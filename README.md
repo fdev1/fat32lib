@@ -18,4 +18,5 @@ Features:
 - Automatic volume mounting (when SD card or other device is inserted);
 - Long filenames support (can be disabled at compile-time);
 - Several memory management options;
-- Easy to use API.
+- Easy to use API;
+- Released under GPL v3/Commercial licenses also available.
