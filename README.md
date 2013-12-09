@@ -19,4 +19,4 @@ Features:
 - Long filenames support (can be disabled at compile-time);
 - Several memory management options;
 - Easy to use API;
-- Released under GPL v3/Commercial licenses also available.
+- Released under GPL v3. Commercial licenses also available (contact frodriguez.developer@outlook.com for info).
