@@ -6,7 +6,7 @@ Portable FAT12/16/32 Library for Embedded Devices
 Features:
 ---------
 
-- Written in 100% Ansi C (C89);
+- Written in 100% portable C89 code (only requierement is CHAR_BIT == 8, ie. platform has 8-bit bytes);
 - Synchronous and asynchronous (non-blocking) IO;
 - Buffered and unbuffered IO;
 - Extensible drive manager (can be extended to interface with other file systems);
