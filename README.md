@@ -4,7 +4,7 @@ fat32lib
 Portable FAT12/16/32 Library for Embedded Devices
 
 Features:
-=========
+---------
 
 - Written in 100% Ansi C (C89);
 - Synchronous and asynchronous (non-blocking) IO;
