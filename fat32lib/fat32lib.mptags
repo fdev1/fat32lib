@@ -1,0 +1,774 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+Attributes	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	421;"	m	line:421	struct:FAT_QUERY_STATE
+Attributes	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	251;"	m	line:251	struct:FAT_QUERY_STATE_INTERNAL
+BACKSLASH::(0x5C)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	38;"	d	line:38
+BPB_BkBootSec	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	232;"	m	line:232	struct:FAT_BPB::<anonymous>::FAT32
+BPB_BytsPerSec	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	194;"	m	line:194	struct:FAT_BPB
+BPB_EX	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	241;"	m	line:241	struct:FAT_BPB
+BPB_ExtFlags	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	228;"	m	line:228	struct:FAT_BPB::<anonymous>::FAT32
+BPB_FATSz16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	201;"	m	line:201	struct:FAT_BPB
+BPB_FATSz32	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	227;"	m	line:227	struct:FAT_BPB::<anonymous>::FAT32
+BPB_FSInfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	231;"	m	line:231	struct:FAT_BPB::<anonymous>::FAT32
+BPB_FSVer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	229;"	m	line:229	struct:FAT_BPB::<anonymous>::FAT32
+BPB_HiddSec	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	204;"	m	line:204	struct:FAT_BPB
+BPB_Media	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	200;"	m	line:200	struct:FAT_BPB
+BPB_NumFATs	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	197;"	m	line:197	struct:FAT_BPB
+BPB_NumHeads	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	203;"	m	line:203	struct:FAT_BPB
+BPB_Reserved	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	233;"	m	line:233	struct:FAT_BPB::<anonymous>::FAT32
+BPB_RootClus	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	230;"	m	line:230	struct:FAT_BPB::<anonymous>::FAT32
+BPB_RootEntCnt	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	198;"	m	line:198	struct:FAT_BPB
+BPB_RsvdSecCnt	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	196;"	m	line:196	struct:FAT_BPB
+BPB_SecPerClus	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	195;"	m	line:195	struct:FAT_BPB
+BPB_SecPerTrk	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	202;"	m	line:202	struct:FAT_BPB
+BPB_TotSec16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	199;"	m	line:199	struct:FAT_BPB
+BPB_TotSec32	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	205;"	m	line:205	struct:FAT_BPB
+BS_BootSig	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	215;"	m	line:215	struct:FAT_BPB::<anonymous>::FAT16
+BS_BootSig	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	236;"	m	line:236	struct:FAT_BPB::<anonymous>::FAT32
+BS_DrvNum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	213;"	m	line:213	struct:FAT_BPB::<anonymous>::FAT16
+BS_DrvNum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	234;"	m	line:234	struct:FAT_BPB::<anonymous>::FAT32
+BS_FilSysType	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	218;"	m	line:218	struct:FAT_BPB::<anonymous>::FAT16
+BS_FilSysType	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	239;"	m	line:239	struct:FAT_BPB::<anonymous>::FAT32
+BS_OEMName	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	193;"	m	line:193	struct:FAT_BPB
+BS_Reserved1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	214;"	m	line:214	struct:FAT_BPB::<anonymous>::FAT16
+BS_Reserved1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	235;"	m	line:235	struct:FAT_BPB::<anonymous>::FAT32
+BS_VolID	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	216;"	m	line:216	struct:FAT_BPB::<anonymous>::FAT16
+BS_VolID	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	237;"	m	line:237	struct:FAT_BPB::<anonymous>::FAT32
+BS_VolLab	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	217;"	m	line:217	struct:FAT_BPB::<anonymous>::FAT16
+BS_VolLab	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	238;"	m	line:238	struct:FAT_BPB::<anonymous>::FAT32
+BS_jmpBoot	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	192;"	m	line:192	struct:FAT_BPB
+Callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	80;"	m	line:80	struct:_STORAGE_CALLBACK_INFO
+Callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	91;"	m	line:91	struct:_STORAGE_CALLBACK_INFO_EX
+Context	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	81;"	m	line:81	struct:_STORAGE_CALLBACK_INFO
+Context	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	92;"	m	line:92	struct:_STORAGE_CALLBACK_INFO_EX
+DEFINE_CRITICAL_SECTION	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	312;"	p	line:312	struct:FAT_VOLUME	signature:(sector_buffer_lock)
+DEFINE_CRITICAL_SECTION	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	318;"	p	line:318	struct:FAT_VOLUME	signature:(write_lock)
+DSKSZTOSECPERCLUS	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	32;"	s	line:32	file:
+DSKSZTOSECPERCLUS	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	37;"	t	line:37	file:
+DiskSize	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	34;"	m	line:34	struct:DSKSZTOSECPERCLUS	file:
+DskTableFAT12	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	48;"	v	line:48	file:
+DskTableFAT16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	74;"	v	line:74	file:
+DskTableFAT32	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	101;"	v	line:101	file:
+ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	362;"	m	line:362	struct:FAT_RAW_DIRECTORY_ENTRY
+ExtraPadding	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	223;"	m	line:223	struct:FAT_BPB::<anonymous>::FAT16
+FAT12_BAD_CLUSTER::(0x0FF7)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	28;"	d	line:28
+FAT12_EOC::(0x0FFF)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	25;"	d	line:25
+FAT16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	211;"	s	line:211	union:FAT_BPB::<anonymous>
+FAT16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	224;"	m	line:224	union:FAT_BPB::<anonymous>
+FAT16_BAD_CLUSTER::(0xFFF7)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	29;"	d	line:29
+FAT16_CLEAN_SHUTDOWN::(0x8000)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	31;"	d	line:31
+FAT16_EOC::(0xFFFF)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	26;"	d	line:26
+FAT16_HARD_ERROR::(0x4000)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	33;"	d	line:33
+FAT32	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	225;"	s	line:225	union:FAT_BPB::<anonymous>
+FAT32	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	240;"	m	line:240	union:FAT_BPB::<anonymous>
+FAT32LIB_FAT_UTILITIES	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.h	23;"	d	line:23
+FAT32_BAD_CLUSTER::(0x0FFFFFF7)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	30;"	d	line:30
+FAT32_CLEAN_SHUTDOWN::(0x08000000)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	32;"	d	line:32
+FAT32_CUTOVER::(1024)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	35;"	d	line:35
+FAT32_EOC::(0x0FFFFFFF)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	27;"	d	line:27
+FAT32_HARD_ERROR::(0x04000000)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	34;"	d	line:34
+FAT_ACQUIRE_READ_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	87;"	d	line:87	file:
+FAT_ACQUIRE_READ_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	98;"	d	line:98	file:
+FAT_ACQUIRE_WRITE_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	100;"	d	line:100	file:
+FAT_ACQUIRE_WRITE_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	94;"	d	line:94	file:
+FAT_ALLOCATE_SEQUENTIAL_CLUSTERS	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	25;"	d	line:25	file:
+FAT_ALLOCATE_SHARED_BUFFER	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	109;"	d	line:109
+FAT_ASYNC_CALLBACK	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	451;"	t	line:451
+FAT_ATTR_ARCHIVE::0x20	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	175;"	d	line:175
+FAT_ATTR_DIRECTORY::0x10	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	174;"	d	line:174
+FAT_ATTR_HIDDEN::0x2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	171;"	d	line:171
+FAT_ATTR_LONG_NAME::(FAT_ATTR_READ_ONLY|	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	179;"	d	line:179
+FAT_ATTR_READ_ONLY::0x1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	170;"	d	line:170
+FAT_ATTR_SYSTEM::0x4	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	172;"	d	line:172
+FAT_ATTR_VOLUME_ID::0x8	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	173;"	d	line:173
+FAT_AWAITING_DATA::(0x20+0x21)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	244;"	d	line:244
+FAT_BPB	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	190;"	s	line:190
+FAT_BPB	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	243;"	t	line:243
+FAT_BUFFER_TOO_BIG::(0x20+0x22)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	245;"	d	line:245
+FAT_CALCULATE_ENTRY_OFFSET::(fs_type,cluster,offset)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	52;"	d	line:52	file:
+FAT_CANNOT_READ_MEDIA::(0x20+0x2)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	213;"	d	line:213
+FAT_CANNOT_WRITE_MEDIA::(0x20+0x3)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	214;"	d	line:214
+FAT_CORRUPTED_FILE::(0x20+0x8)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	219;"	d	line:219
+FAT_DECODE_DATE::(date,month,day,year)(year)=((	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	68;"	d	line:68
+FAT_DECODE_TIME::(time,hour,minute,second)(hour	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	70;"	d	line:70
+FAT_DELETED_ENTRY::(0xE5)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	40;"	d	line:40
+FAT_DIRECTORY_DOES_NOT_EXIST::(0x20+0xD)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	224;"	d	line:224
+FAT_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	375;"	s	line:375
+FAT_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	414;"	t	line:414
+FAT_DIRECTORY_LIMIT_EXCEEDED::(0x20+0x1C)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	239;"	d	line:239
+FAT_DISABLE_LONG_FILENAMES	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	46;"	d	line:46
+FAT_ENCODE_DATE::(month,day,year)((((uint16_t)(	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	67;"	d	line:67
+FAT_ENCODE_TIME::(hour,minute,second)(((uint16_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	69;"	d	line:69
+FAT_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	87;"	t	line:87
+FAT_FEATURE_NOT_SUPPORTED::(0x20+0xF)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	226;"	d	line:226
+FAT_FILE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	494;"	s	line:494
+FAT_FILE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	521;"	t	line:521
+FAT_FILENAME_ALREADY_EXISTS::(0x20+0x6)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	217;"	d	line:217
+FAT_FILENAME_TOO_LONG::(0x20+0xA)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	221;"	d	line:221
+FAT_FILESYSTEM_INTERFACE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	77;"	d	line:77
+FAT_FILESYSTEM_INTERFACE_H	C:\Users\Fernan\Documents\fat32lib\fat32lib\filesystem_interface.h	27;"	d	line:27
+FAT_FILESYSTEM_QUERY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	531;"	t	line:531
+FAT_FILESYSTEM_QUERY_INNER	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	130;"	t	line:130
+FAT_FILE_ACCESS_APPEND::(0x4)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	186;"	d	line:186
+FAT_FILE_ACCESS_CREATE::(0x10)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	188;"	d	line:188
+FAT_FILE_ACCESS_CREATE_OR_APPEND::(FAT_FILE_ACCESS_CREATE|FAT_FI	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	190;"	d	line:190
+FAT_FILE_ACCESS_CREATE_OR_OVERWRITE::(FAT_FILE_ACCESS_CREATE|FAT_FI	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	189;"	d	line:189
+FAT_FILE_ACCESS_OVERWRITE::(0x8)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	187;"	d	line:187
+FAT_FILE_ACCESS_READ::0x1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	184;"	d	line:184
+FAT_FILE_ACCESS_WRITE::0x2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	185;"	d	line:185
+FAT_FILE_BUFFER_NOT_SET::(0x20+0x1F)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	242;"	d	line:242
+FAT_FILE_FLAG_NO_BUFFERING::(0x20)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	191;"	d	line:191
+FAT_FILE_FLAG_OPTIMIZE_FOR_FLASH::(0x40)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	192;"	d	line:192
+FAT_FILE_HANDLE_IN_USE::(0x20+0x1E)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	241;"	d	line:241
+FAT_FILE_NOT_FOUND::(0x20+0xC)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	223;"	d	line:223
+FAT_FILE_NOT_OPENED_FOR_WRITE_ACCESS::(0x20+0x15)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	232;"	d	line:232
+FAT_FIRST_LFN_ENTRY::0x40	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	262;"	d	line:262
+FAT_FLUSH_INTERVAL::0x800	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	151;"	d	line:151
+FAT_FORMAT_UTILITY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	120;"	d	line:120
+FAT_FSINFO	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	139;"	s	line:139
+FAT_FSINFO	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	148;"	t	line:148
+FAT_FS_TYPE_FAT12::0x1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	163;"	d	line:163
+FAT_FS_TYPE_FAT16::0x2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	164;"	d	line:164
+FAT_FS_TYPE_FAT32::0x3	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	165;"	d	line:165
+FAT_FS_TYPE_UNSPECIFIED::0x0	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	162;"	d	line:162
+FAT_GET_SYSTEM_TIME	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	281;"	t	line:281
+FAT_ILLEGAL_FILENAME::(0x20+0x9)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	220;"	d	line:220
+FAT_INSUFFICIENT_DISK_SPACE::(0x20+0xE)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	225;"	d	line:225
+FAT_INTERNALS	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	21;"	d	line:21
+FAT_INVALID_CLUSTER::(0x20+0x17)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	234;"	d	line:234
+FAT_INVALID_FAT_VOLUME::(0x20+0x18)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	235;"	d	line:235
+FAT_INVALID_FILENAME::(0x20+0x5)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	216;"	d	line:216
+FAT_INVALID_FORMAT_PARAMETERS::(0x20+0x1A)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	237;"	d	line:237
+FAT_INVALID_HANDLE::(0x20+0x16)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	233;"	d	line:233
+FAT_INVALID_PARAMETERS::(0x20+0x1D)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	240;"	d	line:240
+FAT_INVALID_PATH::(0x20+0x7)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	218;"	d	line:218
+FAT_INVALID_VOLUME_LABEL::(0x20+0x19)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	236;"	d	line:236
+FAT_IS_LOADED_SECTOR::(sector)(0)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	32;"	d	line:32	file:
+FAT_IS_LOADED_SECTOR::(sector)(fat_shared_buffer_sec	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	28;"	d	line:28	file:
+FAT_IS_LOADED_SECTOR::(sector)(volume->sector_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	30;"	d	line:30	file:
+FAT_LFN_GENERATED::(0x20+0x12)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	229;"	d	line:229
+FAT_LOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	56;"	d	line:56	file:
+FAT_LOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	59;"	d	line:59	file:
+FAT_LOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	61;"	d	line:61	file:
+FAT_LOWERCASE_BASENAME::0x8	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	256;"	d	line:256
+FAT_LOWERCASE_EXTENSION::0x10	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	255;"	d	line:255
+FAT_MAX_FILENAME::12	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	264;"	d	line:264
+FAT_MAX_FILENAME::255	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	266;"	d	line:266
+FAT_MAX_PATH::260	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	261;"	d	line:261
+FAT_MISALIGNED_IO::(0x20+0x20)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	243;"	d	line:243
+FAT_NOT_A_DIRECTORY::(0x20+0x4)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	215;"	d	line:215
+FAT_NOT_A_FILE::(0x20+0xB)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	222;"	d	line:222
+FAT_OPEN_HANDLE_MAGIC::(0x4B)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	39;"	d	line:39
+FAT_OPTIMIZE_FOR_FLASH	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	153;"	d	line:153
+FAT_OP_IN_PROGRESS::(0x20+0x10)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	227;"	d	line:227
+FAT_OP_STATE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	461;"	s	line:461
+FAT_OP_STATE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	485;"	t	line:485
+FAT_PARTITION_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	169;"	s	line:169
+FAT_PARTITION_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	178;"	t	line:178
+FAT_QUERY_STATE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	419;"	s	line:419
+FAT_QUERY_STATE	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	446;"	t	line:446
+FAT_QUERY_STATE_INTERNAL	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	249;"	s	line:249
+FAT_QUERY_STATE_INTERNAL	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	272;"	t	line:272
+FAT_RAW_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	332;"	s	line:332
+FAT_RAW_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	364;"	t	line:364
+FAT_RELINQUISH_READ_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	89;"	d	line:89	file:
+FAT_RELINQUISH_READ_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	99;"	d	line:99	file:
+FAT_RELINQUISH_WRITE_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	101;"	d	line:101	file:
+FAT_RELINQUISH_WRITE_ACCESS::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	96;"	d	line:96	file:
+FAT_ROOT_DIRECTORY_LIMIT_EXCEEDED::(0x20+0x1B)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	238;"	d	line:238
+FAT_SECTOR_SIZE_NOT_SUPPORTED::(0x20+0x11)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	228;"	d	line:228
+FAT_SEEK_CURRENT::0x2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	198;"	d	line:198
+FAT_SEEK_END::0x3	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	199;"	d	line:199
+FAT_SEEK_FAILED::(0x20+0x14)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	231;"	d	line:231
+FAT_SEEK_START::0x1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	197;"	d	line:197
+FAT_SET_LOADED_SECTOR::(sector)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	40;"	d	line:40	file:
+FAT_SET_LOADED_SECTOR::(sector)fat_shared_buffer_sect	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	36;"	d	line:36	file:
+FAT_SET_LOADED_SECTOR::(sector)volume->sector_buffer_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	38;"	d	line:38	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	34;"	d	line:34	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	31;"	d	line:31	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)fat_shared_buff	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	30;"	d	line:30	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)fat_shared_buff	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	27;"	d	line:27	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)volume->sector_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	32;"	d	line:32	file:
+FAT_SET_LOADED_SECTOR::(volume,sector)volume->sector_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	29;"	d	line:29	file:
+FAT_SHORT_LFN_GENERATED::(0x20+0x13)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	230;"	d	line:230
+FAT_STREAMING_IO	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	152;"	d	line:152
+FAT_STREAMING_RESPONSE_READY::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	206;"	d	line:206
+FAT_STREAMING_RESPONSE_SKIP::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	205;"	d	line:205
+FAT_STREAMING_RESPONSE_STOP::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	204;"	d	line:204
+FAT_STREAM_CALLBACK	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	456;"	t	line:456
+FAT_SUCCESS::(0x0)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	211;"	d	line:211
+FAT_UNKNOWN_ERROR::(0x20+0x1)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	212;"	d	line:212
+FAT_UNKNOWN_SECTOR::(0xFFFFFFFF)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	41;"	d	line:41
+FAT_UNLOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	66;"	d	line:66	file:
+FAT_UNLOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	69;"	d	line:69	file:
+FAT_UNLOCK_BUFFER::	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	71;"	d	line:71	file:
+FAT_USE_SYSTEM_TIME	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	62;"	d	line:62
+FAT_VOLUME	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	290;"	s	line:290
+FAT_VOLUME	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	323;"	t	line:323
+FILESYSTEM_QUERY	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	526;"	s	line:526
+FIRST_SECTOR_OF_CLUSTER::(volume,cluster)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	48;"	d	line:48
+FREE_FAT::(0x0000)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	36;"	d	line:36
+Free_Count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	143;"	m	line:143	struct:FAT_FSINFO
+GetSectorSize	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	126;"	m	line:126	struct:_STORAGE_DEVICE
+GetTotalSectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	127;"	m	line:127	struct:_STORAGE_DEVICE
+HI16::(dword)((uint16_t)((dword)>>16	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	80;"	d	line:80
+HI8::(word)((unsignedchar)((word)>>	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	78;"	d	line:78
+ILLEGAL_CHARS	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	157;"	v	line:157
+ILLEGAL_CHARS_COUNT::(0x10)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	37;"	d	line:37
+IS_FREE_DIRECTORY_ENTRY::(entry)(*(entry)->ENTRY.STD.na	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	61;"	d	line:61
+IS_FREE_FAT::(volume,fat)	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	55;"	d	line:55
+IS_LAST_DIRECTORY_ENTRY::(entry)(*(entry)->ENTRY.STD.na	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	62;"	d	line:62
+LFN	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	351;"	s	line:351	union:FAT_RAW_DIRECTORY_ENTRY::<anonymous>
+LFN	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	361;"	m	line:361	union:FAT_RAW_DIRECTORY_ENTRY::<anonymous>
+LO16::(dword)((uint16_t)(dword))	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	79;"	d	line:79
+LO8::(word)((unsignedchar)(word))	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	77;"	d	line:77
+LeadSig	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	146;"	m	line:146	struct:FAT_FSINFO
+MAX::(a,b)(((a)>(b))?(a):(b))	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	75;"	d	line:75
+MAX_SECTOR_LENGTH::0x200	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	69;"	d	line:69
+MIN::(a,b)(((a)<(b))?(a):(b))	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	76;"	d	line:76
+Media	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	121;"	m	line:121	struct:_STORAGE_DEVICE
+Nxt_Free	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	142;"	m	line:142	struct:FAT_FSINFO
+PSTORAGE_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	83;"	t	line:83
+PSTORAGE_CALLBACK_INFO_EX	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	94;"	t	line:94
+PSTORAGE_DEVICE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	134;"	t	line:134
+Pad1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	219;"	m	line:219	struct:FAT_BPB::<anonymous>::FAT16
+Pad2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	221;"	m	line:221	struct:FAT_BPB::<anonymous>::FAT16
+Pad3	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	222;"	m	line:222	struct:FAT_BPB::<anonymous>::FAT16
+ReadSector	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	122;"	m	line:122	struct:_STORAGE_DEVICE
+ReadSectorAsync	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	123;"	m	line:123	struct:_STORAGE_DEVICE
+Reserved1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	145;"	m	line:145	struct:FAT_FSINFO
+Reserved2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	141;"	m	line:141	struct:FAT_FSINFO
+STD	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	336;"	s	line:336	union:FAT_RAW_DIRECTORY_ENTRY::<anonymous>
+STD	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	350;"	m	line:350	union:FAT_RAW_DIRECTORY_ENTRY::<anonymous>
+STORAGE_ADDRESS_ERROR::0x0005	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	39;"	d	line:39
+STORAGE_AWAITING_DATA::0x0014	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	54;"	d	line:54
+STORAGE_CALLBACK	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	66;"	t	line:66
+STORAGE_CALLBACK_EX	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	67;"	t	line:67
+STORAGE_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	83;"	t	line:83
+STORAGE_CALLBACK_INFO_EX	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	94;"	t	line:94
+STORAGE_CC_ERROR::0x000F	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	49;"	d	line:49
+STORAGE_COMMUNICATION_ERROR::0x000A	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	44;"	d	line:44
+STORAGE_CRC_ERROR::0x0007	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	41;"	d	line:41
+STORAGE_DEVICE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	134;"	t	line:134
+STORAGE_DEVICE_ERASE_SECTORS	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	103;"	t	line:103
+STORAGE_DEVICE_GET_SECTOR_COUNT	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	65;"	t	line:65
+STORAGE_DEVICE_GET_SECTOR_SIZE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	64;"	t	line:64
+STORAGE_DEVICE_NOT_READY::0x0013	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	53;"	d	line:53
+STORAGE_DEVICE_READ	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	99;"	t	line:99
+STORAGE_DEVICE_READ_ASYNC	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	100;"	t	line:100
+STORAGE_DEVICE_WRITE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	108;"	t	line:108
+STORAGE_DEVICE_WRITE_ASYNC	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	109;"	t	line:109
+STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	111;"	t	line:111
+STORAGE_ERASE_RESET::0x0009	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	43;"	d	line:43
+STORAGE_ERASE_SEQ_ERROR::0x0006	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	40;"	d	line:40
+STORAGE_GET_DEVICE_ID	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	69;"	t	line:69
+STORAGE_GET_PAGE_SIZE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	70;"	t	line:70
+STORAGE_IDLE::0x000C	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	46;"	d	line:46
+STORAGE_ILLEGAL_COMMAND::0x0008	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	42;"	d	line:42
+STORAGE_INVALID_MEDIA::0x0002	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	36;"	d	line:36
+STORAGE_INVALID_MULTI_BLOCK_RESPONSE::0x0015	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	55;"	d	line:55
+STORAGE_INVALID_PARAMETER::0x0004	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	38;"	d	line:38
+STORAGE_MEDIA_CHANGED_CALLBACK	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	71;"	t	line:71
+STORAGE_MEDIA_ECC_FAILED::0x000E	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	48;"	d	line:48
+STORAGE_MEDIUM_WRITE_PROTECTED::0x0011	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	51;"	d	line:51
+STORAGE_MULTI_SECTOR_RESPONSE_READY::0x2	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	59;"	d	line:59
+STORAGE_MULTI_SECTOR_RESPONSE_SKIP::0x1	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	58;"	d	line:58
+STORAGE_MULTI_SECTOR_RESPONSE_STOP::0x0	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	57;"	d	line:57
+STORAGE_OP_IN_PROGRESS::0x0010	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	50;"	d	line:50
+STORAGE_OUT_OF_RANGE::0x000D	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	47;"	d	line:47
+STORAGE_OUT_OF_SPACE::0x0012	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	52;"	d	line:52
+STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	72;"	t	line:72
+STORAGE_SUCCESS::0x0	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	34;"	d	line:34
+STORAGE_TIMEOUT::0x000B	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	45;"	d	line:45
+STORAGE_UNKNOWN_ERROR::0x0003	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	37;"	d	line:37
+STORAGE_VOLTAGE_NOT_SUPPORTED::0x0001	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	35;"	d	line:35
+SecPerClusVal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	35;"	m	line:35	struct:DSKSZTOSECPERCLUS	file:
+StructSig	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	144;"	m	line:144	struct:FAT_FSINFO
+TIMEKEEPER	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	41;"	s	line:41	file:
+TIMEKEEPER	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	45;"	t	line:45	file:
+TrailSig	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	140;"	m	line:140	struct:FAT_FSINFO
+WriteSector	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	124;"	m	line:124	struct:_STORAGE_DEVICE
+WriteSectorAsync	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	125;"	m	line:125	struct:_STORAGE_DEVICE
+_FILESYSTEM_QUERY_INNER	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	126;"	s	line:126
+_STORAGE_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	78;"	s	line:78
+_STORAGE_CALLBACK_INFO_EX	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	89;"	s	line:89
+_STORAGE_DEVICE	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	119;"	s	line:119
+__FAT_H__	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	21;"	d	line:21
+__STORAGE_DEVICE_H__	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	21;"	d	line:21
+access_date	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	344;"	m	line:344	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+access_flags	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	511;"	m	line:511	struct:FAT_FILE
+access_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	396;"	m	line:396	struct:FAT_DIRECTORY_ENTRY
+async_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	466;"	m	line:466	struct:FAT_OP_STATE
+async_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2239;"	l	line:2239
+attributes	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	339;"	m	line:339	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+attributes	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	384;"	m	line:384	struct:FAT_DIRECTORY_ENTRY
+bpb	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	90;"	l	line:90
+bpb_storage	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	97;"	l	line:97
+buff	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	444;"	m	line:444	struct:FAT_QUERY_STATE
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	101;"	l	line:101
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1032;"	l	line:1032
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	103;"	l	line:103
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	105;"	l	line:105
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2006;"	l	line:2006
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2008;"	l	line:2008
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2010;"	l	line:2010
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	519;"	l	line:519
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	521;"	l	line:521
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	523;"	l	line:523
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	425;"	m	line:425	struct:FAT_QUERY_STATE
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	471;"	m	line:471	struct:FAT_OP_STATE
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	513;"	m	line:513	struct:FAT_FILE
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1139;"	l	line:1139
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1141;"	l	line:1141
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1143;"	l	line:1143
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1421;"	l	line:1421
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1423;"	l	line:1423
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1425;"	l	line:1425
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1580;"	l	line:1580
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1582;"	l	line:1582
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1584;"	l	line:1584
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1767;"	l	line:1767
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1769;"	l	line:1769
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1771;"	l	line:1771
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	203;"	l	line:203
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	205;"	l	line:205
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	207;"	l	line:207
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1700;"	l	line:1700	file:
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	227;"	l	line:227
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	464;"	l	line:464
+buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	255;"	m	line:255	struct:FAT_QUERY_STATE_INTERNAL
+buffer_dirty	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	508;"	m	line:508	struct:FAT_FILE
+buffer_head	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	507;"	m	line:507	struct:FAT_FILE
+buffer_head	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1702;"	l	line:1702	file:
+buffer_internal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	515;"	m	line:515	struct:FAT_FILE
+busy	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	509;"	m	line:509	struct:FAT_FILE
+bytes_read	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	467;"	m	line:467	struct:FAT_OP_STATE
+bytes_remaining	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	464;"	m	line:464	struct:FAT_OP_STATE
+bytes_remaining	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1695;"	l	line:1695	file:
+c	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2120;"	l	line:2120
+c	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2958;"	l	line:2958
+callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	475;"	m	line:475	struct:FAT_OP_STATE
+callback_context	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	483;"	m	line:483	struct:FAT_OP_STATE
+callback_ex	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	480;"	m	line:480	struct:FAT_OP_STATE
+char_index	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1985;"	l	line:1985
+chs_first_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	172;"	m	line:172	struct:FAT_PARTITION_ENTRY
+chs_last_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	174;"	m	line:174	struct:FAT_PARTITION_ENTRY
+cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	186;"	l	line:186
+cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	234;"	l	line:234
+cluster_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1255;"	l	line:1255
+cluster_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	239;"	l	line:239
+counter	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1984;"	l	line:1984
+counter	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2119;"	l	line:2119
+create_date	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	343;"	m	line:343	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+create_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	342;"	m	line:342	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+create_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	388;"	m	line:388	struct:FAT_DIRECTORY_ENTRY
+create_time_tenth	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	341;"	m	line:341	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+current_clus_addr	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	502;"	m	line:502	struct:FAT_FILE
+current_clus_idx	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	503;"	m	line:503	struct:FAT_FILE
+current_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	423;"	m	line:423	struct:FAT_QUERY_STATE
+current_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	42;"	l	line:42
+current_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	253;"	m	line:253	struct:FAT_QUERY_STATE_INTERNAL
+current_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1013;"	l	line:1013
+current_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	528;"	m	line:528	struct:FILESYSTEM_QUERY
+current_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	127;"	m	line:127	struct:_FILESYSTEM_QUERY_INNER
+current_entry_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	424;"	m	line:424	struct:FAT_QUERY_STATE
+current_entry_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	254;"	m	line:254	struct:FAT_QUERY_STATE_INTERNAL
+current_entry_raw_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	429;"	m	line:429	struct:FAT_QUERY_STATE
+current_entry_raw_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	259;"	m	line:259	struct:FAT_QUERY_STATE_INTERNAL
+current_entry_raw_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	428;"	m	line:428	struct:FAT_QUERY_STATE
+current_entry_raw_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	258;"	m	line:258	struct:FAT_QUERY_STATE_INTERNAL
+current_level	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1021;"	l	line:1021
+current_level	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1023;"	l	line:1023
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	422;"	m	line:422	struct:FAT_QUERY_STATE
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1134;"	l	line:1134
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1762;"	l	line:1762
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	185;"	l	line:185
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1985;"	l	line:1985
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2120;"	l	line:2120
+current_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	252;"	m	line:252	struct:FAT_QUERY_STATE_INTERNAL
+current_sector_idx	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	504;"	m	line:504	struct:FAT_FILE
+current_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	501;"	m	line:501	struct:FAT_FILE
+current_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1699;"	l	line:1699	file:
+device	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	321;"	m	line:321	struct:FAT_VOLUME
+directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	500;"	m	line:500	struct:FAT_FILE
+dot_index	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2948;"	l	line:2948
+dst	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3297;"	l	line:3297
+end_of_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	470;"	m	line:470	struct:FAT_OP_STATE
+end_of_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1703;"	l	line:1703	file:
+entries	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1986;"	l	line:1986
+entries_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1987;"	l	line:1987
+entries_updated	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	188;"	l	line:188
+entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1132;"	l	line:1132
+entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1418;"	l	line:1418
+entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1577;"	l	line:1577
+entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1760;"	l	line:1760
+entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	187;"	l	line:187
+entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1133;"	l	line:1133
+entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1417;"	l	line:1417
+entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1576;"	l	line:1576
+entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1761;"	l	line:1761
+entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	184;"	l	line:184
+entry_storage	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1993;"	l	line:1993
+erase_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	132;"	m	line:132	struct:_STORAGE_DEVICE
+fat	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1680;"	l	line:1680
+fat	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1991;"	l	line:1991
+fat_allocate_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	107;"	p	line:107	file:	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint32_t count, char zero, uint32_t page_size, uint16_t* result)
+fat_allocate_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	180;"	f	line:180	file:	signature:( FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint32_t count, char zero, uint32_t page_size, uint16_t* result)
+fat_allocate_data_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	135;"	f	line:135	signature:(FAT_VOLUME* volume, uint32_t count, char zero, uint16_t* result)
+fat_allocate_data_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	281;"	p	line:281	signature:(FAT_VOLUME* volume, uint32_t count, char zero, uint16_t* result)
+fat_allocate_data_cluster_ex	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	143;"	f	line:143	signature:(FAT_VOLUME* volume, uint32_t count, char zero, uint32_t page_size, uint16_t* result)
+fat_allocate_data_cluster_ex	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	310;"	p	line:310	signature:(FAT_VOLUME* volume, uint32_t count, char zero, uint32_t page_size, uint16_t* result)
+fat_allocate_directory_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	120;"	f	line:120	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint16_t* result)
+fat_allocate_directory_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	288;"	p	line:288	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint16_t* result)
+fat_compare_long_name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2925;"	f	line:2925	signature:( uint16_t* name1, uint16_t* name2 )
+fat_compare_long_name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	314;"	p	line:314	signature:(uint16_t* name1, uint16_t* name2)
+fat_compare_short_name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2916;"	f	line:2916	signature:( unsigned char* name1, unsigned char* name2 )
+fat_compare_short_name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	299;"	p	line:299	signature:(unsigned char* name1, unsigned char* name2)
+fat_create_directory	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	900;"	f	line:900	signature:(FAT_VOLUME* volume, char* directory)
+fat_create_directory	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	644;"	p	line:644	signature:( FAT_VOLUME* volume, char* filename )
+fat_create_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1979;"	f	line:1979	signature:( FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, char* name, unsigned char attribs, uint32_t entry_cluster, FAT_DIRECTORY_ENTRY* new_entry)
+fat_create_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	282;"	p	line:282	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, char* name, unsigned char attribs, uint32_t entry_cluster, FAT_DIRECTORY_ENTRY* entry)
+fat_decode_date_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3262;"	f	line:3262	signature:(uint16_t date, uint16_t time)
+fat_decode_date_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	305;"	p	line:305	signature:(uint16_t date, uint16_t time)
+fat_dismount_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	504;"	f	line:504	signature:(FAT_VOLUME* volume)
+fat_dismount_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	573;"	p	line:573	signature:( FAT_VOLUME* volume )
+fat_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	191;"	l	line:191
+fat_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	3081;"	l	line:3081
+fat_file_alloc	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	738;"	p	line:738	signature:( FAT_FILE* file, uint32_t bytes )
+fat_file_alloc	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	954;"	f	line:954	signature:(FAT_FILE* file, uint32_t bytes)
+fat_file_close	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	886;"	p	line:886	signature:( FAT_FILE* handle )
+fat_file_close	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	3078;"	f	line:3078	signature:(FAT_FILE* handle)
+fat_file_delete	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	658;"	p	line:658	signature:( FAT_VOLUME* volume, char* filename )
+fat_file_delete	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	623;"	f	line:623	signature:(FAT_VOLUME* volume, char* filename)
+fat_file_flush	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	874;"	p	line:874	signature:( FAT_FILE* file )
+fat_file_flush	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2888;"	f	line:2888	signature:(FAT_FILE* handle)
+fat_file_get_unique_id	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	715;"	p	line:715	signature:( FAT_FILE* file )
+fat_file_get_unique_id	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	600;"	f	line:600	signature:(FAT_FILE* file)
+fat_file_open	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	690;"	p	line:690	signature:( FAT_VOLUME* volume, char* filename, unsigned char access_flags, FAT_FILE* file )
+fat_file_open	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	75;"	f	line:75	signature:(FAT_VOLUME* volume, char* filename, unsigned char access_flags, FAT_FILE* handle)
+fat_file_read	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	831;"	p	line:831	signature:( FAT_FILE* handle, unsigned char* buffer, uint32_t length, uint32_t* bytes_read )
+fat_file_read	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2453;"	f	line:2453	signature:(FAT_FILE* hdl, unsigned char* buffer, uint32_t length, uint32_t* bytes_read)
+fat_file_read_async	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	857;"	p	line:857	signature:( FAT_FILE* handle, unsigned char* buffer, uint32_t length, uint32_t* bytes_read, uint16_t* result, FAT_ASYNC_CALLBACK* callback, void* callback_context )
+fat_file_read_async	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2461;"	f	line:2461	signature:(FAT_FILE* handle, unsigned char* buff, uint32_t length, uint32_t* bytes_read, uint16_t* state, FAT_ASYNC_CALLBACK* callback, void* callback_context)
+fat_file_read_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2586;"	f	line:2586	signature:(FAT_FILE* handle, uint16_t* async_state)
+fat_file_read_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	293;"	p	line:293	signature:(FAT_FILE* handle, uint16_t* async_state)
+fat_file_read_internal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2478;"	f	line:2478	signature:( FAT_FILE* handle, unsigned char* buff, uint32_t length, uint32_t* bytes_read, uint16_t* async_state, FAT_ASYNC_CALLBACK* callback, void* callback_context )
+fat_file_read_internal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	292;"	p	line:292	signature:(FAT_FILE* handle, unsigned char* buff, uint32_t length, uint32_t* bytes_read, uint16_t* state, FAT_ASYNC_CALLBACK* callback, void* callback_context)
+fat_file_rename	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	673;"	p	line:673	signature:( FAT_VOLUME* volume, char* original_filename, char* new_filename )
+fat_file_rename	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	741;"	f	line:741	signature:(FAT_VOLUME* volume, char* original_filename, char* new_filename)
+fat_file_seek	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	756;"	p	line:756	signature:( FAT_FILE* file, uint32_t offset, char mode )
+fat_file_seek	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1251;"	f	line:1251	signature:(FAT_FILE* file, uint32_t offset, char mode)
+fat_file_set_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	703;"	p	line:703	signature:( FAT_FILE* file, unsigned char* buffer )
+fat_file_set_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	572;"	f	line:572	signature:(FAT_FILE* file, unsigned char* buffer)
+fat_file_update_sequential_cluster_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	38;"	p	line:38	file:	signature:(FAT_FILE* file)
+fat_file_update_sequential_cluster_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	40;"	f	line:40	signature:(FAT_FILE* handle)
+fat_file_write	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	772;"	p	line:772	signature:( FAT_FILE* file, unsigned char* buffer, uint32_t length )
+fat_file_write	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1407;"	f	line:1407	signature:(FAT_FILE* handle, unsigned char* buffer, uint32_t length)
+fat_file_write_async	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	796;"	p	line:796	signature:( FAT_FILE* handle, unsigned char* buffer, uint32_t length, uint16_t* result, FAT_ASYNC_CALLBACK* callback, void* callback_context )
+fat_file_write_async	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1419;"	f	line:1419	signature:( FAT_FILE* handle, unsigned char* buffer, uint32_t length, uint16_t* result, FAT_ASYNC_CALLBACK* callback, void* callback_context )
+fat_file_write_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2236;"	f	line:2236	signature:(FAT_FILE* handle, uint16_t* async_state_in)
+fat_file_write_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	295;"	p	line:295	signature:(FAT_FILE* handle, uint16_t* async_state)
+fat_file_write_internal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1447;"	f	line:1447	signature:( FAT_FILE* handle, unsigned char* buff, uint32_t length, uint16_t* async_state, FAT_ASYNC_CALLBACK* callback, void* callback_context )
+fat_file_write_internal	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	294;"	p	line:294	signature:(FAT_FILE* handle, unsigned char* buff, uint32_t length, uint16_t* result, FAT_ASYNC_CALLBACK* callback, void* callback_context)
+fat_file_write_stream	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	810;"	p	line:810	signature:( FAT_FILE* handle, unsigned char* buff, uint32_t length, uint16_t* async_state, FAT_STREAM_CALLBACK* callback, void* callback_context )
+fat_file_write_stream	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1576;"	f	line:1576	signature:( FAT_FILE* handle, unsigned char* buff, uint32_t length, uint16_t* async_state, FAT_STREAM_CALLBACK* callback, void* callback_context )
+fat_file_write_stream_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1692;"	f	line:1692	signature:(FAT_FILE* handle, uint16_t* async_state_in, unsigned char** transfer_buffer, uint16_t* response)
+fat_file_write_stream_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	35;"	p	line:35	file:	signature:(FAT_FILE* handle, uint16_t* async_state_in, unsigned char** transfer_buffer, uint16_t* response)
+fat_fill_directory_entry_from_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	876;"	f	line:876	signature:( FAT_DIRECTORY_ENTRY* entry, FAT_RAW_DIRECTORY_ENTRY* raw_entry )
+fat_fill_directory_entry_from_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	302;"	p	line:302	signature:(FAT_DIRECTORY_ENTRY* entry, FAT_RAW_DIRECTORY_ENTRY* raw_entry)
+fat_find_first_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	638;"	f	line:638	signature:( FAT_VOLUME* volume, char* parent_path, unsigned char attributes, FAT_DIRECTORY_ENTRY** dir_entry, FAT_FILESYSTEM_QUERY* q)
+fat_find_first_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	608;"	p	line:608	signature:( FAT_VOLUME* volume, char* path, unsigned char attributes, FAT_DIRECTORY_ENTRY** dir_entry, FAT_FILESYSTEM_QUERY* query )
+fat_find_next_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	779;"	f	line:779	signature:( FAT_VOLUME* volume, FAT_DIRECTORY_ENTRY** dir_entry, FAT_FILESYSTEM_QUERY* q)
+fat_find_next_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	629;"	p	line:629	signature:( FAT_VOLUME* volume, FAT_DIRECTORY_ENTRY** dir_entry, FAT_FILESYSTEM_QUERY* query )
+fat_format_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	158;"	f	line:158	signature:( unsigned char fs_type, char* const volume_label, uint32_t no_of_sectors_per_cluster, STORAGE_DEVICE* device )
+fat_format_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.h	42;"	p	line:42	signature:( unsigned char fs_type, char* const volume_label, uint32_t no_of_sectors_per_cluster, STORAGE_DEVICE* device )
+fat_free_cluster_chain	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1128;"	f	line:1128	signature:(FAT_VOLUME* volume, uint32_t cluster)
+fat_free_cluster_chain	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	280;"	p	line:280	signature:(FAT_VOLUME* volume, uint32_t cluster)
+fat_get_cluster_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1412;"	f	line:1412	signature:( FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY* fat_entry )
+fat_get_cluster_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	278;"	p	line:278	signature:(FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY* fat_entry)
+fat_get_cluster_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	116;"	f	line:116	file:	signature:(unsigned char fs_type, uint32_t total_sectors, char forced_fs_type)
+fat_get_cluster_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	42;"	p	line:42	file:	signature:(unsigned char fs_type, uint32_t total_sectors, char forced_fs_type)
+fat_get_fat16_sec_per_clus	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	301;"	p	line:301	signature:(uint32_t sector_count)
+fat_get_fat32_sec_per_clus	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	300;"	p	line:300	signature:(uint32_t sector_count)
+fat_get_file_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1007;"	f	line:1007	signature:(FAT_VOLUME* volume, char* path, FAT_DIRECTORY_ENTRY* entry)
+fat_get_file_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	587;"	p	line:587	signature:( FAT_VOLUME* volume, char* path, FAT_DIRECTORY_ENTRY* entry )
+fat_get_filesystem_interface	C:\Users\Fernan\Documents\fat32lib\fat32lib\filesystem_interface.c	26;"	f	line:26	signature:(FILESYSTEM* filesystem)
+fat_get_filesystem_interface	C:\Users\Fernan\Documents\fat32lib\fat32lib\filesystem_interface.h	44;"	p	line:44	signature:(FILESYSTEM* filesystem)
+fat_get_sector_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	620;"	f	line:620	signature:(FAT_VOLUME* volume)
+fat_get_sector_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	582;"	p	line:582	signature:( FAT_VOLUME* volume )
+fat_get_short_name_from_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2817;"	f	line:2817	signature:( unsigned char* dest, const unsigned char* src )
+fat_get_short_name_from_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	298;"	p	line:298	signature:(unsigned char* dest, const unsigned char* src)
+fat_get_system_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	43;"	m	line:43	struct:TIMEKEEPER	file:
+fat_increase_cluster_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1755;"	f	line:1755	signature:( FAT_VOLUME* volume, uint32_t cluster, uint16_t count, uint32_t* value )
+fat_increase_cluster_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	283;"	p	line:283	signature:(FAT_VOLUME* volume, uint32_t current_cluster, uint16_t count, uint32_t* value)
+fat_init	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	74;"	f	line:74
+fat_init	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	554;"	p	line:554	signature:()
+fat_initialize_directory_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	108;"	p	line:108	file:	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint32_t cluster, unsigned char* buffer)
+fat_initialize_directory_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1980;"	f	line:1980	file:	signature:( FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* parent, uint32_t cluster, unsigned char* buffer)
+fat_is_eof_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1964;"	f	line:1964	signature:(FAT_VOLUME* volume, FAT_ENTRY fat)
+fat_is_eof_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	284;"	p	line:284	signature:(FAT_VOLUME* volume, FAT_ENTRY fat)
+fat_long_entry_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3184;"	f	line:3184	signature:( unsigned char* filename )
+fat_long_entry_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	286;"	p	line:286	signature:( unsigned char* filename)
+fat_mount_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	87;"	f	line:87	signature:(FAT_VOLUME* volume, STORAGE_DEVICE* device)
+fat_mount_volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	564;"	p	line:564	signature:( FAT_VOLUME* volume, STORAGE_DEVICE* device )
+fat_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1131;"	l	line:1131
+fat_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1416;"	l	line:1416
+fat_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1575;"	l	line:1575
+fat_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1759;"	l	line:1759
+fat_open_file_by_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	382;"	f	line:382	signature:(FAT_VOLUME* volume, FAT_DIRECTORY_ENTRY* entry, FAT_FILE* handle, unsigned char access_flags)
+fat_open_file_by_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	291;"	p	line:291	signature:(FAT_VOLUME* volume, FAT_DIRECTORY_ENTRY* entry, FAT_FILE* handle, unsigned char access_flags)
+fat_parse_path	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3339;"	f	line:3339	signature:(char* path, char* path_part, char** filename_part)
+fat_parse_path	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	307;"	p	line:307	signature:(char* path, char* path_part, char** filename_part)
+fat_query_first_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1374;"	f	line:1374	signature:( FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* directory, unsigned char attributes, FAT_QUERY_STATE* query, char buffer_locked )
+fat_query_first_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	289;"	p	line:289	signature:(FAT_VOLUME* volume, FAT_RAW_DIRECTORY_ENTRY* directory, unsigned char attributes, FAT_QUERY_STATE* query, char buffer_locked)
+fat_query_next_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1653;"	f	line:1653	signature:(FAT_VOLUME* volume, FAT_QUERY_STATE* query, char buffer_locked, char first_entry)
+fat_query_next_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	290;"	p	line:290	signature:(FAT_VOLUME* volume, FAT_QUERY_STATE* query, char buffer_locked, char first_entry)
+fat_read_bpb	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3461;"	f	line:3461	signature:(FAT_BPB* bpb, unsigned char* buffer)
+fat_read_bpb	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	320;"	p	line:320	signature:(FAT_BPB* bpb, unsigned char* buffer)
+fat_read_fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3352;"	f	line:3352	signature:(FAT_FSINFO* fsinfo, unsigned char* buffer)
+fat_read_fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	324;"	p	line:324	signature:(FAT_FSINFO* fsinfo, unsigned char* buffer)
+fat_read_partition_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3438;"	f	line:3438	signature:(FAT_PARTITION_ENTRY* entry, unsigned char* buffer)
+fat_read_partition_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	319;"	p	line:319	signature:(FAT_PARTITION_ENTRY* entry, unsigned char* buffer)
+fat_read_raw_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3757;"	f	line:3757	signature:(FAT_RAW_DIRECTORY_ENTRY* entry, unsigned char* buffer)
+fat_read_raw_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	322;"	p	line:322	signature:(FAT_RAW_DIRECTORY_ENTRY* entry, unsigned char* buffer)
+fat_register_system_time_function	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	629;"	f	line:629	signature:(FAT_GET_SYSTEM_TIME system_time)
+fat_register_system_time_function	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	548;"	p	line:548	signature:(FAT_GET_SYSTEM_TIME system_time)
+fat_set_cluster_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1572;"	f	line:1572	signature:(FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY fat_entry )
+fat_set_cluster_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	279;"	p	line:279	signature:(FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY fat_entry)
+fat_shared_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	67;"	v	line:67
+fat_shared_buffer_lock	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	65;"	v	line:65
+fat_shared_buffer_lock	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	538;"	v	line:538
+fat_shared_buffer_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	68;"	v	line:68
+fat_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	293;"	m	line:293	struct:FAT_VOLUME
+fat_write_bpb	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3609;"	f	line:3609	signature:(FAT_BPB* bpb, unsigned char* buffer)
+fat_write_bpb	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	321;"	p	line:321	signature:(FAT_BPB* bpb, unsigned char* buffer)
+fat_write_fat_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	110;"	p	line:110	file:	signature:(FAT_VOLUME* volume, uint32_t sector_address, unsigned char* buffer, uint16_t* ret)
+fat_write_fat_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2154;"	f	line:2154	file:	signature:(FAT_VOLUME* volume, uint32_t sector_address, unsigned char* buffer, uint16_t* ret)
+fat_write_fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3395;"	f	line:3395	signature:(FAT_FSINFO* fsinfo, unsigned char* buffer)
+fat_write_fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	325;"	p	line:325	signature:(FAT_FSINFO* fsinfo, unsigned char* buffer)
+fat_write_raw_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3796;"	f	line:3796	signature:(FAT_RAW_DIRECTORY_ENTRY* entry, unsigned char* buffer)
+fat_write_raw_directory_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	323;"	p	line:323	signature:(FAT_RAW_DIRECTORY_ENTRY* entry, unsigned char* buffer)
+fat_zero_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	109;"	p	line:109	file:	signature:(FAT_VOLUME* volume, uint32_t cluster, unsigned char* buffer)
+fat_zero_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2115;"	f	line:2115	file:	signature:(FAT_VOLUME* volume, uint32_t cluster, unsigned char* buffer)
+file_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	79;"	l	line:79
+file_path	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	121;"	l	line:121
+filename_scanner	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	120;"	l	line:120
+first_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	192;"	l	line:192
+first_cluster_hi	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	345;"	m	line:345	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+first_cluster_lo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	348;"	m	line:348	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+first_data_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	295;"	m	line:295	struct:FAT_VOLUME
+first_entry_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	431;"	m	line:431	struct:FAT_QUERY_STATE
+first_entry_raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	261;"	m	line:261	struct:FAT_QUERY_STATE_INTERNAL
+first_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1384;"	l	line:1384
+first_sector_of_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1989;"	l	line:1989
+fs_type	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3465;"	l	line:3465
+fs_type	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3613;"	l	line:3613
+fs_type	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	307;"	m	line:307	struct:FAT_VOLUME
+fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	432;"	l	line:432
+fsinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	513;"	l	line:513
+fsinfo_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	434;"	l	line:434
+fsinfo_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	515;"	l	line:515
+fsinfo_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	95;"	l	line:95
+fsinfo_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	302;"	m	line:302	struct:FAT_VOLUME
+get_device_id	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	129;"	m	line:129	struct:_STORAGE_DEVICE
+get_long_name_for_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2893;"	f	line:2893	signature:(uint16_t* dst, unsigned char* src)
+get_long_name_for_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	315;"	p	line:315	signature:(uint16_t* dst, unsigned char* src)
+get_page_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	130;"	m	line:130	struct:_STORAGE_DEVICE
+get_short_name_for_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2943;"	f	line:2943	signature:(unsigned char* dest, unsigned char* src, char lfn_disabled)
+get_short_name_for_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	287;"	p	line:287	signature:(unsigned char* dest, unsigned char* src, char lfn_disabled)
+has_uppercase	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2947;"	l	line:2947
+hidden_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	91;"	l	line:91
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1607;"	l	line:1607
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1932;"	l	line:1932
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2120;"	l	line:2120
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2895;"	l	line:2895
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2927;"	l	line:2927
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2950;"	l	line:2950
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3198;"	l	line:3198
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3296;"	l	line:3296
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3354;"	l	line:3354
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3397;"	l	line:3397
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2168;"	l	line:2168
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_format.c	118;"	l	line:118
+id	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	292;"	m	line:292	struct:FAT_VOLUME
+id	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	605;"	l	line:605
+illegal_char	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1986;"	l	line:1986
+indexof	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3196;"	f	line:3196	signature:(char chr, char* str, int index)
+indexof	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	296;"	p	line:296	signature:(char chr, char* str, int index)
+internal_async_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1565;"	l	line:1565
+internal_async_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2577;"	l	line:2577
+internal_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	472;"	m	line:472	struct:FAT_OP_STATE
+is_lfn	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2959;"	l	line:2959
+is_odd_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1135;"	l	line:1135
+is_odd_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1763;"	l	line:1763
+is_valid_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2118;"	l	line:2118
+label	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	94;"	l	line:94
+label	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	309;"	m	line:309	struct:FAT_VOLUME
+last_char	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3295;"	l	line:3295
+last_entry_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1990;"	l	line:1990
+last_entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	194;"	l	line:194
+last_entry_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	193;"	l	line:193
+last_fat	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1992;"	l	line:1992
+last_fat_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	190;"	l	line:190
+lba_first_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	175;"	m	line:175	struct:FAT_PARTITION_ENTRY
+lead_spaces	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3294;"	l	line:3294
+len	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3186;"	l	line:3186
+length	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2949;"	l	line:2949
+length	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	468;"	m	line:468	struct:FAT_OP_STATE
+lfn_attributes	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	355;"	m	line:355	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_chars_1	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	354;"	m	line:354	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_chars_2	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	358;"	m	line:358	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_chars_3	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	360;"	m	line:360	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2002;"	l	line:2002
+lfn_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	357;"	m	line:357	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	439;"	m	line:439	struct:FAT_QUERY_STATE
+lfn_checksum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	269;"	m	line:269	struct:FAT_QUERY_STATE_INTERNAL
+lfn_first_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	359;"	m	line:359	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_sequence	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	353;"	m	line:353	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+lfn_sequence	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	438;"	m	line:438	struct:FAT_QUERY_STATE
+lfn_sequence	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	268;"	m	line:268	struct:FAT_QUERY_STATE_INTERNAL
+lfn_type	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	356;"	m	line:356	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::LFN
+long_filename	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	437;"	m	line:437	struct:FAT_QUERY_STATE
+long_filename	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	267;"	m	line:267	struct:FAT_QUERY_STATE_INTERNAL
+magic	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	510;"	m	line:510	struct:FAT_FILE
+match	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1010;"	l	line:1010
+max_length	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3293;"	l	line:3293
+media	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	376;"	l	line:376
+modify_date	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	347;"	m	line:347	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+modify_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	346;"	m	line:346	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+modify_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	392;"	m	line:392	struct:FAT_DIRECTORY_ENTRY
+name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	338;"	m	line:338	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+name	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	380;"	m	line:380	struct:FAT_DIRECTORY_ENTRY
+name_suffix	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2117;"	l	line:2117
+name_suffix_str	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2119;"	l	line:2119
+new_pos	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1253;"	l	line:1253
+newfat	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2781;"	l	line:2781
+next_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	43;"	l	line:43
+next_free_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	300;"	m	line:300	struct:FAT_VOLUME
+next_sector_loaded	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	189;"	l	line:189
+no_of_bytes_per_serctor	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	304;"	m	line:304	struct:FAT_VOLUME
+no_of_clusters	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3464;"	l	line:3464
+no_of_clusters	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3612;"	l	line:3612
+no_of_clusters	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	298;"	m	line:298	struct:FAT_VOLUME
+no_of_clusters_after_pos	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	505;"	m	line:505	struct:FAT_FILE
+no_of_data_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	297;"	m	line:297	struct:FAT_VOLUME
+no_of_fat_tables	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	308;"	m	line:308	struct:FAT_VOLUME
+no_of_lfn_entries_found	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2001;"	l	line:2001
+no_of_lfn_entries_needed	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2000;"	l	line:2000
+no_of_reserved_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	299;"	m	line:299	struct:FAT_VOLUME
+no_of_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3463;"	l	line:3463
+no_of_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3611;"	l	line:3611
+no_of_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	296;"	m	line:296	struct:FAT_VOLUME
+no_of_sectors_per_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	305;"	m	line:305	struct:FAT_VOLUME
+no_of_sequential_clusters	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	506;"	m	line:506	struct:FAT_FILE
+now	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3216;"	l	line:3216
+now	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3240;"	l	line:3240
+old_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1256;"	l	line:1256
+op_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1701;"	l	line:1701	file:
+op_in_progress	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1136;"	l	line:1136
+op_in_progress	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1764;"	l	line:1764
+op_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	512;"	m	line:512	struct:FAT_FILE
+original_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	478;"	m	line:478	struct:FAT_OP_STATE
+pLevel	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1012;"	l	line:1012
+page_size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	242;"	l	line:242
+parent_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2069;"	l	line:2069
+parent_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1993;"	l	line:1993
+parent_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	643;"	l	line:643
+parent_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	122;"	l	line:122
+parent_entry_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1995;"	l	line:1995
+parent_entry_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1996;"	l	line:1996
+partition_entry	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	92;"	l	line:92
+partition_entry_mem	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	98;"	l	line:98
+partition_type	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	173;"	m	line:173	struct:FAT_PARTITION_ENTRY
+partitions_tried	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	93;"	l	line:93
+pass	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1655;"	l	line:1655
+path_len	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	119;"	l	line:119
+pos	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	463;"	m	line:463	struct:FAT_OP_STATE
+pos	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1698;"	l	line:1698	file:
+query	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1014;"	l	line:1014
+query	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2116;"	l	line:2116
+query	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	416;"	l	line:416
+query	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	644;"	l	line:644
+query	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	783;"	l	line:783
+raw	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	412;"	m	line:412	struct:FAT_DIRECTORY_ENTRY
+readers_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	319;"	m	line:319	struct:FAT_VOLUME
+register_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	128;"	m	line:128	struct:_STORAGE_DEVICE
+reserved	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	340;"	m	line:340	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1009;"	l	line:1009
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1383;"	l	line:1383
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1656;"	l	line:1656
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1984;"	l	line:1984
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	512;"	l	line:512
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	642;"	l	line:642
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	782;"	l	line:782
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	89;"	l	line:89
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1130;"	l	line:1130
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1415;"	l	line:1415
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1574;"	l	line:1574
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1758;"	l	line:1758
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	183;"	l	line:183
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	1983;"	l	line:1983
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	2118;"	l	line:2118
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1258;"	l	line:1258
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1456;"	l	line:1456
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1586;"	l	line:1586
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1694;"	l	line:1694	file:
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2238;"	l	line:2238
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	2588;"	l	line:2588
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	3080;"	l	line:3080
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	386;"	l	line:386
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	576;"	l	line:576
+ret	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	78;"	l	line:78
+root_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	294;"	m	line:294	struct:FAT_VOLUME
+root_directory_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	303;"	m	line:303	struct:FAT_VOLUME
+rtc_get_fat_date	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3213;"	f	line:3213
+rtc_get_fat_date	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	303;"	p	line:303	signature:()
+rtc_get_fat_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3237;"	f	line:3237
+rtc_get_fat_time	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	304;"	p	line:304	signature:()
+sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1988;"	l	line:1988
+sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	245;"	l	line:245
+sector_addr	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	404;"	m	line:404	struct:FAT_DIRECTORY_ENTRY
+sector_addr	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	465;"	m	line:465	struct:FAT_OP_STATE
+sector_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1657;"	l	line:1657
+sector_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1257;"	l	line:1257
+sector_address	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	577;"	l	line:577
+sector_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	314;"	m	line:314	struct:FAT_VOLUME
+sector_buffer_sector	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	315;"	m	line:315	struct:FAT_VOLUME
+sector_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1254;"	l	line:1254
+sector_offset	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	408;"	m	line:408	struct:FAT_DIRECTORY_ENTRY
+size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	349;"	m	line:349	struct:FAT_RAW_DIRECTORY_ENTRY::<anonymous>::STD
+size	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	400;"	m	line:400	struct:FAT_DIRECTORY_ENTRY
+start_cluster	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	195;"	l	line:195
+state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	529;"	m	line:529	struct:FILESYSTEM_QUERY
+state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	128;"	m	line:128	struct:_FILESYSTEM_QUERY_INNER
+status	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	171;"	m	line:171	struct:FAT_PARTITION_ENTRY
+step	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	199;"	l	line:199
+step_count	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	246;"	l	line:246
+storage_callback_info	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	474;"	m	line:474	struct:FAT_OP_STATE
+storage_callback_info_ex	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	479;"	m	line:479	struct:FAT_OP_STATE
+storage_state	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	469;"	m	line:469	struct:FAT_OP_STATE
+strtrim	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3291;"	f	line:3291	signature:(char* dest, char* src, size_t max )
+strtrim	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	306;"	p	line:306	signature:(char* dest, char* src, size_t max )
+sum	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3187;"	l	line:3187
+target_file	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1011;"	l	line:1011
+target_file_long	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1020;"	l	line:1020
+timeinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3217;"	l	line:3217
+timeinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3241;"	l	line:3241
+timekeeper	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	46;"	v	line:46	file:
+tm	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	3275;"	l	line:3275
+tmp	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	2946;"	l	line:2946
+tmp	C:\Users\Fernan\Documents\fat32lib\fat32lib\filesystem_interface.c	28;"	l	line:28
+total_free_clusters	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	301;"	m	line:301	struct:FAT_VOLUME
+total_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_internals.h	176;"	m	line:176	struct:FAT_PARTITION_ENTRY
+unbuffered	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_file.c	1704;"	l	line:1704	file:
+use_long_filenames	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	306;"	m	line:306	struct:FAT_VOLUME
+using_lfn	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.c	1018;"	l	line:1018
+volume	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat.h	499;"	m	line:499	struct:FAT_FILE
+wrapped_around	C:\Users\Fernan\Documents\fat32lib\fat32lib\fat_cluster.c	196;"	l	line:196
+write_multiple_sectors	C:\Users\Fernan\Documents\fat32lib\fat32lib\storage_device.h	131;"	m	line:131	struct:_STORAGE_DEVICE

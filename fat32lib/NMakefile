@@ -1,0 +1,38 @@
+# MPLAB IDE generated this makefile for use with Microsoft `nmake'.
+# Project: fat32lib.mcp
+# Date: Tue Nov 05 15:34:12 2013
+
+AS = pic30-as.exe
+CC = pic30-gcc.exe
+LD = pic30-ld.exe
+AR = pic30-ar.exe
+HX = pic30-bin2hex.exe
+RM = del
+
+"fat32lib.hex" : "fat32lib.cof"
+	$(HX) "fat32lib.cof"
+
+"fat32lib.cof" : "main.o" "dma.o" "spi.o" "sd.o" "clocksw.o" "fat.o"
+	$(CC) -mcpu=33FJ256GP710 "main.o" "dma.o" "spi.o" "sd.o" "clocksw.o" "fat.o" -o"fat32lib.cof" -Wl,-Tp33FJ256GP710.gld,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD2=1,--defsym=__ICD2RAM=1,-Map="fat32lib.map",--report-mem
+
+"main.o" : "rtc.h" "fat.h" "storage_device.h" "dma.h" "sd.h" "clocksw.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\string.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stddef.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdlib.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33FJ256GP710.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33Fxxxx.h" "common.h" "main.c"
+	$(CC) -mcpu=33FJ256GP710 -x c -c "main.c" -o"main.o" -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 -g -Wall
+
+"dma.o" : "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\string.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stddef.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdlib.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33FJ256GP710.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33Fxxxx.h" "common.h" "dma.h" "dma.c"
+	$(CC) -mcpu=33FJ256GP710 -x c -c "dma.c" -o"dma.o" -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 -g -Wall
+
+"spi.o" : "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\string.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stddef.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdlib.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33FJ256GP710.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33Fxxxx.h" "common.h" "spi.h" "spi.c"
+	$(CC) -mcpu=33FJ256GP710 -x c -c "spi.c" -o"spi.o" -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 -g -Wall
+
+"sd.o" : "spi.h" "storage_device.h" "dma.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\string.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stddef.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdlib.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33FJ256GP710.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33Fxxxx.h" "common.h" "sd.h" "sd.c"
+	$(CC) -mcpu=33FJ256GP710 -x c -c "sd.c" -o"sd.o" -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 -g -Wall
+
+"clocksw.o" : "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\inc\p33FJ256GP710.inc" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\inc\p33fxxxx.inc" "clocksw.s"
+	$(CC) -mcpu=33FJ256GP710 -c -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 "clocksw.s" -o"clocksw.o" -Wa,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD2=1,-g
+
+"fat.o" : "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\ctype.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdarg.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdio.h" "storage_device.h" "rtc.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\string.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stddef.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\include\stdlib.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33FJ256GP710.h" "..\..\..\..\..\program files (x86)\microchip\mplab c30\support\dsPIC33F\h\p33Fxxxx.h" "common.h" "fat.h" "fat.c"
+	$(CC) -mcpu=33FJ256GP710 -x c -c "fat.c" -o"fat.o" -D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1 -g -Wall
+
+"clean" : 
+	$(RM) "main.o" "dma.o" "spi.o" "sd.o" "clocksw.o" "fat.o" "fat32lib.cof" "fat32lib.hex"
+
