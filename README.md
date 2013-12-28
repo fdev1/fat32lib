@@ -14,7 +14,7 @@ Features:
 - Stream IO (for writting continuos streams of data);
 - Extensible drive manager (can be extended to interface with other file systems);
 - FAT12/16/32 drive formatting support;
-- SPI driver for SD cards (for Microchip's PIC33 but should be easy to port);
+- SPI driver for SD cards (for Microchip's dsPIC but should be easy to port);
 - Driver supports any SD card size;
 - Multi-threading support;
 - Multiple volumes/partitions can be mounted at once;
