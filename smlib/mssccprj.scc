@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[storemanlib.vcproj]
+SCC_Aux_Path = "\\10.10.0.130\d$\SourceSafe"
+SCC_Project_Name = "$/fat32lib/storemanlib", WSIAAAAA
+
+[smlib.vcproj]
+SCC_Aux_Path = "\\10.10.0.130\d$\SourceSafe"
+SCC_Project_Name = "$/fat32lib/smlib", WSIAAAAA
