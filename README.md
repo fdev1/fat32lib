@@ -13,7 +13,7 @@ Features:
 - Buffered and unbuffered IO;
 - Stream IO (for writting continuos streams of data);
 - Extensible drive manager (can be extended to interface with other file systems);
-- FAT12/16/32 drive formatting support;
+- FAT12/16/32 drive formatting support (can optimize file system for flash);
 - SPI driver for SD cards (for Microchip's dsPIC but should be easy to port);
 - Driver supports any SD card size;
 - Multi-threading support;
