@@ -1,0 +1,920 @@
+\hypertarget{sm_8h}{\section{smlib/sm.h File Reference}
+\label{sm_8h}\index{smlib/sm.\-h@{smlib/sm.\-h}}
+}
+
+
+This header file contains all the functions needed to mount and dismount drives, register file system drivers, and perform file I/\-O operations.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y}
+\begin{DoxyCompactList}\small\item\em This is the handle of a directory query. All the fields in this structure are reserved for internal use and should not be accessed directly by the developer. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E}
+\begin{DoxyCompactList}\small\item\em This is the file handle structure. All fields in this structure are reserved for internal use and should not be used directly by the developer. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y}
+\begin{DoxyCompactList}\small\item\em This structure used to store information about a directory entry. It is usually populated by sm\-\_\-get\-\_\-file\-\_\-entry, sm\-\_\-find\-\_\-first\-\_\-entry, and sm\-\_\-find\-\_\-next\-\_\-entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sm_8h_a82e1efb377618c5d91702264871be160}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}
+\begin{DoxyCompactList}\small\item\em Specifies that the file is read-\/only.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a7597c5e2c9f86c51f933ad5eb2651be6}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N}
+\begin{DoxyCompactList}\small\item\em Specifies that the file is hidden.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_ac045c573c3d3422457555c0aa1f24585}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M}
+\begin{DoxyCompactList}\small\item\em Specifies that the file is a system file.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a9b3ffb0c448ba030c3bb0d0591fc58c0}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}
+\begin{DoxyCompactList}\small\item\em Specifies that the file entry is the volume I\-D.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a54a3f8b383bfab2b56fb838c2c66f040}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em Specifies that the entry is a directory.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a806e497325bcbdb648e34708dde24af3}{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E}
+\begin{DoxyCompactList}\small\item\em Specifies that the file is to be archived.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_afdc50cea776c48a709911da856ad83b2}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D}
+\begin{DoxyCompactList}\small\item\em Specifies that the file should be opened for read access.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a2bd5ea23c380beac7f91336fde56f614}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}
+\begin{DoxyCompactList}\small\item\em Specifies that the file should be opened for write access.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a65385aa0bf57e84bfa08754fe0718050}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D}
+\begin{DoxyCompactList}\small\item\em Specifies that if the file exists it should be opened in append mode.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a2d450d717247164fdd6cde51cc84634d}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E}
+\begin{DoxyCompactList}\small\item\em Specifies that if the file exists it should be overwritten.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a4f600c4ad23ebe265282ff5daeafdb9e}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E}
+\begin{DoxyCompactList}\small\item\em Specifies that if the file does not exists it should be created.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a6590de3f1d996c8f1ee18774df54a273}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G}
+\begin{DoxyCompactList}\small\item\em Specifies that the file should be opened in unbuffered mode.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a0643c921c365b78a89196ebcbd47dd0c}{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H}
+\begin{DoxyCompactList}\small\item\em Specifies that the file should be optimized for flash stream writes.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_ac8a752f1a1eaca0183f6b9910c281d02}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T}
+\begin{DoxyCompactList}\small\item\em Specifies that the seek operation should start at the beginning of the file.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_a59a4a35a4b252549dbf658bdf22c07df}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T}
+\begin{DoxyCompactList}\small\item\em Specifies that the seek operation should start at the current position.\end{DoxyCompactList}\item 
+\#define \hyperlink{sm_8h_abda07779eb4d21b067319dd9d23424fa}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D}
+\begin{DoxyCompactList}\small\item\em Specified that the seek operation should set the file pointer at the end of the file.\end{DoxyCompactList}\item 
+\hypertarget{sm_8h_a3c951d31b1d1d2ca3e2f4d6569f4ef68}{\#define {\bfseries S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-R\-E\-A\-D\-Y}}\label{sm_8h_a3c951d31b1d1d2ca3e2f4d6569f4ef68}
+
+\item 
+\hypertarget{sm_8h_a8fd0f8ba23fb4cfc1fc3508ba6353aa0}{\#define {\bfseries S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-S\-K\-I\-P}}\label{sm_8h_a8fd0f8ba23fb4cfc1fc3508ba6353aa0}
+
+\item 
+\hypertarget{sm_8h_a88b93e8206686bbc035ebc35cbd35929}{\#define {\bfseries S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-S\-T\-O\-P}}\label{sm_8h_a88b93e8206686bbc035ebc35cbd35929}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{sm_8h_a5a9e84d8f6dcc8b7adefda60ac17c34b}{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(char $\ast$label)
+\begin{DoxyCompactList}\small\item\em This function is pointer is used to register for notifications when a new volume is mounted. Once you register this function with sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback it will be called by this module every time a new volume is mounted. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{sm_8h_a9e6ecb4a67a9ac01594b9ef8808cb8d5}{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(char $\ast$label)
+\begin{DoxyCompactList}\small\item\em This function is pointer is used to register for notifications when a new volume is dimounted. Once you register this function with sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback it will be called by this module every time a new volume is dismounted. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{sm_8h_a1b1a8249a2f33303ac6869ba5472500f}{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(void $\ast$context, uint16\-\_\-t $\ast$result)
+\begin{DoxyCompactList}\small\item\em This is the callback function for asynchronous I\-O. You can pass a pointer of this type of any of the asynchronous I\-O functions and it will be called when the operation completes. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{sm_8h_af07c3c837f09898814640e8d5c12725a}{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(void $\ast$context, uint16\-\_\-t $\ast$result, unsigned char $\ast$$\ast$buffer, uint16\-\_\-t $\ast$response)
+\begin{DoxyCompactList}\small\item\em This is the callback function for asynchronous S\-T\-R\-E\-A\-M I\-O. You M\-U\-S\-T pass a pointer of this type to sm\-\_\-file\-\_\-write\-\_\-stream. When it finished writting your buffer it will call this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sm_8h_ada581ecde0fce91bb9d3bc21ef4e165b}{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback} (\hyperlink{sm_8h_a5a9e84d8f6dcc8b7adefda60ac17c34b}{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} callback)
+\begin{DoxyCompactList}\small\item\em Registers a callback function that will be called everytime a volume is mounted. \end{DoxyCompactList}\item 
+void \hyperlink{sm_8h_ac12cf90dfc90777d18c4af288c415aa6}{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback} (\hyperlink{sm_8h_a9e6ecb4a67a9ac01594b9ef8808cb8d5}{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} callback)
+\begin{DoxyCompactList}\small\item\em Registers a callback function that will be called everytime a volume is dismounted. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a07206242f3ccfa230cc193b15425c2b9}{sm\-\_\-register\-\_\-filesystem} (\hyperlink{struct_f_i_l_e_s_y_s_t_e_m}{F\-I\-L\-E\-S\-Y\-S\-T\-E\-M} $\ast$filesystem)
+\begin{DoxyCompactList}\small\item\em Registers a filesystem with smlib. This function needs to be called before a drive can be mounted. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a146b7cf3a138cf9efc04fc87e4b45e08}{sm\-\_\-register\-\_\-storage\-\_\-device} (\hyperlink{struct_s_t_o_r_a_g_e___d_e_v_i_c_e}{S\-T\-O\-R\-A\-G\-E\-\_\-\-D\-E\-V\-I\-C\-E} $\ast$device, char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Registers a device (such as an S\-D card slot) with smlib to be mounted automatically whenever the device is inserted/connected. This will cause smlib to request notifications from the device driver when the device is connected/disconnected and it will mount the device automatically with the specified drive label. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a050baffcda50f1c40cf39578141763e7}{sm\-\_\-mount\-\_\-volume} (char $\ast$label, void $\ast$storage\-\_\-device)
+\begin{DoxyCompactList}\small\item\em Mounts a volume. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a72825d12a01dda79ae7514fd43db0b39}{sm\-\_\-dismount\-\_\-volume} (char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Dismounts a mounted volume. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{sm_8h_a82074ca3d5c9aecec72879608f8b57d6}{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size} (char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Gets the sector size of a mounted volume. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_ae42546f1d89f496dc21f12b9291a4019}{sm\-\_\-get\-\_\-file\-\_\-entry} (char $\ast$filename, \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$entry)
+\begin{DoxyCompactList}\small\item\em Gets the directory entry information for a file.\end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a05c051930d83c1c79324bc1b1ef3aff4}{sm\-\_\-find\-\_\-first\-\_\-entry} (char $\ast$path, unsigned char attributes, \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$entry, \hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$query)
+\begin{DoxyCompactList}\small\item\em Initializes a directory query and finds the 1st entry in the specified directory. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a9dcd85a62788fcb043f5a7440d0157ad}{sm\-\_\-find\-\_\-next\-\_\-entry} (\hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$entry, \hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$query)
+\begin{DoxyCompactList}\small\item\em Finds the next entry in a directory. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a88967d56ae0340d4d5ed57f9a088f792}{sm\-\_\-find\-\_\-close} (\hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$query)
+\begin{DoxyCompactList}\small\item\em Closes and frees all resources used by a directory query. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a9ce85e4cd81e0978ee9961ab1267788f}{sm\-\_\-create\-\_\-directory} (char $\ast$directory\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Creates a directory. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_ad325adbd4d2d9f994224f7d999ce089a}{sm\-\_\-file\-\_\-delete} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Deletes a file. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a5a8e91bc98b12d40ed7288f182a8a424}{sm\-\_\-file\-\_\-rename} (char $\ast$original\-\_\-filename, char $\ast$new\-\_\-filename)
+\begin{DoxyCompactList}\small\item\em Renames a file. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a9f37cbd43f40dcc26d0a168260ff4133}{sm\-\_\-file\-\_\-open} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, char $\ast$filename, unsigned char access\-\_\-flags)
+\begin{DoxyCompactList}\small\item\em Opens or creates a file for read and/or write access. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a6ce0b248f06989129498278e97b29208}{sm\-\_\-file\-\_\-alloc} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, uint32\-\_\-t bytes)
+\begin{DoxyCompactList}\small\item\em Allocates enough clusters to a file as needed to write the specified number of bytes beyond the current file pointer position. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_ade30ac72c2a83daee73bfe9ce6f9e914}{sm\-\_\-file\-\_\-seek} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, uint32\-\_\-t offset, char mode)
+\begin{DoxyCompactList}\small\item\em Moves the file pointer to the specified position. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_aab4aee20006c31d0b86a53ea0885a5e4}{sm\-\_\-file\-\_\-write} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t bytes\-\_\-to\-\_\-write)
+\begin{DoxyCompactList}\small\item\em Writes the specified number of bytes to a file synchronously \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_af90fed9ea963df75d22308ca281f6b81}{sm\-\_\-file\-\_\-write\-\_\-async} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t bytes\-\_\-to\-\_\-write, uint16\-\_\-t $\ast$result, \hyperlink{sm_8h_a1b1a8249a2f33303ac6869ba5472500f}{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} callback, void $\ast$callback\-\_\-context)
+\begin{DoxyCompactList}\small\item\em Writes the specified number of bytes to a file asynchronously. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a17fc880ffc90b5d420172575c978a2e2}{sm\-\_\-file\-\_\-write\-\_\-stream} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t bytes\-\_\-to\-\_\-write, uint16\-\_\-t $\ast$result, \hyperlink{sm_8h_af07c3c837f09898814640e8d5c12725a}{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} callback, void $\ast$callback\-\_\-context)
+\begin{DoxyCompactList}\small\item\em Initiates a stream write. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_abd2f20e503bf44309d9e5819fecb5314}{sm\-\_\-file\-\_\-read} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t bytes\-\_\-to\-\_\-read, uint32\-\_\-t $\ast$bytes\-\_\-read)
+\begin{DoxyCompactList}\small\item\em Reads the specified number of bytes from the file. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a855f3d4ebca97695ba09c2b290c3fb1c}{sm\-\_\-file\-\_\-read\-\_\-async} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t bytes\-\_\-to\-\_\-read, uint32\-\_\-t $\ast$bytes\-\_\-read, uint16\-\_\-t $\ast$result, \hyperlink{sm_8h_a1b1a8249a2f33303ac6869ba5472500f}{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} callback, void $\ast$callback\-\_\-context)
+\begin{DoxyCompactList}\small\item\em Reads the specified number of bytes from the file asynchronously. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_aa4a1293b141187a779d59e47ee030bc8}{sm\-\_\-file\-\_\-flush} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file)
+\begin{DoxyCompactList}\small\item\em Flushes the file buffer to the drive and updates the file size and timestamps. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a3ddfac8946d87ed28d4513c2527df320}{sm\-\_\-file\-\_\-close} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file)
+\begin{DoxyCompactList}\small\item\em Flushes the file buffer to the drive, updates the file size and timestamps, and closes the file handle. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{sm_8h_a6ce7c3fe0bf9c09489d5927ae94df7bc}{sm\-\_\-file\-\_\-set\-\_\-buffer} (\hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} $\ast$file, unsigned char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Sets the file buffer. This function is useful if the device driver requires you to use memory from a specific location for asynchronous operations (ie. D\-M\-A memory). Or if you want more control about memory allocation. You can open the file with the S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G flag and immediately call this function to set the buffer. That will switch the file handle back to buffered mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header file contains all the functions needed to mount and dismount drives, register file system drivers, and perform file I/\-O operations. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sm_8h_a806e497325bcbdb648e34708dde24af3}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E}}\label{sm_8h_a806e497325bcbdb648e34708dde24af3}
+
+
+Specifies that the file is to be archived.
+
+\hypertarget{sm_8h_a54a3f8b383bfab2b56fb838c2c66f040}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}}\label{sm_8h_a54a3f8b383bfab2b56fb838c2c66f040}
+
+
+Specifies that the entry is a directory.
+
+\hypertarget{sm_8h_a7597c5e2c9f86c51f933ad5eb2651be6}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-H\-I\-D\-D\-E\-N}}\label{sm_8h_a7597c5e2c9f86c51f933ad5eb2651be6}
+
+
+Specifies that the file is hidden.
+
+\hypertarget{sm_8h_a82e1efb377618c5d91702264871be160}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}}\label{sm_8h_a82e1efb377618c5d91702264871be160}
+
+
+Specifies that the file is read-\/only.
+
+\hypertarget{sm_8h_ac045c573c3d3422457555c0aa1f24585}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-S\-Y\-S\-T\-E\-M}}\label{sm_8h_ac045c573c3d3422457555c0aa1f24585}
+
+
+Specifies that the file is a system file.
+
+\hypertarget{sm_8h_a9b3ffb0c448ba030c3bb0d0591fc58c0}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}}
+\index{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D@{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-A\-T\-T\-R\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}}\label{sm_8h_a9b3ffb0c448ba030c3bb0d0591fc58c0}
+
+
+Specifies that the file entry is the volume I\-D.
+
+\hypertarget{sm_8h_a65385aa0bf57e84bfa08754fe0718050}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-A\-P\-P\-E\-N\-D}}\label{sm_8h_a65385aa0bf57e84bfa08754fe0718050}
+
+
+Specifies that if the file exists it should be opened in append mode.
+
+\hypertarget{sm_8h_a4f600c4ad23ebe265282ff5daeafdb9e}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-R\-E\-A\-T\-E}}\label{sm_8h_a4f600c4ad23ebe265282ff5daeafdb9e}
+
+
+Specifies that if the file does not exists it should be created.
+
+\hypertarget{sm_8h_a2d450d717247164fdd6cde51cc84634d}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-V\-E\-R\-W\-R\-I\-T\-E}}\label{sm_8h_a2d450d717247164fdd6cde51cc84634d}
+
+
+Specifies that if the file exists it should be overwritten.
+
+\hypertarget{sm_8h_afdc50cea776c48a709911da856ad83b2}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D}}\label{sm_8h_afdc50cea776c48a709911da856ad83b2}
+
+
+Specifies that the file should be opened for read access.
+
+\hypertarget{sm_8h_a2bd5ea23c380beac7f91336fde56f614}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}}\label{sm_8h_a2bd5ea23c380beac7f91336fde56f614}
+
+
+Specifies that the file should be opened for write access.
+
+\hypertarget{sm_8h_a6590de3f1d996c8f1ee18774df54a273}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G}}\label{sm_8h_a6590de3f1d996c8f1ee18774df54a273}
+
+
+Specifies that the file should be opened in unbuffered mode.
+
+\hypertarget{sm_8h_a0643c921c365b78a89196ebcbd47dd0c}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H}}
+\index{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H@{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-\_\-\-F\-O\-R\-\_\-\-F\-L\-A\-S\-H}}\label{sm_8h_a0643c921c365b78a89196ebcbd47dd0c}
+
+
+Specifies that the file should be optimized for flash stream writes.
+
+\hypertarget{sm_8h_a59a4a35a4b252549dbf658bdf22c07df}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T}}
+\index{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T}}\label{sm_8h_a59a4a35a4b252549dbf658bdf22c07df}
+
+
+Specifies that the seek operation should start at the current position.
+
+\hypertarget{sm_8h_abda07779eb4d21b067319dd9d23424fa}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D}}
+\index{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D}}\label{sm_8h_abda07779eb4d21b067319dd9d23424fa}
+
+
+Specified that the seek operation should set the file pointer at the end of the file.
+
+\hypertarget{sm_8h_ac8a752f1a1eaca0183f6b9910c281d02}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T}}
+\index{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T@{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T}}\label{sm_8h_ac8a752f1a1eaca0183f6b9910c281d02}
+
+
+Specifies that the seek operation should start at the beginning of the file.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sm_8h_a1b1a8249a2f33303ac6869ba5472500f}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}
+\index{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K)(void $\ast$context, uint16\-\_\-t $\ast$result)}}\label{sm_8h_a1b1a8249a2f33303ac6869ba5472500f}
+
+
+This is the callback function for asynchronous I\-O. You can pass a pointer of this type of any of the asynchronous I\-O functions and it will be called when the operation completes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The pointer that was passed to the asynchronous function through the callback\-\_\-context parameter. \\
+\hline
+{\em result} & The result of the asynchronous operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_af90fed9ea963df75d22308ca281f6b81}{sm\-\_\-file\-\_\-write\-\_\-async}, \hyperlink{sm_8h_a855f3d4ebca97695ba09c2b290c3fb1c}{sm\-\_\-file\-\_\-read\-\_\-async}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_af07c3c837f09898814640e8d5c12725a}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}
+\index{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K)(void $\ast$context, uint16\-\_\-t $\ast$result, unsigned char $\ast$$\ast$buffer, uint16\-\_\-t $\ast$response)}}\label{sm_8h_af07c3c837f09898814640e8d5c12725a}
+
+
+This is the callback function for asynchronous S\-T\-R\-E\-A\-M I\-O. You M\-U\-S\-T pass a pointer of this type to sm\-\_\-file\-\_\-write\-\_\-stream. When it finished writting your buffer it will call this function. 
+
+When smlib calls this function you must do one of the following\-:
+
+
+\begin{DoxyEnumerate}
+\item If you have more data to be written reload the buffer with it and set response to S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-R\-E\-A\-D\-Y.
+\item If you want to write more data but the data is not yet ready set response to S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-S\-K\-I\-P. The file system will release the I\-O device and once it becomes available again it will call back so you can reload the buffer.
+\item If you're done writing to the device set response to S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-S\-T\-O\-P. 
+\end{DoxyEnumerate}\hypertarget{sm_8h_a9e6ecb4a67a9ac01594b9ef8808cb8d5}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}
+\index{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K)(char $\ast$label)}}\label{sm_8h_a9e6ecb4a67a9ac01594b9ef8808cb8d5}
+
+
+This function is pointer is used to register for notifications when a new volume is dimounted. Once you register this function with sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback it will be called by this module every time a new volume is dismounted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The drive label of the mounted volume.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_ac12cf90dfc90777d18c4af288c415aa6}{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_a5a9e84d8f6dcc8b7adefda60ac17c34b}{\index{sm.\-h@{sm.\-h}!S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}
+\index{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K@{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}!sm.h@{sm.\-h}}
+\subsubsection[{S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K)(char $\ast$label)}}\label{sm_8h_a5a9e84d8f6dcc8b7adefda60ac17c34b}
+
+
+This function is pointer is used to register for notifications when a new volume is mounted. Once you register this function with sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback it will be called by this module every time a new volume is mounted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The drive label of the mounted volume.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_ada581ecde0fce91bb9d3bc21ef4e165b}{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{sm_8h_a9ce85e4cd81e0978ee9961ab1267788f}{\index{sm.\-h@{sm.\-h}!sm\-\_\-create\-\_\-directory@{sm\-\_\-create\-\_\-directory}}
+\index{sm\-\_\-create\-\_\-directory@{sm\-\_\-create\-\_\-directory}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-create\-\_\-directory}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-create\-\_\-directory (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{directory\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a9ce85e4cd81e0978ee9961ab1267788f}
+
+
+Creates a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\-\_\-name} & The full path of the directory to be created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a72825d12a01dda79ae7514fd43db0b39}{\index{sm.\-h@{sm.\-h}!sm\-\_\-dismount\-\_\-volume@{sm\-\_\-dismount\-\_\-volume}}
+\index{sm\-\_\-dismount\-\_\-volume@{sm\-\_\-dismount\-\_\-volume}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-dismount\-\_\-volume}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-dismount\-\_\-volume (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a72825d12a01dda79ae7514fd43db0b39}
+
+
+Dismounts a mounted volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The drive label of the volume to dismount.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+
+
+If this function is called for a volume that is not actually mounted it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S without doing any actual work. \hypertarget{sm_8h_a6ce0b248f06989129498278e97b29208}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-alloc@{sm\-\_\-file\-\_\-alloc}}
+\index{sm\-\_\-file\-\_\-alloc@{sm\-\_\-file\-\_\-alloc}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{uint32\-\_\-t}]{bytes}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a6ce0b248f06989129498278e97b29208}
+
+
+Allocates enough clusters to a file as needed to write the specified number of bytes beyond the current file pointer position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em bytes} & The number of bytes to allocate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+
+
+The purpose of this function is to speed up file writes. It simply allocates the clusters needed, it does not actually expand the file (it's file size remains the same and you still cannot seek beyond the last byte that has already been written. If you call this function before writing to a file the write operation will be much faster, that's all it does. If not all the clusters are used when the file is closed they will be freed. Calling this function also helps to avoid fragmentation. \hypertarget{sm_8h_a3ddfac8946d87ed28d4513c2527df320}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-close@{sm\-\_\-file\-\_\-close}}
+\index{sm\-\_\-file\-\_\-close@{sm\-\_\-file\-\_\-close}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a3ddfac8946d87ed28d4513c2527df320}
+
+
+Flushes the file buffer to the drive, updates the file size and timestamps, and closes the file handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the result codes defined on \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h}. 
+\end{DoxyReturn}
+\hypertarget{sm_8h_ad325adbd4d2d9f994224f7d999ce089a}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-delete@{sm\-\_\-file\-\_\-delete}}
+\index{sm\-\_\-file\-\_\-delete@{sm\-\_\-file\-\_\-delete}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-delete}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-delete (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_ad325adbd4d2d9f994224f7d999ce089a}
+
+
+Deletes a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The full path of the file to be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_aa4a1293b141187a779d59e47ee030bc8}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-flush@{sm\-\_\-file\-\_\-flush}}
+\index{sm\-\_\-file\-\_\-flush@{sm\-\_\-file\-\_\-flush}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-flush}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-flush (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_aa4a1293b141187a779d59e47ee030bc8}
+
+
+Flushes the file buffer to the drive and updates the file size and timestamps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the result codes defined on \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h}. 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a9f37cbd43f40dcc26d0a168260ff4133}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-open@{sm\-\_\-file\-\_\-open}}
+\index{sm\-\_\-file\-\_\-open@{sm\-\_\-file\-\_\-open}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{char $\ast$}]{filename, }
+\item[{unsigned char}]{access\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a9f37cbd43f40dcc26d0a168260ff4133}
+
+
+Opens or creates a file for read and/or write access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & A pointer to a \hyperlink{struct_s_m___f_i_l_e}{S\-M\-\_\-\-F\-I\-L\-E} structure.\\
+\hline
+{\em filename} & The full path of the file to open.\\
+\hline
+{\em access\-\_\-flags} & One or more of the access flags defined in \hyperlink{sm_8h}{sm.\-h} O\-Red together. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+
+
+If the S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G access flag is used all I\-O operations must be done on a sector boundry. You can call sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size to get the sector size of a mounted volume. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_a82074ca3d5c9aecec72879608f8b57d6}{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_abd2f20e503bf44309d9e5819fecb5314}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-read@{sm\-\_\-file\-\_\-read}}
+\index{sm\-\_\-file\-\_\-read@{sm\-\_\-file\-\_\-read}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{uint32\-\_\-t}]{bytes\-\_\-to\-\_\-read, }
+\item[{uint32\-\_\-t $\ast$}]{bytes\-\_\-read}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_abd2f20e503bf44309d9e5819fecb5314}
+
+
+Reads the specified number of bytes from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The buffer where the data will be written to.\\
+\hline
+{\em bytes\-\_\-to\-\_\-read} & The number of bytes to be written.\\
+\hline
+{\em bytes\-\_\-read} & A pointer to a 16-\/bit integer where the number of bytes read will be stored when the operation completes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the error codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} or \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_a855f3d4ebca97695ba09c2b290c3fb1c}{sm\-\_\-file\-\_\-read\-\_\-async}, \hyperlink{sm_8h_a9f37cbd43f40dcc26d0a168260ff4133}{sm\-\_\-file\-\_\-open}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_a855f3d4ebca97695ba09c2b290c3fb1c}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-read\-\_\-async@{sm\-\_\-file\-\_\-read\-\_\-async}}
+\index{sm\-\_\-file\-\_\-read\-\_\-async@{sm\-\_\-file\-\_\-read\-\_\-async}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-read\-\_\-async}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-read\-\_\-async (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{uint32\-\_\-t}]{bytes\-\_\-to\-\_\-read, }
+\item[{uint32\-\_\-t $\ast$}]{bytes\-\_\-read, }
+\item[{uint16\-\_\-t $\ast$}]{result, }
+\item[{{\bf S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}]{callback, }
+\item[{void $\ast$}]{callback\-\_\-context}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a855f3d4ebca97695ba09c2b290c3fb1c}
+
+
+Reads the specified number of bytes from the file asynchronously. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The buffer where the data will be written to.\\
+\hline
+{\em bytes\-\_\-to\-\_\-read} & The number of bytes to be written.\\
+\hline
+{\em bytes\-\_\-read} & A pointer to a 32-\/bit integer where the number of bytes read will be stored when the operation completes. \\
+\hline
+{\em result} & A pointer to a 16-\/bit integer where the result of the asynchronous operation will be stored once it completes. \\
+\hline
+{\em callback} & An optional function pointer to a callback function to be called when the asynchronous operation completes. \\
+\hline
+{\em callback\-\_\-context} & A pointer that will be passed to the callback function when the operation completes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-O\-P\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S, otherwise one of the error codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} or \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a5a8e91bc98b12d40ed7288f182a8a424}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-rename@{sm\-\_\-file\-\_\-rename}}
+\index{sm\-\_\-file\-\_\-rename@{sm\-\_\-file\-\_\-rename}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-rename}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-rename (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{original\-\_\-filename, }
+\item[{char $\ast$}]{new\-\_\-filename}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a5a8e91bc98b12d40ed7288f182a8a424}
+
+
+Renames a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\-\_\-filename} & The full path to the file to be renamed.\\
+\hline
+{\em new\-\_\-filename} & The full path to the new filename.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+
+
+Both filenames need to be on the same volume. If they're in different directories the file will be moved. Moving files accross different volumes is not currently supported. \hypertarget{sm_8h_ade30ac72c2a83daee73bfe9ce6f9e914}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-seek@{sm\-\_\-file\-\_\-seek}}
+\index{sm\-\_\-file\-\_\-seek@{sm\-\_\-file\-\_\-seek}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-seek}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-seek (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_ade30ac72c2a83daee73bfe9ce6f9e914}
+
+
+Moves the file pointer to the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em offset} & The new position of the specified position within the file.\\
+\hline
+{\em mode} & One of the seek modes listed bellow. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_ac8a752f1a1eaca0183f6b9910c281d02}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-S\-T\-A\-R\-T} 
+
+\hyperlink{sm_8h_a59a4a35a4b252549dbf658bdf22c07df}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-C\-U\-R\-R\-E\-N\-T} 
+
+\hyperlink{sm_8h_abda07779eb4d21b067319dd9d23424fa}{S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D} 
+\end{DoxySeeAlso}
+If an offset other than 0 is specified along with the S\-M\-\_\-\-S\-E\-E\-K\-\_\-\-E\-N\-D mode this call will fail. \hypertarget{sm_8h_a6ce7c3fe0bf9c09489d5927ae94df7bc}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-set\-\_\-buffer@{sm\-\_\-file\-\_\-set\-\_\-buffer}}
+\index{sm\-\_\-file\-\_\-set\-\_\-buffer@{sm\-\_\-file\-\_\-set\-\_\-buffer}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-set\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-set\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a6ce7c3fe0bf9c09489d5927ae94df7bc}
+
+
+Sets the file buffer. This function is useful if the device driver requires you to use memory from a specific location for asynchronous operations (ie. D\-M\-A memory). Or if you want more control about memory allocation. You can open the file with the S\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-\_\-\-B\-U\-F\-F\-E\-R\-I\-N\-G flag and immediately call this function to set the buffer. That will switch the file handle back to buffered mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The new file buffer.\\
+\hline
+\end{DoxyParams}
+\hypertarget{sm_8h_aab4aee20006c31d0b86a53ea0885a5e4}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-write@{sm\-\_\-file\-\_\-write}}
+\index{sm\-\_\-file\-\_\-write@{sm\-\_\-file\-\_\-write}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{uint32\-\_\-t}]{bytes\-\_\-to\-\_\-write}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_aab4aee20006c31d0b86a53ea0885a5e4}
+
+
+Writes the specified number of bytes to a file synchronously 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The buffer containing the data to be written.\\
+\hline
+{\em bytes\-\_\-to\-\_\-write} & The number of bytes to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise it will return one of the result codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} or \hyperlink{sm_8h}{sm.\-h}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_a6ce0b248f06989129498278e97b29208}{sm\-\_\-file\-\_\-alloc}, \hyperlink{sm_8h_af90fed9ea963df75d22308ca281f6b81}{sm\-\_\-file\-\_\-write\-\_\-async}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_af90fed9ea963df75d22308ca281f6b81}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-write\-\_\-async@{sm\-\_\-file\-\_\-write\-\_\-async}}
+\index{sm\-\_\-file\-\_\-write\-\_\-async@{sm\-\_\-file\-\_\-write\-\_\-async}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-write\-\_\-async}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-write\-\_\-async (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{uint32\-\_\-t}]{bytes\-\_\-to\-\_\-write, }
+\item[{uint16\-\_\-t $\ast$}]{result, }
+\item[{{\bf S\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}]{callback, }
+\item[{void $\ast$}]{callback\-\_\-context}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_af90fed9ea963df75d22308ca281f6b81}
+
+
+Writes the specified number of bytes to a file asynchronously. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The buffer containing the data to be written.\\
+\hline
+{\em bytes\-\_\-to\-\_\-write} & The number of bytes to write\\
+\hline
+{\em result} & A pointer to a 16-\/bit integer where the result of the asynchronous write will be stored once the operation completes. \\
+\hline
+{\em callback} & An optional function pointer to a callback function to be called when the asynchronous operation completes. \\
+\hline
+{\em callback\-\_\-context} & A pointer that will be passed to the callback function when the operation completes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-O\-P\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S, otherwise it will return one of the result codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} or \hyperlink{sm_8h}{sm.\-h}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_a6ce0b248f06989129498278e97b29208}{sm\-\_\-file\-\_\-alloc}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_a17fc880ffc90b5d420172575c978a2e2}{\index{sm.\-h@{sm.\-h}!sm\-\_\-file\-\_\-write\-\_\-stream@{sm\-\_\-file\-\_\-write\-\_\-stream}}
+\index{sm\-\_\-file\-\_\-write\-\_\-stream@{sm\-\_\-file\-\_\-write\-\_\-stream}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-file\-\_\-write\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-file\-\_\-write\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-F\-I\-L\-E} $\ast$}]{file, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{uint32\-\_\-t}]{bytes\-\_\-to\-\_\-write, }
+\item[{uint16\-\_\-t $\ast$}]{result, }
+\item[{{\bf S\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}]{callback, }
+\item[{void $\ast$}]{callback\-\_\-context}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a17fc880ffc90b5d420172575c978a2e2}
+
+
+Initiates a stream write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & An open file handle.\\
+\hline
+{\em buffer} & The buffer containing the data to be written.\\
+\hline
+{\em bytes\-\_\-to\-\_\-write} & The number of bytes to write\\
+\hline
+{\em result} & A pointer to a 16-\/bit integer where the result of the asynchronous write will be stored once the operation completes. \\
+\hline
+{\em callback} & An optional function pointer to a callback function to be called when the asynchronous operation completes. \\
+\hline
+{\em callback\-\_\-context} & A pointer that will be passed to the callback function when the operation completes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-O\-P\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S, otherwise it will return one of the result codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} or \hyperlink{sm_8h}{sm.\-h}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h_a6ce0b248f06989129498278e97b29208}{sm\-\_\-file\-\_\-alloc}
+
+
+\end{DoxySeeAlso}
+\hypertarget{sm_8h_a88967d56ae0340d4d5ed57f9a088f792}{\index{sm.\-h@{sm.\-h}!sm\-\_\-find\-\_\-close@{sm\-\_\-find\-\_\-close}}
+\index{sm\-\_\-find\-\_\-close@{sm\-\_\-find\-\_\-close}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-find\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-find\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$}]{query}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a88967d56ae0340d4d5ed57f9a088f792}
+
+
+Closes and frees all resources used by a directory query. 
+
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a05c051930d83c1c79324bc1b1ef3aff4}{\index{sm.\-h@{sm.\-h}!sm\-\_\-find\-\_\-first\-\_\-entry@{sm\-\_\-find\-\_\-first\-\_\-entry}}
+\index{sm\-\_\-find\-\_\-first\-\_\-entry@{sm\-\_\-find\-\_\-first\-\_\-entry}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-find\-\_\-first\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-find\-\_\-first\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{unsigned char}]{attributes, }
+\item[{{\bf S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$}]{entry, }
+\item[{{\bf S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$}]{query}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a05c051930d83c1c79324bc1b1ef3aff4}
+
+
+Initializes a directory query and finds the 1st entry in the specified directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The full path of the directory to query.\\
+\hline
+{\em attributes} & A list of file attributes O\-Red together to be used as a query filter. \\
+\hline
+{\em entry} & A pointer to a \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} structure that will be populated with the information about the next directory entry. \\
+\hline
+{\em query} & A pointer to a directory query structure (\hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a9dcd85a62788fcb043f5a7440d0157ad}{\index{sm.\-h@{sm.\-h}!sm\-\_\-find\-\_\-next\-\_\-entry@{sm\-\_\-find\-\_\-next\-\_\-entry}}
+\index{sm\-\_\-find\-\_\-next\-\_\-entry@{sm\-\_\-find\-\_\-next\-\_\-entry}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-find\-\_\-next\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-find\-\_\-next\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$}]{entry, }
+\item[{{\bf S\-M\-\_\-\-Q\-U\-E\-R\-Y} $\ast$}]{query}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a9dcd85a62788fcb043f5a7440d0157ad}
+
+
+Finds the next entry in a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & A pointer to a \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} structure that will be populated with the information about the next directory entry. \\
+\hline
+{\em query} & A pointer to a directory query structure (\hyperlink{struct_s_m___q_u_e_r_y}{S\-M\-\_\-\-Q\-U\-E\-R\-Y}) that has been initialized by sm\-\_\-find\-\_\-first\-\_\-entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_ae42546f1d89f496dc21f12b9291a4019}{\index{sm.\-h@{sm.\-h}!sm\-\_\-get\-\_\-file\-\_\-entry@{sm\-\_\-get\-\_\-file\-\_\-entry}}
+\index{sm\-\_\-get\-\_\-file\-\_\-entry@{sm\-\_\-get\-\_\-file\-\_\-entry}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-get\-\_\-file\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-get\-\_\-file\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename, }
+\item[{{\bf S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_ae42546f1d89f496dc21f12b9291a4019}
+
+
+Gets the directory entry information for a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The full path of the file.\\
+\hline
+{\em entry} & A pointer to an \hyperlink{struct_s_m___d_i_r_e_c_t_o_r_y___e_n_t_r_y}{S\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-E\-N\-T\-R\-Y} structure that will be populated with the file information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{sm_8h_a82074ca3d5c9aecec72879608f8b57d6}{\index{sm.\-h@{sm.\-h}!sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size@{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size}}
+\index{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size@{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t sm\-\_\-get\-\_\-volume\-\_\-sector\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a82074ca3d5c9aecec72879608f8b57d6}
+
+
+Gets the sector size of a mounted volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The drive label of the volume.\\
+\hline
+\end{DoxyParams}
+\hypertarget{sm_8h_a050baffcda50f1c40cf39578141763e7}{\index{sm.\-h@{sm.\-h}!sm\-\_\-mount\-\_\-volume@{sm\-\_\-mount\-\_\-volume}}
+\index{sm\-\_\-mount\-\_\-volume@{sm\-\_\-mount\-\_\-volume}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-mount\-\_\-volume}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-mount\-\_\-volume (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label, }
+\item[{void $\ast$}]{storage\-\_\-device}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a050baffcda50f1c40cf39578141763e7}
+
+
+Mounts a volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & A drive label for the volume.\\
+\hline
+{\em storage\-\_\-device} & A pointer to the \hyperlink{struct_s_t_o_r_a_g_e___d_e_v_i_c_e}{S\-T\-O\-R\-A\-G\-E\-\_\-\-D\-E\-V\-I\-C\-E} structure of the device driver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a07206242f3ccfa230cc193b15425c2b9}{\index{sm.\-h@{sm.\-h}!sm\-\_\-register\-\_\-filesystem@{sm\-\_\-register\-\_\-filesystem}}
+\index{sm\-\_\-register\-\_\-filesystem@{sm\-\_\-register\-\_\-filesystem}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-register\-\_\-filesystem}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-register\-\_\-filesystem (
+\begin{DoxyParamCaption}
+\item[{{\bf F\-I\-L\-E\-S\-Y\-S\-T\-E\-M} $\ast$}]{filesystem}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a07206242f3ccfa230cc193b15425c2b9}
+
+
+Registers a filesystem with smlib. This function needs to be called before a drive can be mounted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filesystem} & A pointer to the \hyperlink{struct_f_i_l_e_s_y_s_t_e_m}{F\-I\-L\-E\-S\-Y\-S\-T\-E\-M} structure of the file system driver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+\hypertarget{sm_8h_a146b7cf3a138cf9efc04fc87e4b45e08}{\index{sm.\-h@{sm.\-h}!sm\-\_\-register\-\_\-storage\-\_\-device@{sm\-\_\-register\-\_\-storage\-\_\-device}}
+\index{sm\-\_\-register\-\_\-storage\-\_\-device@{sm\-\_\-register\-\_\-storage\-\_\-device}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-register\-\_\-storage\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sm\-\_\-register\-\_\-storage\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-T\-O\-R\-A\-G\-E\-\_\-\-D\-E\-V\-I\-C\-E} $\ast$}]{device, }
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_a146b7cf3a138cf9efc04fc87e4b45e08}
+
+
+Registers a device (such as an S\-D card slot) with smlib to be mounted automatically whenever the device is inserted/connected. This will cause smlib to request notifications from the device driver when the device is connected/disconnected and it will mount the device automatically with the specified drive label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & A pointer to the \hyperlink{struct_s_t_o_r_a_g_e___d_e_v_i_c_e}{S\-T\-O\-R\-A\-G\-E\-\_\-\-D\-E\-V\-I\-C\-E} structure of the device driver. \\
+\hline
+{\em label} & A drive label for the volume.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful it will return F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S, otherwise one of the return codes defined in \hyperlink{filesystem_8h}{filesystem.\-h} and \hyperlink{sm_8h}{sm.\-h} 
+\end{DoxyReturn}
+
+
+You may call this function several times for the same device with different drive labels and if the device has multiple partitions it will mount one in each drive label. \hypertarget{sm_8h_ac12cf90dfc90777d18c4af288c415aa6}{\index{sm.\-h@{sm.\-h}!sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback@{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback}}
+\index{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback@{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void sm\-\_\-register\-\_\-volume\-\_\-dismounted\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}]{callback}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_ac12cf90dfc90777d18c4af288c415aa6}
+
+
+Registers a callback function that will be called everytime a volume is dismounted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function pointer to the callback function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{sm_8h_ada581ecde0fce91bb9d3bc21ef4e165b}{\index{sm.\-h@{sm.\-h}!sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback@{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback}}
+\index{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback@{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback}!sm.h@{sm.\-h}}
+\subsubsection[{sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void sm\-\_\-register\-\_\-volume\-\_\-mounted\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-M\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-M\-O\-U\-N\-T\-E\-D\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K}}]{callback}
+\end{DoxyParamCaption}
+)}}\label{sm_8h_ada581ecde0fce91bb9d3bc21ef4e165b}
+
+
+Registers a callback function that will be called everytime a volume is mounted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function pointer to the callback function. \\
+\hline
+\end{DoxyParams}

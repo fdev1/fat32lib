@@ -1,0 +1,13 @@
+\section{Modules}
+This are the modules in this project and their corresponding header files.\begin{DoxyCompactList}
+\item\contentsline{section}{fat32lib/\hyperlink{fat_8h}{fat.\-h} \\*This is the header file for the F\-A\-T driver. It allows low level access to the file system. The functions defined in \hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h} allow access to all the functionality provided by this header, most users should use those instead. The only all users need to call on this module is fat\-\_\-get\-\_\-filesystem\-\_\-interface which is defined in \hyperlink{filesystem__interface_8h}{filesystem\-\_\-interface.\-h} and allows smlib (the volume manager) to interface with fat32lib (the file system driver.) \begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h}
+
+
+\end{DoxySeeAlso}
+\hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h}}{\pageref{fat_8h}}{}
+\item\contentsline{section}{fat32lib/\hyperlink{filesystem__interface_8h}{filesystem\-\_\-interface.\-h} \\*This header contains the function that needs to be called to obtain the interface needed by smlib to access this file system driver }{\pageref{filesystem__interface_8h}}{}
+\item\contentsline{section}{fat32lib/\hyperlink{storage__device_8h}{storage\-\_\-device.\-h} \\*This file defines the interface between this module and the underlying storage device driver }{\pageref{storage__device_8h}}{}
+\item\contentsline{section}{smlib/\hyperlink{filesystem_8h}{filesystem.\-h} \\*This header file defines the interface used by this module to interface to a file system driver. It also defines most of the result codes returned by the functions in this module }{\pageref{filesystem_8h}}{}
+\item\contentsline{section}{smlib/\hyperlink{sm_8h}{sm.\-h} \\*This header file contains all the functions needed to mount and dismount drives, register file system drivers, and perform file I/\-O operations }{\pageref{sm_8h}}{}
+\end{DoxyCompactList}

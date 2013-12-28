@@ -1,0 +1,17 @@
+\hypertarget{dir_bddc50b92baa9add6b6d72ffa81b8add}{\section{fat32lib Directory Reference}
+\label{dir_bddc50b92baa9add6b6d72ffa81b8add}\index{fat32lib Directory Reference@{fat32lib Directory Reference}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{fat_8h}{fat.\-h}
+\begin{DoxyCompactList}\small\item\em This is the header file for the F\-A\-T driver. It allows low level access to the file system. The functions defined in \hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h} allow access to all the functionality provided by this header, most users should use those instead. The only all users need to call on this module is fat\-\_\-get\-\_\-filesystem\-\_\-interface which is defined in \hyperlink{filesystem__interface_8h}{filesystem\-\_\-interface.\-h} and allows smlib (the volume manager) to interface with fat32lib (the file system driver.) \begin{DoxySeeAlso}{See Also}
+\hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h}
+
+
+\end{DoxySeeAlso}
+\hyperlink{sm_8h}{smlib\textbackslash{}sm.\-h}\end{DoxyCompactList}\item 
+file \hyperlink{filesystem__interface_8h}{filesystem\-\_\-interface.\-h}
+\begin{DoxyCompactList}\small\item\em This header contains the function that needs to be called to obtain the interface needed by smlib to access this file system driver. \end{DoxyCompactList}\item 
+file \hyperlink{storage__device_8h}{storage\-\_\-device.\-h}
+\begin{DoxyCompactList}\small\item\em This file defines the interface between this module and the underlying storage device driver. \end{DoxyCompactList}\end{DoxyCompactItemize}

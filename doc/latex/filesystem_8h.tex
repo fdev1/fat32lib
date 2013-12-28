@@ -1,0 +1,194 @@
+\hypertarget{filesystem_8h}{\section{smlib/filesystem.h File Reference}
+\label{filesystem_8h}\index{smlib/filesystem.\-h@{smlib/filesystem.\-h}}
+}
+
+
+This header file defines the interface used by this module to interface to a file system driver. It also defines most of the result codes returned by the functions in this module.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_i_l_e_s_y_s_t_e_m}{F\-I\-L\-E\-S\-Y\-S\-T\-E\-M}
+\begin{DoxyCompactList}\small\item\em Stores all the function pointers needed by this library to interface to a file system driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{filesystem_8h_a5e136bfc3987fe4edda5782ce27808fe}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-U\-C\-C\-E\-S\-S}}\label{filesystem_8h_a5e136bfc3987fe4edda5782ce27808fe}
+
+\item 
+\hypertarget{filesystem_8h_a8796b210e5290411016419e2155fc37e}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-R\-R\-O\-R}}\label{filesystem_8h_a8796b210e5290411016419e2155fc37e}
+
+\item 
+\hypertarget{filesystem_8h_ac3b1925e3bea59952222b63f64f086b1}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-C\-A\-N\-N\-O\-T\-\_\-\-R\-E\-A\-D\-\_\-\-M\-E\-D\-I\-A}}\label{filesystem_8h_ac3b1925e3bea59952222b63f64f086b1}
+
+\item 
+\hypertarget{filesystem_8h_a9ba7259c1abd05f1d553ab5d74a453d1}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-C\-A\-N\-N\-O\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-E\-D\-I\-A}}\label{filesystem_8h_a9ba7259c1abd05f1d553ab5d74a453d1}
+
+\item 
+\hypertarget{filesystem_8h_a79c73e22c76085f4398ccc7140cc981e}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-N\-O\-T\-\_\-\-A\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}}\label{filesystem_8h_a79c73e22c76085f4398ccc7140cc981e}
+
+\item 
+\hypertarget{filesystem_8h_a7a44c2d78f2568d956c456f2120716f2}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}\label{filesystem_8h_a7a44c2d78f2568d956c456f2120716f2}
+
+\item 
+\hypertarget{filesystem_8h_a5d7edcc8004201e37f2502cf4a487520}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\-\_\-\-A\-L\-R\-E\-A\-D\-Y\-\_\-\-E\-X\-I\-S\-T\-S}}\label{filesystem_8h_a5d7edcc8004201e37f2502cf4a487520}
+
+\item 
+\hypertarget{filesystem_8h_aab88cf39b74a6f1639472e8f987f645a}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-T\-H}}\label{filesystem_8h_aab88cf39b74a6f1639472e8f987f645a}
+
+\item 
+\hypertarget{filesystem_8h_a4751dee94b6561eed84e6605831764e0}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-C\-O\-R\-R\-U\-P\-T\-E\-D\-\_\-\-F\-I\-L\-E}}\label{filesystem_8h_a4751dee94b6561eed84e6605831764e0}
+
+\item 
+\hypertarget{filesystem_8h_a98d23a76518c7adffaf414ae38de3a78}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-L\-L\-E\-G\-A\-L\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}\label{filesystem_8h_a98d23a76518c7adffaf414ae38de3a78}
+
+\item 
+\hypertarget{filesystem_8h_a5f12f142af8199346df22b0ca1e20f1a}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\-\_\-\-T\-O\-O\-\_\-\-L\-O\-N\-G}}\label{filesystem_8h_a5f12f142af8199346df22b0ca1e20f1a}
+
+\item 
+\hypertarget{filesystem_8h_ada52b739c685d7bfca7096d417fbd0b8}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-N\-O\-T\-\_\-\-A\-\_\-\-F\-I\-L\-E}}\label{filesystem_8h_ada52b739c685d7bfca7096d417fbd0b8}
+
+\item 
+\hypertarget{filesystem_8h_a8249444386246e87a4591c52d18e1922}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-N\-O\-T\-\_\-\-F\-O\-U\-N\-D}}\label{filesystem_8h_a8249444386246e87a4591c52d18e1922}
+
+\item 
+\hypertarget{filesystem_8h_a5fe52cd967bffeebd6c29b42b5b670d0}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-D\-O\-E\-S\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-S\-T}}\label{filesystem_8h_a5fe52cd967bffeebd6c29b42b5b670d0}
+
+\item 
+\hypertarget{filesystem_8h_a2444a98d357dc6b065f0f12e976a7e95}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-D\-I\-S\-K\-\_\-\-S\-P\-A\-C\-E}}\label{filesystem_8h_a2444a98d357dc6b065f0f12e976a7e95}
+
+\item 
+\hypertarget{filesystem_8h_ac327fdc7a336b93b914340984a33e541}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}\label{filesystem_8h_ac327fdc7a336b93b914340984a33e541}
+
+\item 
+\hypertarget{filesystem_8h_a378e4c92b7d3dd0f0f8683b0007eb812}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-O\-P\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S}}\label{filesystem_8h_a378e4c92b7d3dd0f0f8683b0007eb812}
+
+\item 
+\hypertarget{filesystem_8h_a962a9fde2babb6e7d0fa7e1e745d5dd2}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-E\-C\-T\-O\-R\-\_\-\-S\-I\-Z\-E\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}\label{filesystem_8h_a962a9fde2babb6e7d0fa7e1e745d5dd2}
+
+\item 
+\hypertarget{filesystem_8h_a81bbf48aff1259b8ec8f8ae33034b962}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-L\-F\-N\-\_\-\-G\-E\-N\-E\-R\-A\-T\-E\-D}}\label{filesystem_8h_a81bbf48aff1259b8ec8f8ae33034b962}
+
+\item 
+\hypertarget{filesystem_8h_aebd2c02d5c66df18e2b94d57346f0e2b}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-H\-O\-R\-T\-\_\-\-L\-F\-N\-\_\-\-G\-E\-N\-E\-R\-A\-T\-E\-D}}\label{filesystem_8h_aebd2c02d5c66df18e2b94d57346f0e2b}
+
+\item 
+\hypertarget{filesystem_8h_a39b97b316e712288bfca29547aee3820}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-E\-E\-K\-\_\-\-F\-A\-I\-L\-E\-D}}\label{filesystem_8h_a39b97b316e712288bfca29547aee3820}
+
+\item 
+\hypertarget{filesystem_8h_aa246210fe5db905ba3c1e8b4110eeb34}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-N\-O\-T\-\_\-\-O\-P\-E\-N\-E\-D\-\_\-\-F\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-A\-C\-C\-E\-S\-S}}\label{filesystem_8h_aa246210fe5db905ba3c1e8b4110eeb34}
+
+\item 
+\hypertarget{filesystem_8h_a3615415b7ca6852d77e172437f0b8c1d}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}}\label{filesystem_8h_a3615415b7ca6852d77e172437f0b8c1d}
+
+\item 
+\hypertarget{filesystem_8h_af8b75da8bc8af87b635c0565bc861377}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R}}\label{filesystem_8h_af8b75da8bc8af87b635c0565bc861377}
+
+\item 
+\hypertarget{filesystem_8h_a195f3ce9173608dfbe6d1be64c529a6b}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-A\-T\-\_\-\-V\-O\-L\-U\-M\-E}}\label{filesystem_8h_a195f3ce9173608dfbe6d1be64c529a6b}
+
+\item 
+\hypertarget{filesystem_8h_af75fb9e578ab6dd286f42cd3068ababc}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-L\-A\-B\-E\-L}}\label{filesystem_8h_af75fb9e578ab6dd286f42cd3068ababc}
+
+\item 
+\hypertarget{filesystem_8h_a0c888d3c6c1e0e8411dfc5e10e50e738}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R\-S}}\label{filesystem_8h_a0c888d3c6c1e0e8411dfc5e10e50e738}
+
+\item 
+\hypertarget{filesystem_8h_ae337719d5ac75772d08807e5248ed07f}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-R\-O\-O\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-L\-I\-M\-I\-T\-\_\-\-E\-X\-C\-E\-E\-D\-E\-D}}\label{filesystem_8h_ae337719d5ac75772d08807e5248ed07f}
+
+\item 
+\hypertarget{filesystem_8h_a5e39f1318585281c6a55a7c5d2c774a7}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-L\-I\-M\-I\-T\-\_\-\-E\-X\-C\-E\-E\-D\-E\-D}}\label{filesystem_8h_a5e39f1318585281c6a55a7c5d2c774a7}
+
+\item 
+\hypertarget{filesystem_8h_ad7f97bc106e3dd347cb3dfa8a53f3a1e}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R\-S}}\label{filesystem_8h_ad7f97bc106e3dd347cb3dfa8a53f3a1e}
+
+\item 
+\hypertarget{filesystem_8h_a8cfb6a40e2b6d7eb95693d0281b130fa}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-H\-A\-N\-D\-L\-E\-\_\-\-I\-N\-\_\-\-U\-S\-E}}\label{filesystem_8h_a8cfb6a40e2b6d7eb95693d0281b130fa}
+
+\item 
+\hypertarget{filesystem_8h_ab34885284fe5cb65f8792c9bfa5f4bb6}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-E\-T}}\label{filesystem_8h_ab34885284fe5cb65f8792c9bfa5f4bb6}
+
+\item 
+\hypertarget{filesystem_8h_a3066cfc2124b0f80df4685412f072349}{\#define {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-W\-A\-I\-T\-I\-N\-G\-\_\-\-D\-A\-T\-A}}\label{filesystem_8h_a3066cfc2124b0f80df4685412f072349}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{filesystem_8h_ad1be21c99420c57b7bd0d78a720d6f35}{typedef void $\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E}}\label{filesystem_8h_ad1be21c99420c57b7bd0d78a720d6f35}
+
+\item 
+\hypertarget{filesystem_8h_a44699ae0b1194bfaf79096158688c0af}{typedef void($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(void $\ast$context, uint16\-\_\-t $\ast$result)}\label{filesystem_8h_a44699ae0b1194bfaf79096158688c0af}
+
+\item 
+\hypertarget{filesystem_8h_a2eec6fe2ddd8188a85c6da68b90d7a7d}{typedef void($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K} )(void $\ast$context, uint16\-\_\-t $\ast$result, unsigned char $\ast$$\ast$buffer, uint16\-\_\-t $\ast$response)}\label{filesystem_8h_a2eec6fe2ddd8188a85c6da68b90d7a7d}
+
+\item 
+\hypertarget{filesystem_8h_aea05198dad48a80b93b5be6611d4e467}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-M\-O\-U\-N\-T\-\_\-\-V\-O\-L\-U\-M\-E} )(void $\ast$volume, void $\ast$storage\-\_\-interface)}\label{filesystem_8h_aea05198dad48a80b93b5be6611d4e467}
+
+\item 
+\hypertarget{filesystem_8h_a4c94397bcfbdfcd0f432976e4e70cf82}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-D\-I\-S\-M\-O\-U\-N\-T\-\_\-\-V\-O\-L\-U\-M\-E} )(void $\ast$volume)}\label{filesystem_8h_a4c94397bcfbdfcd0f432976e4e70cf82}
+
+\item 
+\hypertarget{filesystem_8h_af3c563d189647af40254fde9060fe330}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-N\-D\-\_\-\-F\-I\-R\-S\-T\-\_\-\-E\-N\-T\-R\-Y} )(void $\ast$volume, char $\ast$path, unsigned char attributes, void $\ast$$\ast$dir\-\_\-entry, void $\ast$query)}\label{filesystem_8h_af3c563d189647af40254fde9060fe330}
+
+\item 
+\hypertarget{filesystem_8h_a7e84a93025da08f04dd7092e1fef72ea}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-N\-D\-\_\-\-N\-E\-X\-T\-\_\-\-E\-N\-T\-R\-Y} )(void $\ast$volume, void $\ast$$\ast$dir\-\_\-entry, void $\ast$query)}\label{filesystem_8h_a7e84a93025da08f04dd7092e1fef72ea}
+
+\item 
+\hypertarget{filesystem_8h_a43a786f1d363b746b76a069743fd52b8}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y} )(void $\ast$volume, char $\ast$pathname)}\label{filesystem_8h_a43a786f1d363b746b76a069743fd52b8}
+
+\item 
+\hypertarget{filesystem_8h_a76852840c90afaf2aad32bdb728105a4}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-D\-E\-L\-E\-T\-E} )(void $\ast$volume, char $\ast$filename)}\label{filesystem_8h_a76852840c90afaf2aad32bdb728105a4}
+
+\item 
+\hypertarget{filesystem_8h_a6058f888b4ce0126ee29fa8a39922b4e}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-R\-E\-N\-A\-M\-E} )(void $\ast$volume, char $\ast$original\-\_\-filename, char $\ast$new\-\_\-filename)}\label{filesystem_8h_a6058f888b4ce0126ee29fa8a39922b4e}
+
+\item 
+\hypertarget{filesystem_8h_a82b9287eb8ef2037ab5b668e3265a80f}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-O\-P\-E\-N} )(void $\ast$volume, char $\ast$filename, unsigned char access\-\_\-flags, void $\ast$file)}\label{filesystem_8h_a82b9287eb8ef2037ab5b668e3265a80f}
+
+\item 
+\hypertarget{filesystem_8h_afc0f440d94344cd9bc36d1873ffde756}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-A\-L\-L\-O\-C} )(void $\ast$file, uint32\-\_\-t bytes)}\label{filesystem_8h_afc0f440d94344cd9bc36d1873ffde756}
+
+\item 
+\hypertarget{filesystem_8h_aecbe2d2ceb9062ee733a98561142717b}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-S\-E\-E\-K} )(void $\ast$file, uint32\-\_\-t offset, char mode)}\label{filesystem_8h_aecbe2d2ceb9062ee733a98561142717b}
+
+\item 
+\hypertarget{filesystem_8h_ad4b02ba4f9f48942ff445f6199f50b87}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-W\-R\-I\-T\-E} )(void $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t length)}\label{filesystem_8h_ad4b02ba4f9f48942ff445f6199f50b87}
+
+\item 
+\hypertarget{filesystem_8h_aac60c43f750a4e892fba608921935a8b}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-A\-S\-Y\-N\-C} )(void $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t length, uint16\-\_\-t $\ast$result, F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K callback, void $\ast$callback\-\_\-context)}\label{filesystem_8h_aac60c43f750a4e892fba608921935a8b}
+
+\item 
+\hypertarget{filesystem_8h_af0ad9cad479faf8af40c8e1250c4db93}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-S\-T\-R\-E\-A\-M} )(void $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t length, uint16\-\_\-t $\ast$result, F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K callback, void $\ast$callback\-\_\-context)}\label{filesystem_8h_af0ad9cad479faf8af40c8e1250c4db93}
+
+\item 
+\hypertarget{filesystem_8h_a72107d14b3141229c2efda3e62461aac}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-R\-E\-A\-D} )(void $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t length, uint32\-\_\-t $\ast$bytes\-\_\-read)}\label{filesystem_8h_a72107d14b3141229c2efda3e62461aac}
+
+\item 
+\hypertarget{filesystem_8h_aacfe8d01e9abc125045fce23b0683500}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-R\-E\-A\-D\-\_\-\-A\-S\-Y\-N\-C} )(void $\ast$file, unsigned char $\ast$buffer, uint32\-\_\-t length, uint32\-\_\-t $\ast$bytes\-\_\-read, uint16\-\_\-t $\ast$result, F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-S\-Y\-N\-C\-\_\-\-C\-A\-L\-L\-B\-A\-C\-K callback, void $\ast$callback\-\_\-context)}\label{filesystem_8h_aacfe8d01e9abc125045fce23b0683500}
+
+\item 
+\hypertarget{filesystem_8h_add0ba69ad9c319deb42e112069edaeb7}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-F\-L\-U\-S\-H} )(void $\ast$file)}\label{filesystem_8h_add0ba69ad9c319deb42e112069edaeb7}
+
+\item 
+\hypertarget{filesystem_8h_a1d9ceefe53336b708399bc92c1c61970}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-C\-L\-O\-S\-E} )(void $\ast$file)}\label{filesystem_8h_a1d9ceefe53336b708399bc92c1c61970}
+
+\item 
+\hypertarget{filesystem_8h_ae1d81092ad325aa80f990f0eae451a1d}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-G\-E\-T\-\_\-\-S\-E\-C\-T\-O\-R\-\_\-\-S\-I\-Z\-E} )(void $\ast$volume)}\label{filesystem_8h_ae1d81092ad325aa80f990f0eae451a1d}
+
+\item 
+\hypertarget{filesystem_8h_a5a7e8df741c7c30642e62bda17bb3724}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-S\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R} )(void $\ast$file, unsigned char $\ast$buffer)}\label{filesystem_8h_a5a7e8df741c7c30642e62bda17bb3724}
+
+\item 
+\hypertarget{filesystem_8h_ac327af1c1560e22b043ba0d321b3cf35}{typedef uint16\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-G\-E\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-N\-T\-R\-Y} )(void $\ast$volume, char $\ast$filename, void $\ast$file\-\_\-entry)}\label{filesystem_8h_ac327af1c1560e22b043ba0d321b3cf35}
+
+\item 
+\hypertarget{filesystem_8h_af67c277a2a0b9535c6de9b658c166d7b}{typedef uint32\-\_\-t($\ast$ {\bfseries F\-I\-L\-E\-S\-Y\-S\-T\-E\-M\-\_\-\-F\-I\-L\-E\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-Q\-U\-E\-\_\-\-I\-D} )(void $\ast$file)}\label{filesystem_8h_af67c277a2a0b9535c6de9b658c166d7b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header file defines the interface used by this module to interface to a file system driver. It also defines most of the result codes returned by the functions in this module. 
