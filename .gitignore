@@ -23,6 +23,7 @@ doc/fat32lib.doxy.txt
 doc/pages/*.*
 doc/pages/temp/*.*
 doc/doxygen_preprocessor.exe
+doc/readme.md
 doc/layout.xml
 vssver2.scc
 *.vssscc
