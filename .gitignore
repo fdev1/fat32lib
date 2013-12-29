@@ -16,3 +16,8 @@
 *.exe
 *.out
 *.app
+
+\doc\compile.bat
+\doc\fat32lib.doxy.txt
+\doc\pages\*.*
+\doc\doxygen_preprocessor.exe
