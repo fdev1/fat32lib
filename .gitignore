@@ -41,3 +41,5 @@ debug/*.*
 *.suo
 fat32app_console.ht
 *.ncb
+*.mptags
+*.tagsrc
