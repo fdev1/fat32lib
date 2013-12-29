@@ -1,22 +1,29 @@
 var NAVTREE =
 [
   [ "Fat32Lib", "index.html", [
-    [ "Introduction", "main.html", null ],
-    [ "Features", "features.html", null ],
-    [ "Compiling", "compile.html", null ],
-    [ "Examples", "examples.html", null ],
-    [ "Licensing", "licensing.html", null ],
-    [ "References", "references.html", null ],
+    [ "Data Structures", null, [
+      [ "Data Structures", "annotated.html", "annotated" ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", null, [
-      [ "Modules", "files.html", "files" ]
+      [ "File List", "files.html", "files" ],
+      [ "Globals", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"compile.html",
-"storage__device_8h.html#a8eec85ad68913e38ff6ef85c967cbf32"
+"annotated.html",
+"storage__device_8h.html#a8e047704acfb6066bd7400d034138015"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
