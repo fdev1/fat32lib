@@ -18,16 +18,16 @@
 *.app
 *.hex
 
-doc\compile.bat
-doc\fat32lib.doxy.txt
-doc\pages\*.*
-doc\doxygen_preprocessor.exe
+doc/compile.bat
+doc/fat32lib.doxy.txt
+doc/pages\*.*
+doc/doxygen_preprocessor.exe
 vssver2.scc
 *.vssscc
 *.Admin-VAIO.Fernan
-\fat32lib\deleted\*.*
-\fat32lib\debug\*.*
-\smlib\debug\*.*
+fat32lib/deleted/*.*
+fat32lib/debug/*.*
+smlib/debug/*.*
 *.mcs
-\debug\*.*
+debug/*.*
 *.scc
