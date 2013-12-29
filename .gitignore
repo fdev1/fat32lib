@@ -40,3 +40,4 @@ debug/*.*
 *.scc
 *.suo
 fat32app_console.ht
+*.ncb
