@@ -25,6 +25,7 @@ doc/pages/temp/*.*
 doc/doxygen_preprocessor.exe
 doc/readme.md
 doc/layout.xml
+ramdrv/debug/*.*
 vssver2.scc
 *.vssscc
 *.Admin-VAIO.Fernan
