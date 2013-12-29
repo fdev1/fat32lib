@@ -26,6 +26,7 @@ doc/doxygen_preprocessor.exe
 doc/readme.md
 doc/layout.xml
 ramdrv/debug/*.*
+smlib/debug/*.*
 vssver2.scc
 *.vssscc
 *.Admin-VAIO.Fernan
