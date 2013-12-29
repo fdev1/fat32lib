@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Globals</title>
+<title>Compile Instructions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('globals_type.html','');});
+$(document).ready(function(){initNavTree('compile.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -98,31 +98,79 @@ $(document).ready(function(){initNavTree('globals_type.html','');});
 </iframe>
 </div>
 
-<div class="contents">
-&#160;<ul>
-<li>FAT_ASYNC_CALLBACK
-: <a class="el" href="fat_8h.html#a6e2a39ea21368ed965a2780cfc144f3b">fat.h</a>
-</li>
-<li>FAT_GET_SYSTEM_TIME
-: <a class="el" href="fat_8h.html#a8c38edd8f851e25c4fadbea43488480f">fat.h</a>
-</li>
-<li>FAT_STREAM_CALLBACK
-: <a class="el" href="fat_8h.html#a251e8e98091db9a540729dd12d6458b4">fat.h</a>
-</li>
-<li>SM_ASYNC_CALLBACK
-: <a class="el" href="sm_8h.html#a1b1a8249a2f33303ac6869ba5472500f">sm.h</a>
-</li>
-<li>SM_STREAM_CALLBACK
-: <a class="el" href="sm_8h.html#af07c3c837f09898814640e8d5c12725a">sm.h</a>
-</li>
-<li>SM_VOLUME_DISMOUNTED_CALLBACK
-: <a class="el" href="sm_8h.html#a9e6ecb4a67a9ac01594b9ef8808cb8d5">sm.h</a>
-</li>
-<li>SM_VOLUME_MOUNTED_CALLBACK
-: <a class="el" href="sm_8h.html#a5a9e84d8f6dcc8b7adefda60ac17c34b">sm.h</a>
-</li>
-</ul>
-</div><!-- contents -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Compile Instructions </div>  </div>
+</div><!--header-->
+<div style="margin-right:20px; margin-left:20px">
+<table width="100%">
+    <tr>
+        <td style="height:20px"></td>
+    </tr>
+    <tr>
+        <td style="text-align: justify;">
+            <span>To compile Fat32Lib follow the following instructions:</span>
+            <ol>
+                <li>
+                    <span>
+                        Develop a Hardware Abstraction Layer library using the included dspic_hal as a template.
+                        <br /><br />
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        Open compiler\compiler.h and modify it as required by your compiler.
+                        Specifically make sure that the fixed with integer data types are defined correctly
+                        for your compiler and if your compiler supports struct packing make sure the proper
+                        macro is defined as it increases performance and reduces code size significantly. The
+                        comments on compiler.h should help you accomplish this.<br /><br />
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        Open fat.h and enable/disable features to suit your needs. The comments on the file
+                        should help you accomplish this. Then load all source files as a project on your IDE
+                        (a project file is provided for Microchip's MPLAB) or create a makefile for your compiler 
+                        and compile as a static library. Be sure that the compiler folder is in your include path.
+                        <br /><br />
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        Open sm.h and enable/disable features to suit your needs. The comments on the file
+                        should help you accomplish this. Then load all source files in the smlib folder to a 
+                        project on your IDE (a project file is provided for Microchip's MPLAB) or create a makefile 
+                        for your compiler and compile as a static library. Be sure that the compiler folder is in
+                        your include path.
+                        <br /><br />
+                    </span>
+                </li>
+               <li>
+                    <span>
+                        Open sd.h and enable/disable features to suit your needs. The comments on the file
+                        should help you accomplish this. Then load all source files in the sdlib folder to a 
+                        project on your IDE (a project file is provided for Microchip's MPLAB) or create a makefile 
+                        for your compiler and compile as a static library. Be sure that the compiler folder and
+                        your HAL project file are in the include search path.
+                        <br /><br />
+                    </span>
+                </li>
+               <li>
+                    <span>
+                        Start using Fat32lib (see examples and documentation) on your project and then compile
+                        and link with all the Fat32lib libraries making sure that your HAL library and sdlib are the
+                        last two libraries linked.
+                        <br /><br />
+                    </span>
+                </li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td style="height:20px"></td>
+    </tr>
+</table>
+</div>
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->

@@ -96,7 +96,7 @@ var fat_8h =
     [ "fat_file_set_buffer", "fat_8h.html#acde6b996aa45281866c34854ee20e90d", null ],
     [ "fat_file_write", "fat_8h.html#a9b77c490d4814955e20342e53f49dd37", null ],
     [ "fat_file_write_async", "fat_8h.html#a4f23bec74776edab9601e8770d2e9174", null ],
-    [ "fat_file_write_stream", "fat_8h.html#a51c6851c6a68197dc3be6cc18960f9e0", null ],
+    [ "fat_file_write_stream", "fat_8h.html#a36b8a2d039c13e484ea8050ee86cdb1b", null ],
     [ "fat_find_first_entry", "fat_8h.html#a88d8f9c787986468fcc67b6e13d1daa3", null ],
     [ "fat_find_next_entry", "fat_8h.html#a595a506893aca97c9946b710b1146818", null ],
     [ "fat_get_file_entry", "fat_8h.html#a99816f5f466d245277bdf678152770f9", null ],

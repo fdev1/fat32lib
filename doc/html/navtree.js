@@ -1,6 +1,12 @@
 var NAVTREE =
 [
-  [ "Fat32lib", "index.html", [
+  [ "Fat32Lib", "index.html", [
+    [ "Introduction", "main.html", null ],
+    [ "Features", "features.html", null ],
+    [ "Compiling", "compile.html", null ],
+    [ "Examples", "examples.html", null ],
+    [ "Licensing", "licensing.html", null ],
+    [ "References", "references.html", null ],
     [ "Files", null, [
       [ "Modules", "files.html", "files" ]
     ] ]
@@ -9,8 +15,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_24b8f0e80fe3d390cad25eb9724204bd.html",
-"storage__device_8h.html#ac3daecb5b10dd9fc2befacedb36b1e1a"
+"compile.html",
+"storage__device_8h.html#a8eec85ad68913e38ff6ef85c967cbf32"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,10 +1,11 @@
+<!-- HTML header for doxygen 1.8.5-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Fat32lib: smlib/sm.h File Reference</title>
+<title>smlib/sm.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,15 +26,22 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
-   <div id="projectname">Fat32lib
-   </div>
-   <div id="projectbrief">FAT12/16/32 Filesystem Library for Embedded Devices</div>
-  </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td id="projectlogo" style="text-align:left; padding-left: 0.5em;">
+                <img alt="Logo" width="100" height="50" src="fat32lib.png" />
+            </td>
+        </tr>
+        <tr style="background-image:url('tab_b.png'); height:30px">
+            <td>
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="padding-left: 0.5em;">
+                            <div id="projectbrief">File System Stack for Embedded Devices</div>
+                        </td>
+                        <td style="vertical-align:middle">
+                            <div>&nbsp;        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
@@ -47,9 +55,13 @@
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-</td>
- </tr>
- </tbody>
+</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
 </table>
 </div>
 <!-- end header part -->
@@ -77,7 +89,7 @@ $(document).ready(function(){initNavTree('sm_8h.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -247,7 +259,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:af90fed9ea963df75d22308ca281f6b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the specified number of bytes to a file asynchronously.  <a href="#af90fed9ea963df75d22308ca281f6b81">More...</a><br/></td></tr>
 <tr class="separator:af90fed9ea963df75d22308ca281f6b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17fc880ffc90b5d420172575c978a2e2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sm_8h.html#a17fc880ffc90b5d420172575c978a2e2">sm_file_write_stream</a> (<a class="el" href="struct_s_m___f_i_l_e.html">SM_FILE</a> *file, unsigned char *buffer, uint32_t bytes_to_write, uint16_t *result, <a class="el" href="sm_8h.html#af07c3c837f09898814640e8d5c12725a">SM_STREAM_CALLBACK</a> callback, void *callback_context)</td></tr>
-<tr class="memdesc:a17fc880ffc90b5d420172575c978a2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates a stream write.  <a href="#a17fc880ffc90b5d420172575c978a2e2">More...</a><br/></td></tr>
+<tr class="memdesc:a17fc880ffc90b5d420172575c978a2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates a stream write. This function is used to write data continuosly to the file system. When used with SD cards or other flash devices it will write multiple sectors at once thus increasing performance. It accomplish this without requiring you to allocate large buffers to hold multiple sectors. This function supports both unbuffered and buffered IO but it is recommended that you use unbuffered IO for better performance. Once you initiate a stream write with this function the data you provided will be written to the device, and as soon as the transfer is complete (even while the device is still writing the data) the callback function provided through the callback parameter will be invoked. In this function you must either reload the buffer or replace it with a different one (a pointer to the buffer is passed to the function for this) and set the response argument to SM_STREAM_RESPONSE_READY. As long as you do this everytime and there are no other requests pending the driver will use a single command to write multiple sectors to the device. If you don't have the data ready when the callback function is called you can set the response pointer to SM_STREAM_RESPONSE_SKIP. In that case the driver will complete the multiple sector transfer and release the device for other requests to use, once the device becomes available again the callback function will be called. This process is repeated until you either supply the data and set the response pointer to SM_STREAM_RESPONSE_READY or end the transfer by setting the response pointer to SM_STREAM_RESPONSE_STOP. Once you set the response pointer to SM_STREAM_RESPONSE_STOP the callback function will be called once more to notify you of the result. If an error occurs before that transaction is complete the result pointer will be set to the error code. When the transaction is completed successfully the result pointer is set to SM_SUCCESS, otherwise if the file system is waiting for you to reload the buffer the result pointer is set to SM_AWAITING_DATA. Please see the examples included for more details.  <a href="#a17fc880ffc90b5d420172575c978a2e2">More...</a><br/></td></tr>
 <tr class="separator:a17fc880ffc90b5d420172575c978a2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2f20e503bf44309d9e5819fecb5314"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sm_8h.html#abd2f20e503bf44309d9e5819fecb5314">sm_file_read</a> (<a class="el" href="struct_s_m___f_i_l_e.html">SM_FILE</a> *file, unsigned char *buffer, uint32_t bytes_to_read, uint32_t *bytes_read)</td></tr>
 <tr class="memdesc:abd2f20e503bf44309d9e5819fecb5314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of bytes from the file.  <a href="#abd2f20e503bf44309d9e5819fecb5314">More...</a><br/></td></tr>
@@ -1186,7 +1198,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initiates a stream write. </p>
+<p>Initiates a stream write. This function is used to write data continuosly to the file system. When used with SD cards or other flash devices it will write multiple sectors at once thus increasing performance. It accomplish this without requiring you to allocate large buffers to hold multiple sectors. This function supports both unbuffered and buffered IO but it is recommended that you use unbuffered IO for better performance. Once you initiate a stream write with this function the data you provided will be written to the device, and as soon as the transfer is complete (even while the device is still writing the data) the callback function provided through the callback parameter will be invoked. In this function you must either reload the buffer or replace it with a different one (a pointer to the buffer is passed to the function for this) and set the response argument to SM_STREAM_RESPONSE_READY. As long as you do this everytime and there are no other requests pending the driver will use a single command to write multiple sectors to the device. If you don't have the data ready when the callback function is called you can set the response pointer to SM_STREAM_RESPONSE_SKIP. In that case the driver will complete the multiple sector transfer and release the device for other requests to use, once the device becomes available again the callback function will be called. This process is repeated until you either supply the data and set the response pointer to SM_STREAM_RESPONSE_READY or end the transfer by setting the response pointer to SM_STREAM_RESPONSE_STOP. Once you set the response pointer to SM_STREAM_RESPONSE_STOP the callback function will be called once more to notify you of the result. If an error occurs before that transaction is complete the result pointer will be set to the error code. When the transaction is completed successfully the result pointer is set to SM_SUCCESS, otherwise if the file system is waiting for you to reload the buffer the result pointer is set to SM_AWAITING_DATA. Please see the examples included for more details. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>An open file handle.</td></tr>
@@ -1515,13 +1527,12 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_24b8f0e80fe3d390cad25eb9724204bd.html">smlib</a></li><li class="navelem"><a class="el" href="sm_8h.html">sm.h</a></li>
-    <li class="footer">Generated on Sat Dec 28 2013 04:22:59 for Fat32lib by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+    <li class="footer">&nbsp;</li>
   </ul>
 </div>
 </body>
