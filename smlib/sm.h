@@ -681,7 +681,33 @@ uint16_t sm_file_write_async
 
 /*!
  * <summary>
- * Initiates a stream write.
+ * Initiates a stream write. This function is used to write data continuosly
+ * to the file system. When used with SD cards or other flash devices it will
+ * write multiple sectors at once thus increasing performance. It accomplish this
+ * without requiring you to allocate large buffers to hold multiple sectors. This
+ * function supports both unbuffered and buffered IO but it is recommended that you
+ * use unbuffered IO for better performance. Once you initiate a stream write with
+ * this function the data you provided will be written to the device, and as soon
+ * as the transfer is complete (even while the device is still writing the data)
+ * the callback function provided through the callback parameter will be invoked.
+ * In this function you must either reload the buffer or replace it with a different
+ * one (a pointer to the buffer is passed to the function for this) and set the
+ * response argument to SM_STREAM_RESPONSE_READY. As long as you do this everytime
+ * and there are no other requests pending the driver will use a single command
+ * to write multiple sectors to the device. If you don't have the data ready when
+ * the callback function is called you can set the response pointer to SM_STREAM_RESPONSE_SKIP.
+ * In that case the driver will complete the multiple sector transfer and release
+ * the device for other requests to use, once the device becomes available again the
+ * callback function will be called. This process is repeated until you either supply
+ * the data and set the response pointer to SM_STREAM_RESPONSE_READY or end the
+ * transfer by setting the response pointer to SM_STREAM_RESPONSE_STOP. Once you
+ * set the response pointer to SM_STREAM_RESPONSE_STOP the callback function will
+ * be called once more to notify you of the result. If an error occurs before that
+ * transaction is complete the result pointer will be set to the error code. When
+ * the transaction is completed successfully the result pointer is set to SM_SUCCESS,
+ * otherwise if the file system is waiting for you to reload the buffer the result
+ * pointer is set to SM_AWAITING_DATA. Please see the examples included for more
+ * details.
  * </summary>
  * <param name="file">An open file handle.</param>
  * <param name="buffer">The buffer containing the data to be written.</param>

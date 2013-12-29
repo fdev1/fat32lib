@@ -47,7 +47,7 @@
 #define CHKDSK_PATH				"c:\\windows\\system32\\chkdsk.exe"
 #define SD_CARD					"E:"
 #define USE_FIXED_POINT			/* to calculate filesize */
-#define USE_LONG_FILENAMES
+//#define USE_LONG_FILENAMES
 
 /*
 // struct used to store context of async operations
@@ -137,11 +137,11 @@ int cmd_test(char* args)
 
 
 
-	test_check_file("e:\\stream.txt");
+	//test_check_file("e:\\stream.txt");
 	//test_check_file("e:\\xxx1.txt");
 	//test_check_file("e:\\xxx2.txt");
 	//test_check_file("e:\\xxx3.txt");
-	return;
+	//return;
 
 	/*
 	// register the FAT filesystem driver with smlib
@@ -178,16 +178,11 @@ int cmd_test(char* args)
 		/*
 		// perform tests
 		*/
-		/*
 		test_directory_struct();
-		*/
 		test_create_100_files();
-		/*
 		test_write_file_async();
 		test_another_async_write();
-		*/
-		//test_write_file_unbuffered(1);
-		/*
+		test_write_file_unbuffered(1);
 		test_read_file_unbuffered();
 		test_write_file(1);
 		test_read_file();
@@ -197,8 +192,7 @@ int cmd_test(char* args)
 		test_rename_file();
 		test_write_file(1);
 		test_delete_file();	
-		*/
-		//test_write_stream();
+		test_write_stream();
 		test_dir_listing();
 		
 		/*

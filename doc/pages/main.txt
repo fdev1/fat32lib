@@ -1,0 +1,13 @@
+/*!
+ * \mainpage Fat32Lib
+ *
+ * Fat32Lib is a portable FAT12/16/32 file system stack for embedded
+ * devices. See introduction link bellow for more details.
+ *
+ * - <a href="main.html">Introduction</a>
+ * - <a href="features.html">Features</a>
+ * - <a href="compile.html">Compiling</a>
+ * - <a href="examples.html">Examples</a>
+ * - <a href="licensing.html">Licensing</a>
+ * - <a href="files.html">Module Headers</a>
+ */
