@@ -22,3 +22,5 @@ Features:
 - Several memory management options;
 - Easy to use API;
 - Released under GPL v3. Commercial licenses also available (contact frodriguez.developer@outlook.com for info).
+
+Feel free to browse the documentation <a href="http://fernan82.brinkster.net/fat32lib/index.html" target="_blank">here</a>.
