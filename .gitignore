@@ -27,6 +27,7 @@ doc/readme.md
 doc/layout.xml
 ramdrv/debug/*.*
 smlib/debug/*.*
+win32io/debug/*.*
 vssver2.scc
 *.vssscc
 *.Admin-VAIO.Fernan
