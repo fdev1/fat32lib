@@ -20,7 +20,7 @@
 
 doc/compile.bat
 doc/fat32lib.doxy.txt
-doc/pages\*.*
+doc/pages/*.*
 doc/doxygen_preprocessor.exe
 vssver2.scc
 *.vssscc
