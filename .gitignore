@@ -39,3 +39,4 @@ smlib/debug/*.*
 debug/*.*
 *.scc
 *.suo
+fat32app_console.ht
