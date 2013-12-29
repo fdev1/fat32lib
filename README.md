@@ -1,7 +1,7 @@
 Fat32lib
 ========
 
-Portable FAT12/16/32 Library for Embedded Devices.
+Fat32lib is a portable FAT12/16/32 file system stack for embedded devices. All components, except for the Hardware Abstraction Layer (HAL) are written in portable ANSI C89 code to any platform with a C89 compiler. It is intended for embedded devices where memory and processing power are scarce resources.
 
 
 Features:
