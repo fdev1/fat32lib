@@ -22,3 +22,6 @@
 \doc\fat32lib.doxy.txt
 \doc\pages\*.*
 \doc\doxygen_preprocessor.exe
+vssver2.scc
+*.vssscc
+*.Admin-VAIO.Fernan
