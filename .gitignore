@@ -34,3 +34,4 @@ smlib/debug/*.*
 *.mcs
 debug/*.*
 *.scc
+*.suo
