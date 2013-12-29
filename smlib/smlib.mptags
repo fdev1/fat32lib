@@ -1,0 +1,290 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+FILESYSTEM	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	102;"	s	line:102
+FILESYSTEM	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	141;"	t	line:141
+FILESYSTEM_ASYNC_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	71;"	t	line:71
+FILESYSTEM_AWAITING_DATA::(0x20+0x21)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	64;"	d	line:64
+FILESYSTEM_CANNOT_READ_MEDIA::(0x20+0x2)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	34;"	d	line:34
+FILESYSTEM_CANNOT_WRITE_MEDIA::(0x20+0x3)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	35;"	d	line:35
+FILESYSTEM_CORRUPTED_FILE::(0x20+0x8)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	40;"	d	line:40
+FILESYSTEM_CREATE_DIRECTORY	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	78;"	t	line:78
+FILESYSTEM_DIRECTORY_DOES_NOT_EXIST::(0x20+0xD)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	45;"	d	line:45
+FILESYSTEM_DIRECTORY_LIMIT_EXCEEDED::(0x20+0x1C)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	60;"	d	line:60
+FILESYSTEM_DISMOUNT_VOLUME	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	75;"	t	line:75
+FILESYSTEM_FEATURE_NOT_SUPPORTED::(0x20+0xF)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	47;"	d	line:47
+FILESYSTEM_FILE	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	70;"	t	line:70
+FILESYSTEM_FILENAME_ALREADY_EXISTS::(0x20+0x6)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	38;"	d	line:38
+FILESYSTEM_FILENAME_TOO_LONG::(0x20+0xA)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	42;"	d	line:42
+FILESYSTEM_FILE_ALLOC	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	82;"	t	line:82
+FILESYSTEM_FILE_BUFFER_NOT_SET::(0x20+0x1F)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	63;"	d	line:63
+FILESYSTEM_FILE_CLOSE	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	90;"	t	line:90
+FILESYSTEM_FILE_DELETE	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	79;"	t	line:79
+FILESYSTEM_FILE_FLUSH	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	89;"	t	line:89
+FILESYSTEM_FILE_GET_UNIQUE_ID	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	94;"	t	line:94
+FILESYSTEM_FILE_HANDLE_IN_USE::(0x20+0x1E)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	62;"	d	line:62
+FILESYSTEM_FILE_NOT_FOUND::(0x20+0xC)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	44;"	d	line:44
+FILESYSTEM_FILE_NOT_OPENED_FOR_WRITE_ACCESS::(0x20+0x15)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	53;"	d	line:53
+FILESYSTEM_FILE_OPEN	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	81;"	t	line:81
+FILESYSTEM_FILE_READ	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	87;"	t	line:87
+FILESYSTEM_FILE_READ_ASYNC	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	88;"	t	line:88
+FILESYSTEM_FILE_RENAME	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	80;"	t	line:80
+FILESYSTEM_FILE_SEEK	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	83;"	t	line:83
+FILESYSTEM_FILE_SET_BUFFER	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	92;"	t	line:92
+FILESYSTEM_FILE_WRITE	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	84;"	t	line:84
+FILESYSTEM_FILE_WRITE_ASYNC	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	85;"	t	line:85
+FILESYSTEM_FILE_WRITE_STREAM	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	86;"	t	line:86
+FILESYSTEM_FIND_FIRST_ENTRY	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	76;"	t	line:76
+FILESYSTEM_FIND_NEXT_ENTRY	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	77;"	t	line:77
+FILESYSTEM_GET_FILE_ENTRY	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	93;"	t	line:93
+FILESYSTEM_GET_SECTOR_SIZE	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	91;"	t	line:91
+FILESYSTEM_ILLEGAL_FILENAME::(0x20+0x9)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	41;"	d	line:41
+FILESYSTEM_INSUFFICIENT_DISK_SPACE::(0x20+0xE)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	46;"	d	line:46
+FILESYSTEM_INVALID_CLUSTER::(0x20+0x17)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	55;"	d	line:55
+FILESYSTEM_INVALID_FAT_VOLUME::(0x20+0x18)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	56;"	d	line:56
+FILESYSTEM_INVALID_FILENAME::(0x20+0x5)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	37;"	d	line:37
+FILESYSTEM_INVALID_FORMAT_PARAMETERS::(0x20+0x1A)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	58;"	d	line:58
+FILESYSTEM_INVALID_HANDLE::(0x20+0x16)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	54;"	d	line:54
+FILESYSTEM_INVALID_PARAMETERS::(0x20+0x1D)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	61;"	d	line:61
+FILESYSTEM_INVALID_PATH::(0x20+0x7)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	39;"	d	line:39
+FILESYSTEM_INVALID_VOLUME_LABEL::(0x20+0x19)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	57;"	d	line:57
+FILESYSTEM_LFN_GENERATED::(0x20+0x12)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	50;"	d	line:50
+FILESYSTEM_MOUNT_VOLUME	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	74;"	t	line:74
+FILESYSTEM_NOT_A_DIRECTORY::(0x20+0x4)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	36;"	d	line:36
+FILESYSTEM_NOT_A_FILE::(0x20+0xB)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	43;"	d	line:43
+FILESYSTEM_OP_IN_PROGRESS::(0x20+0x10)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	48;"	d	line:48
+FILESYSTEM_ROOT_DIRECTORY_LIMIT_EXCEEDED::(0x20+0x1B)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	59;"	d	line:59
+FILESYSTEM_SECTOR_SIZE_NOT_SUPPORTED::(0x20+0x11)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	49;"	d	line:49
+FILESYSTEM_SEEK_FAILED::(0x20+0x14)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	52;"	d	line:52
+FILESYSTEM_SHORT_LFN_GENERATED::(0x20+0x13)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	51;"	d	line:51
+FILESYSTEM_STREAM_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	72;"	t	line:72
+FILESYSTEM_SUCCESS::0x0	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	32;"	d	line:32
+FILESYSTEM_UNKNOWN_ERROR::(0x20+0x1)	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	33;"	d	line:33
+SMLIB_SMLIB_H	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	21;"	d	line:21
+SM_ASYNC_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	266;"	t	line:266
+SM_ATTR_ARCHIVE::0x20	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	90;"	d	line:90
+SM_ATTR_DIRECTORY::0x10	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	86;"	d	line:86
+SM_ATTR_HIDDEN::0x2	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	74;"	d	line:74
+SM_ATTR_READ_ONLY::0x1	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	70;"	d	line:70
+SM_ATTR_SYSTEM::0x4	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	78;"	d	line:78
+SM_ATTR_VOLUME_ID::0x8	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	82;"	d	line:82
+SM_CANNOT_LOCK_FILE::0xA	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	52;"	d	line:52
+SM_COULD_NOT_MOUNT_VOLUME::0x8	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	50;"	d	line:50
+SM_DEVICE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	27;"	s	line:27	file:
+SM_DEVICE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	34;"	t	line:34	file:
+SM_DEVICE_ALREADY_REGISTERED::0x9	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	51;"	d	line:51
+SM_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	199;"	s	line:199
+SM_DIRECTORY_ENTRY	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	226;"	t	line:226
+SM_DRIVE_LABEL_ALREADY_IN_USE::0x3	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	45;"	d	line:45
+SM_FILE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	174;"	s	line:174
+SM_FILE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	187;"	t	line:187
+SM_FILESYSTEM	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	39;"	s	line:39	file:
+SM_FILESYSTEM	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	44;"	t	line:44	file:
+SM_FILESYSTEM_ALREADY_REGISTERED::0x1	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	43;"	d	line:43
+SM_FILE_ACCESS_APPEND::(0x4)	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	108;"	d	line:108
+SM_FILE_ACCESS_CREATE::(0x10)	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	116;"	d	line:116
+SM_FILE_ACCESS_OVERWRITE::(0x8)	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	112;"	d	line:112
+SM_FILE_ACCESS_READ::0x1	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	100;"	d	line:100
+SM_FILE_ACCESS_WRITE::0x2	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	104;"	d	line:104
+SM_FILE_FLAG_NO_BUFFERING::(0x20)	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	120;"	d	line:120
+SM_FILE_FLAG_OPTIMIZE_FOR_FLASH::(0x40)	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	124;"	d	line:124
+SM_INSUFFICIENT_MEMORY::0x2	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	44;"	d	line:44
+SM_INVALID_DRIVE_LABEL::0x4	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	46;"	d	line:46
+SM_INVALID_FILE_HANDLE::0x7	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	49;"	d	line:49
+SM_INVALID_PATH::0x5	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	47;"	d	line:47
+SM_MAX_DRIVE_LABEL_LENGTH::8	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	57;"	d	line:57
+SM_OPEN_FILE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	61;"	s	line:61	file:
+SM_OPEN_FILE	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	67;"	t	line:67	file:
+SM_OPERATION_NOT_SUPPORTED_ACCROSS_VOLUMES::0x6	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	48;"	d	line:48
+SM_PATH_SEPARATOR::'	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	59;"	d	line:59
+SM_QUERY	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	161;"	s	line:161
+SM_QUERY	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	166;"	t	line:166
+SM_SEEK_CURRENT::0x2	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	138;"	d	line:138
+SM_SEEK_END::0x3	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	142;"	d	line:142
+SM_SEEK_START::0x1	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	134;"	d	line:134
+SM_STREAM_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	286;"	t	line:286
+SM_STREAM_RESPONSE_READY::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	147;"	d	line:147
+SM_STREAM_RESPONSE_SKIP::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	148;"	d	line:148
+SM_STREAM_RESPONSE_STOP::STORAGE_MULTI_SECTOR_RESPONSE_	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	149;"	d	line:149
+SM_SUCCESS::0x0	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	42;"	d	line:42
+SM_SUPPORT_FILE_LOCKS	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	62;"	d	line:62
+SM_VOLUME	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	49;"	s	line:49	file:
+SM_VOLUME	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	56;"	t	line:56	file:
+SM_VOLUME_DISMOUNTED_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	250;"	t	line:250
+SM_VOLUME_MOUNTED_CALLBACK	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	238;"	t	line:238
+STOREMANLIB_FILESYSTEM_H	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	21;"	d	line:21
+access_time	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	216;"	m	line:216	struct:SM_DIRECTORY_ENTRY
+attributes	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	220;"	m	line:220	struct:SM_DIRECTORY_ENTRY
+create_directory	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	123;"	m	line:123	struct:FILESYSTEM
+create_time	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	208;"	m	line:208	struct:SM_DIRECTORY_ENTRY
+current_filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	232;"	l	line:232
+current_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	340;"	l	line:340
+current_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	405;"	l	line:405
+device	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1054;"	l	line:1054
+device	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	30;"	m	line:30	struct:SM_DEVICE	file:
+dir_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1010;"	l	line:1010
+dir_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	905;"	l	line:905
+dir_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	960;"	l	line:960
+dir_entry_access_time_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	116;"	m	line:116	struct:FILESYSTEM
+dir_entry_attributes_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	117;"	m	line:117	struct:FILESYSTEM
+dir_entry_create_time_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	114;"	m	line:114	struct:FILESYSTEM
+dir_entry_modify_time_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	115;"	m	line:115	struct:FILESYSTEM
+dir_entry_name_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	111;"	m	line:111	struct:FILESYSTEM
+dir_entry_name_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	112;"	m	line:112	struct:FILESYSTEM
+dir_entry_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	110;"	m	line:110	struct:FILESYSTEM
+dir_entry_size_offset	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	113;"	m	line:113	struct:FILESYSTEM
+dismount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	120;"	m	line:120	struct:FILESYSTEM
+drive_label	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	51;"	m	line:51	struct:SM_VOLUME	file:
+file_alloc	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	127;"	m	line:127	struct:FILESYSTEM
+file_buffer_allocation_required	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	106;"	m	line:106	struct:FILESYSTEM
+file_close	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	134;"	m	line:134	struct:FILESYSTEM
+file_delete	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	124;"	m	line:124	struct:FILESYSTEM
+file_flush	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	133;"	m	line:133	struct:FILESYSTEM
+file_get_unique_id	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	138;"	m	line:138	struct:FILESYSTEM
+file_handle_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	108;"	m	line:108	struct:FILESYSTEM
+file_id	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	544;"	l	line:544
+file_id	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	832;"	l	line:832
+file_open	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	126;"	m	line:126	struct:FILESYSTEM
+file_read	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	131;"	m	line:131	struct:FILESYSTEM
+file_read_async	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	132;"	m	line:132	struct:FILESYSTEM
+file_rename	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	125;"	m	line:125	struct:FILESYSTEM
+file_seek	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	128;"	m	line:128	struct:FILESYSTEM
+file_set_buffer	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	135;"	m	line:135	struct:FILESYSTEM
+file_write	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	129;"	m	line:129	struct:FILESYSTEM
+file_write_async	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	130;"	m	line:130	struct:FILESYSTEM
+file_write_stream	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	139;"	m	line:139	struct:FILESYSTEM
+filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	359;"	p	line:359	file:	signature:(*current_volume)->volume
+filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	41;"	m	line:41	struct:SM_FILESYSTEM	file:
+filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	53;"	m	line:53	struct:SM_VOLUME	file:
+filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	180;"	m	line:180	struct:SM_FILE
+filesystem_file_handle	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	179;"	m	line:179	struct:SM_FILE
+find_first_entry	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	121;"	m	line:121	struct:FILESYSTEM
+find_next_entry	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	122;"	m	line:122	struct:FILESYSTEM
+fs	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1011;"	l	line:1011
+fs	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	906;"	l	line:906
+fs	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	961;"	l	line:961
+get_file_entry	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	137;"	m	line:137	struct:FILESYSTEM
+get_sector_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	136;"	m	line:136	struct:FILESYSTEM
+handle	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	64;"	m	line:64	struct:SM_OPEN_FILE	file:
+i	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1078;"	l	line:1078
+id	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	29;"	m	line:29	struct:SM_DEVICE	file:
+id	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	63;"	m	line:63	struct:SM_OPEN_FILE	file:
+label	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	31;"	m	line:31	struct:SM_DEVICE	file:
+label_part	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1080;"	l	line:1080
+last_device	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	149;"	l	line:149
+last_filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	96;"	l	line:96
+last_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	231;"	l	line:231
+magic	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	181;"	m	line:181	struct:SM_FILE
+managed_buffer	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	182;"	m	line:182	struct:SM_FILE
+modify_time	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	212;"	m	line:212	struct:SM_DIRECTORY_ENTRY
+mount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	119;"	m	line:119	struct:FILESYSTEM
+mounted_volumes	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	74;"	v	line:74	file:
+name	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	104;"	m	line:104	struct:FILESYSTEM
+name	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	224;"	m	line:224	struct:SM_DIRECTORY_ENTRY
+new_volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	477;"	l	line:477
+next	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	32;"	m	line:32	struct:SM_DEVICE	file:
+next	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	42;"	m	line:42	struct:SM_FILESYSTEM	file:
+next	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	54;"	m	line:54	struct:SM_VOLUME	file:
+next	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	65;"	m	line:65	struct:SM_OPEN_FILE	file:
+open_file	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	545;"	l	line:545
+open_file	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	833;"	l	line:833
+open_files	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	79;"	v	line:79	file:
+open_files_lock	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	81;"	v	line:81
+original_volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	476;"	l	line:476
+path_len	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1079;"	l	line:1079
+path_separator	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	105;"	m	line:105	struct:FILESYSTEM
+query_handle	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	163;"	m	line:163	struct:SM_QUERY
+query_handle_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	109;"	m	line:109	struct:FILESYSTEM
+registered_devices	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	73;"	v	line:73	file:
+registered_filesystems	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	72;"	v	line:72	file:
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1009;"	l	line:1009
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	230;"	l	line:230
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	435;"	l	line:435
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	453;"	l	line:453
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	473;"	l	line:473
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	503;"	l	line:503
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	806;"	l	line:806
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	831;"	l	line:831
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	902;"	l	line:902
+ret	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	957;"	l	line:957
+size	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	204;"	m	line:204	struct:SM_DIRECTORY_ENTRY
+sm_create_directory	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	431;"	f	line:431	signature:(char* pathname)
+sm_create_directory	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	503;"	p	line:503	signature:( char* directory_name )
+sm_dismount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	338;"	f	line:338	signature:(char* label)
+sm_dismount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	396;"	p	line:396	signature:( char* label )
+sm_file_alloc	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	631;"	f	line:631	signature:(SM_FILE* file, uint32_t bytes)
+sm_file_alloc	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	593;"	p	line:593	signature:( SM_FILE* file, uint32_t bytes )
+sm_file_close	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	829;"	f	line:829	signature:(SM_FILE* file)
+sm_file_close	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	832;"	p	line:832	signature:( SM_FILE* file )
+sm_file_delete	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	451;"	f	line:451	signature:(char* filename)
+sm_file_delete	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	518;"	p	line:518	signature:( char* filename )
+sm_file_flush	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	804;"	f	line:804	signature:(SM_FILE* file)
+sm_file_flush	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	816;"	p	line:816	signature:( SM_FILE* file )
+sm_file_open	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	501;"	f	line:501	signature:(SM_FILE* file, char* filename, unsigned char access_flags)
+sm_file_open	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	565;"	p	line:565	signature:( SM_FILE* file, char* filename, unsigned char access_flags )
+sm_file_read	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	758;"	f	line:758	signature:(SM_FILE* file, unsigned char* buffer, uint32_t length, uint32_t* bytes_read)
+sm_file_read	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	760;"	p	line:760	signature:( SM_FILE* file, unsigned char* buffer, uint32_t bytes_to_read, uint32_t* bytes_read )
+sm_file_read_async	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	776;"	f	line:776	signature:( SM_FILE* file, unsigned char* buffer, uint32_t length, uint32_t* bytes_read, uint16_t* result, SM_ASYNC_CALLBACK callback, void* callback_context )
+sm_file_read_async	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	795;"	p	line:795	signature:( SM_FILE* file, unsigned char* buffer, uint32_t bytes_to_read, uint32_t* bytes_read, uint16_t* result, SM_ASYNC_CALLBACK callback, void* callback_context )
+sm_file_rename	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	471;"	f	line:471	signature:(char* original_filename, char* new_filename)
+sm_file_rename	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	539;"	p	line:539	signature:( char* original_filename, char* new_filename )
+sm_file_seek	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	672;"	f	line:672	signature:(SM_FILE* file, uint32_t offset, char mode)
+sm_file_seek	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	620;"	p	line:620	signature:( SM_FILE* file, uint32_t offset, char mode )
+sm_file_set_buffer	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	646;"	f	line:646	signature:(SM_FILE* file, unsigned char* buffer)
+sm_file_set_buffer	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	850;"	p	line:850	signature:( SM_FILE* file, unsigned char* buffer )
+sm_file_write	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	690;"	f	line:690	signature:(SM_FILE* file, unsigned char* buffer, uint32_t length)
+sm_file_write	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	641;"	p	line:641	signature:( SM_FILE* file, unsigned char* buffer, uint32_t bytes_to_write )
+sm_file_write_async	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	708;"	f	line:708	signature:( SM_FILE* file, unsigned char* buffer, uint32_t length, uint16_t* result, SM_ASYNC_CALLBACK callback, void* callback_context )
+sm_file_write_async	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	672;"	p	line:672	signature:( SM_FILE* file, unsigned char* buffer, uint32_t bytes_to_write, uint16_t* result, SM_ASYNC_CALLBACK callback, void* callback_context )
+sm_file_write_stream	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	731;"	f	line:731	signature:( SM_FILE* file, unsigned char* buffer, uint32_t length, uint16_t* result, SM_STREAM_CALLBACK callback, void* callback_context )
+sm_file_write_stream	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	732;"	p	line:732	signature:( SM_FILE* file, unsigned char* buffer, uint32_t bytes_to_write, uint16_t* result, SM_STREAM_CALLBACK callback, void* callback_context )
+sm_find_close	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1040;"	f	line:1040	signature:(SM_QUERY* query)
+sm_find_close	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	488;"	p	line:488	signature:( SM_QUERY* query )
+sm_find_first_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	955;"	f	line:955	signature:(char* path, unsigned char attributes, SM_DIRECTORY_ENTRY* entry, SM_QUERY* query)
+sm_find_first_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	448;"	p	line:448	signature:( char* path, unsigned char attributes, SM_DIRECTORY_ENTRY* entry, SM_QUERY* query )
+sm_find_next_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1007;"	f	line:1007	signature:(SM_DIRECTORY_ENTRY* entry, SM_QUERY* query)
+sm_find_next_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	473;"	p	line:473	signature:( SM_DIRECTORY_ENTRY* entry, SM_QUERY* query )
+sm_get_file_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	900;"	f	line:900	signature:(char* filename, SM_DIRECTORY_ENTRY* entry)
+sm_get_file_entry	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	421;"	p	line:421	signature:( char* filename, SM_DIRECTORY_ENTRY* entry )
+sm_get_volume_sector_size	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	403;"	f	line:403	signature:(char* label)
+sm_get_volume_sector_size	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	408;"	p	line:408	signature:( char* label )
+sm_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1052;"	f	line:1052	file:	signature:(uint16_t device_id, char media_ready)
+sm_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	89;"	p	line:89	file:	signature:(uint16_t device_id, char media_ready)
+sm_mount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	227;"	f	line:227	signature:(char* label, void* storage_device)
+sm_mount_volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	375;"	p	line:375	signature:( char* label, void* storage_device )
+sm_register_filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	94;"	f	line:94	signature:(FILESYSTEM* filesystem)
+sm_register_filesystem	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	329;"	p	line:329	signature:( FILESYSTEM* filesystem )
+sm_register_storage_device	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	147;"	f	line:147	signature:(STORAGE_DEVICE* device, char* label)
+sm_register_storage_device	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	356;"	p	line:356	signature:( STORAGE_DEVICE* device, char* label )
+sm_register_volume_dismounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	219;"	f	line:219	signature:(SM_VOLUME_DISMOUNTED_CALLBACK callback)
+sm_register_volume_dismounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	311;"	p	line:311	signature:( SM_VOLUME_DISMOUNTED_CALLBACK callback )
+sm_register_volume_mounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	210;"	f	line:210	signature:(SM_VOLUME_MOUNTED_CALLBACK callback)
+sm_register_volume_mounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	297;"	p	line:297	signature:( SM_VOLUME_MOUNTED_CALLBACK callback )
+sm_resolve_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1076;"	f	line:1076	file:	signature:(char* path, SM_VOLUME** vol, char** volume_path)
+sm_resolve_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	88;"	p	line:88	file:	signature:(char* path, SM_VOLUME** volume, char** volume_path)
+the_file	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	886;"	l	line:886
+tmp	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	341;"	l	line:341
+vol	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	229;"	l	line:229
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	1081;"	l	line:1081
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	433;"	l	line:433
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	454;"	l	line:454
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	474;"	l	line:474
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	504;"	l	line:504
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	52;"	m	line:52	struct:SM_VOLUME	file:
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	903;"	l	line:903
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	958;"	l	line:958
+volume	C:\Users\Fernan\Documents\fat32lib\smlib\sm.h	164;"	m	line:164	struct:SM_QUERY
+volume_1	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	475;"	l	line:475
+volume_dismounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	76;"	v	line:76	file:
+volume_handle_size	C:\Users\Fernan\Documents\fat32lib\smlib\filesystem.h	107;"	m	line:107	struct:FILESYSTEM
+volume_mounted_callback	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	75;"	v	line:75	file:
+volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	434;"	l	line:434
+volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	455;"	l	line:455
+volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	505;"	l	line:505
+volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	904;"	l	line:904
+volume_path	C:\Users\Fernan\Documents\fat32lib\smlib\sm.c	959;"	l	line:959

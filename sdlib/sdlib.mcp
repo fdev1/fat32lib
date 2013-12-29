@@ -51,11 +51,6 @@ TS{7D9C6ECE-785D-44CB-BA22-17BF2E119622}=-g
 TS{25AC22BD-2378-4FDB-BFB6-7345A15512D3}=-g -ansi -Wall -pedantic -mlarge-code -mlarge-data -mconst-in-code -funroll-loops -fomit-frame-pointer -fschedule-insns -fschedule-insns2
 TS{7DAC9A1D-4C45-45D6-B25A-D117C74E8F5A}=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -legacy-libc --boot=small_ram
 TS{509E5861-1E2A-483B-8B6B-CA8DB7F2DD78}=
-[VAULT]
-vault={1B368E2B-FF50-41FF-8C01-583CE166C30B}
-000=1.0
-001=\\10.10.0.130\d$\SourceSafe\srcsafe.ini
-002=$/fat32lib/sdlib
 [INSTRUMENTED_TRACE]
 enable=0
 transport=0
