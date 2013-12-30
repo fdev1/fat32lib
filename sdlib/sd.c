@@ -121,6 +121,7 @@
 // used by this implementation
 */
 #define SD_BLOCK_LENGTH							(0x200)
+#define SD_SPI_MODULE							(1)
 
 /*
 // used for marking queue entries
@@ -152,35 +153,35 @@
 // send a command to the SD card with
 // all-zeroes arguments
 */
-#define SEND_COMMAND(cmd)			\
-{									\
-	SPI_WRITE_DATA(cmd);			\
-	SPI_WRITE_DATA(0x00);			\
-	SPI_WRITE_DATA(0x00);			\
-	SPI_WRITE_DATA(0x00);			\
-	SPI_WRITE_DATA(0x00);			\
-	SPI_WRITE_DATA(0x95);			\
+#define SEND_COMMAND(spi_module, cmd)			\
+{											\
+	spi_write(spi_module, cmd);			\
+	spi_write(spi_module, 0x00);			\
+	spi_write(spi_module, 0x00);			\
+	spi_write(spi_module, 0x00);			\
+	spi_write(spi_module, 0x00);			\
+	spi_write(spi_module, 0x95);			\
 }
 
 /*
 // send a command /w args to the SD card
 */
-#define SEND_COMMAND_WITH_ARGS(cmd, arg0, arg1, arg2, arg3, crc)	\
+#define SEND_COMMAND_WITH_ARGS(spi_module, cmd, arg0, arg1, arg2, arg3, crc)	\
 {												\
-	SPI_WRITE_DATA(cmd);						\
-	SPI_WRITE_DATA(arg0);						\
-	SPI_WRITE_DATA(arg1);						\
-	SPI_WRITE_DATA(arg2);						\
-	SPI_WRITE_DATA(arg3);						\
-	SPI_WRITE_DATA(crc | 1);						\
+	spi_write(spi_module, cmd);						\
+	spi_write(spi_module, arg0);						\
+	spi_write(spi_module, arg1);						\
+	spi_write(spi_module, arg2);						\
+	spi_write(spi_module, arg3);						\
+	spi_write(spi_module, crc | 1);						\
 }
 
 /*
 // sends an IO command to the SD card
 */
-#define SEND_IO_COMMAND(cmd, address)				\
+#define SEND_IO_COMMAND(spi_module, cmd, address)				\
 {													\
-	sd_send_io_command(cmd, address);				\
+	sd_send_io_command(spi_module, cmd, address);				\
 }
 
 /*
@@ -199,7 +200,7 @@
 	driver->context.timeout = SD_SPI_TIMEOUT;						\
 	do 																\
 	{																\
-		SPI_READ_DATA(token);										\
+		token = spi_read(driver->context.spi_module);						\
 		token &= SD_DATA_RESPONSE_MASK;								\
 		driver->context.timeout--;									\
 	}																\
@@ -231,12 +232,12 @@
 /*
 // wait while the SD card is busy
 */
-#define WAIT_WHILE_CARD_BUSY()		\
+#define WAIT_WHILE_CARD_BUSY(spi_module)		\
 {									\
 	unsigned char __temp__;			\
 	do 								\
 	{ 								\
-		SPI_READ_DATA(__temp__); 	\
+		__temp__ = spi_read(spi_module); 	\
 	}								\
 	while (__temp__ == 0x0);		\
 }	
@@ -253,7 +254,7 @@ uint16_t sd_erase(SD_DRIVER* driver, uint32_t start_address, uint32_t end_addres
 static uint16_t sd_wait_for_data(SD_DRIVER* driver);
 static void sd_wait_for_response(SD_DRIVER* driver, unsigned char* data);
 static unsigned char sd_translate_response(unsigned char response);
-static void sd_send_io_command(unsigned char cmd, uint32_t address);
+static void sd_send_io_command(SPI_MODULE spi_module, unsigned char cmd, uint32_t address);
 
 #if defined(SD_ENABLE_MULTI_BLOCK_WRITE)
 uint16_t sd_write_multiple_blocks
@@ -288,19 +289,19 @@ void sd_register_media_changed_callback(SD_DRIVER* driver, SD_MEDIA_STATE_CHANGE
 */
 void sd_get_storage_device_interface(SD_DRIVER* driver, STORAGE_DEVICE* device) 
 {
-	device->Media = driver;
-	device->ReadSector = (STORAGE_DEVICE_READ) &sd_read_sector;
-	device->WriteSector = (STORAGE_DEVICE_WRITE) &sd_write_sector;
-	device->GetSectorSize = (STORAGE_DEVICE_GET_SECTOR_SIZE) &sd_get_sector_size;
-	device->ReadSectorAsync = (STORAGE_DEVICE_READ_ASYNC) &sd_read_sector_async;
-	device->WriteSectorAsync = (STORAGE_DEVICE_WRITE_ASYNC) &sd_write_sector_async;
-	device->GetTotalSectors = (STORAGE_DEVICE_GET_SECTOR_COUNT) &sd_get_total_sectors;
-	device->get_device_id = (STORAGE_GET_DEVICE_ID) &sd_get_device_id;
-	device->get_page_size = (STORAGE_GET_PAGE_SIZE) &sd_get_page_size;
+	device->driver = driver;
+	device->read_sector 					= (STORAGE_DEVICE_READ) &sd_read_sector;
+	device->write_sector 					= (STORAGE_DEVICE_WRITE) &sd_write_sector;
+	device->get_sector_size 				= (STORAGE_DEVICE_GET_SECTOR_SIZE) &sd_get_sector_size;
+	device->read_sector_async 				= (STORAGE_DEVICE_READ_ASYNC) &sd_read_sector_async;
+	device->write_sector_async 				= (STORAGE_DEVICE_WRITE_ASYNC) &sd_write_sector_async;
+	device->get_total_sectors 				= (STORAGE_DEVICE_GET_SECTOR_COUNT) &sd_get_total_sectors;
+	device->get_device_id 					= (STORAGE_GET_DEVICE_ID) &sd_get_device_id;
+	device->get_page_size 					= (STORAGE_GET_PAGE_SIZE) &sd_get_page_size;
 	device->register_media_changed_callback = (STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK) &sd_register_media_changed_callback;
-	device->erase_sectors = (STORAGE_DEVICE_ERASE_SECTORS) &sd_erase_sectors;
+	device->erase_sectors 					= (STORAGE_DEVICE_ERASE_SECTORS) &sd_erase_sectors;
 	#if defined(SD_ENABLE_MULTI_BLOCK_WRITE)
-	device->write_multiple_sectors = (STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS) &sd_write_multiple_sectors;
+	device->write_multiple_sectors 			= (STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS) &sd_write_multiple_sectors;
 	#endif
 	
 }
@@ -422,9 +423,9 @@ uint16_t sd_write_multiple_sectors(SD_DRIVER* driver, uint32_t sector_address, u
 uint16_t sd_init
 (
 	SD_DRIVER* driver, 
+	SPI_MODULE spi_module,
 	DMA_CHANNEL* const dma_channel1, 
 	DMA_CHANNEL* const dma_channel2, 
-	const unsigned char bus_dma_irq,
 	unsigned char* async_buffer,
 	char* dma_byte,
 	BIT_POINTER media_ready,
@@ -467,12 +468,12 @@ uint16_t sd_init
 	driver->context.media_changed_callback = 0;
 	driver->context.id = id;
 	driver->context.async_buffer = async_buffer;
+	driver->context.spi_module = spi_module;
 	/*
 	// save copy of the DMA channel pointers
 	*/
 	driver->context.dma_channel_1 = dma_channel1;
 	driver->context.dma_channel_2 = dma_channel2;
-	driver->context.dma_spi_bus_irq = bus_dma_irq;
 	driver->context.dma_byte = dma_byte;
 	/*
 	// configure the dma channels
@@ -509,8 +510,8 @@ void sd_init_dma(SD_DRIVER* sd)
 	DMA_SET_INTERRUPT_MODE( sd->context.dma_channel_1, DMA_INTERRUPT_MODE_FULL );
 	DMA_SET_NULL_DATA_WRITE_MODE( sd->context.dma_channel_1, 0 );
 	DMA_SET_ADDRESSING_MODE( sd->context.dma_channel_1, DMA_ADDR_REG_IND_NO_INCREMENT );
-	DMA_SET_PERIPHERAL( sd->context.dma_channel_1, sd->context.dma_spi_bus_irq );
-	DMA_SET_PERIPHERAL_ADDRESS( sd->context.dma_channel_1, &SPIBUF );
+	DMA_SET_PERIPHERAL( sd->context.dma_channel_1, SPI_GET_DMA_REQ(sd->context.spi_module));
+	DMA_SET_PERIPHERAL_ADDRESS( sd->context.dma_channel_1, SPI_BUFFER_ADDRESS(sd->context.spi_module));
 	DMA_SET_BUFFER_A(sd->context.dma_channel_1, sd->context.dma_byte);
 	DMA_SET_BUFFER_B(sd->context.dma_channel_1, sd->context.dma_byte);
 	DMA_SET_MODE( sd->context.dma_channel_1, DMA_MODE_ONE_SHOT );
@@ -527,8 +528,8 @@ void sd_init_dma(SD_DRIVER* sd)
 	DMA_SET_INTERRUPT_MODE(sd->context.dma_channel_2, DMA_INTERRUPT_MODE_FULL);
 	DMA_SET_NULL_DATA_WRITE_MODE(sd->context.dma_channel_2, 0);
 	DMA_SET_ADDRESSING_MODE(sd->context.dma_channel_2, DMA_ADDR_REG_IND_W_POST_INCREMENT);
-	DMA_SET_PERIPHERAL(sd->context.dma_channel_2, sd->context.dma_spi_bus_irq);
-	DMA_SET_PERIPHERAL_ADDRESS(sd->context.dma_channel_2, &SPIBUF);
+	DMA_SET_PERIPHERAL(sd->context.dma_channel_2, SPI_GET_DMA_REQ(sd->context.spi_module));
+	DMA_SET_PERIPHERAL_ADDRESS(sd->context.dma_channel_2, SPI_BUFFER_ADDRESS(sd->context.spi_module));
 	DMA_SET_MODE(sd->context.dma_channel_2, DMA_MODE_ONE_SHOT);
 	DMA_SET_TRANSFER_LENGTH(sd->context.dma_channel_2, SD_BLOCK_LENGTH - 1);
 	DMA_CHANNEL_CLEAR_INTERRUPT_FLAG(sd->context.dma_channel_2);
@@ -546,10 +547,13 @@ uint16_t sd_init_internal(SD_DRIVER* driver)
 	unsigned char c_size_mult;	/* c_size_mult of the CSD (legacy cards) */
 	unsigned char sector_size;	/* flash page size (legacy cards) */
 	unsigned char speed_class;	/* speed class of version 2 cards */
+	SPI_MODULE spi_module;
 	uint32_t block_nr;			/* block number (legacy cards) */
 	uint32_t c_size = 0;		/* c_size field of the CSD */
 	uint16_t mult;				/* card size multiplier (legacy cards) */
 	uint16_t err = 0;			/* temp variable */
+	
+	spi_module = driver->context.spi_module;
 
 init_retry:
 	/*
@@ -559,7 +563,8 @@ init_retry:
 	/*
 	// initialize the sp module @ < 400 khz
 	*/
-	spi_init();	/* 310.5 khz */
+	spi_init(spi_module);	/* 310.5 khz */
+	spi_set_clock(spi_module, 400000L);
 	/*
 	// if the card is not ready return error
 	*/
@@ -591,25 +596,25 @@ init_retry:
 	// send at least 74 clock pulses to the card for it
 	// to initialize (80 is as close as we can get).
 	*/
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
 	/*
 	// send the reset command
 	*/
-	SEND_COMMAND(GO_IDLE_STATE);
+	SEND_COMMAND(spi_module, GO_IDLE_STATE);
 	/*
 	// wait for the response
 	*/
@@ -626,21 +631,34 @@ init_retry:
 	/*
 	// translate the response
 	*/	
-	tmp = TRANSLATE_RESPONSE(tmp);
+	/* tmp = TRANSLATE_RESPONSE(tmp); */
+	err = SD_SPI_TIMEOUT;
 	/*
 	// send 8 clock pulses
 	*/ 
-	SPI_WRITE_DATA(0xFF);
+	/* spi_write(spi_module, 0xFF); */
+	while (tmp != 0xFF && tmp & SD_RSP_IDLE)
+	{
+		if (!err--)
+		{
+			DEASSERT_CS(driver);
+			BP_CLR(driver->context.busy_signal);
+			return tmp;
+		}
+		tmp = spi_read(spi_module);
+	}
+	err = 0;
 	/*
 	// if an error was returned, then
 	// deassert the CS line and return
 	// the error code
 	*/
-	if (tmp != SD_IDLE) 
+	if (tmp && tmp != 0xFF /*!= SD_IDLE */) 
 	{
 		if (retries++ < 3)
+		{
 			goto init_retry;
-			
+		}	
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		return tmp;
@@ -648,7 +666,7 @@ init_retry:
 	/*
 	// send the command 8
 	*/
-	SEND_COMMAND_WITH_ARGS(SEND_IF_COND, 0x00, 0x00, 0x01, 0xAA, 0x86);
+	SEND_COMMAND_WITH_ARGS(spi_module, SEND_IF_COND, 0x00, 0x00, 0x01, 0xAA, 0x86);
 	/*
 	// discard the 1st 4 bytes of the response
 	*/	
@@ -682,7 +700,7 @@ init_retry:
 		/*
 		// send 8 clock pulses to the card
 		*/	
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 		/*
 		// skip the version 2-specific steps of the
 		// initialization process
@@ -696,29 +714,39 @@ init_retry:
 	/*
 	// discard the next 2 bytes of the SEND_IF_COND response
 	*/
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
 	/*
 	// read the next byte which is the supported 
 	// operating voltage of the card
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// check that the card supports our operating
 	// voltage
 	*/
 	if ((tmp & 0xF) != 0x1)
+	{
+		/*
+		// give it a minute for voltage to rise before retrying
+		*/
+		for (err = 0; err < 0xFFFF; err++);
 		err = SD_VOLTAGE_NOT_SUPPORTED;
+	}	
 	/*
 	// read the 5th byte of the SEND_IF_COND command response. 
 	// This should be an echo of our 4th parameter
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// make sure we understand each other
 	*/
 	if (tmp != 0xAA) 
 	{
+		if (retries++ < 5)
+		{
+			goto init_retry;
+		}	
 		DEASSERT_CS(driver);
 		err = SD_COMMUNICATION_ERROR;
 	}
@@ -726,11 +754,11 @@ init_retry:
 	// read and discard the last byte of the
 	// SEND_IF_COND command response (crc check)
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// send 8 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
+	spi_write(spi_module, 0xFF);
 	/*
 	// if an error occurred return the error code
 	*/
@@ -751,7 +779,7 @@ __legacy_card:
 		// send an APP_CMD (55) command to indicate that the next
 		// command is an application specific command
 		*/
-		SEND_COMMAND(APP_CMD);
+		SEND_COMMAND(spi_module, APP_CMD);
 		/*
 		// read the response
 		*/
@@ -768,7 +796,7 @@ __legacy_card:
 		/*
 		// send 8 clock pulses to the card
 		*/
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 		/*
 		// if we got an invalid command response then the card is 
 		// not a valid SD card, it must be an MMC card
@@ -783,7 +811,7 @@ __legacy_card:
 		// send the SD_APP_OP_COND (41) command to find out if the card 
 		// has completed it's initialization process
 		*/
-		SEND_COMMAND_WITH_ARGS(SD_APP_OP_COND, 0x50, 0x0, 0x0, 0x0, 0x95);
+		SEND_COMMAND_WITH_ARGS(spi_module, SD_APP_OP_COND, 0x50, 0x0, 0x0, 0x0, 0x95);
 		/*
 		// discard the 1st byte of the response
 		*/
@@ -806,7 +834,7 @@ __legacy_card:
 		/*
 		// send 8 clock cycles
 		*/
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 		/*
 		// if we received an error from the
 		// card then return the error code
@@ -824,7 +852,7 @@ __legacy_card:
 	// register in order to check that the card supports our
 	// supply volate
 	*/
-	SEND_COMMAND(READ_OCR);
+	SEND_COMMAND(spi_module, READ_OCR);
 	/*
 	// read the response
 	*/
@@ -855,7 +883,7 @@ __legacy_card:
 	/*
 	// read the 1st byte of the OCR
 	*/
-	SPI_READ_DATA(tmp);			/* OCR1 */
+	tmp = spi_read(spi_module);			/* OCR1 */
 	/*
 	// save the card capacity status bit
 	*/
@@ -863,7 +891,7 @@ __legacy_card:
 	/*
 	// read the 2nd byte of the OCR
 	*/
-	SPI_READ_DATA(tmp);			/* OCR2 */
+	tmp = spi_read(spi_module);			/* OCR2 */
 	/*
 	// if neither bit 20 or 21 of the OCR register is set 
 	// then the card does not support our supply volage
@@ -877,12 +905,12 @@ __legacy_card:
 	/*
 	// read and discard the rest of the OCR
 	*/
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
 	/*
 	// send 8 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
+	spi_write(spi_module, 0xFF);
 	/*
 	// send the SEND_CSD command
 	// NOTE: Version 2 of the CSD is only applied to SDHC and 
@@ -891,7 +919,7 @@ __legacy_card:
 	// we check for driver->card_info.high_capacity instead of the
 	// version.
 	*/
-	SEND_COMMAND(SEND_CSD);
+	SEND_COMMAND(spi_module, SEND_CSD);
 	/*
 	// wait for the response
 	*/
@@ -914,7 +942,7 @@ __legacy_card:
 	*/
 	if (tmp) 
 	{
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		return tmp;		
@@ -936,26 +964,26 @@ __legacy_card:
 	// read and discard the 1st byte 
 	// ofthe CSD register
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// read the 2nd byte of the CSD register into the TAAC 
 	// field of the driver structure
 	*/
-	SPI_READ_DATA(driver->card_info.taac);
+	driver->card_info.taac = spi_read(spi_module);
 	/*
 	// read the 3rd byte of the CSD register into the NSAC 
 	// field of the driver structure
 	*/
-	SPI_READ_DATA(driver->card_info.nsac);
+	driver->card_info.nsac = spi_read(spi_module);
 	/*
 	// discard bytes 4 and 5 of CSD
 	*/
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
 	/*
 	// read byte 6 of CSD
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// the lower 4 bits of the 6th byte of
 	// the CSD is the READ_BL_LEN value
@@ -964,7 +992,7 @@ __legacy_card:
 	/*
 	// read the 7th byte of the CSD register
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// VERSION 1:
 	// bits 1-0 of the 7th byte of the CSD contains bits
@@ -977,7 +1005,7 @@ __legacy_card:
 	/*
 	// read the 8th byte
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// version 1:
 	// the 8th byte of the CSD contains bits 9-2 of the c_size field
@@ -996,7 +1024,7 @@ __legacy_card:
 	/*
 	// read the 9th byte of the CSD register
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// copy bits 4-2 of the 9th byte of the
 	// CSD register to the R2W_FACTOR field of
@@ -1025,7 +1053,7 @@ __legacy_card:
 	/*
 	// read the 10th byte of the CSD register
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// version 1:
 	// bits 7 of the 10th byte of the CSD is bit 0 of C_SIZE_MULT field
@@ -1043,7 +1071,7 @@ __legacy_card:
 	/*
 	// read the 11th byte of the CSD register
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// version 1: 11th byte of the CSD register
 	// bit 7 contains bit 0 of the C_SIZE_MULT field
@@ -1059,7 +1087,7 @@ __legacy_card:
 	/*
 	// read the 12th byte
 	*/
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
 	/*
 	// version 1:
 	// bit 7 of 12th byte contains bit 0 0f SECTOR_SIZE field
@@ -1072,35 +1100,27 @@ __legacy_card:
 	/*
 	// read and discard bytes 13-16 of the CSD register
 	*/
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);
 	/*
 	// read and discard the 16 bit crc
 	*/
-	SPI_READ_DATA(tmp);
-	SPI_READ_DATA(tmp);	
+	tmp = spi_read(spi_module);
+	tmp = spi_read(spi_module);	
 	/*
 	// send 8 clock pulses to card
 	*/
-	SPI_WRITE_DATA(0xFF);
+	spi_write(spi_module, 0xFF);
 	/*
 	// de-assert the CS line of the SD card
 	*/
 	DEASSERT_CS(driver);
 	/*
-	// disable spi
+	// set the clock speed at 25 MB/s or whatever device supports
 	*/
-	SPI_DISABLE();
-	/*
-	// set the clock speed at top speed (10 mhz)
-	*/
-	SPI_SET_PRESCALER_MAX();	/* 10 mhz @ 40 mips */
-	/*
-	// enable spi
-	*/
-	SPI_ENABLE();
+	spi_set_clock(spi_module, 25000000L);	/* 10 mhz @ 40 mips */
 	/*
 	// assert the CS line of the SD card
 	*/
@@ -1108,8 +1128,8 @@ __legacy_card:
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);	
-	SPI_WRITE_DATA(0xFF);	
+	spi_write(spi_module, 0xFF);	
+	spi_write(spi_module, 0xFF);	
 	/*
 	// calculate the SD card's capacity
 	*/
@@ -1155,7 +1175,7 @@ __legacy_card:
 		// send an APP_CMD (55) command to indicate that the next
 		// command is an application specific command
 		*/
-		SEND_COMMAND(APP_CMD);
+		SEND_COMMAND(spi_module, APP_CMD);
 		/*
 		// read the response
 		*/
@@ -1172,7 +1192,7 @@ __legacy_card:
 		/*
 		// send 8 clock pulses to the card
 		*/
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 		/*
 		// if we got an invalid command response then the card is 
 		// not a valid SD card, it must be an MMC card. This should never
@@ -1189,7 +1209,7 @@ __legacy_card:
 		/*
 		// send the SEND_STATUS command
 		*/
-		SEND_COMMAND(SEND_STATUS);
+		SEND_COMMAND(spi_module, SEND_STATUS);
 		/*
 		// wait for the response
 		*/
@@ -1212,7 +1232,7 @@ __legacy_card:
 		*/
 		if (tmp) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			return tmp;		
@@ -1234,27 +1254,27 @@ __legacy_card:
 		// SD_STATUS is 64 bytes wide
 		// Lets read and discard the 1st 8 bytes
 		*/
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);	
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);	
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);	
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);	
+		tmp = spi_read(spi_module);
+		tmp = spi_read(spi_module);	
+		tmp = spi_read(spi_module);
+		tmp = spi_read(spi_module);	
+		tmp = spi_read(spi_module);
+		tmp = spi_read(spi_module);	
+		tmp = spi_read(spi_module);
+		tmp = spi_read(spi_module);	
 		/*
 		// read the speed class
 		*/
-		SPI_READ_DATA(speed_class);
+		speed_class = spi_read(spi_module);
 		/*
 		// read and discard the 10th byte
 		*/
-		SPI_READ_DATA(tmp);	
+		tmp = spi_read(spi_module);	
 		/*
 		// read byte 11 which contains the AU_SIZE field
 		// in the upper 4 bits
 		*/
-		SPI_READ_DATA(tmp);	
+		tmp = spi_read(spi_module);	
 		/*
 		// shift in order to get the upper 4 bits
 		*/		
@@ -1319,7 +1339,7 @@ __legacy_card:
 		// read byte 12 which contains the upper byte of the
 		// ERASE_SIZE field
 		*/
-		SPI_READ_DATA(tmp);
+		tmp = spi_read(spi_module);
 		/*
 		// we'll store it in the card's ru field for now
 		*/
@@ -1327,23 +1347,23 @@ __legacy_card:
 		/*
 		// now we read byte 13 which contains the lower byte
 		*/
-		SPI_READ_DATA(tmp);
+		tmp = spi_read(spi_module);
 		/*
 		// read and discard the next 51 bytes
 		*/
 		for (err = 0; err < 51; err++)
 		{
-			SPI_READ_DATA(tmp);
+			tmp = spi_read(spi_module);
 		}	
 		/*
 		// read and discard the 16 bit crc
 		*/
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);	
+		tmp = spi_read(spi_module);
+		tmp = spi_read(spi_module);	
 		/*
 		// send 8 clock pulses to card
 		*/
-		SPI_WRITE_DATA(0xFF);
+		spi_write(spi_module, 0xFF);
 	}	
 	/*
 	// de-assert the CS line
@@ -1520,7 +1540,7 @@ uint16_t sd_read
 		/*
 		// send the read command
 		*/	
-		SEND_IO_COMMAND(READ_SINGLE_BLOCK, address);
+		SEND_IO_COMMAND(driver->context.spi_module, READ_SINGLE_BLOCK, address);
 		/*
 		// read the response
 		*/
@@ -1544,7 +1564,7 @@ uint16_t sd_read
 		*/
 		if (tmp != 0) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(driver->context.spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			driver->context.busy = 0;
@@ -1651,7 +1671,7 @@ uint16_t sd_read
 		/*
 		// send the read command
 		*/	
-		SEND_IO_COMMAND(READ_SINGLE_BLOCK, address);
+		SEND_IO_COMMAND(driver->context.spi_module, READ_SINGLE_BLOCK, address);
 		/*
 		// read the response
 		*/
@@ -1675,7 +1695,7 @@ uint16_t sd_read
 		*/
 		if (tmp != 0) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(driver->context.spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			driver->context.busy = 0;
@@ -1698,19 +1718,22 @@ uint16_t sd_read
 		/*
 		// copy incoming data to buffer
 		*/
+		/*
 		for ( i = 0; i < SD_BLOCK_LENGTH; i++ ) 
 		{
-			SPI_READ_DATA(*buffer++);
+			*buffer++ = spi_read(driver->context.spi_module);
 		}
+		*/
+		spi_read_buffer(driver->context.spi_module, buffer, SD_BLOCK_LENGTH);
 		/*
 		// read and discard the 16-bit crc
 		*/
-		SPI_READ_DATA(tmp);
-		SPI_READ_DATA(tmp);
+		tmp = spi_read(driver->context.spi_module);
+		tmp = spi_read(driver->context.spi_module);
 		/*
 		// send 8 clock cycles
 		*/
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		/*
 		// de-assert the CS line
 		*/
@@ -1763,12 +1786,12 @@ uint16_t sd_erase
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// send the start block
 	*/	
-	SEND_IO_COMMAND(ERASE_WR_BLK_START, start_address);
+	SEND_IO_COMMAND(driver->context.spi_module, ERASE_WR_BLK_START, start_address);
 	/*
 	// read the response
 	*/
@@ -1788,7 +1811,7 @@ uint16_t sd_erase
 	*/
 	if (tmp) 
 	{		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		driver->context.busy = 0;
@@ -1797,12 +1820,12 @@ uint16_t sd_erase
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// send the end block
 	*/	
-	SEND_IO_COMMAND(ERASE_WR_BLK_END, end_address);
+	SEND_IO_COMMAND(driver->context.spi_module, ERASE_WR_BLK_END, end_address);
 	/*
 	// read the response
 	*/
@@ -1822,7 +1845,7 @@ uint16_t sd_erase
 	*/
 	if (tmp) 
 	{		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		driver->context.busy = 0;
@@ -1831,12 +1854,12 @@ uint16_t sd_erase
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// send the write command
 	*/	
-	SEND_COMMAND(ERASE);
+	SEND_COMMAND(driver->context.spi_module, ERASE);
 	/*
 	// read the response
 	*/
@@ -1856,7 +1879,7 @@ uint16_t sd_erase
 	*/
 	if (tmp) 
 	{		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		driver->context.busy = 0;
@@ -1865,12 +1888,12 @@ uint16_t sd_erase
 	/*
 	// wait
 	*/
-	WAIT_WHILE_CARD_BUSY();
+	WAIT_WHILE_CARD_BUSY(driver->context.spi_module);
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// de-assert CS
 	*/
@@ -2043,12 +2066,12 @@ uint16_t sd_write
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// send the write command
 	*/	
-	SEND_IO_COMMAND(WRITE_SINGLE_BLOCK, address);
+	SEND_IO_COMMAND(driver->context.spi_module, WRITE_SINGLE_BLOCK, address);
 	/*
 	// read the response
 	*/
@@ -2072,7 +2095,7 @@ uint16_t sd_write
 	*/
 	if (tmp) 
 	{		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		driver->context.busy = 0;
@@ -2098,7 +2121,7 @@ uint16_t sd_write
 		// send the start token and let the
 		// DMA do the rest
 		*/
-		SPI_WRITE_DATA(SD_BLOCK_START_TOKEN);
+		spi_write(driver->context.spi_module, SD_BLOCK_START_TOKEN);
 		/*
 		// set dma buffer
 		*/
@@ -2166,19 +2189,22 @@ uint16_t sd_write
 		/*
 		// send the start token
 		*/
-		SPI_WRITE_DATA(SD_BLOCK_START_TOKEN);
+		spi_write(driver->context.spi_module, SD_BLOCK_START_TOKEN);
 		/*
 		// transfer the block of data & crc
 		*/
+		/*
 		for ( i = 0; i < SD_BLOCK_LENGTH; i++ )	
 		{		
-			SPI_WRITE_DATA(buffer[i]);
+			spi_write(driver->context.spi_module, buffer[i]);
 		}
+		*/
+		spi_write_buffer(driver->context.spi_module, buffer, SD_BLOCK_LENGTH);
 		/*
 		// write the 16-bit CRC
 		*/
-		/*SPI_WRITE_DATA(0x0);
-		SPI_WRITE_DATA(0X1);*/
+		/*spi_write(driver->context.spi_module, 0x0);
+		spi_write(driver->context.spi_module, 0X1);*/
 		/*
 		// read the data response
 		*/
@@ -2199,7 +2225,7 @@ uint16_t sd_write
 		*/
 		if (SD_DATA_RESPONSE_ACCEPTED == (tmp & SD_DATA_RESPONSE_ACCEPTED)) 
 		{
-			WAIT_WHILE_CARD_BUSY();
+			WAIT_WHILE_CARD_BUSY(driver->context.spi_module);
 		}
 		/*
 		// if the data was rejected due to a CRC error
@@ -2207,7 +2233,7 @@ uint16_t sd_write
 		*/		
 		else if (SD_DATA_RESPONSE_REJECTED_CRC_ERROR == (tmp & SD_DATA_RESPONSE_REJECTED_CRC_ERROR)) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(driver->context.spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			driver->context.busy = 0;
@@ -2219,7 +2245,7 @@ uint16_t sd_write
 		*/
 		else if (SD_DATA_RESPONSE_REJECTED_WRITE_ERROR == (tmp & SD_DATA_RESPONSE_REJECTED_WRITE_ERROR)) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(driver->context.spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			driver->context.busy = 0;
@@ -2228,7 +2254,7 @@ uint16_t sd_write
 		/*
 		// send the SEND_STATUS command
 		*/
-		SEND_COMMAND(SEND_STATUS);
+		SEND_COMMAND(driver->context.spi_module, SEND_STATUS);
 		/*
 		// wait for the response
 		*/
@@ -2251,36 +2277,36 @@ uint16_t sd_write
 		*/
 		if (tmp) 
 		{
-			SPI_WRITE_DATA(0xFF);
+			spi_write(driver->context.spi_module, 0xFF);
 			DEASSERT_CS(driver);
 			BP_CLR(driver->context.busy_signal);
 			return tmp;		
 		}
 		
-		SPI_READ_DATA(tmp);
+		tmp = spi_read(driver->context.spi_module);
 		
 		
 		if (tmp != 0)
 		{
-			while(1);
+			HALT();
 		
 		}
 		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		
 		/*
 		// if the card is still busy
 		// the time slice
 		*/
 		/*
-		//SPI_READ_DATA(tmp);
+		//tmp = spi_read(driver->context.spi_module);
 		//if  (tmp == 0x0)
 		//	return;
 		*/
 		/*
 		// clock out 8 cycles
 		*/
-		SPI_WRITE_DATA( 0xFF );
+		spi_write(driver->context.spi_module,  0xFF );
 		/*
 		// de-assert the CS line
 		*/
@@ -2520,12 +2546,12 @@ enqueue_request:
 	/*
 	// send 16 clock pulses to the card
 	*/
-	SPI_WRITE_DATA(0xFF);
-	SPI_WRITE_DATA(0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
+	spi_write(driver->context.spi_module, 0xFF);
 	/*
 	// send the write command
 	*/	
-	SEND_IO_COMMAND(WRITE_MULTIPLE_BLOCK, address);
+	SEND_IO_COMMAND(driver->context.spi_module, WRITE_MULTIPLE_BLOCK, address);
 	/*
 	// read the response
 	*/
@@ -2549,7 +2575,7 @@ enqueue_request:
 	*/
 	if (tmp) 
 	{		
-		SPI_WRITE_DATA(0xFF);
+		spi_write(driver->context.spi_module, 0xFF);
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
 		driver->context.busy = 0;
@@ -2601,7 +2627,7 @@ enqueue_request:
 	// send the start token and let the
 	// DMA do the rest
 	*/
-	SPI_WRITE_DATA(SD_BLOCK_START_TOKEN_MULT);
+	spi_write(driver->context.spi_module, SD_BLOCK_START_TOKEN_MULT);
 	/*
 	// set dma buffer
 	*/
@@ -2699,7 +2725,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 			/*
 			// try to mount the card
 			*/
-			i = sd_init_internal(sd);
+			if (!BP_GET(sd->context.media_ready))
+			{
+				i = sd_init_internal(sd);
+			}
+			else
+			{
+				i = 1;
+			}	
 			/*
 			// update the state
 			*/
@@ -2729,12 +2762,12 @@ void sd_idle_processing(SD_DRIVER* sd)
 				/*
 				// read and discard the 16-bit crc
 				*/
-				SPI_READ_DATA(tmp);
-				SPI_READ_DATA(tmp);
+				tmp = spi_read(sd->context.spi_module);
+				tmp = spi_read(sd->context.spi_module);
 				/*
 				// send 8 clock cycles
 				*/
-				SPI_WRITE_DATA(0xFF);
+				spi_write(sd->context.spi_module, 0xFF);
 				/*
 				// de-assert the CS line
 				*/
@@ -2800,8 +2833,8 @@ void sd_idle_processing(SD_DRIVER* sd)
 				/*
 				// write the 16-bit CRC
 				*/
-				/*SPI_WRITE_DATA(0x0);
-				SPI_WRITE_DATA(0X1); */
+				/*spi_write(sd->context.spi_module, 0x0);
+				spi_write(sd->context.spi_module, 0X1); */
 				/*
 				// wait for the data transfer response token from the card
 				*/
@@ -2818,7 +2851,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock cycles
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -2874,7 +2907,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock pulses to the card
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -2920,7 +2953,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock pulses to the card
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -2960,7 +2993,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 				// if the card is still programming relinquish
 				// the time slice
 				*/
-				SPI_READ_DATA(tmp);
+				tmp = spi_read(sd->context.spi_module);
 				if  (tmp == 0x0)
 					return;
 				/*
@@ -2970,7 +3003,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 				/*
 				// clock out 8 cycles
 				*/
-				SPI_WRITE_DATA(0xFF);
+				spi_write(sd->context.spi_module, 0xFF);
 				/*
 				// de-assert the CS line
 				*/
@@ -3008,8 +3041,8 @@ void sd_idle_processing(SD_DRIVER* sd)
 				/*
 				// write the 16-bit CRC
 				*/
-				/*SPI_WRITE_DATA(0x0);
-				SPI_WRITE_DATA(0X1); */
+				/*spi_write(sd->context.spi_module, 0x0);
+				spi_write(sd->context.spi_module, 0X1); */
 				/*
 				// record time of block completion
 				*/
@@ -3041,7 +3074,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock cycles
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -3181,7 +3214,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock pulses to the card
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -3229,7 +3262,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// send 8 clock pulses to the card
 					*/
-					SPI_WRITE_DATA(0xFF);
+					spi_write(sd->context.spi_module, 0xFF);
 					/*
 					// de-assert the CS line
 					*/
@@ -3275,7 +3308,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 				// if the card is still programming relinquish
 				// the time slice
 				*/
-				SPI_READ_DATA(tmp);
+				tmp = spi_read(sd->context.spi_module);
 				if  (tmp == 0x0)
 				{
 					/*
@@ -3363,7 +3396,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 							/*
 							// send the start token and let the DMA do the rest
 							*/
-							SPI_WRITE_DATA(SD_BLOCK_START_TOKEN_MULT);
+							spi_write(sd->context.spi_module, SD_BLOCK_START_TOKEN_MULT);
 							/*
 							// enable the dma channels
 							*/
@@ -3454,11 +3487,11 @@ void sd_idle_processing(SD_DRIVER* sd)
 						/*
 						// send the start token and let the DMA do the rest
 						*/
-						SPI_WRITE_DATA(SD_BLOCK_STOP_TOKEN_MULT);
+						spi_write(sd->context.spi_module, SD_BLOCK_STOP_TOKEN_MULT);
 						/*
 						// send 16 clock cycles
 						*/
-						SPI_WRITE_DATA(0xFF);
+						spi_write(sd->context.spi_module, 0xFF);
 						/*
 						// set the transfer state to completing
 						*/							
@@ -3473,7 +3506,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 				// if the card is still programming relinquish
 				// the time slice
 				*/
-				SPI_READ_DATA(tmp);
+				tmp = spi_read(sd->context.spi_module);
 				if  (tmp == 0x0)
 				{
 					return;
@@ -3496,7 +3529,7 @@ void sd_idle_processing(SD_DRIVER* sd)
 				/*
 				// clock out 8 cycles
 				*/
-				SPI_WRITE_DATA(0xFF);
+				spi_write(sd->context.spi_module, 0xFF);
 				/*
 				// de-assert the CS line
 				*/
@@ -3657,30 +3690,30 @@ static uint16_t sd_wait_for_data(SD_DRIVER* driver)
 	driver->context.timeout = SD_SPI_TIMEOUT;
 	do
 	{
-		SPI_READ_DATA(data);
+		data = spi_read(driver->context.spi_module);
 		
 		switch (data)
 		{
 			case SD_DATA_ERROR_UNKNOWN :
-				SPI_WRITE_DATA(0xFF);
+				spi_write(driver->context.spi_module, 0xFF);
 				DEASSERT_CS(driver);
 				BP_CLR(driver->context.busy_signal);
 				return SD_UNKNOWN_ERROR;
 				
 			case SD_DATA_ERROR_CC_ERROR:
-				SPI_WRITE_DATA(0xFF);
+				spi_write(driver->context.spi_module, 0xFF);
 				DEASSERT_CS(driver);
 				BP_CLR(driver->context.busy_signal);
 				return SD_CC_ERROR;
 				
 			case SD_DATA_ERROR_ECC_FAILED:
-				SPI_WRITE_DATA(0xFF);
+				spi_write(driver->context.spi_module, 0xFF);
 				DEASSERT_CS(driver);
 				BP_CLR(driver->context.busy_signal);
 				return SD_CARD_ECC_FAILED;
 				
 			case  SD_DATA_ERROR_OUT_OF_RANGE:
-				SPI_WRITE_DATA(0xFF);
+				spi_write(driver->context.spi_module, 0xFF);
 				DEASSERT_CS(driver);
 				BP_CLR(driver->context.busy_signal);
 				return SD_OUT_OF_RANGE;
@@ -3709,7 +3742,7 @@ static void sd_wait_for_response(SD_DRIVER* driver, unsigned char* data)
 	driver->context.timeout = SD_SPI_TIMEOUT;
 	do
 	{
-		SPI_READ_DATA(*data);
+		*data = spi_read(driver->context.spi_module);
 		driver->context.timeout--;
 
 	}
@@ -3745,7 +3778,7 @@ static unsigned char sd_translate_response(unsigned char response)
 /*
 // sends an IO command to the sd card
 */
-static void sd_send_io_command(unsigned char cmd, uint32_t address)
+static void sd_send_io_command(SPI_MODULE spi_module, unsigned char cmd, uint32_t address)
 {
 	#if defined(USE_CRC)
 	register unsigned char crc = 0;
@@ -3756,42 +3789,42 @@ static void sd_send_io_command(unsigned char cmd, uint32_t address)
 	#if defined(USE_CRC)
 	crc = calc_crc7(cmd, crc);
 	#endif
-	SPI_WRITE_DATA(cmd);
+	spi_write(spi_module, cmd);
 	/*
 	// write byte 0 of address
 	*/
 	#if defined(USE_CRC)
 	crc = calc_crc7(((unsigned char*) &address)[3], crc);
 	#endif
-	SPI_WRITE_DATA(((unsigned char*) &address)[3]);
+	spi_write(spi_module, ((unsigned char*) &address)[3]);
 	/*
 	// write byte 1 of address
 	*/
 	#if defined(USE_CRC)
 	crc = calc_crc7(((unsigned char*) &address)[2], crc);
 	#endif
-	SPI_WRITE_DATA(((unsigned char*) &address)[2]);
+	spi_write(spi_module, ((unsigned char*) &address)[2]);
 	/*
 	// write byte 2 of address
 	*/
 	#if defined(USE_CRC)
 	crc = calc_crc7(((unsigned char*) &address)[1], crc);
 	#endif
-	SPI_WRITE_DATA(((unsigned char*) &address)[1]);
+	spi_write(spi_module, ((unsigned char*) &address)[1]);
 	/*
 	// write byte 3 of address
 	*/
 	#if defined(USE_CRC)
 	crc = calc_crc7(((unsigned char*) &address)[0], crc);
 	#endif
-	SPI_WRITE_DATA(((unsigned char*) &address)[0]);
+	spi_write(spi_module, ((unsigned char*) &address)[0]);
 	/*
 	// write the crc7 byte
 	*/
 	#if defined(USE_CRC)
-	SPI_WRITE_DATA((crc << 1) | 1);
+	spi_write(spi_module, (crc << 1) | 1);
 	#else
-	SPI_WRITE_DATA(0x1);
+	spi_write(spi_module, 0x1);
 	#endif
 }
 

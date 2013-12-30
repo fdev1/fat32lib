@@ -95,14 +95,14 @@ void win32io_get_storage_device(TCHAR* physical_drive, STORAGE_DEVICE* device)
 	dev = malloc(sizeof(WIN32IO_DEVICE));
 	dev->physical_drive = physical_drive;
 	
-	device->Media = dev;
-	device->ReadSector = (STORAGE_DEVICE_READ) &win32io_read_sector;
-	device->WriteSector = (STORAGE_DEVICE_WRITE) &win32io_write_sector;
-	device->GetSectorSize = (STORAGE_DEVICE_GET_SECTOR_SIZE) &win32io_get_sector_size;
-	device->ReadSectorAsync = (STORAGE_DEVICE_READ_ASYNC) &win32io_read_sector_async;
-	device->WriteSectorAsync = (STORAGE_DEVICE_WRITE_ASYNC) &win32io_write_sector_async;
-	device->GetTotalSectors = (STORAGE_DEVICE_GET_SECTOR_COUNT) &win32io_get_sector_count;
-	device->write_multiple_sectors = (STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS) &win32io_write_multiple_blocks;
+	device->driver = dev;
+	device->read_sector				= (STORAGE_DEVICE_READ) &win32io_read_sector;
+	device->write_sector			= (STORAGE_DEVICE_WRITE) &win32io_write_sector;
+	device->get_sector_size			= (STORAGE_DEVICE_GET_SECTOR_SIZE) &win32io_get_sector_size;
+	device->read_sector_async		= (STORAGE_DEVICE_READ_ASYNC) &win32io_read_sector_async;
+	device->write_sector_async		= (STORAGE_DEVICE_WRITE_ASYNC) &win32io_write_sector_async;
+	device->get_total_sectors		= (STORAGE_DEVICE_GET_SECTOR_COUNT) &win32io_get_sector_count;
+	device->write_multiple_sectors	= (STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS) &win32io_write_multiple_blocks;
 
 	h = CreateFile((TCHAR*) physical_drive, GENERIC_READ | GENERIC_WRITE, 
 		FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);

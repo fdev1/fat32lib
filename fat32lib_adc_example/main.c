@@ -21,6 +21,7 @@
 #include <dma.h>
 #include <rtc.h>
 #include <lcd.h>
+#include <spi.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -333,9 +334,9 @@ void init_fs()
 	sd_init
 	(
 		&sd_card, 				// pointer to driver handle
+		SPI_GET_MODULE(1),
 		DMA_GET_CHANNEL(0), 	// 1st DMA channel (interrupt must be configured for this channel)
 		DMA_GET_CHANNEL(1), 	// 2nd DMA channel (interrupt must be configured for this channel)
-		0xA, 					// DMA bus irq for SPI
 		dma_buffer,				// optional async buffer (DMA memory)
 		&dma_byte, 				// 1 byte of dma memory
 		media_ready, 			// bit-pointer to pin that rises when card is on slot

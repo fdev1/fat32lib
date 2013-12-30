@@ -181,6 +181,10 @@
 			RelativePath="..\licensing.txt"
 			>
 		</File>
+		<File
+			RelativePath=".\readme.txt"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

@@ -42,13 +42,13 @@ void ramdrv_init(RAMDRIVE* ramdrive, uint16_t total_sectors, uint16_t sector_siz
 	ramdrive->sector_size = sector_size;
 	ramdrive->total_sectors = total_sectors;
 
-	device->Media = (void*) ramdrive;
-	device->ReadSector = (STORAGE_DEVICE_READ) &ramdrv_read_sector;
-	device->WriteSector = (STORAGE_DEVICE_WRITE) &ramdrv_write_sector;
-	device->GetSectorSize = (STORAGE_DEVICE_GET_SECTOR_SIZE) &ramdrv_get_sector_size;
-	device->GetTotalSectors = (STORAGE_DEVICE_GET_SECTOR_COUNT) &ramdrv_get_total_sectors;
+	device->driver							= (void*) ramdrive;
+	device->read_sector						= (STORAGE_DEVICE_READ) &ramdrv_read_sector;
+	device->write_sector					= (STORAGE_DEVICE_WRITE) &ramdrv_write_sector;
+	device->get_sector_size					= (STORAGE_DEVICE_GET_SECTOR_SIZE) &ramdrv_get_sector_size;
+	device->get_total_sectors				= (STORAGE_DEVICE_GET_SECTOR_COUNT) &ramdrv_get_total_sectors;
 	device->register_media_changed_callback = (STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK) &ramdrv_register_media_changed_callback;
-	device->get_device_id = (STORAGE_GET_DEVICE_ID) &ramdrv_get_device_id;
+	device->get_device_id					= (STORAGE_GET_DEVICE_ID) &ramdrv_get_device_id;
 }
 
 uint16_t ramdrv_get_device_id(RAMDRIVE* device)

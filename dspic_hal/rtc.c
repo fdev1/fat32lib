@@ -21,6 +21,7 @@
 
 static time_t __attribute__((boot, section(".rtc"))) rtc_time;
 static uint32_t timer_period;
+static uint32_t current_fcy;
 
 #define BUILD_YEAR_CH0 (__DATE__[ 7])
 #define BUILD_YEAR_CH1 (__DATE__[ 8])
@@ -102,6 +103,7 @@ void rtc_init(uint32_t fcy)
 {
 	struct tm* timeinfo;
 	
+	current_fcy = fcy;
 	timer_period = fcy / 256;
 	/*
 	// create a time_t for compile time
@@ -138,8 +140,14 @@ void rtc_init(uint32_t fcy)
 	T2CONbits.TON = 1;			/* Start 32-bit Timer */
 }
 
+uint32_t rtc_get_fcy()
+{
+	return current_fcy;
+}
+
 void rtc_change_fcy(uint32_t fcy)
 {
+	current_fcy = fcy;
 	timer_period = fcy / 256;			/* Calculate new period */
 	PR3 = HI16(timer_period); 			/* Load 32-bit period value (msw) */
 	PR2 = LO16(timer_period); 			/* Load 32-bit period value (lsw) */

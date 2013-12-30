@@ -158,9 +158,9 @@ typedef struct SD_DRIVER_CONTEXT
 	BIT_POINTER media_ready;
 	BIT_POINTER cs_line;
 	BIT_POINTER busy_signal;
+	SPI_MODULE spi_module;
 	DMA_CHANNEL* dma_channel_1;
 	DMA_CHANNEL* dma_channel_2;
-	unsigned char dma_spi_bus_irq;
 	char* dma_byte;
 	SD_MEDIA_STATE_CHANGED media_changed_callback;
 	unsigned char* async_buffer;
@@ -254,9 +254,9 @@ SD_DRIVER;
 uint16_t sd_init
 ( 
 	SD_DRIVER* driver, 
+	SPI_MODULE spi_module,
 	DMA_CHANNEL* const channel1, 
 	DMA_CHANNEL* const channel2, 
-	const unsigned char bus_dma_irq,
 	unsigned char* async_buffer,
 	char* dma_byte,
 	BIT_POINTER media_ready,

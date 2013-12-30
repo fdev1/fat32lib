@@ -38,6 +38,11 @@ void rtc_change_fcy(uint32_t fcy);
 */
 void rtc_set_time(time_t new_time);
 
+/*
+// get the current fcy setting
+*/
+uint32_t rtc_get_fcy();
+
 void rtc_timer(uint32_t* s, uint32_t* ms);
 void rtc_timer_elapsed(uint32_t* s, uint32_t* ms);
 

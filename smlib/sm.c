@@ -164,7 +164,7 @@ uint16_t sm_register_storage_device(STORAGE_DEVICE* device, char* label)
 		{
 			return SM_DRIVE_LABEL_ALREADY_IN_USE;
 		}
-		if ((*last_device)->id == device->get_device_id(device->Media))
+		if ((*last_device)->id == device->get_device_id(device->driver))
 		{
 			return SM_DEVICE_ALREADY_REGISTERED;
 		}
@@ -189,13 +189,13 @@ uint16_t sm_register_storage_device(STORAGE_DEVICE* device, char* label)
 	// copy device interface and label
 	*/
 	strcpy((*last_device)->label, label);
-	(*last_device)->id = device->get_device_id(device->Media);
+	(*last_device)->id = device->get_device_id(device->driver);
 	(*last_device)->device = *device;
 	(*last_device)->next = 0;
 	/*
 	// register the callback
 	*/
-	device->register_media_changed_callback(device->Media, 
+	device->register_media_changed_callback(device->driver, 
 		(STORAGE_MEDIA_CHANGED_CALLBACK) &sm_media_changed_callback);
 	/*
 	// SUCCESS!
