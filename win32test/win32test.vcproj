@@ -5,6 +5,10 @@
 	Name="win32test"
 	ProjectGUID="{BA561084-B995-4ED5-AD68-A974947244C0}"
 	RootNamespace="win32test"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>

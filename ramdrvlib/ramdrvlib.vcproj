@@ -5,6 +5,10 @@
 	Name="ramdrvlib"
 	ProjectGUID="{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}"
 	RootNamespace="ramdrvlib"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
