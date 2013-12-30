@@ -7,16 +7,16 @@
 !_TAG_REVISION_NAME	MCHPTags	//
 !_TAG_REVISION_VERSION	6.0.1	//
 APP_CMD::(CMD_MASK|0x37)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	80;"	d	line:80	file:
-ASSERT_CS::(sd)BP_CLR(sd->context.cs_line	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	147;"	d	line:147	file:
+ASSERT_CS::(sd)BP_CLR(sd->context.cs_line	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	148;"	d	line:148	file:
 CMD_MASK::(0x40)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	70;"	d	line:70	file:
-DEASSERT_CS::(sd)BP_SET(sd->context.cs_line	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	148;"	d	line:148	file:
+DEASSERT_CS::(sd)BP_SET(sd->context.cs_line	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	149;"	d	line:149	file:
 DEFINE_CRITICAL_SECTION	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	152;"	p	line:152	struct:SD_DRIVER_CONTEXT	signature:(busy_lock)
 DEFINE_CRITICAL_SECTION	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	218;"	p	line:218	struct:SD_DRIVER_CONTEXT	signature:(request_queue_lock)
 ERASE::(CMD_MASK|38)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	84;"	d	line:84	file:
 ERASE_WR_BLK_END::(CMD_MASK|33)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	83;"	d	line:83	file:
 ERASE_WR_BLK_START::(CMD_MASK|32)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	82;"	d	line:82	file:
 GO_IDLE_STATE::(CMD_MASK|0x00)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	71;"	d	line:71	file:
-IS_CARD_LOCKED::(0x0)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	149;"	d	line:149	file:
+IS_CARD_LOCKED::(0x0)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	150;"	d	line:150	file:
 PSD_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	116;"	t	line:116
 READ_OCR::(CMD_MASK|0x3A)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	81;"	d	line:81	file:
 READ_SINGLE_BLOCK::(CMD_MASK|0x11)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	76;"	d	line:76	file:
@@ -29,12 +29,12 @@ SD_ASYNC_REQUEST	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	128;"	s	line:128
 SD_ASYNC_REQUEST	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	139;"	t	line:139
 SD_AWAITING_DATA::(STORAGE_AWAITING_DATA)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	108;"	d	line:108	file:
 SD_BLOCK_LENGTH::(0x200)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	123;"	d	line:123	file:
-SD_BLOCK_READ_IN_PROGRESS::0	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	136;"	d	line:136	file:
+SD_BLOCK_READ_IN_PROGRESS::0	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	137;"	d	line:137	file:
 SD_BLOCK_START_TOKEN::0xFE	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	53;"	d	line:53	file:
 SD_BLOCK_START_TOKEN_MULT::0xFC	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	54;"	d	line:54	file:
 SD_BLOCK_STOP_TOKEN_MULT::0xFD	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	55;"	d	line:55	file:
-SD_BLOCK_WRITE_IN_PROGRESS::1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	137;"	d	line:137	file:
-SD_BLOCK_WRITE_PROGRAMMING::2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	138;"	d	line:138	file:
+SD_BLOCK_WRITE_IN_PROGRESS::1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	138;"	d	line:138	file:
+SD_BLOCK_WRITE_PROGRAMMING::2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	139;"	d	line:139	file:
 SD_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	111;"	s	line:111
 SD_CALLBACK_INFO	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	116;"	t	line:116
 SD_CALLBACK_INFO_EX	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	118;"	s	line:118
@@ -63,7 +63,7 @@ SD_DRIVER_CONTEXT	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	222;"	t	line:222
 SD_ENABLE_MULTI_BLOCK_WRITE	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	68;"	d	line:68
 SD_ERASE_RESET::(STORAGE_ERASE_RESET)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	99;"	d	line:99	file:
 SD_ERASE_SEQ_ERROR::(STORAGE_ERASE_SEQ_ERROR)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	96;"	d	line:96	file:
-SD_FREE_REQUEST::(0x0)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	128;"	d	line:128	file:
+SD_FREE_REQUEST::(0x0)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	129;"	d	line:129	file:
 SD_IDLE::(STORAGE_IDLE)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	102;"	d	line:102	file:
 SD_ILLEGAL_COMMAND::(STORAGE_ILLEGAL_COMMAND)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	98;"	d	line:98	file:
 SD_INVALID_CARD::(STORAGE_INVALID_MEDIA)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	92;"	d	line:92	file:
@@ -73,14 +73,14 @@ SD_MEDIA_STATE_CHANGED	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	105;"	t	lin
 SD_MULTI_BLOCK_RESPONSE_READY::(STORAGE_MULTI_SECTOR_RESPONSE	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	116;"	d	line:116	file:
 SD_MULTI_BLOCK_RESPONSE_SKIP::(STORAGE_MULTI_SECTOR_RESPONSE	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	115;"	d	line:115	file:
 SD_MULTI_BLOCK_RESPONSE_STOP::(STORAGE_MULTI_SECTOR_RESPONSE	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	114;"	d	line:114	file:
-SD_MULTI_BLOCK_WRITE_COMPLETING::5	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	141;"	d	line:141	file:
-SD_MULTI_BLOCK_WRITE_IN_PROGRESS::3	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	139;"	d	line:139	file:
-SD_MULTI_BLOCK_WRITE_PROGRAMMING::4	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	140;"	d	line:140	file:
-SD_MULTI_BLOCK_WRITE_REQUEST::(0x3)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	131;"	d	line:131	file:
+SD_MULTI_BLOCK_WRITE_COMPLETING::5	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	142;"	d	line:142	file:
+SD_MULTI_BLOCK_WRITE_IN_PROGRESS::3	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	140;"	d	line:140	file:
+SD_MULTI_BLOCK_WRITE_PROGRAMMING::4	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	141;"	d	line:141	file:
+SD_MULTI_BLOCK_WRITE_REQUEST::(0x3)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	132;"	d	line:132	file:
 SD_OUT_OF_RANGE::(STORAGE_OUT_OF_RANGE)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	103;"	d	line:103	file:
 SD_PROCESSING::(STORAGE_OP_IN_PROGRESS)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	106;"	d	line:106	file:
 SD_QUEUE_ASYNC_REQUESTS	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	55;"	d	line:55
-SD_READ_REQUEST::(0x1)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	129;"	d	line:129	file:
+SD_READ_REQUEST::(0x1)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	130;"	d	line:130	file:
 SD_RSP_ADDRESS_ERROR::0x20	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	43;"	d	line:43	file:
 SD_RSP_CRC_ERROR::0x08	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	45;"	d	line:45	file:
 SD_RSP_ERASE_RESET::0x02	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	47;"	d	line:47	file:
@@ -93,6 +93,7 @@ SD_SPEED_CLASS10::4	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	37;"	d	line:37
 SD_SPEED_CLASS2::1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	34;"	d	line:34	file:
 SD_SPEED_CLASS4::2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	35;"	d	line:35	file:
 SD_SPEED_CLASS6::3	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	36;"	d	line:36	file:
+SD_SPI_MODULE::(1)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	124;"	d	line:124	file:
 SD_SPI_TIMEOUT::0xFFFF	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	65;"	d	line:65	file:
 SD_SUCCESS::(STORAGE_SUCCESS)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	90;"	d	line:90	file:
 SD_TIMEOUT::(STORAGE_TIMEOUT)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	101;"	d	line:101	file:
@@ -101,39 +102,39 @@ SD_VERSION_1_0::0x10	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	27;"	d	line:2
 SD_VERSION_2_0::0x20	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	28;"	d	line:28	file:
 SD_VOLTAGE_NOT_SUPPORTED::(STORAGE_VOLTAGE_NOT_SUPPORTED	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	91;"	d	line:91	file:
 SD_WAIT_TOKEN::0x00	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	56;"	d	line:56	file:
-SD_WRITE_REQUEST::(0x2)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	130;"	d	line:130	file:
+SD_WRITE_REQUEST::(0x2)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	131;"	d	line:131	file:
 SEND_BLOCK_LEN::(CMD_MASK|0x10)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	74;"	d	line:74	file:
-SEND_COMMAND::(cmd)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	163;"	d	line:163	file:
-SEND_COMMAND_WITH_ARGS::(cmd,arg0,arg1,arg2,arg3,crc)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	176;"	d	line:176	file:
+SEND_COMMAND::(spi_module,cmd)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	164;"	d	line:164	file:
+SEND_COMMAND_WITH_ARGS::(spi_module,cmd,arg0,arg1,arg2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	177;"	d	line:177	file:
 SEND_CSD::(CMD_MASK|0x09)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	73;"	d	line:73	file:
 SEND_IF_COND::(CMD_MASK|0x08)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	72;"	d	line:72	file:
-SEND_IO_COMMAND::(cmd,address)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	184;"	d	line:184	file:
+SEND_IO_COMMAND::(spi_module,cmd,address)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	185;"	d	line:185	file:
 SEND_STATUS::(CMD_MASK|0x0D)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	75;"	d	line:75	file:
-TRANSLATE_RESPONSE::(rsp)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	217;"	d	line:217	file:
-WAIT_FOR_DATA::(driver)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	228;"	d	line:228	file:
-WAIT_FOR_DATA_RESPONSE_TOKEN::(driver,token)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	211;"	d	line:211	file:
-WAIT_FOR_RESPONSE::(driver,rsp)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	192;"	d	line:192	file:
-WAIT_WHILE_CARD_BUSY::	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	242;"	d	line:242	file:
+TRANSLATE_RESPONSE::(rsp)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	218;"	d	line:218	file:
+WAIT_FOR_DATA::(driver)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	229;"	d	line:229	file:
+WAIT_FOR_DATA_RESPONSE_TOKEN::(driver,token)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	212;"	d	line:212	file:
+WAIT_FOR_RESPONSE::(driver,rsp)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	193;"	d	line:193	file:
+WAIT_WHILE_CARD_BUSY::(spi_module)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	243;"	d	line:243	file:
 WRITE_MULTIPLE_BLOCK::(CMD_MASK|0X19)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	78;"	d	line:78	file:
 WRITE_SINGLE_BLOCK::(CMD_MASK|0x18)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	77;"	d	line:77	file:
 __SD_H__	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	21;"	d	line:21
-address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	372;"	l	line:372
-address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	383;"	l	line:383
-address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	393;"	l	line:393
-address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	404;"	l	line:404
-address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	412;"	l	line:412
+address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	373;"	l	line:373
+address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	384;"	l	line:384
+address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	394;"	l	line:394
+address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	405;"	l	line:405
+address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	413;"	l	line:413
 address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	130;"	m	line:130	struct:SD_ASYNC_REQUEST
 async_buffer	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	166;"	m	line:166	struct:SD_DRIVER_CONTEXT
 async_state	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	132;"	m	line:132	struct:SD_ASYNC_REQUEST
 au_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	235;"	m	line:235	struct:SD_CARD
 block_length	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	237;"	m	line:237	struct:SD_CARD
-block_nr	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	549;"	l	line:549
+block_nr	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	551;"	l	line:551
 buffer	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	131;"	m	line:131	struct:SD_ASYNC_REQUEST
 busy	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	149;"	m	line:149	struct:SD_DRIVER_CONTEXT
 busy_signal	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	160;"	m	line:160	struct:SD_DRIVER_CONTEXT
-c_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	550;"	l	line:550
-c_size_mult	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	546;"	l	line:546
-calc_crc7	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	249;"	p	line:249	file:	signature:(unsigned char value, unsigned char crc)
+c_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	552;"	l	line:552
+c_size_mult	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	547;"	l	line:547
+calc_crc7	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	250;"	p	line:250	file:	signature:(unsigned char value, unsigned char crc)
 callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	113;"	m	line:113	struct:SD_CALLBACK_INFO
 callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	120;"	m	line:120	struct:SD_CALLBACK_INFO_EX
 callback_info	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	133;"	m	line:133	struct:SD_ASYNC_REQUEST
@@ -145,9 +146,8 @@ context	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	121;"	m	line:121	struct:SD
 context	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	247;"	m	line:247	struct:SD_DRIVER
 cs_line	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	159;"	m	line:159	struct:SD_DRIVER_CONTEXT
 dma_byte	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	164;"	m	line:164	struct:SD_DRIVER_CONTEXT
-dma_channel_1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	161;"	m	line:161	struct:SD_DRIVER_CONTEXT
-dma_channel_2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	162;"	m	line:162	struct:SD_DRIVER_CONTEXT
-dma_spi_bus_irq	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	163;"	m	line:163	struct:SD_DRIVER_CONTEXT
+dma_channel_1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	162;"	m	line:162	struct:SD_DRIVER_CONTEXT
+dma_channel_2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	163;"	m	line:163	struct:SD_DRIVER_CONTEXT
 dma_transfer_address	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	179;"	m	line:179	struct:SD_DRIVER_CONTEXT
 dma_transfer_block_count	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	189;"	m	line:189	struct:SD_DRIVER_CONTEXT
 dma_transfer_blocks_remaining	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	176;"	m	line:176	struct:SD_DRIVER_CONTEXT
@@ -175,85 +175,87 @@ dma_transfer_state	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	171;"	m	line:17
 dma_transfer_time_ms	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	196;"	m	line:196	struct:SD_DRIVER_CONTEXT
 dma_transfer_time_s	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	195;"	m	line:195	struct:SD_DRIVER_CONTEXT
 dma_transfer_total_blocks	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	194;"	m	line:194	struct:SD_DRIVER_CONTEXT
-err	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	552;"	l	line:552
+err	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	554;"	l	line:554
 high_capacity	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	230;"	m	line:230	struct:SD_CARD
-i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1376;"	l	line:1376
-i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1906;"	l	line:1906
-i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2320;"	l	line:2320
-i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2675;"	l	line:2675	file:
-i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	441;"	l	line:441
+i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1396;"	l	line:1396
+i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1929;"	l	line:1929
+i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2346;"	l	line:2346
+i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2701;"	l	line:2701	file:
+i	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	442;"	l	line:442
 id	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	157;"	m	line:157	struct:SD_DRIVER_CONTEXT
 last_media_ready	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	150;"	m	line:150	struct:SD_DRIVER_CONTEXT
 media_changed_callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	165;"	m	line:165	struct:SD_DRIVER_CONTEXT
 media_ready	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	158;"	m	line:158	struct:SD_DRIVER_CONTEXT
 mode	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	135;"	m	line:135	struct:SD_ASYNC_REQUEST
-mult	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	551;"	l	line:551
+mult	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	553;"	l	line:553
 needs_data	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	136;"	m	line:136	struct:SD_ASYNC_REQUEST
 next	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	137;"	m	line:137	struct:SD_ASYNC_REQUEST
 nsac	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	232;"	m	line:232	struct:SD_CARD
 r2w_factor	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	233;"	m	line:233	struct:SD_CARD
-read_bl_len	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	545;"	l	line:545
-req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1404;"	l	line:1404
-req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1929;"	l	line:1929
-req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2344;"	l	line:2344
-req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	3401;"	l	line:3401
+read_bl_len	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	546;"	l	line:546
+req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1424;"	l	line:1424
+req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1952;"	l	line:1952
+req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2370;"	l	line:2370
+req	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	3434;"	l	line:3434
 request_queue	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	209;"	m	line:209	struct:SD_DRIVER_CONTEXT
 request_queue_slots	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	212;"	m	line:212	struct:SD_DRIVER_CONTEXT
 request_queue_slots	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	214;"	m	line:214	struct:SD_DRIVER_CONTEXT
-retries	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	543;"	l	line:543
+retries	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	544;"	l	line:544
 ru_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	236;"	m	line:236	struct:SD_CARD
-sd_erase	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1733;"	f	line:1733	signature:( SD_DRIVER* driver, uint32_t start_address, uint32_t end_address, char from_queue )
-sd_erase	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	252;"	p	line:252	file:	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address, char from_queue)
-sd_erase_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	280;"	p	line:280	file:	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address)
-sd_erase_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	355;"	f	line:355	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address)
-sd_get_device_id	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	282;"	p	line:282	file:	signature:(SD_DRIVER* driver)
-sd_get_device_id	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	311;"	f	line:311	signature:(SD_DRIVER* driver)
-sd_get_page_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	283;"	p	line:283	file:	signature:(SD_DRIVER* driver)
-sd_get_page_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	339;"	f	line:339	signature:(SD_DRIVER* driver)
-sd_get_sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	274;"	p	line:274	file:	signature:(SD_DRIVER* driver)
-sd_get_sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	347;"	f	line:347	signature:(SD_DRIVER* driver)
-sd_get_storage_device_interface	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	289;"	f	line:289	signature:(SD_DRIVER* driver, STORAGE_DEVICE* device)
+sd_erase	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1756;"	f	line:1756	signature:( SD_DRIVER* driver, uint32_t start_address, uint32_t end_address, char from_queue )
+sd_erase	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	253;"	p	line:253	file:	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address, char from_queue)
+sd_erase_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	281;"	p	line:281	file:	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address)
+sd_erase_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	356;"	f	line:356	signature:(SD_DRIVER* driver, uint32_t start_address, uint32_t end_address)
+sd_get_device_id	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	283;"	p	line:283	file:	signature:(SD_DRIVER* driver)
+sd_get_device_id	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	312;"	f	line:312	signature:(SD_DRIVER* driver)
+sd_get_page_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	284;"	p	line:284	file:	signature:(SD_DRIVER* driver)
+sd_get_page_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	340;"	f	line:340	signature:(SD_DRIVER* driver)
+sd_get_sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	275;"	p	line:275	file:	signature:(SD_DRIVER* driver)
+sd_get_sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	348;"	f	line:348	signature:(SD_DRIVER* driver)
+sd_get_storage_device_interface	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	290;"	f	line:290	signature:(SD_DRIVER* driver, STORAGE_DEVICE* device)
 sd_get_storage_device_interface	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	272;"	p	line:272	signature:( SD_DRIVER* card_info, STORAGE_DEVICE* device )
-sd_get_total_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	281;"	p	line:281	file:	signature:(SD_DRIVER* driver)
-sd_get_total_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	329;"	f	line:329	signature:(SD_DRIVER* driver)
-sd_idle_processing	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2673;"	f	line:2673	signature:(SD_DRIVER* sd)
+sd_get_total_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	282;"	p	line:282	file:	signature:(SD_DRIVER* driver)
+sd_get_total_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	330;"	f	line:330	signature:(SD_DRIVER* driver)
+sd_idle_processing	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2699;"	f	line:2699	signature:(SD_DRIVER* sd)
 sd_idle_processing	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	281;"	p	line:281	signature:( SD_DRIVER* sd )
-sd_init	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	422;"	f	line:422	signature:( SD_DRIVER* driver, DMA_CHANNEL* const dma_channel1, DMA_CHANNEL* const dma_channel2, const unsigned char bus_dma_irq, unsigned char* async_buffer, char* dma_byte, BIT_POINTER media_ready, BIT_POINTER cs_line, BIT_POINTER busy_signal, uint16_t id )
-sd_init	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	254;"	p	line:254	signature:( SD_DRIVER* driver, DMA_CHANNEL* const channel1, DMA_CHANNEL* const channel2, const unsigned char bus_dma_irq, unsigned char* async_buffer, char* dma_byte, BIT_POINTER media_ready, BIT_POINTER cs_line, BIT_POINTER busy_signal, uint16_t id )
-sd_init_dma	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	248;"	p	line:248	file:	signature:(SD_DRIVER* sd )
-sd_init_dma	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	497;"	f	line:497	signature:(SD_DRIVER* sd)
-sd_init_internal	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	247;"	p	line:247	file:	signature:(SD_DRIVER* driver)
-sd_init_internal	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	541;"	f	line:541	signature:(SD_DRIVER* driver)
-sd_read	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1365;"	f	line:1365	signature:( SD_DRIVER* driver, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue )
-sd_read	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	250;"	p	line:250	file:	signature:(SD_DRIVER*, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue)
-sd_read_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	275;"	p	line:275	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
-sd_read_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	370;"	f	line:370	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
-sd_read_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	277;"	p	line:277	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, PSD_CALLBACK_INFO callback_info)
-sd_read_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	380;"	f	line:380	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback)
-sd_register_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	284;"	p	line:284	file:	signature:(SD_DRIVER* driver, SD_MEDIA_STATE_CHANGED callback)
-sd_register_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	320;"	f	line:320	signature:(SD_DRIVER* driver, SD_MEDIA_STATE_CHANGED callback)
-sd_send_io_command	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	256;"	p	line:256	file:	signature:(unsigned char cmd, uint32_t address)
-sd_translate_response	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	255;"	p	line:255	file:	signature:(unsigned char response)
-sd_wait_for_data	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	253;"	p	line:253	file:	signature:(SD_DRIVER* driver)
-sd_wait_for_response	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	254;"	p	line:254	file:	signature:(SD_DRIVER* driver, unsigned char* data)
-sd_write	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1895;"	f	line:1895	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue )
-sd_write	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	251;"	p	line:251	file:	signature:(SD_DRIVER* driver, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue)
-sd_write_multiple_blocks	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2307;"	f	line:2307	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info, char from_queue, char needs_data )
-sd_write_multiple_blocks	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	259;"	p	line:259	file:	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info, char from_queue, char needs_data )
-sd_write_multiple_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	279;"	p	line:279	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info)
-sd_write_multiple_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	410;"	f	line:410	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback)
-sd_write_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	276;"	p	line:276	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
-sd_write_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	391;"	f	line:391	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
-sd_write_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	278;"	p	line:278	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, PSD_CALLBACK_INFO callback_info)
-sd_write_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	401;"	f	line:401	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback)
-sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	547;"	l	line:547
-speed_class	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	548;"	l	line:548
+sd_init	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	423;"	f	line:423	signature:( SD_DRIVER* driver, SPI_MODULE spi_module, DMA_CHANNEL* const dma_channel1, DMA_CHANNEL* const dma_channel2, unsigned char* async_buffer, char* dma_byte, BIT_POINTER media_ready, BIT_POINTER cs_line, BIT_POINTER busy_signal, uint16_t id )
+sd_init	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	254;"	p	line:254	signature:( SD_DRIVER* driver, SPI_MODULE spi_module, DMA_CHANNEL* const channel1, DMA_CHANNEL* const channel2, unsigned char* async_buffer, char* dma_byte, BIT_POINTER media_ready, BIT_POINTER cs_line, BIT_POINTER busy_signal, uint16_t id )
+sd_init_dma	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	249;"	p	line:249	file:	signature:(SD_DRIVER* sd )
+sd_init_dma	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	498;"	f	line:498	signature:(SD_DRIVER* sd)
+sd_init_internal	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	248;"	p	line:248	file:	signature:(SD_DRIVER* driver)
+sd_init_internal	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	542;"	f	line:542	signature:(SD_DRIVER* driver)
+sd_read	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1385;"	f	line:1385	signature:( SD_DRIVER* driver, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue )
+sd_read	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	251;"	p	line:251	file:	signature:(SD_DRIVER*, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue)
+sd_read_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	276;"	p	line:276	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
+sd_read_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	371;"	f	line:371	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
+sd_read_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	278;"	p	line:278	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, PSD_CALLBACK_INFO callback_info)
+sd_read_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	381;"	f	line:381	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback)
+sd_register_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	285;"	p	line:285	file:	signature:(SD_DRIVER* driver, SD_MEDIA_STATE_CHANGED callback)
+sd_register_media_changed_callback	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	321;"	f	line:321	signature:(SD_DRIVER* driver, SD_MEDIA_STATE_CHANGED callback)
+sd_send_io_command	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	257;"	p	line:257	file:	signature:(SPI_MODULE spi_module, unsigned char cmd, uint32_t address)
+sd_translate_response	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	256;"	p	line:256	file:	signature:(unsigned char response)
+sd_wait_for_data	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	254;"	p	line:254	file:	signature:(SD_DRIVER* driver)
+sd_wait_for_response	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	255;"	p	line:255	file:	signature:(SD_DRIVER* driver, unsigned char* data)
+sd_write	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1918;"	f	line:1918	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue )
+sd_write	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	252;"	p	line:252	file:	signature:(SD_DRIVER* driver, uint32_t address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback_info, char from_queue)
+sd_write_multiple_blocks	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2333;"	f	line:2333	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info, char from_queue, char needs_data )
+sd_write_multiple_blocks	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	260;"	p	line:260	file:	signature:( SD_DRIVER* driver, unsigned long address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info, char from_queue, char needs_data )
+sd_write_multiple_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	280;"	p	line:280	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback_info)
+sd_write_multiple_sectors	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	411;"	f	line:411	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO_EX* callback)
+sd_write_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	277;"	p	line:277	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
+sd_write_sector	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	392;"	f	line:392	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer)
+sd_write_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	279;"	p	line:279	file:	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, PSD_CALLBACK_INFO callback_info)
+sd_write_sector_async	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	402;"	f	line:402	signature:(SD_DRIVER* driver, uint32_t sector_address, unsigned char* buffer, uint16_t* async_state, SD_CALLBACK_INFO* callback)
+sector_size	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	548;"	l	line:548
+speed_class	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	549;"	l	line:549
+spi_module	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	550;"	l	line:550
+spi_module	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	161;"	m	line:161	struct:SD_DRIVER_CONTEXT
 taac	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	231;"	m	line:231	struct:SD_CARD
 timeout	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	167;"	m	line:167	struct:SD_DRIVER_CONTEXT
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1375;"	l	line:1375
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1741;"	l	line:1741
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1905;"	l	line:1905
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2319;"	l	line:2319
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2676;"	l	line:2676	file:
-tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	544;"	l	line:544
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1395;"	l	line:1395
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1764;"	l	line:1764
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	1928;"	l	line:1928
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2345;"	l	line:2345
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	2702;"	l	line:2702	file:
+tmp	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	545;"	l	line:545
 version	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.h	229;"	m	line:229	struct:SD_CARD

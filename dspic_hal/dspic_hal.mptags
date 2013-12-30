@@ -31,40 +31,40 @@ BP_INIT::(bp,address,bit_no)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common
 BP_READ::(bp,dest)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	118;"	d	line:118
 BP_SET::(bp)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	97;"	d	line:97
 BP_WRITE::(bp,value)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	134;"	d	line:134
-BUILD_DAY	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	85;"	d	line:85	file:
-BUILD_DAY_CH0::((__DATE__[4]>='0')?(__DATE__[	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	41;"	d	line:41	file:
-BUILD_DAY_CH1::(__DATE__[5])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	42;"	d	line:42	file:
-BUILD_HOUR	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	89;"	d	line:89	file:
-BUILD_HOUR_CH0::(__TIME__[0])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	43;"	d	line:43	file:
-BUILD_HOUR_CH1::(__TIME__[1])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	44;"	d	line:44	file:
-BUILD_MIN	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	93;"	d	line:93	file:
-BUILD_MIN_CH0::(__TIME__[3])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	45;"	d	line:45	file:
-BUILD_MIN_CH1::(__TIME__[4])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	46;"	d	line:46	file:
-BUILD_MONTH	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	75;"	d	line:75	file:
-BUILD_MONTH_IS_APR::(__DATE__[0]=='A'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	32;"	d	line:32	file:
-BUILD_MONTH_IS_AUG::(__DATE__[0]=='A'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	36;"	d	line:36	file:
-BUILD_MONTH_IS_DEC::(__DATE__[0]=='D')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	40;"	d	line:40	file:
-BUILD_MONTH_IS_FEB::(__DATE__[0]=='F')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	30;"	d	line:30	file:
-BUILD_MONTH_IS_JAN::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	29;"	d	line:29	file:
-BUILD_MONTH_IS_JUL::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	35;"	d	line:35	file:
-BUILD_MONTH_IS_JUN::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	34;"	d	line:34	file:
-BUILD_MONTH_IS_MAR::(__DATE__[0]=='M'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	31;"	d	line:31	file:
-BUILD_MONTH_IS_MAY::(__DATE__[0]=='M'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	33;"	d	line:33	file:
-BUILD_MONTH_IS_NOV::(__DATE__[0]=='N')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	39;"	d	line:39	file:
-BUILD_MONTH_IS_OCT::(__DATE__[0]=='O')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	38;"	d	line:38	file:
-BUILD_MONTH_IS_SEP::(__DATE__[0]=='S')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	37;"	d	line:37	file:
-BUILD_SEC	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	97;"	d	line:97	file:
-BUILD_SEC_CH0::(__TIME__[6])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	47;"	d	line:47	file:
-BUILD_SEC_CH1::(__TIME__[7])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	48;"	d	line:48	file:
-BUILD_YEAR	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	81;"	d	line:81	file:
-BUILD_YEAR_CH0::(__DATE__[7])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	25;"	d	line:25	file:
-BUILD_YEAR_CH1::(__DATE__[8])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	26;"	d	line:26	file:
-BUILD_YEAR_CH2::(__DATE__[9])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	27;"	d	line:27	file:
-BUILD_YEAR_CH3::(__DATE__[10])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	28;"	d	line:28	file:
+BUILD_DAY	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	86;"	d	line:86	file:
+BUILD_DAY_CH0::((__DATE__[4]>='0')?(__DATE__[	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	42;"	d	line:42	file:
+BUILD_DAY_CH1::(__DATE__[5])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	43;"	d	line:43	file:
+BUILD_HOUR	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	90;"	d	line:90	file:
+BUILD_HOUR_CH0::(__TIME__[0])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	44;"	d	line:44	file:
+BUILD_HOUR_CH1::(__TIME__[1])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	45;"	d	line:45	file:
+BUILD_MIN	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	94;"	d	line:94	file:
+BUILD_MIN_CH0::(__TIME__[3])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	46;"	d	line:46	file:
+BUILD_MIN_CH1::(__TIME__[4])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	47;"	d	line:47	file:
+BUILD_MONTH	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	76;"	d	line:76	file:
+BUILD_MONTH_IS_APR::(__DATE__[0]=='A'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	33;"	d	line:33	file:
+BUILD_MONTH_IS_AUG::(__DATE__[0]=='A'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	37;"	d	line:37	file:
+BUILD_MONTH_IS_DEC::(__DATE__[0]=='D')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	41;"	d	line:41	file:
+BUILD_MONTH_IS_FEB::(__DATE__[0]=='F')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	31;"	d	line:31	file:
+BUILD_MONTH_IS_JAN::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	30;"	d	line:30	file:
+BUILD_MONTH_IS_JUL::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	36;"	d	line:36	file:
+BUILD_MONTH_IS_JUN::(__DATE__[0]=='J'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	35;"	d	line:35	file:
+BUILD_MONTH_IS_MAR::(__DATE__[0]=='M'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	32;"	d	line:32	file:
+BUILD_MONTH_IS_MAY::(__DATE__[0]=='M'&&__DATE__[1]	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	34;"	d	line:34	file:
+BUILD_MONTH_IS_NOV::(__DATE__[0]=='N')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	40;"	d	line:40	file:
+BUILD_MONTH_IS_OCT::(__DATE__[0]=='O')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	39;"	d	line:39	file:
+BUILD_MONTH_IS_SEP::(__DATE__[0]=='S')	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	38;"	d	line:38	file:
+BUILD_SEC	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	98;"	d	line:98	file:
+BUILD_SEC_CH0::(__TIME__[6])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	48;"	d	line:48	file:
+BUILD_SEC_CH1::(__TIME__[7])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	49;"	d	line:49	file:
+BUILD_YEAR	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	82;"	d	line:82	file:
+BUILD_YEAR_CH0::(__DATE__[7])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	26;"	d	line:26	file:
+BUILD_YEAR_CH1::(__DATE__[8])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	27;"	d	line:27	file:
+BUILD_YEAR_CH2::(__DATE__[9])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	28;"	d	line:28	file:
+BUILD_YEAR_CH3::(__DATE__[10])	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	29;"	d	line:29	file:
 BitMask	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	47;"	m	line:47	struct:_BIT_POINTER
 BufferA	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	112;"	m	line:112	struct:_DMA_CHANNEL
 BufferB	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	113;"	m	line:113	struct:_DMA_CHANNEL
-CHAR_TO_INT::(c)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	61;"	d	line:61	file:
+CHAR_TO_INT::(c)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	62;"	d	line:62	file:
 CHEN	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	91;"	m	line:91	struct:_DMA_CHANNEL_CONTROL_BITS
 ControlBits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	111;"	m	line:111	struct:_DMA_CHANNEL
 DIR	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	89;"	m	line:89	struct:_DMA_CHANNEL_CONTROL_BITS
@@ -162,39 +162,14 @@ RWLine	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	47;"	m	line:47	struct:
 SEND_DATA::(data)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	53;"	d	line:53	file:
 SEND_E_PULSE::()	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	63;"	d	line:63	file:
 SIZE	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	90;"	m	line:90	struct:_DMA_CHANNEL_CONTROL_BITS
-SPI1_DMA_ASSOC::(0b0001010)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	56;"	d	line:56
-SPI2_DMA_ASSOC::(0b0100001)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	57;"	d	line:57
-SPIBUF::SPI1BUF	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	34;"	d	line:34
-SPIBUF::SPI2BUF	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	43;"	d	line:43
-SPICON1::SPI1CON1	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	36;"	d	line:36
-SPICON1::SPI2CON1	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	45;"	d	line:45
-SPICON1bits::SPI1CON1bits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	38;"	d	line:38
-SPICON1bits::SPI2CON1bits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	47;"	d	line:47
-SPICON2::SPI1CON1	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	37;"	d	line:37
-SPICON2::SPI2CON2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	46;"	d	line:46
-SPICON2bits::SPI1CON2bits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	39;"	d	line:39
-SPICON2bits::SPI2CON2bits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	48;"	d	line:48
-SPISTAT::SPI1STAT	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	35;"	d	line:35
-SPISTAT::SPI2STAT	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	44;"	d	line:44
-SPISTATbits::SPI1STATbits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	40;"	d	line:40
-SPISTATbits::SPI2STATbits	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	49;"	d	line:49
-SPI_DISABLE::()SPISTATbits.SPIEN=0x0	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	59;"	d	line:59
-SPI_DMA_ASSOC::SPI1_DMA_ASSOC	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	41;"	d	line:41
-SPI_DMA_ASSOC::SPI2_DMA_ASSOC	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	50;"	d	line:50
-SPI_ENABLE::()SPISTATbits.SPIEN=0x1	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	58;"	d	line:58
-SPI_FLUSH_BUFFER::()	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	108;"	d	line:108
-SPI_IS_RX_BUFFER_FULL::()(SPISTATbits.SPIRBF)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	62;"	d	line:62
-SPI_IS_TX_BUFFER_FULL::()(!SPISTATbits.SPIRBF)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	72;"	d	line:72
-SPI_MODULE::2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	27;"	d	line:27
-SPI_READ::()(SPIBUF)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	61;"	d	line:61
-SPI_READ_DATA::(x)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	118;"	d	line:118
-SPI_SET_PRESCALER::(pri,sec)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	81;"	d	line:81
-SPI_SET_PRESCALER_MAX::	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	91;"	d	line:91
-SPI_SET_PRESCALER_MAX::	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	98;"	d	line:98
-SPI_WAIT_FOR_RECEIVE::()while(!SPI_IS_RX_BUFFER_FULL	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	64;"	d	line:64
-SPI_WAIT_FOR_TRANSMIT::()while(SPI_IS_TX_BUFFER_FULL(	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	63;"	d	line:63
-SPI_WRITE::(x)SPIBUF=(x)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	60;"	d	line:60
-SPI_WRITE_DATA::(x)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	128;"	d	line:128
+SPI1_DMA_REQ::(0x0A)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	30;"	d	line:30
+SPI2_DMA_REQ::(0x21)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	31;"	d	line:31
+SPI_BUFFER_ADDRESS::(module)((module==1)?&SPI1BUF:	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	49;"	d	line:49
+SPI_GET_DMA_REQ::(module)((module==1)?SPI1_DMA_	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	53;"	d	line:53
+SPI_GET_MODULE::(module)(module)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	43;"	d	line:43
+SPI_MAX_SPEED::(10000000)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	41;"	d	line:41
+SPI_MODULE	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	25;"	t	line:25
+SPI_NO_OF_MODULES::(2)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	36;"	d	line:36
 TransferLength	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	116;"	m	line:116	struct:_DMA_CHANNEL
 VddRiseDelay	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	65;"	m	line:65	struct:LCD_CONFIG
 WAIT_25_NS::()	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	44;"	d	line:44	file:
@@ -204,7 +179,7 @@ _DMA_CHANNEL	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	109;"	s	line:109
 _DMA_CHANNEL_CONTROL_BITS	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	81;"	s	line:81
 _DMA_IRQSEL_BITS	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	98;"	s	line:98
 _StackError	C:\Users\Fernan\Documents\fat32lib\dspic_hal\traps.c	43;"	f	line:43	signature:(void)
-_T3Interrupt	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	212;"	f	line:212	signature:(void)
+_T3Interrupt	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	220;"	f	line:220	signature:(void)
 __COMMON_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	21;"	d	line:21
 __DMA_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	21;"	d	line:21
 __LCD_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	23;"	d	line:23
@@ -216,8 +191,11 @@ __SPI_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	21;"	d	line:21
 ___dma_channel_0	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.c	25;"	v	line:25
 ___dma_channel_1	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.c	39;"	v	line:39
 ___dma_channel_2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.c	53;"	v	line:53
-__dummy__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	25;"	v	line:25
+bps_max	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	97;"	l	line:97
+bps_temp	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	96;"	l	line:96
 c	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	175;"	l	line:175	file:
+current_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	24;"	v	line:24	file:
+fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	95;"	l	line:95
 i	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	70;"	l	line:70
 last_update_ms	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	57;"	m	line:57	struct:LCD_CONFIG
 last_update_s	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	56;"	m	line:56	struct:LCD_CONFIG
@@ -245,30 +223,48 @@ line_no	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	58;"	m	line:58	struct
 line_pos	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	59;"	m	line:59	struct:LCD_CONFIG
 lines	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	61;"	m	line:61	struct:LCD_CONFIG
 ms	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	199;"	l	line:199	file:
-ms_now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	178;"	l	line:178
-now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	158;"	l	line:158
-now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	176;"	l	line:176
+ms_now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	186;"	l	line:186
+now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	166;"	l	line:166
+now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	184;"	l	line:184
 pc	C:\Users\Fernan\Documents\fat32lib\dspic_hal\traps.c	22;"	v	line:22	file:
-rtc_change_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	141;"	f	line:141	signature:(uint32_t fcy)
+pri	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
+pri_lookup	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	93;"	l	line:93
+pri_max	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
+rtc_change_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	148;"	f	line:148	signature:(uint32_t fcy)
 rtc_change_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	34;"	p	line:34	signature:(uint32_t fcy)
-rtc_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	101;"	f	line:101	signature:(uint32_t fcy)
+rtc_get_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	143;"	f	line:143
+rtc_get_fcy	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	44;"	p	line:44	signature:()
+rtc_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	102;"	f	line:102	signature:(uint32_t fcy)
 rtc_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	29;"	p	line:29	signature:(uint32_t fcy)
-rtc_set_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	150;"	f	line:150	signature:(time_t new_time)
+rtc_set_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	158;"	f	line:158	signature:(time_t new_time)
 rtc_set_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	39;"	p	line:39	signature:(time_t new_time)
 rtc_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	22;"	v	line:22	file:
-rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	156;"	f	line:156	signature:(uint32_t* s, uint32_t* ms)
-rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	41;"	p	line:41	signature:(uint32_t* s, uint32_t* ms)
-rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	174;"	f	line:174	signature:(uint32_t* s, uint32_t* ms)
-rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	42;"	p	line:42	signature:(uint32_t* s, uint32_t* ms)
+rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	164;"	f	line:164	signature:(uint32_t* s, uint32_t* ms)
+rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	46;"	p	line:46	signature:(uint32_t* s, uint32_t* ms)
+rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	182;"	f	line:182	signature:(uint32_t* s, uint32_t* ms)
+rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	47;"	p	line:47	signature:(uint32_t* s, uint32_t* ms)
 s	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	199;"	l	line:199	file:
-spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	26;"	f	line:26	signature:(void)
-spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	133;"	p	line:133	signature:( void )
+sec	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
+sec_max	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
+spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	27;"	f	line:27	signature:(char module)
+spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	58;"	p	line:58	signature:(char module)
+spi_read	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	212;"	f	line:212	signature:(char module)
+spi_read	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	68;"	p	line:68	signature:(char module)
+spi_read_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	232;"	f	line:232	signature:(char module, unsigned char* buffer, int length)
+spi_read_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	87;"	p	line:87	signature:(char module, unsigned char* buffer, int length)
+spi_set_clock	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	91;"	f	line:91	signature:(char module, uint32_t bps)
+spi_set_clock	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	63;"	p	line:63	signature:(char module, uint32_t bps)
+spi_write	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	156;"	f	line:156	signature:(char module, int data)
+spi_write	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	76;"	p	line:76	signature:(char module, int data)
+spi_write_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	180;"	f	line:180	signature:(char module, unsigned char* data, int length)
+spi_write_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	82;"	p	line:82	signature:(char module, unsigned char* buffer, int length)
+temp	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	182;"	l	line:182
 temp_count	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	237;"	v	line:237
-time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	203;"	f	line:203	signature:(time_t *pt)
-timeinfo	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	103;"	l	line:103
+time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	211;"	f	line:211	signature:(time_t *pt)
+timeinfo	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	104;"	l	line:104
 timer_period	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	23;"	v	line:23	file:
-tmr2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	159;"	l	line:159
-tmr2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	177;"	l	line:177
-tmr3	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	159;"	l	line:159
-tmr3	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	177;"	l	line:177
+tmr2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	167;"	l	line:167
+tmr2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	185;"	l	line:185
+tmr3	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	167;"	l	line:167
+tmr3	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	185;"	l	line:185
 write_pos	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	60;"	m	line:60	struct:LCD_CONFIG

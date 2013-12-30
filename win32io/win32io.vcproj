@@ -5,10 +5,6 @@
 	Name="win32io"
 	ProjectGUID="{F05B2BE2-EDED-4802-AE0F-0C214085858F}"
 	RootNamespace="win32io"
-	SccProjectName="SAK"
-	SccAuxPath="SAK"
-	SccLocalPath="SAK"
-	SccProvider="SAK"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
