@@ -20,6 +20,25 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ramdrvlib", "ramdrvlib\ramdrvlib.vcproj", "{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}"
 EndProject
 Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = fat32lib\\fat32lib.vcproj
+		SccProjectName1 = \u0022$/fat32lib/fat32lib\u0022,\u0020CRIAAAAA
+		SccLocalPath1 = fat32lib
+		SccProjectUniqueName2 = win32io\\win32io.vcproj
+		SccProjectName2 = \u0022$/fat32lib/win32io\u0022,\u0020HSIAAAAA
+		SccLocalPath2 = win32io
+		SccProjectUniqueName3 = win32test\\win32test.vcproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = win32test\\
+		SccProjectUniqueName4 = smlib\\smlib.vcproj
+		SccProjectName4 = \u0022$/fat32lib/smlib\u0022,\u0020WSIAAAAA
+		SccLocalPath4 = smlib
+		SccProjectUniqueName5 = ramdrvlib\\ramdrvlib.vcproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = ramdrvlib\\
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
