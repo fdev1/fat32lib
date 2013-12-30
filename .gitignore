@@ -31,7 +31,7 @@ win32io/debug/*.*
 win32test/debug/*.*
 vssver2.scc
 *.vssscc
-*.Admin-VAIO.Fernan
+*.Admin-VAIO.Fernan.user
 fat32lib/deleted/*.*
 fat32lib/debug/*.*
 smlib/debug/*.*
