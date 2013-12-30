@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32io", "win32io\win32io.vcproj", "{F05B2BE2-EDED-4802-AE0F-0C214085858F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891} = {6861D3C3-7EAD-421D-87B8-77CD31F17891}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fat32lib", "fat32lib\fat32lib.vcproj", "{6861D3C3-7EAD-421D-87B8-77CD31F17891}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32test", "win32test\win32test.vcproj", "{BA561084-B995-4ED5-AD68-A974947244C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DCE5C571-5819-49A7-9E17-D389B58D90AC} = {DCE5C571-5819-49A7-9E17-D389B58D90AC}
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891} = {6861D3C3-7EAD-421D-87B8-77CD31F17891}
+		{F05B2BE2-EDED-4802-AE0F-0C214085858F} = {F05B2BE2-EDED-4802-AE0F-0C214085858F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smlib", "smlib\smlib.vcproj", "{DCE5C571-5819-49A7-9E17-D389B58D90AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ramdrvlib", "ramdrvlib\ramdrvlib.vcproj", "{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F05B2BE2-EDED-4802-AE0F-0C214085858F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F05B2BE2-EDED-4802-AE0F-0C214085858F}.Debug|Win32.Build.0 = Debug|Win32
+		{F05B2BE2-EDED-4802-AE0F-0C214085858F}.Release|Win32.ActiveCfg = Release|Win32
+		{F05B2BE2-EDED-4802-AE0F-0C214085858F}.Release|Win32.Build.0 = Release|Win32
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891}.Debug|Win32.Build.0 = Debug|Win32
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891}.Release|Win32.ActiveCfg = Release|Win32
+		{6861D3C3-7EAD-421D-87B8-77CD31F17891}.Release|Win32.Build.0 = Release|Win32
+		{BA561084-B995-4ED5-AD68-A974947244C0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA561084-B995-4ED5-AD68-A974947244C0}.Debug|Win32.Build.0 = Debug|Win32
+		{BA561084-B995-4ED5-AD68-A974947244C0}.Release|Win32.ActiveCfg = Release|Win32
+		{BA561084-B995-4ED5-AD68-A974947244C0}.Release|Win32.Build.0 = Release|Win32
+		{DCE5C571-5819-49A7-9E17-D389B58D90AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DCE5C571-5819-49A7-9E17-D389B58D90AC}.Debug|Win32.Build.0 = Debug|Win32
+		{DCE5C571-5819-49A7-9E17-D389B58D90AC}.Release|Win32.ActiveCfg = Release|Win32
+		{DCE5C571-5819-49A7-9E17-D389B58D90AC}.Release|Win32.Build.0 = Release|Win32
+		{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}.Debug|Win32.Build.0 = Debug|Win32
+		{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}.Release|Win32.ActiveCfg = Release|Win32
+		{EBF200F7-FABD-4F48-9F0B-A2BFBBE11ECC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
