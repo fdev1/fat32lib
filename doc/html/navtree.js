@@ -7,8 +7,10 @@ var NAVTREE =
     [ "Examples", "examples.html", null ],
     [ "Download", "download.html", null ],
     [ "Licensing", "licensing.html", null ],
+    [ "Donations", "donate.html", null ],
     [ "References", "references.html", null ],
-    [ "Files", null, [
+    [ "Support", "support.html", null ],
+    [ "API Documentation", null, [
       [ "Modules", "files.html", "files" ]
     ] ]
   ] ]
@@ -17,7 +19,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "compile.html",
-"storage__device_8h.html#a8e047704acfb6066bd7400d034138015"
+"storage__device_8h.html#a2a06fa2f13791fdfef68daaf9be36cca"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

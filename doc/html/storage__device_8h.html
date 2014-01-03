@@ -108,14 +108,16 @@ $(document).ready(function(){initNavTree('storage__device_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>This file defines the interface between this module and the underlying storage device driver.  
+<p>This file defines the interface between this module and the underlying storage device driver. All storage device driver must implement all the functions defined in this file in order to fully support the File32Lib File System Stack.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html">PSTORAGE_CALLBACK_INFO</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure holds the callback function pointer and the callback context and is passed by the file system driver as a parameter to the driver's asynchronous IO functions.  <a href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o___e_x.html">PSTORAGE_CALLBACK_INFO_EX</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure holds the callback function pointer and the callback context and is passed by the file system driver as a parameter to the driver's multiple sector functions.  <a href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o___e_x.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_t_o_r_a_g_e___d_e_v_i_c_e.html">PSTORAGE_DEVICE</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the interface between fat32lib and the underlying storage device driver.  <a href="struct_s_t_o_r_a_g_e___d_e_v_i_c_e.html#details">More...</a><br/></td></tr>
@@ -201,59 +203,375 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:acc7125ce05706a819e46d6c2ebf97928"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc7125ce05706a819e46d6c2ebf97928"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_GET_SECTOR_SIZE</b> )(void *device)</td></tr>
-<tr class="separator:acc7125ce05706a819e46d6c2ebf97928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b847f9b2df6590b1b14dfb6575deac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45b847f9b2df6590b1b14dfb6575deac"></a>
-typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_GET_SECTOR_COUNT</b> )(void *device)</td></tr>
-<tr class="separator:a45b847f9b2df6590b1b14dfb6575deac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e7d54381119a2ac1679f34a7df73546"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e7d54381119a2ac1679f34a7df73546"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_CALLBACK</b> )(void *context, uint16_t *state)</td></tr>
-<tr class="separator:a2e7d54381119a2ac1679f34a7df73546"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaee48165e94e2c2d25a75a1cf547c26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acaee48165e94e2c2d25a75a1cf547c26"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_CALLBACK_EX</b> )(void *context, uint16_t *state, unsigned char **buffer, uint16_t *action)</td></tr>
-<tr class="separator:acaee48165e94e2c2d25a75a1cf547c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00d216465274a38c59861f351fbee3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af00d216465274a38c59861f351fbee3b"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_GET_DEVICE_ID</b> )(void *device)</td></tr>
-<tr class="separator:af00d216465274a38c59861f351fbee3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fe467b72922f1756858de3e2deaf94e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fe467b72922f1756858de3e2deaf94e"></a>
-typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_GET_PAGE_SIZE</b> )(void *device)</td></tr>
-<tr class="separator:a1fe467b72922f1756858de3e2deaf94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb14eb6b3a551384eb60e31ac041cbf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cb14eb6b3a551384eb60e31ac041cbf"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_MEDIA_CHANGED_CALLBACK</b> )(uint16_t device_id, char media_state)</td></tr>
+<tr class="memitem:a8cb14eb6b3a551384eb60e31ac041cbf"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a8cb14eb6b3a551384eb60e31ac041cbf">STORAGE_MEDIA_CHANGED_CALLBACK</a> )(uint16_t device_id, char media_state)</td></tr>
+<tr class="memdesc:a8cb14eb6b3a551384eb60e31ac041cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the media state changed callback function. It is called by the device driver in order to notify the volume manager whenever the device is mounted or dismounted.  <a href="#a8cb14eb6b3a551384eb60e31ac041cbf">More...</a><br/></td></tr>
 <tr class="separator:a8cb14eb6b3a551384eb60e31ac041cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a06fa2f13791fdfef68daaf9be36cca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a06fa2f13791fdfef68daaf9be36cca"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK</b> )(void *device, STORAGE_MEDIA_CHANGED_CALLBACK callback)</td></tr>
+<tr class="memitem:a2a06fa2f13791fdfef68daaf9be36cca"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a2a06fa2f13791fdfef68daaf9be36cca">STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK</a> )(void *device, <a class="el" href="storage__device_8h.html#a8cb14eb6b3a551384eb60e31ac041cbf">STORAGE_MEDIA_CHANGED_CALLBACK</a> callback)</td></tr>
+<tr class="memdesc:a2a06fa2f13791fdfef68daaf9be36cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function used to register a callback function to receive notifications when the device is mounted or dismounted. It is called by the volume manager driver to register a STORAGE_MEDIA_CHANGED_CALLBACK function.  <a href="#a2a06fa2f13791fdfef68daaf9be36cca">More...</a><br/></td></tr>
 <tr class="separator:a2a06fa2f13791fdfef68daaf9be36cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ac29d59cad4aa6b856ab9e30b2524d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ac29d59cad4aa6b856ab9e30b2524d9"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_READ</b> )(void *device, uint32_t sector_address, unsigned char *buffer)</td></tr>
+<tr class="memitem:a2525e2e402d76190ce2899bee8e3e95f"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a2525e2e402d76190ce2899bee8e3e95f">STORAGE_CALLBACK</a> )(void *context, uint16_t *result)</td></tr>
+<tr class="memdesc:a2525e2e402d76190ce2899bee8e3e95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the callback function for an asynchronous operation.  <a href="#a2525e2e402d76190ce2899bee8e3e95f">More...</a><br/></td></tr>
+<tr class="separator:a2525e2e402d76190ce2899bee8e3e95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4194d733562a00352768c1b70de17c58"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a4194d733562a00352768c1b70de17c58">STORAGE_CALLBACK_EX</a> )(void *context, uint16_t *result, unsigned char **buffer, uint16_t *response)</td></tr>
+<tr class="memdesc:a4194d733562a00352768c1b70de17c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the callback function for multi-sector operations.  <a href="#a4194d733562a00352768c1b70de17c58">More...</a><br/></td></tr>
+<tr class="separator:a4194d733562a00352768c1b70de17c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7125ce05706a819e46d6c2ebf97928"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#acc7125ce05706a819e46d6c2ebf97928">STORAGE_DEVICE_GET_SECTOR_SIZE</a> )(void *device)</td></tr>
+<tr class="memdesc:acc7125ce05706a819e46d6c2ebf97928"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function pointer to the driver function that gets the sector size.  <a href="#acc7125ce05706a819e46d6c2ebf97928">More...</a><br/></td></tr>
+<tr class="separator:acc7125ce05706a819e46d6c2ebf97928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b847f9b2df6590b1b14dfb6575deac"><td class="memItemLeft" align="right" valign="top">typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a45b847f9b2df6590b1b14dfb6575deac">STORAGE_DEVICE_GET_SECTOR_COUNT</a> )(void *device)</td></tr>
+<tr class="memdesc:a45b847f9b2df6590b1b14dfb6575deac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function pointer to the driver function that gets the number of sectors on the storage device.  <a href="#a45b847f9b2df6590b1b14dfb6575deac">More...</a><br/></td></tr>
+<tr class="separator:a45b847f9b2df6590b1b14dfb6575deac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00d216465274a38c59861f351fbee3b"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#af00d216465274a38c59861f351fbee3b">STORAGE_GET_DEVICE_ID</a> )(void *device)</td></tr>
+<tr class="memdesc:af00d216465274a38c59861f351fbee3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function pointer to the driver function that gets the device id.  <a href="#af00d216465274a38c59861f351fbee3b">More...</a><br/></td></tr>
+<tr class="separator:af00d216465274a38c59861f351fbee3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe467b72922f1756858de3e2deaf94e"><td class="memItemLeft" align="right" valign="top">typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a1fe467b72922f1756858de3e2deaf94e">STORAGE_GET_PAGE_SIZE</a> )(void *device)</td></tr>
+<tr class="memdesc:a1fe467b72922f1756858de3e2deaf94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function pointer to the driver function that gets the size of flash pages. This function should return 1 for non-flash devices.  <a href="#a1fe467b72922f1756858de3e2deaf94e">More...</a><br/></td></tr>
+<tr class="separator:a1fe467b72922f1756858de3e2deaf94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac29d59cad4aa6b856ab9e30b2524d9"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a1ac29d59cad4aa6b856ab9e30b2524d9">STORAGE_DEVICE_READ</a> )(void *device, uint32_t sector_address, unsigned char *buffer)</td></tr>
+<tr class="memdesc:a1ac29d59cad4aa6b856ab9e30b2524d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to read a sector.  <a href="#a1ac29d59cad4aa6b856ab9e30b2524d9">More...</a><br/></td></tr>
 <tr class="separator:a1ac29d59cad4aa6b856ab9e30b2524d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed1e9a10ca1480626368c5bb23ed033"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ed1e9a10ca1480626368c5bb23ed033"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_READ_ASYNC</b> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *async_state, PSTORAGE_CALLBACK_INFO callback_info)</td></tr>
-<tr class="separator:a4ed1e9a10ca1480626368c5bb23ed033"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a64826d06121e2e3d04302f3979f9cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a64826d06121e2e3d04302f3979f9cc"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_ERASE_SECTORS</b> )(void *device, uint32_t start_sector, uint32_t end_sector)</td></tr>
-<tr class="separator:a5a64826d06121e2e3d04302f3979f9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635f038e97e18a68f64834b77995b20d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a635f038e97e18a68f64834b77995b20d"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_WRITE</b> )(void *device, uint32_t sector_address, unsigned char *buffer)</td></tr>
+<tr class="memitem:a41871d7ad5089165d8402920362738e1"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a41871d7ad5089165d8402920362738e1">STORAGE_DEVICE_READ_ASYNC</a> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html">STORAGE_CALLBACK_INFO</a> *callback_info)</td></tr>
+<tr class="memdesc:a41871d7ad5089165d8402920362738e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to read a sector asynchronously.  <a href="#a41871d7ad5089165d8402920362738e1">More...</a><br/></td></tr>
+<tr class="separator:a41871d7ad5089165d8402920362738e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef195bdadc0119e278762678ab4cefe"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a2ef195bdadc0119e278762678ab4cefe">STORAGE_DEVICE_ERASE_SECTORS</a> )(void *device, uint32_t start_sector_address, uint32_t end_sector_address)</td></tr>
+<tr class="memdesc:a2ef195bdadc0119e278762678ab4cefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to erase flash pages. For non-flash devices this function should always return STORAGE_SUCCESS without doing any work.  <a href="#a2ef195bdadc0119e278762678ab4cefe">More...</a><br/></td></tr>
+<tr class="separator:a2ef195bdadc0119e278762678ab4cefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635f038e97e18a68f64834b77995b20d"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a635f038e97e18a68f64834b77995b20d">STORAGE_DEVICE_WRITE</a> )(void *device, uint32_t sector_address, unsigned char *buffer)</td></tr>
+<tr class="memdesc:a635f038e97e18a68f64834b77995b20d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to write a sector to the device.  <a href="#a635f038e97e18a68f64834b77995b20d">More...</a><br/></td></tr>
 <tr class="separator:a635f038e97e18a68f64834b77995b20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c06ff414d9794a8376205381a9d119"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57c06ff414d9794a8376205381a9d119"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_WRITE_ASYNC</b> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *async_state, PSTORAGE_CALLBACK_INFO callback_info)</td></tr>
-<tr class="separator:a57c06ff414d9794a8376205381a9d119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84e7cadd8edb75c3e80994384cef4cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae84e7cadd8edb75c3e80994384cef4cc"></a>
-typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS</b> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *async_state, PSTORAGE_CALLBACK_INFO_EX callback_info)</td></tr>
-<tr class="separator:ae84e7cadd8edb75c3e80994384cef4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3d463d7a8989022ecab678bcfd5f47"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#abb3d463d7a8989022ecab678bcfd5f47">STORAGE_DEVICE_WRITE_ASYNC</a> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, PSTORAGE_CALLBACK_INFO callback_info)</td></tr>
+<tr class="memdesc:abb3d463d7a8989022ecab678bcfd5f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to write a sector to the device asynchronously.  <a href="#abb3d463d7a8989022ecab678bcfd5f47">More...</a><br/></td></tr>
+<tr class="separator:abb3d463d7a8989022ecab678bcfd5f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7ff9813608571cba01ce45ab5bdb2e"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage__device_8h.html#a3e7ff9813608571cba01ce45ab5bdb2e">STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS</a> )(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o___e_x.html">STORAGE_CALLBACK_INFO_EX</a> *callback_info)</td></tr>
+<tr class="memdesc:a3e7ff9813608571cba01ce45ab5bdb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer to the driver function used to write multiple sectors to the device asynchronously. This function actually writes one sector at a time but calls back as soon as the sector is written (or while it is still programming in the case of flash memory) to reload the data and continue writing. This allows us to use the multiple block write feature of flash devices without having to allocate large buffers to store the data that is being written, so we get the performance advantage of using multiple sector writes without the expense of large buffers.  <a href="#a3e7ff9813608571cba01ce45ab5bdb2e">More...</a><br/></td></tr>
+<tr class="separator:a3e7ff9813608571cba01ce45ab5bdb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file defines the interface between this module and the underlying storage device driver. </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>This file defines the interface between this module and the underlying storage device driver. All storage device driver must implement all the functions defined in this file in order to fully support the File32Lib File System Stack. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a2525e2e402d76190ce2899bee8e3e95f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* STORAGE_CALLBACK)(void *context, uint16_t *result)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the callback function for an asynchronous operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>The context pointer of the asynchronous operation.</td></tr>
+    <tr><td class="paramname">result</td><td>A pointer to the result of the asynchronous operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4194d733562a00352768c1b70de17c58"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* STORAGE_CALLBACK_EX)(void *context, uint16_t *result, unsigned char **buffer, uint16_t *response)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the callback function for multi-sector operations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>The context of the multi-sector operation.</td></tr>
+    <tr><td class="paramname">result</td><td>A pointer to the result or current status of the multi-sector operation.</td></tr>
+    <tr><td class="paramname">buffer</td><td>A pointer to the multi-sector operation buffer. </td></tr>
+    <tr><td class="paramname">response</td><td>A pointer that the file system driver must set in order to signal how the storage device driver should proceed with the asynchronous operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="storage__device_8h.html#a3e7ff9813608571cba01ce45ab5bdb2e" title="A function pointer to the driver function used to write multiple sectors to the device asynchronously...">STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ef195bdadc0119e278762678ab4cefe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_ERASE_SECTORS)(void *device, uint32_t start_sector_address, uint32_t end_sector_address)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to erase flash pages. For non-flash devices this function should always return STORAGE_SUCCESS without doing any work. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">start_sector_address</td><td>A 32-bit unsigned integer representing the address of the 1st sector to erase.</td></tr>
+    <tr><td class="paramname">end_sector_address</td><td>A 32-bit unsigned integer representing the address of the last sector to erase.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a45b847f9b2df6590b1b14dfb6575deac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t(* STORAGE_DEVICE_GET_SECTOR_COUNT)(void *device)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function pointer to the driver function that gets the number of sectors on the storage device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit unsigned integer that represents the number of sectors on the storage device. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc7125ce05706a819e46d6c2ebf97928"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_GET_SECTOR_SIZE)(void *device)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function pointer to the driver function that gets the sector size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 16-bit unsigned integer that represents the sector size usually ()though not necessarily always) 512 bytes. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ac29d59cad4aa6b856ab9e30b2524d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_READ)(void *device, uint32_t sector_address, unsigned char *buffer)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to read a sector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">sector_address</td><td>A 32-bit unsigned integer representing the address of the sector to be read</td></tr>
+    <tr><td class="paramname">buffer</td><td>A sector sized buffer where the sector data will be copied to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41871d7ad5089165d8402920362738e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_READ_ASYNC)(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html">STORAGE_CALLBACK_INFO</a> *callback_info)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to read a sector asynchronously. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">sector_address</td><td>A 32-bit unsigned integer representing the address of the sector to be read.</td></tr>
+    <tr><td class="paramname">buffer</td><td>A sector-sized buffer where the sector data will be copied to.</td></tr>
+    <tr><td class="paramname">result</td><td>A pointer to a 16-bit unsigned integer where the result of the asynchronous operation will be stored. </td></tr>
+    <tr><td class="paramname">callback_info</td><td>A pointer to a <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html" title="This structure holds the callback function pointer and the callback context and is passed by the file...">STORAGE_CALLBACK_INFO</a> structure that holds the callback function pointer and a context pointer that will be passed back to the callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful it should return STORAGE_OP_IN_PROGRESS, otherwise it should return one of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a635f038e97e18a68f64834b77995b20d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_WRITE)(void *device, uint32_t sector_address, unsigned char *buffer)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to write a sector to the device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">sector_address</td><td>A 32-bit unsigned integer representing the address of the sector to be written.</td></tr>
+    <tr><td class="paramname">buffer</td><td>A sector-sized buffer containing the data to be written.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abb3d463d7a8989022ecab678bcfd5f47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_WRITE_ASYNC)(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, PSTORAGE_CALLBACK_INFO callback_info)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to write a sector to the device asynchronously. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">sector_address</td><td>A 32-bit unsigned integer representing the address of the sector to be written.</td></tr>
+    <tr><td class="paramname">buffer</td><td>A sector-sized buffer containing the data to be written.</td></tr>
+    <tr><td class="paramname">result</td><td>A pointer to a 16-bit integer where the result of the asynchronous operation will be written to. </td></tr>
+    <tr><td class="paramname">callback_info</td><td>A pointer to a <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o.html" title="This structure holds the callback function pointer and the callback context and is passed by the file...">STORAGE_CALLBACK_INFO</a> structure that holds the callback function pointer and a context pointer that will be passed back to the callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful it should return STORAGE_OP_IN_PROGRESS, otherwise it should return one of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3e7ff9813608571cba01ce45ab5bdb2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_DEVICE_WRITE_MULTIPLE_SECTORS)(void *device, uint32_t sector_address, unsigned char *buffer, uint16_t *result, <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o___e_x.html">STORAGE_CALLBACK_INFO_EX</a> *callback_info)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer to the driver function used to write multiple sectors to the device asynchronously. This function actually writes one sector at a time but calls back as soon as the sector is written (or while it is still programming in the case of flash memory) to reload the data and continue writing. This allows us to use the multiple block write feature of flash devices without having to allocate large buffers to store the data that is being written, so we get the performance advantage of using multiple sector writes without the expense of large buffers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">sector_address</td><td>A 32-bit unsigned integer representing the address of the 1st sector to be written. </td></tr>
+    <tr><td class="paramname">buffer</td><td>A sector-sized buffer containing the 1st sector of data to be written.</td></tr>
+    <tr><td class="paramname">result</td><td>A pointer to a 16-bit unsigned integer where the result of the multiple-sector write operation will be stored once the operation completes. </td></tr>
+    <tr><td class="paramname">callback_info</td><td>A pointer to a <a class="el" href="struct_s_t_o_r_a_g_e___c_a_l_l_b_a_c_k___i_n_f_o___e_x.html" title="This structure holds the callback function pointer and the callback context and is passed by the file...">STORAGE_CALLBACK_INFO_EX</a> structure that holds the callback function pointer and a context pointer that will be passed back to the callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful it should return STORAGE_OP_IN_PROGRESS, otherwise one of the result codes defined in <a class="el" href="storage__device_8h.html" title="This file defines the interface between this module and the underlying storage device driver...">storage_device.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af00d216465274a38c59861f351fbee3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* STORAGE_GET_DEVICE_ID)(void *device)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function pointer to the driver function that gets the device id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 16-bit unsigned integer that uniquely identifies the device. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1fe467b72922f1756858de3e2deaf94e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t(* STORAGE_GET_PAGE_SIZE)(void *device)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function pointer to the driver function that gets the size of flash pages. This function should return 1 for non-flash devices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit unsigned integer that represents the size of the flash page in sectors. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cb14eb6b3a551384eb60e31ac041cbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* STORAGE_MEDIA_CHANGED_CALLBACK)(uint16_t device_id, char media_state)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the media state changed callback function. It is called by the device driver in order to notify the volume manager whenever the device is mounted or dismounted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_id</td><td>A 16-bit unsigned integer that uniquely identifies the device.</td></tr>
+    <tr><td class="paramname">media_state</td><td>A boolean value that is set to 1 to indicate that the device has been mounted and to 0 to indicate that it has been dismounted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a06fa2f13791fdfef68daaf9be36cca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* STORAGE_REGISTER_MEDIA_CHANGED_CALLBACK)(void *device, <a class="el" href="storage__device_8h.html#a8cb14eb6b3a551384eb60e31ac041cbf">STORAGE_MEDIA_CHANGED_CALLBACK</a> callback)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function used to register a callback function to receive notifications when the device is mounted or dismounted. It is called by the volume manager driver to register a STORAGE_MEDIA_CHANGED_CALLBACK function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>A pointer to the device driver handle.</td></tr>
+    <tr><td class="paramname">callback</td><td>A pointer to the function that will be called when the device is mounted or dismounted.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bddc50b92baa9add6b6d72ffa81b8add.html">fat32lib</a></li><li class="navelem"><a class="el" href="storage__device_8h.html">storage_device.h</a></li>
-    <li class="footer">&nbsp;</li>
+    <li class="footer">Copyright &copy; 2013 by <a href="mailto:frodriguez.developer@outlook.com">Fernando Rodriguez</a></li>
   </ul>
 </div>
 </body>

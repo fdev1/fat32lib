@@ -1,5 +1,13 @@
 var searchData=
 [
+  ['sd_5fallocate_5fqueue_5ffrom_5fheap',['SD_ALLOCATE_QUEUE_FROM_HEAP',['../sd_8h.html#a40e815dfd89efb9d7115ebc58b7b1fdc',1,'sd.h']]],
+  ['sd_5fasync_5fqueue_5flimit',['SD_ASYNC_QUEUE_LIMIT',['../sd_8h.html#a7e22abe6bef8c645ee03fa63076f3bdb',1,'sd.h']]],
+  ['sd_5fdma_5fchannel_5f1_5finterrupt',['SD_DMA_CHANNEL_1_INTERRUPT',['../sd_8h.html#a7df589db0d265eba2980ae4b4f37feec',1,'sd.h']]],
+  ['sd_5fdma_5fchannel_5f2_5finterrupt',['SD_DMA_CHANNEL_2_INTERRUPT',['../sd_8h.html#a70d2ea58163dc2f023b6120a366cfc84',1,'sd.h']]],
+  ['sd_5fdriver_5fowns_5fthread',['SD_DRIVER_OWNS_THREAD',['../sd_8h.html#afabe8727df891449a86bb98dced689d7',1,'sd.h']]],
+  ['sd_5fenable_5fmulti_5fblock_5fwrite',['SD_ENABLE_MULTI_BLOCK_WRITE',['../sd_8h.html#a26410b5fc22f25fa27918674ac2edffa',1,'sd.h']]],
+  ['sd_5fmulti_5fthreaded',['SD_MULTI_THREADED',['../sd_8h.html#a8f79280fb51f110595325733cc63a252',1,'sd.h']]],
+  ['sd_5fqueue_5fasync_5frequests',['SD_QUEUE_ASYNC_REQUESTS',['../sd_8h.html#a1a6f4043f08d64e9f8e97be1b859c865',1,'sd.h']]],
   ['sm_5fattr_5farchive',['SM_ATTR_ARCHIVE',['../sm_8h.html#a806e497325bcbdb648e34708dde24af3',1,'sm.h']]],
   ['sm_5fattr_5fdirectory',['SM_ATTR_DIRECTORY',['../sm_8h.html#a54a3f8b383bfab2b56fb838c2c66f040',1,'sm.h']]],
   ['sm_5fattr_5fhidden',['SM_ATTR_HIDDEN',['../sm_8h.html#a7597c5e2c9f86c51f933ad5eb2651be6',1,'sm.h']]],

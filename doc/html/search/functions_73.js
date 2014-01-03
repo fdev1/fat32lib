@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['sd_5fget_5fstorage_5fdevice_5finterface',['sd_get_storage_device_interface',['../sd_8h.html#afbd9d61f0880e1c579db25f380e69efc',1,'sd.h']]],
+  ['sd_5fidle_5fprocessing',['sd_idle_processing',['../sd_8h.html#a5570b11e5e686829e8b083e072c03b62',1,'sd.h']]],
+  ['sd_5finit',['sd_init',['../sd_8h.html#ae33f572960cab587a1bd584593dc96fe',1,'sd.h']]],
   ['sm_5fcreate_5fdirectory',['sm_create_directory',['../sm_8h.html#a9ce85e4cd81e0978ee9961ab1267788f',1,'sm.h']]],
   ['sm_5fdismount_5fvolume',['sm_dismount_volume',['../sm_8h.html#a72825d12a01dda79ae7514fd43db0b39',1,'sm.h']]],
   ['sm_5ffile_5falloc',['sm_file_alloc',['../sm_8h.html#a6ce0b248f06989129498278e97b29208',1,'sm.h']]],
