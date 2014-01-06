@@ -20,9 +20,9 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-/* #include <p33Fxxxx.h> */
+#include <p33Fxxxx.h>
 /* #include <p33FJ256GP710.h> */
-#include <p33FJ128GP802.h>
+/* #include <p33FJ128GP802.h> */
 #include <stdlib.h>
 #include <string.h>
 #include <compiler.h>

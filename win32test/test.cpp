@@ -137,11 +137,11 @@ int cmd_test(char* args)
 
 
 
-	//test_check_file("e:\\stream.txt");
+	test_check_file("e:\\stream.txt");
 	//test_check_file("e:\\xxx1.txt");
 	//test_check_file("e:\\xxx2.txt");
 	//test_check_file("e:\\xxx3.txt");
-	//return;
+	return;
 
 	/*
 	// register the FAT filesystem driver with smlib

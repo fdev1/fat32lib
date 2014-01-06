@@ -62,7 +62,7 @@
 #define SD_DATA_ERROR_CC_ERROR					0x02
 #define SD_DATA_ERROR_ECC_FAILED				0x04
 #define SD_DATA_ERROR_OUT_OF_RANGE				0x08
-#define SD_SPI_TIMEOUT							0xFFFF/*0xFDE8*/
+#define SD_SPI_TIMEOUT							0xFFFFfu/*0xFDE8*/
 
 /*
 // SD commands
@@ -2857,6 +2857,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_TIMEOUT;
@@ -2871,14 +2879,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							sd->context.dma_transfer_result
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slice
 					*/
@@ -2913,6 +2913,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_CRC_ERROR;
@@ -2927,14 +2935,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							sd->context.dma_transfer_result
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slot
 					*/
@@ -2959,6 +2959,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_UNKNOWN_ERROR;
@@ -2973,14 +2981,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							sd->context.dma_transfer_result
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slot
 					*/
@@ -3080,6 +3080,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_TIMEOUT;
@@ -3096,14 +3104,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							&sd->context.dma_transfer_response
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slice
 					*/
@@ -3220,6 +3220,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_CRC_ERROR;
@@ -3236,14 +3244,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							&sd->context.dma_transfer_response
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slot
 					*/
@@ -3268,6 +3268,14 @@ void sd_idle_processing(SD_DRIVER* sd)
 					*/
 					DEASSERT_CS(sd);
 					/*
+					// clear busy signal
+					*/
+					BP_CLR(sd->context.busy_signal);
+					/*
+					// mark driver as not busy
+					*/
+					sd->context.busy = 0;
+					/*
 					// set the operation state
 					*/
 					*sd->context.dma_transfer_result = SD_UNKNOWN_ERROR;
@@ -3284,14 +3292,6 @@ void sd_idle_processing(SD_DRIVER* sd)
 							&sd->context.dma_transfer_response
 							);
 					}
-					/*
-					// clear busy signal
-					*/
-					BP_CLR(sd->context.busy_signal);
-					/*
-					// mark driver as not busy
-					*/
-					sd->context.busy = 0;
 					/*
 					// relinquish the time slot
 					*/

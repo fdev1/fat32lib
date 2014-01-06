@@ -164,12 +164,13 @@ SEND_E_PULSE::()	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	63;"	d	line:
 SIZE	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	90;"	m	line:90	struct:_DMA_CHANNEL_CONTROL_BITS
 SPI1_DMA_REQ::(0x0A)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	30;"	d	line:30
 SPI2_DMA_REQ::(0x21)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	31;"	d	line:31
-SPI_BUFFER_ADDRESS::(module)((module==1)?&SPI1BUF:	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	49;"	d	line:49
-SPI_GET_DMA_REQ::(module)((module==1)?SPI1_DMA_	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	53;"	d	line:53
-SPI_GET_MODULE::(module)(module)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	43;"	d	line:43
-SPI_MAX_SPEED::(10000000)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	41;"	d	line:41
+SPI_BUFFER_ADDRESS::(module)((module==1)?&SPI1BUF:	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	53;"	d	line:53
+SPI_GET_DMA_REQ::(module)((module==1)?SPI1_DMA_	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	57;"	d	line:57
+SPI_GET_MODULE::(module)(module)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	47;"	d	line:47
+SPI_MAX_SPEED::(15000000)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	45;"	d	line:45
 SPI_MODULE	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	25;"	t	line:25
-SPI_NO_OF_MODULES::(2)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	36;"	d	line:36
+SPI_NO_OF_MODULES::(1)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	39;"	d	line:39
+SPI_NO_OF_MODULES::(2)	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	37;"	d	line:37
 TransferLength	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	116;"	m	line:116	struct:_DMA_CHANNEL
 VddRiseDelay	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	65;"	m	line:65	struct:LCD_CONFIG
 WAIT_25_NS::()	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	44;"	d	line:44	file:
@@ -179,7 +180,7 @@ _DMA_CHANNEL	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	109;"	s	line:109
 _DMA_CHANNEL_CONTROL_BITS	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	81;"	s	line:81
 _DMA_IRQSEL_BITS	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	98;"	s	line:98
 _StackError	C:\Users\Fernan\Documents\fat32lib\dspic_hal\traps.c	43;"	f	line:43	signature:(void)
-_T3Interrupt	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	220;"	f	line:220	signature:(void)
+_T3Interrupt	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	236;"	f	line:236	signature:(void)
 __COMMON_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\common.h	21;"	d	line:21
 __DMA_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\dma.h	21;"	d	line:21
 __LCD_H__	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	23;"	d	line:23
@@ -223,6 +224,8 @@ line_no	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	58;"	m	line:58	struct
 line_pos	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	59;"	m	line:59	struct:LCD_CONFIG
 lines	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.h	61;"	m	line:61	struct:LCD_CONFIG
 ms	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	199;"	l	line:199	file:
+ms	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	212;"	l	line:212
+ms_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	212;"	l	line:212
 ms_now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	186;"	l	line:186
 now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	166;"	l	line:166
 now	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	184;"	l	line:184
@@ -238,29 +241,33 @@ rtc_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	102;"	f	line:102	sig
 rtc_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	29;"	p	line:29	signature:(uint32_t fcy)
 rtc_set_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	158;"	f	line:158	signature:(time_t new_time)
 rtc_set_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	39;"	p	line:39	signature:(time_t new_time)
+rtc_sleep	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	210;"	f	line:210	signature:(uint16_t ms_delay)
+rtc_sleep	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	45;"	p	line:45	signature:(uint16_t ms_delay)
 rtc_time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	22;"	v	line:22	file:
 rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	164;"	f	line:164	signature:(uint32_t* s, uint32_t* ms)
 rtc_timer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	46;"	p	line:46	signature:(uint32_t* s, uint32_t* ms)
 rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	182;"	f	line:182	signature:(uint32_t* s, uint32_t* ms)
 rtc_timer_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.h	47;"	p	line:47	signature:(uint32_t* s, uint32_t* ms)
 s	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	199;"	l	line:199	file:
+s	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	212;"	l	line:212
+s_elapsed	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	212;"	l	line:212
 sec	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
 sec_max	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	98;"	l	line:98
 spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	27;"	f	line:27	signature:(char module)
-spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	58;"	p	line:58	signature:(char module)
+spi_init	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	62;"	p	line:62	signature:(char module)
 spi_read	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	212;"	f	line:212	signature:(char module)
-spi_read	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	68;"	p	line:68	signature:(char module)
+spi_read	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	72;"	p	line:72	signature:(char module)
 spi_read_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	232;"	f	line:232	signature:(char module, unsigned char* buffer, int length)
-spi_read_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	87;"	p	line:87	signature:(char module, unsigned char* buffer, int length)
+spi_read_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	91;"	p	line:91	signature:(char module, unsigned char* buffer, int length)
 spi_set_clock	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	91;"	f	line:91	signature:(char module, uint32_t bps)
-spi_set_clock	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	63;"	p	line:63	signature:(char module, uint32_t bps)
+spi_set_clock	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	67;"	p	line:67	signature:(char module, uint32_t bps)
 spi_write	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	156;"	f	line:156	signature:(char module, int data)
-spi_write	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	76;"	p	line:76	signature:(char module, int data)
+spi_write	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	80;"	p	line:80	signature:(char module, int data)
 spi_write_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	180;"	f	line:180	signature:(char module, unsigned char* data, int length)
-spi_write_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	82;"	p	line:82	signature:(char module, unsigned char* buffer, int length)
+spi_write_buffer	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.h	86;"	p	line:86	signature:(char module, unsigned char* buffer, int length)
 temp	C:\Users\Fernan\Documents\fat32lib\dspic_hal\spi.c	182;"	l	line:182
 temp_count	C:\Users\Fernan\Documents\fat32lib\dspic_hal\lcd.c	237;"	v	line:237
-time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	211;"	f	line:211	signature:(time_t *pt)
+time	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	227;"	f	line:227	signature:(time_t *pt)
 timeinfo	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	104;"	l	line:104
 timer_period	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	23;"	v	line:23	file:
 tmr2	C:\Users\Fernan\Documents\fat32lib\dspic_hal\rtc.c	167;"	l	line:167

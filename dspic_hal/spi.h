@@ -33,12 +33,16 @@ typedef char SPI_MODULE;
 /*
 // no of spi modules on device
 */
+#if defined(__dsPIC33FJ128GP802__) || defined(__dsPIC33FJ256GP710A__)
 #define SPI_NO_OF_MODULES			(2)
+#else
+#define SPI_NO_OF_MODULES			(1)
+#endif
 
 /*
 // max speed of spi module in bps
 */
-#define SPI_MAX_SPEED				(10000000)
+#define SPI_MAX_SPEED				(15000000)
 
 #define SPI_GET_MODULE(module)		(module)
 

@@ -207,6 +207,22 @@ void rtc_timer_elapsed(uint32_t* s, uint32_t* ms)
 	}
 }
 
+void rtc_sleep(uint16_t ms_delay)
+{
+	uint32_t s, ms, s_elapsed, ms_elapsed;
+	rtc_timer(&s, &ms);
+	s_elapsed = s;
+	ms_elapsed = ms;
+	while (1)
+	{
+		rtc_timer_elapsed(&s_elapsed, &ms_elapsed);
+		if ((s * 1000) + ms >= ms_delay)
+			break;
+		s_elapsed = s;
+		ms_elapsed = ms;
+	}
+}
+
 
 time_t time(time_t *pt)
 {

@@ -20,51 +20,91 @@
 #ifndef __SD_H__
 #define __SD_H__
 
+/*! \file sd.h
+ * \brief This is the header file for the SD card driver.
+ * It handles the SD card access through the SPI bus driver implemented
+ * on the HAL library and provides a STORAGE_DEVICE interface to the
+ * higher level drivers (fat32lib and smlib.)
+ */
+
+/*
+ * NOTE!!: The defines wrapped in #if defined(__DOXYGEN__) are in effect
+ * commented out. This was done in order to allow the doxygen to see
+ * them. If you want to uncomment them just remove the #if defined(__DOXYGEN__).
+ *
+ */
+
+
 #include <common.h>
 #include <dma.h>
 #include <spi.h>
 #include "..\fat32lib\storage_device.h"
 
-/*
-// define SD_MULTI_THREADED to compile with support
-// for multi-threaded systems. Note: if you call any
-// of the IO functions from an interrupt handler (which
-// I strongly recommend against) then you must compile
-// with this option.
-*/
-/* #define SD_MULTI_THREADED */
 
-/*
-// define SD_DRIVER_OWNS_THREAD only if the driver
-// has it's own bakground processing thread, or more 
-// specifically, if none of the IO functions is ever
-// called by user code from the same thread that calls
-// sd_idle_processing.
-*/
-/* #define SD_DRIVER_OWNS_THREAD */
+/*!
+ * <summary>
+ * This is a compile-time option used the enable multi-threading
+ * support. WARNING: At the present time multi-threading support has
+ * not been fully tested.
+ * </summary>
+ */
+#if defined(__DOXYGEN__)
+#define SD_MULTI_THREADED
+#endif
 
-/*
-// async request queue options
-// if you do more than 1 concurrent async request
-// you must define SD_QUEUE_ASYNC_REQUESTS and
-// SD_ASYNC_QUEUE_LIMIT. The recommended value
-// for SD_ASYNC_QUEUE_LIMIT is (x - 1) where x is
-// the number of concurrent async operations that
-// your application may perform.
+/*!
+ * <summary>
+ * This is a compile-time option to indicate that the driver
+ * has it's own background processing thread, or more specifically
+ * that none of the IO functions will ever be called by application code
+ * from the same thread as sd_idle_processing. It only applies when
+ * SD_MULTI_THREADED is defined.
+ * </summary>
 */
+#if defined(__DOXYGEN__)
+#define SD_DRIVER_OWNS_THREAD
+#endif
+
+/*!
+ * <summary>
+ * This is a compile-time option that defines whether the driver
+ * should enqueue asynchronous requests (including stream IO requests.)
+ * If your application only uses 1 asynchronous IO concurrently you can
+ * comment this line out in order to save space.
+ * </summary>
+ */
 #define SD_QUEUE_ASYNC_REQUESTS
+
+/*!
+ * <summary>
+ * This is a compile-time option that defines the number of asynchronous
+ * requests that the driver can handle simultaneously. After this limit is
+ * exceeded any asynchronous requests will block until one requests is completed.
+ * </summary>
+ */
 #define SD_ASYNC_QUEUE_LIMIT		(3)
 
-/*
-// if SD_ALLOCATE_QUEUE_FROM_HEAP is defined this
-// driver will allocate memory for the queue dynamically
-// from the heap. Be careful when using this option because
-// if you run out of memory and attemp an asynchronous
-// request it will block until the memory becomes
-// available
-*/
-/* #define SD_ALLOCATE_QUEUE_FROM_HEAP */
+/*!
+ * <summary>
+ * This is a compile-time option that defines that the driver
+ * should allocate memory for the request queue dynamically from
+ * the heap. If memory is not available when an asynchronous request
+ * is made it will block until the memory becomes available. This
+ * option is not supported with SD_ENABLE_MULTI_BLOCK_WRITE.
+ * </summary>
+ */
+#if defined(__DOXYGEN__)
+#define SD_ALLOCATE_QUEUE_FROM_HEAP
+#endif
 
+/*!
+ * <summary>
+ * This is a compile-time option that indicates that the driver should be compile
+ * with multi-sector write support. This option is required to support stream
+ * IO. If your application does not use stream IO you may comment this option
+ * out in order to save space.
+ * </summary>
+ */
 #define SD_ENABLE_MULTI_BLOCK_WRITE
 
 /* #define SD_PRINT_DEBUG_INFO */
@@ -85,29 +125,98 @@
 #endif
 #endif
 
-/*
-// macros for the DMA interrupts
-*/
-#define SD_DMA_CHANNEL_1_INTERRUPT(sd)								\
-	(sd)->context.dma_transfer_completed = 1;						\
-	DMA_CHANNEL_CLEAR_INTERRUPT_FLAG((sd)->context.dma_channel_1)
+/*!
+ * <summary>
+ * This is the macro for driver's 1st DMA channel interrupt. It must
+ * be called from within that channel's ISR.
+ * </summary>
+ * <param name="driver">A pointer to the driver handle.</param>
+ */
+#define SD_DMA_CHANNEL_1_INTERRUPT(driver)								\
+	(driver)->context.dma_transfer_completed = 1;						\
+	DMA_CHANNEL_CLEAR_INTERRUPT_FLAG((driver)->context.dma_channel_1)
 	
-#define SD_DMA_CHANNEL_2_INTERRUPT(sd)								\
-	(sd)->context.dma_transfer_completed = 1;						\
-	DMA_CHANNEL_CLEAR_INTERRUPT_FLAG((sd)->context.dma_channel_2)
+/*!
+ * <summary>
+ * This is the macro for driver's 2nd DMA channel interrupt. It must
+ * be called from within that channel's ISR.
+ * </summary>
+ * <param name="driver">A pointer to the driver handle.</param>
+ */
+#define SD_DMA_CHANNEL_2_INTERRUPT(driver)								\
+	(driver)->context.dma_transfer_completed = 1;						\
+	DMA_CHANNEL_CLEAR_INTERRUPT_FLAG((driver)->context.dma_channel_2)
 
 
 
-/*
-// SD driver callback functions
-*/ 
-typedef void (*SD_ASYNC_CALLBACK)(uint16_t* State, void* context);
+/*!
+ * <summary>
+ * This is the function pointer required by the file system driver for the 
+ * asynchronous IO callback. The file system driver implements this functions 
+ * and passes it's pointer to the asynchronous IO functions in order to receive 
+ * callbacks.
+ * </summary>
+ * <param name="result">The result of the asynchronous IO operation.</param>
+ * <param name="context">
+ * A pointer passed by the file system driver to the storage device driver
+ * that contains state information about the async operation.
+ * </param>
+ */ 
+typedef void (*SD_ASYNC_CALLBACK)(uint16_t* result, void* context);
+
+/*!
+ * <summary>
+ * This is the function pointer required by the volume manager (smlib) to
+ * receive notifications when the device is mounted of dismounted. The Volume
+ * Manager registers this function when the device is registered with the 
+ * Volume Manager.
+ * </summary>
+ * <param name="device_id">
+ * The id of the device. This is the value passed as the id parameter to sd_init .
+ * </param>
+ * <param name="media_ready">
+ * A boolean value that is set to 1 to indicate that the device has been mounted.
+ * </param>
+ */
 typedef void (*SD_MEDIA_STATE_CHANGED)(uint16_t device_id, char media_ready);
-typedef void (*SD_ASYNC_CALLBACK_EX)(uint16_t*state, void* context, unsigned char** buffer, uint16_t* action);
 
-/*
-// SD callback info structure
-*/
+/*!
+ * <summary>
+ * This is the function pointer required by the file system driver for the 
+ * stream IO callback. The file system driver implements this functions 
+ * and passes it's pointer to the write_multiple_sectors functions in order to receive 
+ * callbacks.
+ * <summary>
+ * <param name="result">The result of the asynchronous IO operation.</param>
+ * <param name="context">
+ * A pointer passed by the file system driver to the storage device driver
+ * that contains state information about the async operation.
+ * </param>
+ * <param name="buffer">
+ * A pointer-to-pointer to the buffer containing the data being read/written
+ * to/from the device. During this callback the file system driver may change
+ * the buffer or reload it with fresh data to continue the multiple sector transfer.
+ * </param>
+ * <param name="response">
+ * A pointer to the response code. The file system driver may set this value to
+ * STORAGE_MULTI_SECTOR_RESPONSE_STOP to signal that the multi sector operation is
+ * completed, to STORAGE_MULTI_SECTOR_RESPONSE_SKIP to signal that the multi-sector 
+ * operation is not completed but the data is not ready to be written. In this case
+ * the driver should enqueue the request, process other pending request and callback
+ * again. Or to STORAGE_MULTI_SECTOR_RESPONSE_READY to indicate that the buffer has
+ * been changed or releaded with fresh data and that the multi-sector operation should
+ * continue.
+ * </param>
+ */
+typedef void (*SD_ASYNC_CALLBACK_EX)(uint16_t* result, void* context, unsigned char** buffer, uint16_t* response);
+
+/*!
+ * <summary>
+ * This structure is used by the SD driver to store callback information
+ * about a request. It is reserved for internal use and should not be accessed
+ * directly by the application code.
+ * </summary>
+ */
 typedef struct SD_CALLBACK_INFO 
 {
 	SD_ASYNC_CALLBACK callback;
@@ -115,6 +224,13 @@ typedef struct SD_CALLBACK_INFO
 }
 SD_CALLBACK_INFO, *PSD_CALLBACK_INFO;
 
+/*!
+ * <summary>
+ * This structure is used by the SD driver to store callback information
+ * about a request. It is reserved for internal use and should not be accessed
+ * directly by the application code.
+ * </summary>
+ */
 typedef struct SD_CALLBACK_INFO_EX
 {
 	SD_ASYNC_CALLBACK_EX callback;
@@ -122,9 +238,13 @@ typedef struct SD_CALLBACK_INFO_EX
 }
 SD_CALLBACK_INFO_EX;
 
-/*
-// async request
-*/
+/*!
+ * <summary>
+ * This structure is used by the SD driver to store information about asynchronous
+ * requests. It is reserved for internal use and should not be accessed directly by 
+ * the application code.
+ * </summary>
+ */
 typedef struct SD_ASYNC_REQUEST
 {
 	uint32_t address;
@@ -138,9 +258,13 @@ typedef struct SD_ASYNC_REQUEST
 }
 SD_ASYNC_REQUEST;
 
-/*
-// SD card driver context
-*/
+/*!
+ * <summary>
+ * This structure stores the state of the SD card driver. It is part of the
+ * driver handle (SD_DRIVER) and as such it is reserved for internal use and should
+ * not be accessed by the application directly.
+ * </summary>
+ */
 typedef struct SD_DRIVER_CONTEXT 
 {
 	/*
@@ -221,9 +345,14 @@ typedef struct SD_DRIVER_CONTEXT
 }
 SD_DRIVER_CONTEXT; 
 
-/*
-// SD card info structure
-*/
+/*!
+ * <summary>
+ * This structure stores information about the currently mounted
+ * SD card. It is part of the device driver handle (SD_DRIVER structure) and
+ * as such it is reserved for internal use and should not be accessed by
+ * the application directly.
+ * </summary>
+ */
 typedef struct SD_CARD
 {
 	unsigned char version;			/* SD card spec. version */
@@ -238,9 +367,13 @@ typedef struct SD_CARD
 }
 SD_CARD;
 
-/*
-// SD card driver handle
-*/
+/*!
+ * <summary>
+ * The SD card device driver handle. The members of this structure are
+ * reserved for internal use and should not be accessed by the application
+ * directly.
+ * </summary>
+ */
 typedef struct SD_DRIVER
 {
 	SD_CARD card_info;
@@ -248,16 +381,58 @@ typedef struct SD_DRIVER
 } 
 SD_DRIVER;	
 
-/*
-// initializes the SD card driver
-*/
+/*!
+ * <summary>Initializes the SD card driver.</summary>
+ * <param name="driver">A pointer to the driver handle (SD_DRIVER structure)</param>
+ * <param name="spi_module">The SPI module used to connect to the SD card.</param>
+ * <param name="dma_channel_1">
+ * The 1st DMA channel used by the driver. This is only required for asynchronous (and stream) IO.
+ * If you don't use this features you can set this paramter to zero. Use the DMA_GET_CHANNEL() macro 
+ * included in the HAL library to initialize a DMA channel instance.
+ * </param>
+ * <param name="dma_channel_2">
+ * The 2nd DMA channel used by the driver. This is only required for asynchronous (and stream) IO.
+ * If you don't use this features you can set this paramter to zero. Use the DMA_GET_CHANNEL() macro 
+ * included in the HAL library to initialize a DMA channel instance.
+ * </param>
+ * <param name="dma_buffer">
+ * DMA buffer used by the driver. This is only required for asynchronous (and stream) IO.
+ * If your application doesn't use this features you can set this parameter to zero.
+ * </param>
+ * <param name="dma_byte">
+ * A byte of DMA memory. This is only required by asynchronous IO in order to sustain
+ * a DMA transfer through the SPI since since the SPI bus requires that reads and writes
+ * be done simultaneously in order to sustain a transfer. If your application does not use
+ * asynchronous IO you can set this parameter to zero.
+ * </param>
+ * <param name="cs_line">
+ * A pointer to the pin that is connected to the CS line of the SD card.
+ * Use the BP_INIT macro included in the HAL library to initialize a 
+ * bit pointer.
+ * </param>
+ * <param name="busy_signal">
+ * A pointer to a pin (or a bit of memory) that will be set HIGH by the driver
+ * during disk activity.
+ * </param>
+ * <param name="id">
+ * A unique device id. This is used by smlib to identify the device.
+ * </param>
+ * <returns>
+ * If successful it will return SD_SUCCESS, otherwise it will return one of the
+ * result codes defined in sd.h.
+ * </returns>
+ * <remarks>
+ * The interrupts for dma_channel_1 and dma_channel_2 must by handled with the
+ * SD_DMA_CHANNEL_1_INTERRUPT() and SD_DMA_CHANNEL_2_INTERRUPT() macros.
+ * </remarks>
+ */
 uint16_t sd_init
 ( 
 	SD_DRIVER* driver, 
 	SPI_MODULE spi_module,
-	DMA_CHANNEL* const channel1, 
-	DMA_CHANNEL* const channel2, 
-	unsigned char* async_buffer,
+	DMA_CHANNEL* const dma_channel_1, 
+	DMA_CHANNEL* const dma_channel_2, 
+	unsigned char* dma_buffer,
 	char* dma_byte,
 	BIT_POINTER media_ready,
 	BIT_POINTER cs_line,
@@ -265,22 +440,35 @@ uint16_t sd_init
 	uint16_t id
 );
 
-/*
-// gets the storage device interface for
-// this driver
-*/
+/*!
+ * <summary>
+ * Initializes the STORAGE_DEVICE interface used by the fat32lib and smlib modules
+ * to communicate with the device.
+ * </summary>
+ * <param name="driver">
+ * A pointer to the initialized driver handle (SD_DRIVER structure).
+ * </param>
+ * <param name="driver_interface">
+ * A pointer to a STORAGE_DEVICE structure to initialize.
+ * </param>
+ *
+ */
 void sd_get_storage_device_interface
 ( 
-	SD_DRIVER* card_info, 
-	STORAGE_DEVICE* device 
+	SD_DRIVER* driver, 
+	STORAGE_DEVICE* driver_interface 
 );
 
-/*
-// performs driver background processing
-*/
+/*!
+ * <summary>
+ * Performs the driver's background processing. This function should
+ * be called from within your applications main loop.
+ * </summary>
+ * <param name="driver">A pointer to the driver handle (SD_DRIVER structure.)</param>
+ */
 void sd_idle_processing
 ( 
-	SD_DRIVER* sd 
+	SD_DRIVER* driver 
 );
 
 #endif
