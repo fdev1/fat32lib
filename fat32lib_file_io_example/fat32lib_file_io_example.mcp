@@ -32,8 +32,6 @@ file_004=.
 file_005=.
 file_006=.
 file_007=.
-file_008=.
-file_009=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -43,8 +41,6 @@ file_004=no
 file_005=no
 file_006=no
 file_007=no
-file_008=no
-file_009=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -52,10 +48,8 @@ file_002=no
 file_003=no
 file_004=no
 file_005=no
-file_006=no
-file_007=no
-file_008=yes
-file_009=yes
+file_006=yes
+file_007=yes
 [FILE_INFO]
 file_000=main.c
 file_001=libc.c
@@ -63,10 +57,8 @@ file_002=..\smlib\smlib.a
 file_003=..\fat32lib\fat32lib.a
 file_004=..\sdlib\sdlib.a
 file_005=..\dspic_hal\dspic_hal.a
-file_006=C:\Users\Fernan\Documents\lglib\lglib.a
-file_007=C:\Users\Fernan\Documents\ili9341\ili9341.a
-file_008=readme.txt
-file_009=..\licensing.txt
+file_006=readme.txt
+file_007=..\licensing.txt
 [SUITE_INFO]
 suite_guid={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 suite_state=
