@@ -62,7 +62,7 @@
 #define SD_DATA_ERROR_CC_ERROR					0x02
 #define SD_DATA_ERROR_ECC_FAILED				0x04
 #define SD_DATA_ERROR_OUT_OF_RANGE				0x08
-#define SD_SPI_TIMEOUT							0xFFFFfu/*0xFDE8*/
+#define SD_SPI_TIMEOUT							0xFFFF/*0xFDE8*/
 
 /*
 // SD commands
