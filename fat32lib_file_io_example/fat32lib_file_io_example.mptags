@@ -56,8 +56,13 @@ SD_CARD_SPI_MODULE::2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_exampl
 STREAM_SIZE_32MB	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	24;"	d	line:24	file:
 USE_SM_IO	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	21;"	d	line:21	file:
 USE_STREAM_IO	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	23;"	d	line:23	file:
-_DMA0Interrupt	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	972;"	f	line:972	signature:(void)
-_DMA1Interrupt	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	977;"	f	line:977	signature:(void)
+_AddressError	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	989;"	f	line:989	signature:(void)
+_DMA0Interrupt	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	974;"	f	line:974	signature:(void)
+_DMA1Interrupt	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	979;"	f	line:979	signature:(void)
+_DMACError	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	1027;"	f	line:1027	signature:(void)
+_MathError	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	1021;"	f	line:1021	signature:(void)
+_OscillatorFail	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	1033;"	f	line:1033	signature:(void)
+_StackError	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	1005;"	f	line:1005	signature:(void)
 __C30_UART::2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	194;"	d	line:194	file:
 access_flags	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	49;"	l	line:49
 async_value1	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	152;"	v	line:152
@@ -70,12 +75,12 @@ buff1	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	146;"	v
 buff2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	147;"	v	line:147
 buff3	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	148;"	v	line:148
 busy_signal	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	392;"	l	line:392
-bytes_read	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	766;"	l	line:766
+bytes_read	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	767;"	l	line:767
 close	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	91;"	f	line:91	signature:(int handle)
 cs	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	390;"	l	line:390
 data_value	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	136;"	v	line:136
 date_label	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	121;"	v	line:121
-date_string	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	831;"	l	line:831	file:
+date_string	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	832;"	l	line:832	file:
 dma_buffer	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	127;"	v	line:127
 dma_byte	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	128;"	v	line:128
 err	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	133;"	v	line:133
@@ -96,7 +101,7 @@ file_id	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	48;"	
 file_test	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	165;"	p	line:165	file:
 file_test	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	495;"	f	line:495
 file_test2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	166;"	p	line:166	file:
-file_test2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	763;"	f	line:763
+file_test2	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	764;"	f	line:764
 file_write_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	169;"	p	line:169	file:	signature:(SM_FILE* file, uint16_t* result)
 file_write_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	651;"	f	line:651	signature:(SM_FILE* f, uint16_t* result)
 file_write_stream_callback	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	170;"	p	line:170	file:	signature:(SM_FILE* f, uint16_t* result, unsigned char** buffer, uint16_t* response)
@@ -109,9 +114,9 @@ i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	198;"	l	lin
 i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	501;"	l	line:501
 i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	653;"	l	line:653
 i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	720;"	l	line:720	file:
-i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	765;"	l	line:765
+i	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	766;"	l	line:766
 idle_processing	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	164;"	p	line:164	file:
-idle_processing	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	826;"	f	line:826
+idle_processing	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	827;"	f	line:827
 init_cpu	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	160;"	p	line:160	file:
 init_cpu	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	245;"	f	line:245
 init_fs	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	163;"	p	line:163	file:
@@ -122,8 +127,8 @@ init_pins	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	171
 init_pins	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	278;"	f	line:278
 init_uart	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	161;"	p	line:161	file:
 init_uart	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	313;"	f	line:313
-last_time	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	828;"	l	line:828	file:
-last_value	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	767;"	l	line:767
+last_time	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	829;"	l	line:829	file:
+last_value	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	768;"	l	line:768
 lcd_driver	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	124;"	v	line:124
 lseek	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	101;"	f	line:101	signature:(int handle, long offset, int origin)
 main	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	175;"	f	line:175
@@ -131,6 +136,7 @@ media_ready	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	3
 mode	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	103;"	l	line:103
 nTimeout	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	153;"	l	line:153
 open	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	45;"	f	line:45	signature:(const char *name, int access, int mode)
+pc	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	984;"	v	line:984	file:
 r	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	527;"	l	line:527
 read	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	123;"	f	line:123	signature:(int handle, void *buffer, unsigned int len)
 remove	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	184;"	f	line:184	signature:(const char *filename)
@@ -143,12 +149,12 @@ sd_card	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	126;"
 smfile	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	528;"	l	line:528
 storage_device	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	393;"	l	line:393
 time_label	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	120;"	v	line:120
-time_string	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	830;"	l	line:830	file:
-timeinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	829;"	l	line:829	file:
+time_string	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	831;"	l	line:831	file:
+timeinfo	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	830;"	l	line:830	file:
 txreg	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	201;"	l	line:201
 umode	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	126;"	l	line:126
 umode	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	199;"	l	line:199
-unmount_pressed_time	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	833;"	l	line:833	file:
+unmount_pressed_time	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	834;"	l	line:834	file:
 ustatus	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	127;"	l	line:127
 ustatus	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\libc.c	200;"	l	line:200
 volume_dismounted	C:\Users\Fernan\Documents\fat32lib\fat32lib_file_io_example\main.c	168;"	p	line:168	file:	signature:(char* volume_label)

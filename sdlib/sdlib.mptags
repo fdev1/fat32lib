@@ -97,7 +97,7 @@ SD_SPEED_CLASS2::1	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	34;"	d	line:34	
 SD_SPEED_CLASS4::2	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	35;"	d	line:35	file:
 SD_SPEED_CLASS6::3	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	36;"	d	line:36	file:
 SD_SPI_MODULE::(1)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	124;"	d	line:124	file:
-SD_SPI_TIMEOUT::0xFFFF	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	65;"	d	line:65	file:
+SD_SPI_TIMEOUT::0xFFFFfu	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	65;"	d	line:65	file:
 SD_SUCCESS::(STORAGE_SUCCESS)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	90;"	d	line:90	file:
 SD_TIMEOUT::(STORAGE_TIMEOUT)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	101;"	d	line:101	file:
 SD_UNKNOWN_ERROR::(STORAGE_UNKNOWN_ERROR)	C:\Users\Fernan\Documents\fat32lib\sdlib\sd.c	93;"	d	line:93	file:
