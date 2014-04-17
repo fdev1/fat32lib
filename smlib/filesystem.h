@@ -19,7 +19,7 @@
 
 #ifndef STOREMANLIB_FILESYSTEM_H
 #define STOREMANLIB_FILESYSTEM_H
-#include "compiler.h"
+#include "../compiler/compiler.h"
 
 /*! \file filesystem.h
  * \brief This header file defines the interface used

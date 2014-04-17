@@ -38,7 +38,7 @@
 #include <common.h>
 #include <dma.h>
 #include <spi.h>
-#include "..\fat32lib\storage_device.h"
+#include "../fat32lib/storage_device.h"
 
 
 /*!

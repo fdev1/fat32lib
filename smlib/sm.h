@@ -31,9 +31,9 @@
 /*
 	@manonly */
 
-#include <compiler.h>
+#include "../compiler/compiler.h"
 #include "filesystem.h"
-#include "..\fat32lib\storage_device.h"
+#include "../fat32lib/storage_device.h"
 #include <time.h>
 
 /*

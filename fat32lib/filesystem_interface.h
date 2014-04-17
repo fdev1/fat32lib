@@ -28,7 +28,7 @@
 /*
 	@manonly */
 
-#include "..\smlib\filesystem.h"
+#include "../smlib/filesystem.h"
 /*
 	@endmanonly */
 

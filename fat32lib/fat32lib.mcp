@@ -76,13 +76,14 @@ file_009=fat_format.h
 file_010=readme.txt
 file_011=..\licensing.txt
 [SUITE_INFO]
-suite_guid={479DDE59-4D56-455E-855E-FFF59A3DB57E}
-suite_state=build-library generic-16bit
+suite_guid={9BCCB495-CD65-480A-BA76-63D8E78B117F}
+suite_state=build-library
 [TOOL_SETTINGS]
-TS{7D9C6ECE-785D-44CB-BA22-17BF2E119622}=-g
-TS{25AC22BD-2378-4FDB-BFB6-7345A15512D3}=-g -fno-short-double -Wall -pedantic -mlarge-code -mlarge-data -mconst-in-code -funroll-loops -fomit-frame-pointer -fschedule-insns -fschedule-insns2
-TS{7DAC9A1D-4C45-45D6-B25A-D117C74E8F5A}=-Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
-TS{509E5861-1E2A-483B-8B6B-CA8DB7F2DD78}=
+TS{8493B2ED-D539-4951-86C9-24D5331F0393}=-g
+TS{F9CE474D-6A6C-401D-A11E-BEE01B244D79}=-g -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn
+TS{F9CE474D-6A6C-401D-A11E-BEE01B244D79}_alt=yes
+TS{21A8AA9B-E75C-40B6-B3AE-9CBC16FF2EF9}=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
+TS{45B3B6E0-6DAF-4E40-8D20-CFB1B620134D}=
 [INSTRUMENTED_TRACE]
 enable=0
 transport=0

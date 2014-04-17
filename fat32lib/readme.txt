@@ -25,3 +25,18 @@ this library to compile correctly.
 
 See the included documentation on doc folder and the examples included
 for usage info.
+
+Known bugs:
+===========
+
+1. The XC16 compiler handle structure alignment different than
+C30 so unless you compiler as strict ANSI code it will give compile
+warnings and possible runtime errors. Until I get the time to fix
+this the workaround is to compile with the strict option, that way
+the library does not rely on struct alignment. Performance on strict
+ANSI mode is not as good but it's still OK.
+
+2. When performing unbuffered IO if the output buffer is not word
+aligned or if it's size is not divisible by two it will throw an
+address error. That is actually a driver bug which I will get fixed
+in the next release.

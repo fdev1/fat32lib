@@ -209,7 +209,8 @@ void lcd_idle_processing(LCD_CONFIG* lcd)
 			// change line # and pos on lcd driver state
 			*/
 			lcd->line_pos = 0;
-			lcd->line_no = ++(lcd->line_no) % LCD_LINE_COUNT;
+			lcd->line_no++;
+			lcd->line_no = (lcd->line_no) % LCD_LINE_COUNT;
 			/*
 			// send change line command to lcd
 			*/

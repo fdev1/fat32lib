@@ -111,7 +111,7 @@ int cmd_test(char* args)
 	TCHAR* dev = TEXT("\\\\.\\") TEXT(SD_CARD);
 	//TCHAR* dev = TEXT("\\\\.\\PhysicalDrive2");
 
-	/*
+	
 	
 	int x, y;
 	int freq;
@@ -133,7 +133,7 @@ int cmd_test(char* args)
 	}
 
 	return;
-	*/
+	
 
 
 

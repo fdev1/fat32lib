@@ -25,11 +25,23 @@
 const DMA_CHANNEL ___dma_channel_0 = 
 { 
 	/* .ControlBits = */ (DMA_CHANNEL_CONTROL_BITS*) &DMA0CON, 
+	
+	#if defined(__dsPIC33F__)
 	/* .BufferA = */ (volatile uint16_t*) &DMA0STA, 
 	/* .BufferB = */ (volatile uint16_t*) &DMA0STB, 
+	#elif defined(__dsPIC33E__)
+	/* .BufferA = */ (volatile uint16_t*) &DMA0STAL, 
+	/* .BufferB = */ (volatile uint16_t*) &DMA0STBL, 
+	/* .BufferAH = */ (volatile uint16_t*) &DMA0STAH, 
+	/* .BufferBH = */ (volatile uint16_t*) &DMA0STBH, 
+	#else
+	#error You may have to define this for your device family.
+	#endif
+	
 	/* .PeripheralAddress = */ (volatile uint16_t*) &DMA0PAD, 
 	/* .PeripheralIrq = */ (DMA_IRQ_BITS*) &DMA0REQ, 
 	/* .TransferLength = */ (volatile uint16_t*) &DMA0CNT, 
+	
 	/* .InterruptFlag = */ ((BIT_POINTER) { (uint16_t*) &IFS0, BIT4 }), 
 	/* .InterruptEnableBit = */ ((BIT_POINTER) { (uint16_t*) &IEC0, BIT4 }), 
 	/* .InterruptPriority = */ ((BIT_POINTER) { (uint16_t*) &IPC1, BIT2 | BIT1 | BIT0 }),
@@ -39,8 +51,19 @@ const DMA_CHANNEL ___dma_channel_0 =
 const DMA_CHANNEL ___dma_channel_1 = 
 { 
 	/* .ControlBits = */ (DMA_CHANNEL_CONTROL_BITS*) &DMA1CON, 
+	
+	#if defined(__dsPIC33F__)
 	/* .BufferA = */ (volatile uint16_t*) &DMA1STA, 
 	/* .BufferB = */ (volatile uint16_t*) &DMA1STB, 
+	#elif defined(__dsPIC33E__)
+	/* .BufferA = */ (volatile uint16_t*) &DMA1STAL, 
+	/* .BufferB = */ (volatile uint16_t*) &DMA1STBL, 
+	/* .BufferAH = */ (volatile uint16_t*) &DMA1STAH, 
+	/* .BufferBH = */ (volatile uint16_t*) &DMA1STBH, 
+	#else
+	#error You may have to define this for your device family.
+	#endif
+	
 	/* .PeripheralAddress = */ (volatile uint16_t*) &DMA1PAD, 
 	/* .PeripheralIrq = */ (DMA_IRQ_BITS*) &DMA1REQ, 
 	/* .TransferLength = */ (volatile uint16_t*) &DMA1CNT, 
@@ -52,8 +75,19 @@ const DMA_CHANNEL ___dma_channel_1 =
 
 const DMA_CHANNEL ___dma_channel_2 = { 
 	/* .ControlBits = */ (DMA_CHANNEL_CONTROL_BITS*) &DMA2CON, 
+
+	#if defined(__dsPIC33F__)
 	/* .BufferA = */ (volatile uint16_t*) &DMA2STA, 
 	/* .BufferB = */ (volatile uint16_t*) &DMA2STB, 
+	#elif defined(__dsPIC33E__)
+	/* .BufferA = */ (volatile uint16_t*) &DMA2STAL, 
+	/* .BufferB = */ (volatile uint16_t*) &DMA2STBL, 
+	/* .BufferAH = */ (volatile uint16_t*) &DMA2STAH, 
+	/* .BufferBH = */ (volatile uint16_t*) &DMA2STBH, 
+	#else
+	#error You may have to define this for your device family.
+	#endif
+
 	/* .PeripheralAddress = */ (volatile uint16_t*) &DMA2PAD, 
 	/* .PeripheralIrq = */ (DMA_IRQ_BITS*) &DMA2REQ, 
 	/* .TransferLength = */ (volatile uint16_t*) &DMA2CNT, 

@@ -17,34 +17,41 @@
  *
  */
  
-#include <time.h>
 #include "common.h"
 
-#ifndef RTC_H
-#define RTC_H
+static unsigned long pc;
 
 /*
-// initialize rtc
+// trap for AddressError
 */
-void rtc_init(uint32_t fcy);
+void __attribute__((__interrupt__, __no_auto_psv__)) _AddressError(void)
+{
+	/*
+	// get the value of the PC before trap
+	*/
+	pc = __PC();
+	/*
+	// break
+	*/
+	HALT();
+	/*
+	// clear interrupt flag
+	*/
+	INTCON1bits.ADDRERR = 0;
+}
 
-/*
-// change the clock speed
-*/
-void rtc_change_fcy(uint32_t fcy);
-
-/*
-// set the time
-*/
-void rtc_set_time(time_t new_time);
-
-/*
-// get the current fcy setting
-*/
-uint32_t rtc_get_fcy();
-void rtc_sleep(uint16_t ms_delay);
-void rtc_timer(uint32_t* s, uint32_t* ms);
-void rtc_timer_elapsed(uint32_t* s, uint32_t* ms);
-void rtc_time_increment(void);
-
-#endif
+void __attribute__((__interrupt__, __no_auto_psv__)) _StackError(void)
+{
+	/*
+	// get the value of the PC before trap
+	*/
+	pc = __PC();
+	/*
+	// halt cpu
+	*/
+	HALT();
+	/*
+	// clear interrupt flag
+	*/
+	INTCON1bits.STKERR = 0;
+}

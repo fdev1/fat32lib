@@ -25,40 +25,61 @@
 //#define USE_ILI9341
 #define EXPLORER16
 
+/*
+// pin configuration
+*/
 #if defined(EXPLORER16)
-#define SD_CARD_SPI_MODULE					2			/* SPI module for SD card */
-#define SD_CARD_CS_LINE_PORT				PORTG		/* SD card CS line port */
-#define SD_CARD_CS_LINE_TRIS				TRISG		/* SD card CS line tris */
-#define SD_CARD_CS_LINE_LAT					LATG		/* SD card CS line lat */
-#define SD_CARD_CS_LINE_PIN					3			/* SD card CS line pin # */
-
-#define SD_CARD_CD_LINE_PORT				PORTF		/* SD card C/D (card detect) line port */
-#define SD_CARD_CD_LINE_TRIS				TRISF		/* SD card C/D (card detect) line tris */
-#define SD_CARD_CD_LINE_LAT					LATF		/* SD card C/D (card detect) line lat */
-#define SD_CARD_CD_LINE_PIN					2			/* SD card C/D (card detect) line pin # */
-
-#define SD_CARD_ACTIVITY_LED_PORT 			PORTA 		/* SD card activity LED port */
-#define SD_CARD_ACTIVITY_LED_TRIS			TRISA		/* SD card activity LED tris */
-#define SD_CARD_ACTIVITY_LED_LAT			LATA		/* SD card activity LED lat */
-#define SD_CARD_ACTIVITY_LED_PIN			5			/* SD card activity LED pin # */
+	#define SD_CARD_SPI_MODULE					2			/* SPI module for SD card */
+	#define SD_CARD_CS_LINE_PORT				PORTG		/* SD card CS line port */
+	#define SD_CARD_CS_LINE_TRIS				TRISG		/* SD card CS line tris */
+	#define SD_CARD_CS_LINE_LAT					LATG		/* SD card CS line lat */
+	#define SD_CARD_CS_LINE_PIN					3			/* SD card CS line pin # */
+	
+	#define SD_CARD_CD_LINE_PORT				PORTF		/* SD card C/D (card detect) line port */
+	#define SD_CARD_CD_LINE_TRIS				TRISF		/* SD card C/D (card detect) line tris */
+	#define SD_CARD_CD_LINE_LAT					LATF		/* SD card C/D (card detect) line lat */
+	#define SD_CARD_CD_LINE_PIN					2			/* SD card C/D (card detect) line pin # */
+	
+	#define SD_CARD_ACTIVITY_LED_PORT 			PORTA 		/* SD card activity LED port */
+	#define SD_CARD_ACTIVITY_LED_TRIS			TRISA		/* SD card activity LED tris */
+	#define SD_CARD_ACTIVITY_LED_LAT			LATA		/* SD card activity LED lat */
+	#define SD_CARD_ACTIVITY_LED_PIN			5			/* SD card activity LED pin # */
+	
+	/*
+	// heartbeat LED
+	*/
+	#define HEARTBEAT 							LATAbits.LATA7
+	#define HEARTBEAT_TRIS						TRISAbits.TRISA7
+	
 #else
-#define SD_CARD_SPI_MODULE					1
-#define SD_CARD_CS_LINE_PORT				PORTB
-#define SD_CARD_CS_LINE_TRIS				TRISB
-#define SD_CARD_CS_LINE_LAT					LATB
-#define SD_CARD_CS_LINE_PIN					7
 
-
-#define SD_CARD_CD_LINE_PORT				PORTB
-#define SD_CARD_CD_LINE_TRIS				TRISB
-#define SD_CARD_CD_LINE_LAT					LATB
-#define SD_CARD_CD_LINE_PIN					12
-
-#define SD_CARD_ACTIVITY_LED_PORT 			PORTB
-#define SD_CARD_ACTIVITY_LED_TRIS			TRISB
-#define SD_CARD_ACTIVITY_LED_LAT			LATB
-#define SD_CARD_ACTIVITY_LED_PIN			6
-
+	#define SD_CARD_SPI_MODULE					1
+	#define SD_CARD_CS_LINE_PORT				PORTB
+	#define SD_CARD_CS_LINE_TRIS				TRISB
+	#define SD_CARD_CS_LINE_LAT					LATB
+	#define SD_CARD_CS_LINE_PIN					11
+	
+	
+	#define SD_CARD_CD_LINE_PORT				PORTA
+	#define SD_CARD_CD_LINE_TRIS				TRISA
+	#define SD_CARD_CD_LINE_LAT					LATA
+	#define SD_CARD_CD_LINE_PIN					3
+	
+	#define SD_CARD_ACTIVITY_LED_PORT 			PORTB
+	#define SD_CARD_ACTIVITY_LED_TRIS			TRISB
+	#define SD_CARD_ACTIVITY_LED_LAT			LATB
+	#define SD_CARD_ACTIVITY_LED_PIN			6
+	
+	#define HEARTBEAT 							LATBbits.LATB12
+	#define HEARTBEAT_TRIS						TRISBbits.TRISB12
+	
+	/*
+	// pin to enable microphone circuit. This is used
+	// by custom board only
+	*/
+	#define USE_MICEN
+	#define MICEN								LATBbits.LATB15
+	#define MICEN_TRIS							TRISBbits.TRISB15
 #endif
  
 
@@ -92,10 +113,15 @@ _FOSC(POSCMD_XT & OSCIOFNC_ON & FCKSM_CSDCMD);
 _FWDT(FWDTEN_OFF);
 _FPOR(FPWRT_PWR128);
 #else
-//_FOSCSEL(FNOSC_FRCPLL & IESO_OFF);
-//_FOSC(POSCMD_NONE & OSCIOFNC_ON & FCKSM_CSDCMD);
-//_FWDT(FWDTEN_OFF);
-//_FPOR(FPWRT_PWR128);
+_FOSCSEL(FNOSC_FRCPLL & IESO_OFF);
+_FOSC(POSCMD_NONE & OSCIOFNC_ON & FCKSM_CSDCMD & IOL1WAY_OFF);
+_FWDT(FWDTEN_OFF);
+#if defined(__dsPIC33E__)
+_FPOR(ALTI2C1_OFF & ALTI2C2_OFF & WDTWIN_WIN25);
+_FICD(ICS_PGD3 & JTAGEN_OFF);
+#else
+_FPOR(FPWRT_PWR128);
+#endif
 #endif
 
 /*
@@ -124,9 +150,13 @@ int16_t volume_icon;
 LCD_CONFIG lcd_driver;
 #endif																// lcd driver
 SD_DRIVER sd_card;																	// sd card driver
+#if defined(__dsPIC33F__)
 unsigned char __attribute__((space(dma), section(".sd_driver_dma_buffer"))) dma_buffer[512];	// DMA buffer for async/stream io
 char __attribute__((space(dma), section(".sd_driver_dma_byte"))) dma_byte;					// sd driver needs 1 byte of dma memory
-
+#else
+unsigned char __attribute__((section(".sd_driver_dma_buffer"))) dma_buffer[512];	// DMA buffer for async/stream io
+char __attribute__((section(".sd_driver_dma_byte"))) dma_byte;					// sd driver needs 1 byte of dma memory
+#endif
 
 #if defined(USE_STREAM_IO)
 SM_FILE file;				// file handle for stream write
@@ -174,34 +204,6 @@ void init_pins();
 //
 int main()
 {
-	/*
-	// configure all IO pins as digital
-	*/
-	#if defined(EXPLORER16)
-	AD1PCFGH = 0xffff;
-	AD2PCFGL = 0Xffff;	
-	AD1PCFGL = 0Xffff;
-	#else
-	AD1PCFGL = 0xFFFF;
-	#endif
-	//
-	// configure LEDs
-	//
-	#if defined(EXPLORER16)
-	IO_PORT_SET_AS_OUTPUT(A);	// LEDs
-	#else
-	IO_PIN_SET_AS_OUTPUT(A, 0);
-	IO_PIN_WRITE(A, 0, 1);		// heartbeat
-	IO_PIN_SET_AS_OUTPUT(B, 14);
-	IO_PIN_WRITE(B, 14, 0);
-	#endif
-	/*
-	// configure switches
-	*/
-	#if defined(EXPLORER16)
-	IO_PIN_SET_AS_INPUT(D, 6);	/* this will be our dismount button */
-	IO_PIN_WRITE(D, 6, 1);	
-	#endif
 	//
 	// clock th/e cpu and mount the filesystem
 	//
@@ -209,9 +211,7 @@ int main()
 	/*
 	// initialize pins
 	*/
-	#if !defined(EXPLORER16)
 	init_pins();
-	#endif
 	/*
 	// initialize uart (for printf)
 	*/
@@ -221,7 +221,13 @@ int main()
 	/*
 	// initialize real-time clock
 	*/
+	#if defined(__dsPIC33F__)
 	rtc_init(40000000);
+	#elif defined(__dsPIC33E__)
+	rtc_init(70000000);
+	#else
+	#error !!
+	#endif
 	/*
 	// initialize lcd
 	*/
@@ -235,8 +241,28 @@ int main()
 	/*
 	// do background processing
 	*/
-	while (1) //2Ch
+	while (1) 
+	{
+		/*
+		// workaround for ILI9341 driver bug
+		*/
+		#if defined(USE_ILI9341)
+			static char painted = 0;
+			if (!painted)
+			{
+				if (!ili9341_is_painting())
+				{
+					ili9341_paint();
+					painted = 1;
+				}
+			}
+		#endif
+		/*
+		// app tasks
+		*/
 		idle_processing();
+		
+	}
 }
 
 //
@@ -244,70 +270,137 @@ int main()
 //
 void init_cpu()
 {
-	//
-	// Configure oscillator to operate the device at 40Mhz
-	// using the primary oscillator with PLL and a 8 MHz crystal
-	// on the explorer 16
-	//
-	// Fosc = Fin * M / ( N1 * N2 )
-	// Fosc = 8M * 32 / ( 2 * 2 ) = 80 MHz
-	// Fcy = Fosc / 2 
-	// Fcy = 80 MHz / 2
-	// Fcy = 40 MHz
-	//
-	PLLFBDbits.PLLDIV = 38;
-	CLKDIVbits.PLLPOST = 0;		
-	CLKDIVbits.PLLPRE = 0;	
-    //PLLFBD = 0x00A0;
-    //CLKDIV = 0x0048;
-
-	//
-	// switch to primary oscillator
-	//	
-	//clock_sw();
-	//
-	// wait for PLL to lock
-	//
-	while (OSCCONbits.LOCK != 0x1);
+	#if defined(__dsPIC33F__)
+		//
+		// Configure oscillator to operate the device at 40Mhz
+		// using the primary oscillator with PLL and a 8 MHz crystal
+		// on the explorer 16
+		//
+		// Fosc = Fin * M / ( N1 * N2 )
+		// Fosc = 8M * 32 / ( 2 * 2 ) = 80 MHz
+		// Fcy = Fosc / 2 
+		// Fcy = 80 MHz / 2
+		// Fcy = 40 MHz
+		//
+		PLLFBDbits.PLLDIV = 38;
+		CLKDIVbits.PLLPOST = 0;		
+		CLKDIVbits.PLLPRE = 0;	
+		//
+		// switch to primary oscillator
+		//	
+		//clock_sw();
+		//
+		// wait for PLL to lock
+		//
+		while (OSCCONbits.LOCK != 0x1);
+		
+	#elif defined(__dsPIC33E__)
+		//
+		// Fosc = Fin * ((PLLDIV + 2) / ((PLLPRE + 2) * 2 * (PLLPOST + 1)))
+		// Fosc = 8 * ((68 + 2) / (2 * 2 * 1)) = 140
+		// Fcy = Fosc / 2
+		// Fcy = 140 / 2
+		// Fcy = 70 MHz
+		//
+		PLLFBDbits.PLLDIV = 68;
+		CLKDIVbits.PLLPRE = 0;
+		CLKDIVbits.PLLPOST = 0;
+		
+		while (OSCCONbits.LOCK != 0x1);
+	#endif
 }
 
 /*
 // configure pps
 */
-#if !defined(EXPLORER16)
 void init_pins()
 {
-	//__builtin_write_OSCCONL(0X46);
-	//__builtin_write_OSCCONH(0X57);
-	//OSCCONbits.IOLOCK = 0;
-
-	RPINR20bits.SDI1R = 0XA;		/* RP9 is SDI */
-	RPINR20bits.SCK1R = 0x9;
-	RPOR4bits.RP9R = 0b01000;		/* RP10 is SCK */
-	RPOR4bits.RP8R = 0b00111;		/* RP8 is SDO */
+	#if defined(EXPLORER16)
+		/*
+		// configure all IO pins as digital
+		*/
+		AD1PCFGH = 0xffff;
+		AD2PCFGL = 0Xffff;	
+		AD1PCFGL = 0Xffff;
+		/*
+		// configure io ports
+		*/	
+		IO_PORT_SET_AS_OUTPUT(A);	// LEDs
+		IO_PIN_SET_AS_INPUT(D, 6);	/* this will be our dismount button */
+		IO_PIN_WRITE(D, 6, 1);	
+		
+	#else /* custom board */
 	
-	#if defined(USE_ILI9341)
-	RPINR22bits.SDI2R = 13;
-	RPINR22bits.SCK2R = 11;
-	RPOR5bits.RP11R = 0b01011;		/* RP11 is SCK */
-	RPOR1bits.RP2R = 0b1010;		/* RP2 is SDO */
-	
-	
-	IO_PIN_SET_AS_INPUT(B, 13);
-	IO_PIN_SET_AS_OUTPUT(B, 11);
-	IO_PIN_SET_AS_OUTPUT(B, 2);
-	IO_PIN_SET_AS_OUTPUT(B, 3);
+		/*
+		// configure all IO pins as digital
+		*/
+		#if defined(__dsPIC33F__)
+			AD1PCFGL = 0xFFFF;
+		#elif defined(__dsPIC33E__)
+			ANSELA = 0;
+			ANSELB = 0;
+		#else
+			#error !!
+		#endif
+		/*
+		// disable MIC circuit (custom board)
+		*/
+		#if defined(MICEN)
+			MICEN_TRIS = 0;
+			MICEN = 0;
+		#endif
+		/*
+		// configure PPS
+		*/
+		#if defined(__dsPIC33E__)
+			/*
+			// configure SPI2 for ILI9341
+			*/		
+			#if defined(USE_ILI9341)
+				RPOR0bits.RP35R = 0b001000; // SDO
+				RPOR4bits.RP43R = 0b001001; // SCK
+				IO_PIN_SET_AS_OUTPUT(B, 5);
+				IO_PIN_SET_AS_OUTPUT(B, 3);
+			#endif
+			/*
+			// lock pin configuration
+			*/	
+			OSCCONbits.IOLOCK = 1;
+		
+		#elif defined(__dsPIC33F__)
+		
+			/*
+			// configure SPI2 for ILI9341
+			*/
+			#if defined(USE_ILI9341)
+				RPOR2bits.RP5R = 0b01011;		/* SCK */
+				RPOR1bits.RP3R = 0b1010;		/* SDO */
+				IO_PIN_SET_AS_OUTPUT(B, 5);
+				IO_PIN_SET_AS_OUTPUT(B, 3);
+			#endif
+			/*
+			// configure SPI1 for SD card
+			*/
+			RPINR20bits.SDI1R = 0X9;		/* SDI */
+			RPOR3bits.RP7R = 0b01000;		/* SCK */
+			RPOR4bits.RP8R = 0b00111;		/* SDO */
+			IO_PIN_SET_AS_OUTPUT(B, 7);
+			IO_PIN_SET_AS_OUTPUT(B, 8);
+			IO_PIN_SET_AS_INPUT(B, 9);
+			/*
+			// lock pin configuration
+			*/
+			__builtin_write_OSCCONL(0X46);
+			__builtin_write_OSCCONH(0X57);
+			OSCCONbits.IOLOCK = 1;
+		#endif
 	#endif
-	
-	// sck = 01011
-	// sdo = 01010
-
-	
-	__builtin_write_OSCCONL(0X46);
-	__builtin_write_OSCCONH(0X57);
-	OSCCONbits.IOLOCK = 1;
+	/*
+	// heartbeat LED
+	*/
+	HEARTBEAT_TRIS = 0;
+	HEARTBEAT = 1;
 }
-#endif
 
 #if defined(EXPLORER16)
 void init_uart()
@@ -326,61 +419,59 @@ void init_uart()
 //
 // initialize LCD
 //
-#if defined(EXPLORER16) || defined(USE_ILI9341)
 void init_lcd() 
 {
 	#if defined(USE_ILI9341)
-	ili9341_init();
-	lg_init((LG_DISPLAY_PAINT)&ili9341_paint, 
-		(LG_DISPLAY_PAINT_PARTIAL) &ili9341_paint_partial);
-	/*
-	// set the background color
-	*/
-	lg_set_background(0x0000FF); 
-	/*
-	// add labels for date/time and volume mounted icon
-	*/
-	time_label = lg_label_add((unsigned char*) "10:30:00", 0, 1, 1, 0xFFFFFF, 220, 12);
-	date_label = lg_label_add((unsigned char*) "00/00/2000", 0, 1, 1, 0xFFFFFF, 125, 12);
-	volume_icon = lg_label_add((unsigned char*) "\1", 0, 1, 2, 0xFFFFFF, 298, 12);
-	lg_label_add((unsigned char*) "(c)2014 Fernando Rodriguez", 0, 1, 2, 0xFFFFFF, 28, 220);
-	lg_label_set_visibility(volume_icon, 0);
-	#else
-	// 
-	// For Explorer 16 board:
-	//
-	// RS -> RB15
-	// E  -> RD4
-	// RW -> RD5
-	// DATA -> RE0 - RE7   
-	// ---
-	//
-	// set the pins used by the LCD as outputs
-	//
-	IO_PORT_SET_DIR_MASK(E, IO_PORT_GET_DIR_MASK(E) & 0xFF00);
-	IO_PIN_SET_AS_OUTPUT(D, 5);
-	IO_PIN_SET_AS_OUTPUT(B, 15);
-	IO_PIN_SET_AS_OUTPUT(D, 4);
-	IO_PIN_WRITE(D, 5, 0);
-	IO_PIN_WRITE(B, 15, 0);
-	//
-	// configure the LCD pins
-	//
-	lcd_driver.DataLine = (unsigned char*) &LATE; 	// DATA line connected to pins 7-0 on port E
-	BP_INIT(lcd_driver.RWLine, &LATD, 5);			// RW line connected to pin 5 on port D
-	BP_INIT(lcd_driver.RSLine, &LATB, 15);			// RS line connected to pin 15 on port B
-	BP_INIT(lcd_driver.ELine, &LATD, 4);			// E line connected to pin 4 on port D
-	//
-	// set the VDD rise delay (ms)
-	//
-	lcd_driver.VddRiseDelay = 0x1;
-	//
-	// initialize the LCD driver
-	//
-	lcd_init(&lcd_driver);
+		ili9341_init();
+		lg_init((LG_DISPLAY_PAINT)&ili9341_paint, 
+			(LG_DISPLAY_PAINT_PARTIAL) &ili9341_paint_partial);
+		/*
+		// set the background color
+		*/
+		lg_set_background(0x0000FF); 
+		/*
+		// add labels for date/time and volume mounted icon
+		*/
+		time_label = lg_label_add((unsigned char*) "10:30:00", 0, 1, 1, 0xFFFFFF, 220, 12);
+		date_label = lg_label_add((unsigned char*) "00/00/2000", 0, 1, 1, 0xFFFFFF, 125, 12);
+		volume_icon = lg_label_add((unsigned char*) "\1", 0, 1, 2, 0xFFFFFF, 298, 12);
+		lg_label_add((unsigned char*) "(c)2014 Fernando Rodriguez", 0, 1, 2, 0xFFFFFF, 28, 220);
+		lg_label_set_visibility(volume_icon, 0);
+	#elif defined(EXPLORER16)
+		// 
+		// For Explorer 16 board:
+		//
+		// RS -> RB15
+		// E  -> RD4
+		// RW -> RD5
+		// DATA -> RE0 - RE7   
+		// ---
+		//
+		// set the pins used by the LCD as outputs
+		//
+		IO_PORT_SET_DIR_MASK(E, IO_PORT_GET_DIR_MASK(E) & 0xFF00);
+		IO_PIN_SET_AS_OUTPUT(D, 5);
+		IO_PIN_SET_AS_OUTPUT(B, 15);
+		IO_PIN_SET_AS_OUTPUT(D, 4);
+		IO_PIN_WRITE(D, 5, 0);
+		IO_PIN_WRITE(B, 15, 0);
+		//
+		// configure the LCD pins
+		//
+		lcd_driver.DataLine = (unsigned char*) &LATE; 	// DATA line connected to pins 7-0 on port E
+		BP_INIT(lcd_driver.RWLine, &LATD, 5);			// RW line connected to pin 5 on port D
+		BP_INIT(lcd_driver.RSLine, &LATB, 15);			// RS line connected to pin 15 on port B
+		BP_INIT(lcd_driver.ELine, &LATD, 4);			// E line connected to pin 4 on port D
+		//
+		// set the VDD rise delay (ms)
+		//
+		lcd_driver.VddRiseDelay = 0x1;
+		//
+		// initialize the LCD driver
+		//
+		lcd_init(&lcd_driver);
 	#endif
 }
-#endif
 
 //
 // initialize the filesystem drivers
@@ -463,11 +554,11 @@ void volume_mounted(char* volume_label)
 	// lignt LED to indicate that drive is mounted
 	*/
 	#if defined(USE_ILI9341)
-	lg_label_set_visibility(volume_icon, 1);
+		lg_label_set_visibility(volume_icon, 1);
 	#elif defined(EXPLORER16)
-	IO_PIN_WRITE(A, 6, 1);
+		IO_PIN_WRITE(A, 6, 1);
 	#else
-	//IO_PIN_WRITE(A, 2, 1);
+		//IO_PIN_WRITE(A, 2, 1);
 	#endif
 	/*
 	// perform file io tests
@@ -475,17 +566,21 @@ void volume_mounted(char* volume_label)
 	file_test();
 }
 
+/*
+// callback function to receive notification when
+// a volume is dismounted.
+*/
 void volume_dismounted(char* volume_label)
 {
 	/*
 	// turn off the drive mounted indicator LED
 	*/
 	#if defined(USE_ILI9341)
-	lg_label_set_visibility(volume_icon, 0);
+		lg_label_set_visibility(volume_icon, 0);
 	#elif defined(EXPLORER16)
-	IO_PIN_WRITE(A, 6, 0);
+		IO_PIN_WRITE(A, 6, 0);
 	#else
-	//IO_PIN_WRITE(A, 2, 0);
+		//IO_PIN_WRITE(A, 2, 0);
 	#endif
 }
 
@@ -712,7 +807,13 @@ void file_write_callback(SM_FILE* f, uint16_t* result)
 #endif
 
 /*
-// callback for stream write
+// callback for stream write. This is the callback function for sm_file_write_stream. It is
+// called by the file system driver everytime it finishes writing a chunk. Here you must either reload
+// the buffer or change the pointer to a new buffer and set *response to SM_STREAM_RESPONSE.READY to continue
+// writing or SM_STREAM_RESPONSE_SKIP to surrender the IO device. Once the device becomes available
+// again this function will be called again. To finish writing set *response to SM_STREAM_RESPONSE_STOP and return. After
+// the file system driver receives the SM_STREAM_RESPONSE_STOP this function will be called one more time with
+// *result set to either SM_SUCCESS or an error code.
 */
 #if defined(USE_STREAM_IO)
 void file_write_stream_callback(SM_FILE* f, uint16_t* result, unsigned char** buffer, uint16_t* response)
@@ -760,6 +861,12 @@ void file_write_stream_callback(SM_FILE* f, uint16_t* result, unsigned char** bu
 }
 #endif
 
+/*
+// this function checks that the file was written correctly.
+// if it fails it will break on your debugger. If this happens it
+// is mostlikely a bad SD card. If you have this problem with
+// more than one SD card contact the developer.
+*/
 #if defined(USE_STREAM_IO)
 void file_test2()
 {
@@ -773,16 +880,22 @@ void file_test2()
 	if (err)
 	{
 		#if defined(EXPLORER16)
-		printf("Error opening file for reading: 0x%x", err);
+			printf("Error opening file for reading: 0x%x", err);
+		#else
+			_ASSERT(0);
 		#endif
 		return;
 	}
-	
+	/*
+	// read 512 bytes from file
+	*/
 	err = sm_file_read(&file, buff, 512, &bytes_read);
 	if (err)
 	{
 		#if defined(EXPLORER16)
-		printf("Error reading file: 0x%x", err);
+			printf("Error reading file: 0x%x", err);
+		#else
+			_ASSERT(0);
 		#endif
 		sm_file_close(&file);
 		return;
@@ -790,25 +903,36 @@ void file_test2()
 	
 	while (bytes_read)
 	{
+		/*
+		// verify that the bytes where written correctly
+		*/
 		for (i = 0; i < 512 / 4; i++)
 		{
 			if (((uint32_t*) buff)[i] != last_value++)
 			{
 				sm_file_close(&file);
 				#if defined(EXPLORER16)
-				printf("File corrupted.\r\n");
+					printf("File corrupted.\r\n");
 				#else
-				HALT();
+					_ASSERT(0);
 				#endif
 				return;
 			}
 		}
+		/*
+		// read the next 512 bytes
+		*/
 		err = sm_file_read(&file, buff, 512, &bytes_read);
 		if (err)
 		{
 			#if defined(EXPLORER16)
-			printf("Error opening file for reading: 0x%x\r\n", err);
+				printf("Error opening file for reading: 0x%x\r\n", err);
+			#else
+				_ASSERT(0);				
 			#endif
+			/*
+			// close file
+			*/
 			sm_file_close(&file);
 			return;
 		}
@@ -834,12 +958,9 @@ void idle_processing()
 	static time_t unmount_pressed_time = 0;
 	#endif
 	/*
-	// SD driver processing
+	// this code runs once per second. it updates LCD time and
+	// disk indicators
 	*/
-	sd_idle_processing(&sd_card);
-	/* static unsigned char glyph = 'z' + 39;
-	static char glyph_hex[3]; */
-	
 	if (last_time < time(0))
 	{
 		/*
@@ -847,13 +968,9 @@ void idle_processing()
 		*/
 		time(&last_time);
 		/*
-		// flash the A7 LED
+		// toggle heartbeat LED
 		*/
-		#if defined(EXPLORER16)
-		IO_PIN_WRITE(A, 7, IO_PIN_READ(A, 7) == 0);
-		#else
-		IO_PIN_WRITE(A, 0, IO_PIN_READ(A, 0) == 0);
-		#endif
+		HEARTBEAT ^= 1;
 		/*
 		// update the date and time
 		*/	
@@ -864,106 +981,83 @@ void idle_processing()
 		// write time and date to lcd
 		*/
 		#if defined(USE_ILI9341)
-		lg_label_set_string(time_label, (unsigned char*) time_string);
-		lg_label_set_string(date_label, (unsigned char*) date_string);
+			lg_label_set_string(time_label, (unsigned char*) time_string);
+			lg_label_set_string(date_label, (unsigned char*) date_string);
 		#elif defined(EXPLORER16)
-		lcd_set_pos(&lcd_driver, 0, 3);
-		lcd_write_string(&lcd_driver, (unsigned char*) date_string);
-		lcd_set_pos(&lcd_driver, 1, 4);
-		lcd_write_string(&lcd_driver, (unsigned char*) time_string);
+			lcd_set_pos(&lcd_driver, 0, 3);
+			lcd_write_string(&lcd_driver, (unsigned char*) date_string);
+			lcd_set_pos(&lcd_driver, 1, 4);
+			lcd_write_string(&lcd_driver, (unsigned char*) time_string);
 		#endif
 		/*
-		lcd_set_pos(&lcd_driver, 0, 0);
-		lcd_write_char(&lcd_driver, glyph++);
-		sprintf(glyph_hex, "%02x", glyph);
-		lcd_set_pos(&lcd_driver, 1, 0);
-		lcd_write_string(&lcd_driver, (unsigned char*) glyph_hex);
-		*/
-		
-		/*
-		// flash disk activity indicator
+		// toggle disk activity indicator
 		*/
 		#if defined(USE_ILI9341)
-		if (IO_PIN_READ(B, 6))
-		{
-			lg_label_set_color(volume_icon, IO_PIN_READ(A, 0) ? 0xFFFFFF : 0xFF0000);
-		}	
-		else
-		{
-			lg_label_set_color(volume_icon, 0xFFFFFF);
-		}
+			if (IO_PIN_READ(B, 6))
+			{
+				lg_label_set_color(volume_icon, HEARTBEAT ? 0xFFFFFF : 0xFF0000);
+			}	
+			else
+			{
+				lg_label_set_color(volume_icon, 0xFFFFFF);
+			}
 		#elif defined(EXPLORER16)
-		if (IO_PIN_READ(A, 5))
-		{
-			lcd_set_pos(&lcd_driver, 0, 15);
-			lcd_write_char(&lcd_driver, (IO_PIN_READ(A, 7)) ? 0xF3 : ' ');
-		}
+			if (IO_PIN_READ(A, 5))
+			{
+				lcd_set_pos(&lcd_driver, 0, 15);
+				lcd_write_char(&lcd_driver, (IO_PIN_READ(A, 7)) ? 0xF3 : ' ');
+			}
 		#endif		
 	}
-	/*
-	// SD driver processing
-	*/
-	sd_idle_processing(&sd_card);
 	/*
 	// check for dismount button press
 	*/
 	#if defined(EXPLORER16)
-	if (!IO_PIN_READ(D, 6))
-	{
-		/* glyph = 'z' + 39; */
-		
-		if (!unmount_pressed_time)
+		if (!IO_PIN_READ(D, 6))
 		{
-			time(&unmount_pressed_time);
+			if (!unmount_pressed_time)
+			{
+				time(&unmount_pressed_time);
+			}
+			else if (unmount_pressed_time + 2 < time(0))
+			{
+				sm_dismount_volume("x:");
+			}
 		}
-		else if (unmount_pressed_time + 2 < time(0))
+		else
 		{
-			sm_dismount_volume("x:");
+			unmount_pressed_time = 0;
 		}
-	}
-	else
-	{
-		unmount_pressed_time = 0;
-	}
 	#endif
-
-	/*
-	// SD driver processing
-	*/
-	sd_idle_processing(&sd_card);
-	/*
-	// update media ready LED
-	*/
-	#if defined(EXPLORER16)
-		
 	/*
 	// update media ready LCD indicator
 	*/
-	if ((SD_CARD_CD_LINE_PORT & (1 << SD_CARD_CD_LINE_PIN)) == 0)
-	{
-				
-		if ((SD_CARD_ACTIVITY_LED_PORT & (1 << SD_CARD_ACTIVITY_LED_PIN)) == 0)
+	#if defined(EXPLORER16)
+		if ((SD_CARD_CD_LINE_PORT & (1 << SD_CARD_CD_LINE_PIN)) == 0)
+		{
+					
+			if ((SD_CARD_ACTIVITY_LED_PORT & (1 << SD_CARD_ACTIVITY_LED_PIN)) == 0)
+			{
+				lcd_set_pos(&lcd_driver, 0, 15);
+				lcd_write_char(&lcd_driver, 0xF3);
+			}
+		}
+		else
 		{
 			lcd_set_pos(&lcd_driver, 0, 15);
-			lcd_write_char(&lcd_driver, 0xF3);
+			lcd_write_char(&lcd_driver, 0x20);
 		}
-	}
-	else
-	{
-		lcd_set_pos(&lcd_driver, 0, 15);
-		lcd_write_char(&lcd_driver, 0x20);
-	}
 	#endif
 	/*
-	// lcd driver processing
+	// lcd driver process
 	*/
 	#if defined(USE_ILI9341)
-	ili9341_do_processing();
+		ili9341_do_processing();
 	#elif defined(EXPLORER16)
-	lcd_idle_processing(&lcd_driver);
+		lcd_idle_processing(&lcd_driver);
 	#endif
 	/*
-	// SD driver processing
+	// SD driver process
 	*/
 	sd_idle_processing(&sd_card);
 }
@@ -1034,3 +1128,5 @@ void __attribute__((__interrupt__, __no_auto_psv__)) _OscillatorFail(void)
 {
 	HALT();
 }
+
+	

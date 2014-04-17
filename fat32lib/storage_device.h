@@ -27,7 +27,7 @@
  * order to fully support the File32Lib File System Stack.
  */
 
-#include <compiler.h>
+#include "../compiler/compiler.h"
 
 
 /*

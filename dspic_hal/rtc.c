@@ -19,7 +19,18 @@
  
 #include "rtc.h"
 
-static time_t __attribute__((boot, section(".rtc"))) rtc_time;
+/*
+// if the device has boot RAM and you want to store the
+// time in boot RAM then define RTC_BOOT
+*/
+#if defined(__dsPIC33FJ128GP802__)
+//#define RTC_BOOT __attribute__((boot, section(".rtc")))
+#define RTC_BOOT
+#else
+#define RTC_BOOT
+#endif
+
+static time_t RTC_BOOT rtc_time;
 static uint32_t timer_period;
 static uint32_t current_fcy;
 
@@ -120,24 +131,29 @@ void rtc_init(uint32_t fcy)
 	/*
 	// set T2-T3 as a 32-bit timer
 	*/
-	T3CONbits.TON = 0;			/* Stop any 16-bit Timer3 operation */
-	T2CONbits.TON = 0;			/* Stop any 16/32-bit Timer2 operation */
-	T2CONbits.T32 = 1;			/* Enable 32-bit Timer mode */
-	T2CONbits.TCS = 0;			/* Select internal instruction cycle clock */
-	T2CONbits.TGATE = 0;		/* Disable Gated Timer mode */
-	T2CONbits.TCKPS = 0x3;		/* Select 1:1 Prescaler */
+	T5CONbits.TON = 0;			/* Stop any 16-bit Timer3 operation */
+	T4CONbits.TON = 0;			/* Stop any 16/32-bit Timer2 operation */
+	T4CONbits.T32 = 1;			/* Enable 32-bit Timer mode */
+	T4CONbits.TCS = 0;			/* Select internal instruction cycle clock */
+	T4CONbits.TGATE = 0;		/* Disable Gated Timer mode */
+	T4CONbits.TCKPS = 0x3;		/* Select 1:1 Prescaler */
 	
-	TMR3 = 0x00;				/* Clear 32-bit Timer (msw) */
-	TMR2 = 0x00; 				/* Clear 32-bit Timer (lsw) */
+	TMR4 = 0x00; 				/* Clear 32-bit Timer (lsw) */
+	TMR5 = 0x00;				/* Clear 32-bit Timer (msw) */
 
 	/* 156250 = 0x0002625A */
-	PR3 = HI16(timer_period);	/* 0x0002; // Load 32-bit period value (msw) */
-	PR2 = LO16(timer_period);	/* 0x625A; // Load 32-bit period value (lsw) */
+	PR4 = LO16(timer_period);	/* 0x625A; // Load 32-bit period value (lsw) */
+	PR5 = HI16(timer_period);	/* 0x0002; // Load 32-bit period value (msw) */
 
-	IPC2bits.T3IP = 0x01;		/* Set Timer3 Interrupt Priority Level */
-	IFS0bits.T3IF = 0;			/* Clear Timer3 Interrupt Flag */
-	IEC0bits.T3IE = 1;			/* Enable Timer3 interrupt */
-	T2CONbits.TON = 1;			/* Start 32-bit Timer */
+	IPC7bits.T5IP = 0x01;		/* Set Timer3 Interrupt Priority Level */
+	IFS1bits.T5IF = 0;			/* Clear Timer3 Interrupt Flag */
+	IEC1bits.T5IE = 1;			/* Enable Timer3 interrupt */
+	T4CONbits.TON = 1;			/* Start 32-bit Timer */
+}
+
+void rtc_time_increment(void)
+{
+	rtc_time++;	
 }
 
 uint32_t rtc_get_fcy()
@@ -149,10 +165,12 @@ void rtc_change_fcy(uint32_t fcy)
 {
 	current_fcy = fcy;
 	timer_period = fcy / 256;			/* Calculate new period */
-	PR3 = HI16(timer_period); 			/* Load 32-bit period value (msw) */
-	PR2 = LO16(timer_period); 			/* Load 32-bit period value (lsw) */
-	TMR3 = 0x00;						/* Clear 32-bit Timer (msw) */
-	TMR2 = 0x00; 						/* Clear 32-bit Timer (lsw) */
+	T4CONbits.TON = 0;
+	PR5 = HI16(timer_period); 			/* Load 32-bit period value (msw) */
+	PR4 = LO16(timer_period); 			/* Load 32-bit period value (lsw) */
+	TMR4 = 0x00; 						/* Clear 32-bit Timer (lsw) */
+	TMR5 = 0x00;						/* Clear 32-bit Timer (msw) */
+	T4CONbits.TON = 1;
 }
 
 void rtc_set_time(time_t new_time)
@@ -164,16 +182,13 @@ void rtc_set_time(time_t new_time)
 void rtc_timer(uint32_t* s, uint32_t* ms)
 {
 	time_t now;
-	uint16_t tmr2, tmr3;	
-	INTERRUPT_PROTECT(
-		tmr2 = TMR2;
-		tmr3 = TMR3;
-		now = rtc_time;
-		);
-		
+	uint16_t tmrb, tmrc;	
+	tmrb = TMR4;
+	tmrc = TMR5HLD;
+	now = rtc_time;
 
 	*s = (uint32_t) now;
-	*ms = ((uint32_t) tmr3) << 16 | tmr2;
+	*ms = ((uint32_t) tmrc) << 16 | tmrb;
 	if (*ms > timer_period)
 		while(1);
 	*ms = (*ms * 1000) / timer_period;
@@ -182,16 +197,14 @@ void rtc_timer(uint32_t* s, uint32_t* ms)
 void rtc_timer_elapsed(uint32_t* s, uint32_t* ms)
 {
 	time_t now;
-	uint16_t tmr2, tmr3;
+	uint16_t tmrb, tmrc;
 	uint32_t ms_now;
 		
-	INTERRUPT_PROTECT(
-		tmr2 = TMR2;
-		tmr3 = TMR3;
-		now = rtc_time;
-		);
+	tmrb = TMR4;
+	tmrc = TMR5HLD;
+	now = rtc_time;
 	
-	ms_now = ((uint32_t) tmr3) << 16 | tmr2;
+	ms_now = ((uint32_t) tmrc) << 16 | tmrb;
 	ms_now = (ms_now * 1000) / timer_period;
 
 	*s = ((uint32_t) now) - *s;
@@ -216,7 +229,7 @@ void rtc_sleep(uint16_t ms_delay)
 	while (1)
 	{
 		rtc_timer_elapsed(&s_elapsed, &ms_elapsed);
-		if ((s * 1000) + ms >= ms_delay)
+		if ((s_elapsed * 1000) + ms_elapsed >= ms_delay)
 			break;
 		s_elapsed = s;
 		ms_elapsed = ms;
@@ -233,13 +246,13 @@ time_t time(time_t *pt)
 	return(rtc_time);
 }
 
-void __attribute__((__interrupt__, no_auto_psv)) _T3Interrupt(void)
+void __attribute__((__interrupt__, no_auto_psv)) _T5Interrupt(void)
 {
 	rtc_time++;
-	T2CONbits.TON = 0;			/* Stop 32-bit Timer */
-	TMR2 = 0;
-	TMR3 = 0;
-	T2CONbits.TON = 1;			/* Start 32-bit Timer */
-	IFS0bits.T3IF = 0; 			/* Clear Timer3 Interrupt Flag */
+	//T4CONbits.TON = 0;			/* Stop 32-bit Timer */
+	//TMR4 = 0;
+	//TMR5 = 0;
+	//T4CONbits.TON = 1;			/* Start 32-bit Timer */
+	IFS1bits.T5IF = 0; 			/* Clear Timer3 Interrupt Flag */
 }
 

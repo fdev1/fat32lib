@@ -16,9 +16,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
- 
+#if (kawanga)
 #include <stdio.h>
-#include <p30sim.h>
+//#include <p30sim.h>
 #include <errno.h>
 #include <string.h>
 #include "..\smlib\sm.h"
@@ -242,3 +242,4 @@ int LIBC write(int handle, void *buffer, unsigned int len)
   	}
   	return(len);
 }
+#endif

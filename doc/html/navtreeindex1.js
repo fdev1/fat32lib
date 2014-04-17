@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"storage__device_8h.html#a2a06fa2f13791fdfef68daaf9be36cca":[9,0,0,2,41],
 "storage__device_8h.html#a2ef195bdadc0119e278762678ab4cefe":[9,0,0,2,30],
 "storage__device_8h.html#a304f4642832a777ffb2538a03af47d5e":[9,0,0,2,18],
 "storage__device_8h.html#a361d7ea6e5d4af9319492f3353099e2a":[9,0,0,2,19],

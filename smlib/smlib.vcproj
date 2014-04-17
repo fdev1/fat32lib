@@ -5,6 +5,10 @@
 	Name="smlib"
 	ProjectGUID="{DCE5C571-5819-49A7-9E17-D389B58D90AC}"
 	RootNamespace="storemanlib"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>

@@ -31,7 +31,7 @@
  * <seealso cref="smlib\sm.h">smlib\sm.h</seealso>
  */
 
-#include <compiler.h>
+#include "../compiler/compiler.h"
 #include <time.h>
 #include "storage_device.h"
 
@@ -43,7 +43,7 @@
 /*
 // uncomment this line to compile the library without long filenames support
 */
-#define FAT_DISABLE_LONG_FILENAMES
+//#define FAT_DISABLE_LONG_FILENAMES
 
 /*
 // if this option is not specified the library will only maintain 1 copy of

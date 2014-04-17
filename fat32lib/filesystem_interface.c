@@ -21,7 +21,7 @@
 
 #include "fat.h"
 #include "filesystem_interface.h"
-#include "..\smlib\filesystem.h"
+#include "../smlib/filesystem.h"
 
 void fat_get_filesystem_interface(FILESYSTEM* filesystem)
 {

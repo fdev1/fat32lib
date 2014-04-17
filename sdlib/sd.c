@@ -488,7 +488,8 @@ uint16_t sd_init
 	/*
 	// return success code
 	*/
-	return SD_SUCCESS;
+	/* return SD_SUCCESS; */
+	return sd_init_internal(driver);
 }
 
 /*
@@ -762,7 +763,7 @@ init_retry:
 	/*
 	// if an error occurred return the error code
 	*/
-	if (err != NULL) 
+	if (err != 0) 
 	{
 		DEASSERT_CS(driver);
 		BP_CLR(driver->context.busy_signal);
@@ -2464,7 +2465,7 @@ enqueue_request:
 		*/
 		driver->context.dma_transfer_response = SD_MULTI_BLOCK_RESPONSE_STOP;
 		/*
-		// ask users how to proceed
+		// ask filesystem how to proceed
 		*/
 		if (driver->context.dma_transfer_callback_ex)
 		{
@@ -2483,6 +2484,34 @@ enqueue_request:
 		}
 		else if (driver->context.dma_transfer_response == SD_MULTI_BLOCK_RESPONSE_STOP)
 		{
+
+			/* 
+			// TODO: Instead of calling the callback right here
+			// we need to set the state machine so that it gets called
+			// the next time the processing loop runs
+			*/
+			driver->context.dma_transfer_state = SD_MULTI_BLOCK_WRITE_COMPLETING;
+			driver->context.dma_transfer_completed = 1;
+			return *async_state;
+			
+			#if defined(COMMENTED)			
+			/*
+			// set the operation state
+			*/
+			*driver->context.dma_transfer_result = SD_SUCCESS;
+			/*
+			// call the user/filesystem callback routine
+			*/
+			if (driver->context.dma_transfer_callback_ex != 0) 
+			{
+				driver->context.dma_transfer_callback_ex(
+					driver->context.dma_transfer_callback_context, 
+					driver->context.dma_transfer_result,
+					&driver->context.dma_transfer_buffer,
+					&driver->context.dma_transfer_response
+					);
+			}
+
 			driver->context.busy = 0;
 			/*
 			// set the state to SD_PROCESSING
@@ -2492,7 +2521,7 @@ enqueue_request:
 			// return control to caller
 			*/
 			return *async_state;
-		
+			#endif
 		}
 		else if (driver->context.dma_transfer_response != SD_MULTI_BLOCK_RESPONSE_READY)
 		{
@@ -3153,53 +3182,56 @@ void sd_idle_processing(SD_DRIVER* sd)
 					/*
 					// set dma buffer
 					*/
-					if (sd->context.async_buffer)
+					if (sd->context.dma_transfer_response == SD_MULTI_BLOCK_RESPONSE_READY)
 					{
-						#if defined(__C30__)
-						__asm__
-						(
-							"mov %0, w1\n"
-							"mov %1, w2\n"
-							"repeat #%2\n"
-							"mov [w1++], [w2++]"
-							:
-							: "g" (sd->context.dma_transfer_buffer), "g" (sd->context.async_buffer), "i" ((SD_BLOCK_LENGTH / 2) - 1)
-							: "w1", "w2"
-						);
-						#else
-						for (i = 0; i < (SD_BLOCK_LENGTH / 2); i++)
+						if (sd->context.async_buffer)
 						{
-							((uint16_t*) sd->context.async_buffer)[i] = ((uint16_t*) sd->context.dma_transfer_buffer)[i];
+							#if defined(__C30__)
+							__asm__
+							(
+								"mov %0, w1\n"
+								"mov %1, w2\n"
+								"repeat #%2\n"
+								"mov [w1++], [w2++]"
+								:
+								: "g" (sd->context.dma_transfer_buffer), "g" (sd->context.async_buffer), "i" ((SD_BLOCK_LENGTH / 2) - 1)
+								: "w1", "w2"
+							);
+							#else
+							for (i = 0; i < (SD_BLOCK_LENGTH / 2); i++)
+							{
+								((uint16_t*) sd->context.async_buffer)[i] = ((uint16_t*) sd->context.dma_transfer_buffer)[i];
+							}
+							#endif
+						}
+						else
+						{
+							DMA_SET_BUFFER_A(sd->context.dma_channel_2, sd->context.dma_transfer_buffer);
+						}
+						/*
+						// increase the DMA transfer address
+						*/
+						if (sd->card_info.high_capacity)
+						{
+							sd->context.dma_transfer_address++;
+						}
+						else
+						{
+							sd->context.dma_transfer_address += sd->card_info.block_length;
+						}
+						/*
+						// reset the busy token counter (DEBUG)
+						*/
+						#if defined(SD_PRINT_MULTI_BLOCK_TIME_INFO)
+						sd->context.dma_transfer_busy_count = 0;
+						sd->context.dma_transfer_block_count++;	
+						sd->context.dma_transfer_total_blocks++;
+						if (sd->context.dma_transfer_response == SD_MULTI_BLOCK_RESPONSE_STOP)
+						{
+							printf("SDDRIVER: Filesystem sent STOP request\r\n");
 						}
 						#endif
 					}
-					else
-					{
-						DMA_SET_BUFFER_A(sd->context.dma_channel_2, sd->context.dma_transfer_buffer);
-					}
-					/*
-					// increase the DMA transfer address
-					*/
-					if (sd->card_info.high_capacity)
-					{
-						sd->context.dma_transfer_address++;
-					}
-					else
-					{
-						sd->context.dma_transfer_address += sd->card_info.block_length;
-					}
-					/*
-					// reset the busy token counter (DEBUG)
-					*/
-					#if defined(SD_PRINT_MULTI_BLOCK_TIME_INFO)
-					sd->context.dma_transfer_busy_count = 0;
-					sd->context.dma_transfer_block_count++;	
-					sd->context.dma_transfer_total_blocks++;
-					if (sd->context.dma_transfer_response == SD_MULTI_BLOCK_RESPONSE_STOP)
-					{
-						printf("SDDRIVER: Filesystem sent STOP request\r\n");
-					}
-					#endif
 				}
 				/*
 				// if the data was rejected due to a CRC error

@@ -34,7 +34,7 @@
 
 #if defined(FAT_ALLOCATE_SHARED_BUFFER)
 #define FAT_SET_LOADED_SECTOR(sector)		fat_shared_buffer_sector = (sector)
-#elif
+#elif defined(FAT_ALLOCATE_VOLUME_BUFFER)
 #define FAT_SET_LOADED_SECTOR(sector)		volume->sector_buffer_sector = (sector)
 #else
 #define FAT_SET_LOADED_SECTOR(sector)	

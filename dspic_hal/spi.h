@@ -33,7 +33,7 @@ typedef char SPI_MODULE;
 /*
 // no of spi modules on device
 */
-#if defined(__dsPIC33FJ128GP802__) || defined(__dsPIC33FJ256GP710A__)
+#if defined(__dsPIC33FJ128GP802__) || defined(__dsPIC33FJ256GP710A__) || defined(__dsPIC33FJ128GP202__) || defined(__dsPIC33E__)
 #define SPI_NO_OF_MODULES			(2)
 #else
 #define SPI_NO_OF_MODULES			(1)
@@ -42,7 +42,7 @@ typedef char SPI_MODULE;
 /*
 // max speed of spi module in bps
 */
-#define SPI_MAX_SPEED				(15000000)
+#define SPI_MAX_SPEED				(10000000)
 
 #define SPI_GET_MODULE(module)		(module)
 
@@ -65,6 +65,10 @@ void spi_init(char module);
 // sets the SPI bus speed
 */
 uint32_t spi_set_clock(char module, uint32_t bps);
+
+char spi_ready(char module);
+uint16_t spi_write_async(char module, unsigned char data);
+
 
 /*
 // reads the spi buffer

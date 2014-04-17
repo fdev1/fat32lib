@@ -1,11 +1,10 @@
 /*
- * fat32lib - Portable FAT12/16/32 Filesystem Library
- * Copyright (C) 2013 Fernando Rodriguez (frodriguez.developer@outlook.com)
+ * smlib - Portable File System/Volume Manager For Embedded Devices
+ * Copyright (C) 2013 Fernando Rodriguez
  *
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
+ * it under the terms of the GNU General Public License Versioni 3 as 
+ * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -26,7 +25,7 @@
 // for debugging the critical sections on a single threaded
 // system (and it's useless in a real multi-threaded environment)
 */
-/* #define DEBUG_CRITICAL_SECTIONS */
+#define DEBUG_CRITICAL_SECTIONS
 
 /*
 // uncomment this define to compile for a big endian cpu
@@ -74,14 +73,7 @@ typedef unsigned int uintptr_t;
 #define BEGIN_PACKED_STRUCT		/*__pragma(pack(1))*/
 #define END_PACKED_STRUCT		/*__pragma(pack())*/
 #define USE_PRAGMA_PACK
-#elif defined(__XC16__)
-#define INLINE					inline
-#define ALIGN16					
-#define PACKED					
-#define BEGIN_PACKED_STRUCT		
-#define END_PACKED_STRUCT
-#define NO_STRUCT_PACKING
-#elif defined(__C30__) && !defined(__STRICT_ANSI__)
+#elif defined(__C30__)
 #define INLINE					inline
 #define ALIGN16					__attribute__ ((aligned(2)))
 #define PACKED					__attribute__ ((__packed__))
@@ -95,35 +87,6 @@ typedef unsigned int uintptr_t;
 #define END_PACKED_STRUCT
 /* #define USE_PRAGMA_PACK */
 #define NO_STRUCT_PACKING
-#endif
-
-/*
-// software breakpoints and debug macros
-*/
-#if defined(_MSC_VER)
-#define HALT()					while (1)
-#elif defined(__C30__)
-#define HALT()					__asm__ volatile (".pword 0xDA4000\nnop\nnop\nnop")
-#if !defined(__DEBUG)
-#define NDEBUG
-#endif
-#else
-#define HALT()					while (1)
-#endif
-
-/*
-// assert macro
-*/
-#if !defined(NDEBUG)
-#define _ASSERT(condition)		\
-{								\
-	if (!(condition))			\
-	{							\
-		HALT();					\
-	}							\
-}
-#else
-#define _ASSERT(condition)
 #endif
 
 /*
@@ -183,20 +146,6 @@ typedef unsigned int uintptr_t;
 	}												\
 }
 #elif defined(__C30__)
-#define _SET_CPU_IPL(ipl) {       \
-  int DISI_save;                 \
-                                 \
-  DISI_save = DISICNT;           \
-  asm volatile ("disi #0x3FFF"); \
-  SRbits.IPL = ipl;              \
-  DISICNT = DISI_save; } (void) 0;
-
-#define _SET_AND_SAVE_CPU_IPL(save_to, ipl) { \
-  save_to = SRbits.IPL; \
-  SET_CPU_IPL(ipl); } (void) 0;
-
-#define _RESTORE_CPU_IPL(saved_to) SET_CPU_IPL(saved_to)
-
 #define RELINQUISH_THREAD()							asm("nop")
 #define DECLARE_CRITICAL_SECTION(section_name)		extern volatile int section_name
 #define DEFINE_CRITICAL_SECTION(section_name)		volatile int section_name
@@ -208,14 +157,14 @@ typedef unsigned int uintptr_t;
 	char saved_ipl;									\
 	while (1)										\
 	{												\
-		_SET_AND_SAVE_CPU_IPL(saved_ipl, 7);			\
+		SET_AND_SAVE_CPU_IPL(saved_ipl, 7);			\
 		if (section_name == 0)						\
 		{											\
 			section_name = 1;						\
-			_RESTORE_CPU_IPL(saved_ipl);				\
+			RESTORE_CPU_IPL(saved_ipl);				\
 			break;									\
 		}											\
-		_RESTORE_CPU_IPL(saved_ipl);					\
+		RESTORE_CPU_IPL(saved_ipl);					\
 	}												\
 } 
 #else

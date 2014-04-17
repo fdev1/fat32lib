@@ -20,21 +20,26 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
+#if defined(__dsPIC33F__)
 #include <p33Fxxxx.h>
-/* #include <p33FJ256GP710.h> */
-/* #include <p33FJ128GP802.h> */
+#elif defined(__dsPIC33E__)
+#include <p33Exxxx.h>
+#else
+#error Your MCU family is not supported. Add the header here and see what happens.
+#endif
+
 #include <stdlib.h>
 #include <string.h>
-#include <compiler.h>
+#include "../compiler/compiler.h"
  
 /*
 // macros to get the PC right before a trap
 */
 #define __SP					(*((unsigned int*) 0x1e))
-#define __PCL					(*((unsigned int*) (__SP - 14)))
-#define __PCH					(*((unsigned int*) (__SP - 12)))
+#define __PCL					(*((unsigned int*) (__SP - 18)))
+#define __PCH					(*((unsigned int*) (__SP - 16)))
 #define __PC() \
-	(((((unsigned long) __PCH) << 16) | ((unsigned long) __PCL)) - 2)
+	((((((unsigned long) __PCH) << 16) & 0xFF0000) | ((unsigned long) __PCL)) - 1)
 
 
 /*

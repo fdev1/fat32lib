@@ -18,7 +18,6 @@ var fat_8h =
     [ "FAT_CORRUPTED_FILE", "fat_8h.html#ab91f9309102e0451fda567611e70ff44", null ],
     [ "FAT_DIRECTORY_DOES_NOT_EXIST", "fat_8h.html#a9a50c6386713254fdc7b15f5a401bc96", null ],
     [ "FAT_DIRECTORY_LIMIT_EXCEEDED", "fat_8h.html#acef35005bdea20589a0979c565ce4c33", null ],
-    [ "FAT_DISABLE_LONG_FILENAMES", "fat_8h.html#a81df47d63e0f81f912ebb245fcb7cdbf", null ],
     [ "FAT_FEATURE_NOT_SUPPORTED", "fat_8h.html#a60d352716be70670877bba81763e119c", null ],
     [ "FAT_FILE_ACCESS_APPEND", "fat_8h.html#a6e46e004ebe37039735f407014393709", null ],
     [ "FAT_FILE_ACCESS_CREATE", "fat_8h.html#a88be59088f11420d8f8ea8cecc578421", null ],

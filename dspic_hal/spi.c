@@ -45,6 +45,11 @@ void spi_init(char module)
 			SPI1CON2bits.FRMPOL = 0x1;		/* FS polarity is 1 */
 			SPI1CON2bits.FRMDLY = 0x1;		/* FS pulse one cycle before data 1=same cycle */
 			
+			#if defined(__dsPIC33E__)
+			SPI1CON2bits.SPIBEN = 0;
+			#endif
+			
+			
 			/*IPC8bits.SPI2IP = 0x6;*/
 			/*IFS2bits.SPI2IF = 0x0;*/			/* clear int flag */
 			/*IEC2bits.SPI2IE = 0x1;*/
@@ -72,6 +77,10 @@ void spi_init(char module)
 			SPI2CON2bits.FRMPOL = 0x1;		/* FS polarity is 1 */
 			SPI2CON2bits.FRMDLY = 0x1;		/* FS pulse one cycle before data 1=same cycle */
 			
+			#if defined(__dsPIC33E__)
+			SPI2CON2bits.SPIBEN = 0;
+			#endif
+			
 			/*IPC8bits.SPI2IP = 0x6;*/
 			/*IFS2bits.SPI2IF = 0x0;*/			/* clear int flag */
 			/*IEC2bits.SPI2IE = 0x1;*/
@@ -97,9 +106,17 @@ uint32_t spi_set_clock(char module, uint32_t bps)
 	uint32_t bps_max = 0;
 	unsigned char pri, sec, pri_max, sec_max;
 	
-	for (pri = 0; pri < 4; pri++)
+	#if defined(__dsPIC33E__)
+	#define SPI_PPRE_MAX	3
+	#define SPI_SPRE_MAX	7
+	#else
+	#define SPI_PPRE_MAX	4
+	#define SPI_SPRE_MAX	8
+	#endif
+	
+	for (pri = 0; pri < SPI_PPRE_MAX; pri++)
 	{
-		for (sec = 0; sec < 8; sec++)
+		for (sec = 0; sec < SPI_SPRE_MAX; sec++)
 		{
 			bps_temp = fcy / (pri_lookup[pri] * (8 - sec));
 			if (bps_temp == bps)
@@ -166,6 +183,43 @@ uint16_t spi_write(char module, int data)
 			SPI2BUF = data;
 			while (!SPI2STATbits.SPIRBF);
 			return SPI2BUF;
+		#endif
+		default:
+			_ASSERT(0);
+			return 0;
+	}
+}
+
+char spi_ready(char module)
+{
+	switch (module)
+	{
+		case 1:
+			return (!SPI1STATbits.SPITBF);
+		#if (SPI_NO_OF_MODULES >= 2)
+		case 2:
+			return (!SPI2STATbits.SPITBF);
+		#endif
+		default:
+			_ASSERT(0);
+			return 0;
+	}
+}
+
+uint16_t spi_write_async(char module, unsigned char data)
+{
+	unsigned char result;
+	switch (module)
+	{
+		case 1:
+			result = SPI1BUF;
+			SPI1BUF = data;
+			return result;
+		#if (SPI_NO_OF_MODULES >= 2)
+		case 2:
+			result = SPI2BUF;
+			SPI2BUF = data;
+			return result;
 		#endif
 		default:
 			_ASSERT(0);

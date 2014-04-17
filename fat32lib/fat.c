@@ -28,7 +28,7 @@
 */
 #if defined(FAT_ALLOCATE_SHARED_BUFFER)
 #define FAT_SET_LOADED_SECTOR(volume, sector)		fat_shared_buffer_sector = (sector)
-#elif
+#elif defined(FAT_ALLOCATE_VOLUME_BUFFER)
 #define FAT_SET_LOADED_SECTOR(volume, sector)		volume->sector_buffer_sector = (sector)
 #else
 #define FAT_SET_LOADED_SECTOR(volume, sector)	
@@ -652,7 +652,7 @@ uint16_t fat_find_first_entry(
 	// the next character
 	*/
 	if (parent_path)
-		if (*parent_path == '\\') *parent_path++;
+		if (*parent_path == '\\') parent_path++;
 	/*
 	// if a parent was specified...
 	*/
@@ -1038,7 +1038,8 @@ uint16_t fat_get_file_entry(FAT_VOLUME* volume, char* path, FAT_DIRECTORY_ENTRY*
 	// if the path starts with a backlash then advance to
 	// the next character
 	*/
-	if (*path == '\\') *path++;
+	if (*path == '\\') 
+		path++;
 
 	if (*path != 0) 
 	{
@@ -1131,7 +1132,8 @@ uint16_t fat_get_file_entry(FAT_VOLUME* volume, char* path, FAT_DIRECTORY_ENTRY*
 		// if the path starts with a backlash then advance to
 		// the next character
 		*/
-		if (*path == '\\') *path++;
+		if (*path == '\\') 
+			path++;
 		/*
 		// copy the name of the current level entry
 		*/

@@ -80,7 +80,7 @@
 #include "..\smlib\sm.h"
 
 #define USE_DOUBLE_BUFFERS
-#define AUDIO_BUFFER_SIZE		6144	/* size of each buffer must be a multiple of sector size */
+#define AUDIO_BUFFER_SIZE		1024	/* size of each buffer must be a multiple of sector size */
 #define DMA_BUFFER_SIZE			16		/* size of DMA buffer must be a power of two >= 4 
 											with double buffering smaller values give better performance
 											when double buffering is disabled it must be a multiple of sector size */

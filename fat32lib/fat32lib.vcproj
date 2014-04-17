@@ -5,6 +5,10 @@
 	Name="fat32lib"
 	ProjectGUID="{6861D3C3-7EAD-421D-87B8-77CD31F17891}"
 	RootNamespace="fat32lib"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>

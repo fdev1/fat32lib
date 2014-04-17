@@ -60,8 +60,27 @@
 #define DMA_SET_MODE( channel, mode )					channel->ControlBits->MODE = ( mode )
 #define DMA_SET_PERIPHERAL( channel, peripheral )		channel->PeripheralIrq->IRQSEL = ( peripheral )
 #define DMA_SET_PERIPHERAL_ADDRESS( channel, reg )		*channel->PeripheralAddress = ( volatile uint16_t ) ( reg )
+
+#if defined(__dsPIC33E__)
+#define DMA_SET_BUFFER_A( channel, address )		\
+	*channel->BufferA = (unsigned int)(address);	\
+	*channel->BufferAH = 0
+#define DMA_SET_BUFFER_B( channel, address )		\
+	*channel->BufferB = (unsigned int)(address);	\
+	*channel->BufferBH = 0
+
+#define DMA_SET_BUFFER_A_EDS( channel, address )		\
+	*channel->BufferA = __builtin_dmaoffset(address);	\
+	*channel->BufferAH = __builtin_dmapage(address)
+
+#define DMA_SET_BUFFER_B_EDS( channel, address )		\
+	*channel->BufferB = __builtin_dmaoffset(address);	\
+	*channel->BufferBH = __builtin_dmapage(address)
+#else
 #define DMA_SET_BUFFER_A( channel, address )			*channel->BufferA = ((unsigned int)(address) - ((unsigned int)&_DMA_BASE))
 #define DMA_SET_BUFFER_B( channel, address )			*channel->BufferB = ((unsigned int)(address) - ((unsigned int)&_DMA_BASE))
+#endif
+
 #define DMA_SET_TRANSFER_LENGTH( channel, length )		*channel->TransferLength = ( length )
 #define DMA_CHANNEL_ENABLE_INTERRUPT( channel )			BP_SET( channel->InterruptEnableBit )
 #define DMA_CHANNEL_DISABLE_INTERRUPT( channel )		BP_CLR( channel->InterruptEnableBit )
@@ -78,6 +97,9 @@ typedef void DMA_INTERRUPT( void );
 /*
 // structure of the DMA channel control bits
 */	
+/*
+#if defined(__dsPIC33F__)
+*/
 typedef struct _DMA_CHANNEL_CONTROL_BITS 
 {
 	unsigned MODE:2;
@@ -91,9 +113,30 @@ typedef struct _DMA_CHANNEL_CONTROL_BITS
     unsigned CHEN:1;
 }
 DMA_CHANNEL_CONTROL_BITS, *PDMA_CHANNEL_CONTROL_BITS;
+/*
+#elif defined(__dsPIC33E__)
+typedef struct _DMA_CHANNEL_CONTROL_BITS 
+{
+	unsigned CHEN:1;
+	unsigned SIZE:1;
+	unsigned DIR:1;
+	unsigned HALF:1;
+	unsigned NULLW:1;
+	unsigned :5;
+	unsigned AMODE:2;
+	unsigned :2;
+	unsigned MODE:2;
+}
+DMA_CHANNEL_CONTROL_BITS, *PDMA_CHANNEL_CONTROL_BITS;
+#endif
+*/
+
 
 /*
 // DMA irl selection register structure
+*/
+/*
+#if defined(__dsPIC33F__)
 */
 typedef struct _DMA_IRQSEL_BITS 
 {
@@ -102,6 +145,17 @@ typedef struct _DMA_IRQSEL_BITS
 	unsigned FORCE:1;
 }	
 DMA_IRQ_BITS;
+/*
+#elif defined(__dsPIC33E__)
+typedef struct _DMA_IRQSEL_BITS 
+{
+	unsigned FORCE:1;
+	unsigned :8;
+	unsigned IRQSEL:7;
+}	
+DMA_IRQ_BITS;
+#endif
+*/
 
 /*
 // defines a dma channel
@@ -111,6 +165,12 @@ typedef struct _DMA_CHANNEL
 	DMA_CHANNEL_CONTROL_BITS* const ControlBits;
 	volatile uint16_t* const BufferA;
 	volatile uint16_t* const BufferB;
+	
+	#if defined(__dsPIC33E__)
+	volatile uint16_t* const BufferAH;
+	volatile uint16_t* const BufferBH;
+	#endif
+	
 	volatile uint16_t* const PeripheralAddress;
 	DMA_IRQ_BITS* const PeripheralIrq;
 	volatile uint16_t* const TransferLength;
