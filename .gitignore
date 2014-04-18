@@ -33,7 +33,7 @@ vssver2.scc
 *.vssscc
 *.Admin-VAIO.Fernan.user
 *.Windows8.Fernan.user
-.vcproj.vspvcc
+.vcproj.vspscc
 fat32lib/deleted/*.*
 fat32lib/debug/*.*
 smlib/debug/*.*
