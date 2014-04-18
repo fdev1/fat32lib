@@ -760,7 +760,7 @@ uint16_t fat_file_rename(FAT_VOLUME* volume, char* original_filename, char* new_
 	FAT_DIRECTORY_ENTRY new_entry;
 
 	#if !defined(FAT_DISABLE_LONG_FILENAMES)
-	unsigned char checksum;
+	unsigned char checksum = 0;
 	char original_parent[256];
 	#else
 	char original_parent[13];

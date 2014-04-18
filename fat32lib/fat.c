@@ -1988,7 +1988,7 @@ uint16_t fat_create_directory_entry(
 	uint16_t illegal_char;
 	uint16_t entries_count = 0;
 	uint32_t sector;
-	uint32_t first_sector_of_cluster;
+	uint32_t first_sector_of_cluster = 0;
 	uintptr_t last_entry_address;
 	FAT_ENTRY fat;
 	FAT_ENTRY last_fat;
@@ -1999,7 +1999,7 @@ uint16_t fat_create_directory_entry(
 	#endif
 
 	#if !defined(FAT_DISABLE_LONG_FILENAMES)
-	char no_of_lfn_entries_needed;
+	char no_of_lfn_entries_needed = 0;
 	char no_of_lfn_entries_found;
 	char lfn_checksum;
 	#endif

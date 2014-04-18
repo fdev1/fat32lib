@@ -36,6 +36,7 @@ file_008=.
 file_009=.
 file_010=.
 file_011=.
+file_012=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -49,6 +50,7 @@ file_008=no
 file_009=no
 file_010=no
 file_011=no
+file_012=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -62,6 +64,7 @@ file_008=no
 file_009=no
 file_010=yes
 file_011=yes
+file_012=yes
 [FILE_INFO]
 file_000=fat.c
 file_001=fat_cluster.c
@@ -75,6 +78,7 @@ file_008=filesystem_interface.h
 file_009=fat_format.h
 file_010=readme.txt
 file_011=..\licensing.txt
+file_012=makefile
 [SUITE_INFO]
 suite_guid={9BCCB495-CD65-480A-BA76-63D8E78B117F}
 suite_state=build-library

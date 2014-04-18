@@ -184,14 +184,14 @@ static uint32_t INLINE fat_allocate_cluster(
 	uint32_t entry_sector;			/* the address of the cached sector */
 	uint32_t current_sector;		/* address of the sector loaded in memory */
 	uint32_t cluster;				/* cluster number */
-	uint32_t entry_offset;			/* offset of fat entry within it's sector */
+	uint32_t entry_offset = 0;			/* offset of fat entry within it's sector */
 	char entries_updated;			/* indicates that the cached sector is dirty */
 	char next_sector_loaded = 0;	/* indicates that the next sector has been loaded */
-	FAT_ENTRY last_fat_entry;		/* stores the value of the last cluster found or EOC if no clusters found yet */
+	FAT_ENTRY last_fat_entry = 0;		/* stores the value of the last cluster found or EOC if no clusters found yet */
 	FAT_ENTRY fat_entry;			/* temp value to store cluster numbers read from FAT table */
 	uint32_t first_cluster;
-	uint32_t last_entry_sector;
-	uint32_t last_entry_offset;
+	uint32_t last_entry_sector = 0;
+	uint32_t last_entry_offset = 0;
 	uint32_t start_cluster;
 	char wrapped_around = 0;
 
@@ -1128,11 +1128,11 @@ static uint32_t INLINE fat_allocate_cluster(
 uint16_t fat_free_cluster_chain(FAT_VOLUME* volume, uint32_t cluster) 
 {
 	uint16_t ret;				/* temp variable / used to hold return codes from driver */
-	uint32_t fat_offset;		/* the offset of the cluster entry within the FAT table */
+	uint32_t fat_offset = 0;		/* the offset of the cluster entry within the FAT table */
 	uint32_t entry_offset;		/* the offset of the cluster entry within it's sector */
 	uint32_t entry_sector;		/* the sector where the entry is stored on the drive */
 	uint32_t current_sector;	/* the sector that's currently loaded in memory */
-	char is_odd_cluster;		/* indicates that the entry being processed is an odd cluster address (FAT12 only) */
+	char is_odd_cluster = 0;		/* indicates that the entry being processed is an odd cluster address (FAT12 only) */
 	char op_in_progress = 0;	/* indicates that a multi-step operation is in progress (FAT12 only) */
 
 	#if defined(FAT_ALLOCATE_VOLUME_BUFFER)
@@ -1413,7 +1413,7 @@ uint16_t fat_get_cluster_entry(
 	FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY* fat_entry ) 
 {
 	uint16_t ret;
-	uint32_t fat_offset;	/* todo: this one may require 64 bits for large drives? */
+	uint32_t fat_offset = 0;	/* todo: this one may require 64 bits for large drives? */
 	uint32_t entry_sector;	
 	uint32_t entry_offset;	/* todo: 16 bits should suffice for this value */
 
@@ -1572,7 +1572,7 @@ uint16_t fat_get_cluster_entry(
 uint16_t fat_set_cluster_entry(FAT_VOLUME* volume, uint32_t cluster, FAT_ENTRY fat_entry ) 
 {
 	uint16_t ret;
-	uint32_t fat_offset;
+	uint32_t fat_offset = 0;
 	uint32_t entry_sector;
 	uint32_t entry_offset;	
 
@@ -1756,11 +1756,11 @@ char fat_increase_cluster_address(
 	FAT_VOLUME* volume, uint32_t cluster, uint16_t count, uint32_t* value ) 
 {
 	uint16_t ret;
-	uint32_t fat_offset;
+	uint32_t fat_offset = 0;
 	uint32_t entry_offset;
 	uint32_t entry_sector;
 	uint32_t current_sector;
-	char is_odd_cluster;
+	char is_odd_cluster = 0;
 	char op_in_progress = 0;
 
 	#if defined(FAT_ALLOCATE_VOLUME_BUFFER)

@@ -170,7 +170,7 @@ uint16_t fat_format_volume
 	uint32_t i, c;
 	uint32_t total_sectors;
 	uint32_t root_dir_sectors;
-	uint32_t fatsz;
+	uint32_t fatsz = 0;
 
 	uint32_t backup_boot_sector;
 	uint32_t fsinfo_sector;
@@ -182,7 +182,7 @@ uint16_t fat_format_volume
 	uint32_t no_of_fat_tables;
 	unsigned char media_type;
 	uint32_t root_entry_sector;
-	uint32_t root_entry_offset;
+	uint32_t root_entry_offset = 0;
 
 	FAT_BPB* bpb;
 	FAT_FSINFO* fsinfo;

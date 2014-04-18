@@ -545,8 +545,8 @@ uint16_t sd_init_internal(SD_DRIVER* driver)
 	unsigned char retries = 0;	/* retries count */
 	unsigned char tmp;			/* temp byte for data received from SPI */
 	unsigned char read_bl_len;	/* read_bl_len of the CSD (legacy cards) */
-	unsigned char c_size_mult;	/* c_size_mult of the CSD (legacy cards) */
-	unsigned char sector_size;	/* flash page size (legacy cards) */
+	unsigned char c_size_mult = 0;	/* c_size_mult of the CSD (legacy cards) */
+	unsigned char sector_size = 0;	/* flash page size (legacy cards) */
 	unsigned char speed_class;	/* speed class of version 2 cards */
 	SPI_MODULE spi_module;
 	uint32_t block_nr;			/* block number (legacy cards) */

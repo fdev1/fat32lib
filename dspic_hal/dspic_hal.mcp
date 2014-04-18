@@ -1,7 +1,7 @@
 [HEADER]
 magic_cookie={66E99B07-E706-4689-9E80-9B2582898A13}
 file_version=1.0
-device=dsPIC33FJ256GP710A
+device=dsPIC33EP512GP502
 [PATH_INFO]
 BuildDirPolicy=BuildDirIsProjectDir
 dir_src=
@@ -35,6 +35,7 @@ file_007=.
 file_008=.
 file_009=.
 file_010=.
+file_011=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -47,6 +48,7 @@ file_007=no
 file_008=no
 file_009=no
 file_010=no
+file_011=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -59,6 +61,7 @@ file_007=no
 file_008=no
 file_009=yes
 file_010=yes
+file_011=yes
 [FILE_INFO]
 file_000=dma.c
 file_001=spi.c
@@ -71,6 +74,7 @@ file_007=lcd.h
 file_008=common.h
 file_009=readme.txt
 file_010=..\licensing.txt
+file_011=makefile
 [SUITE_INFO]
 suite_guid={9BCCB495-CD65-480A-BA76-63D8E78B117F}
 suite_state=build-library

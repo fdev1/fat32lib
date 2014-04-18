@@ -1,0 +1,59 @@
+Microchip Technology Inc, v@€S
+
+Tool Name:
+  c:\program files (x86)\microchip\xc16\v1.21\bin\bin\..\bin/coff-ld.exe
+
+Command:
+  -p33EP512GP502 \
+  -o \
+  dspic_hal.cof \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/.. \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/PIC24E \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/PIC24E/gld \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/PIC24F \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/PIC24F/gld \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/PIC24H \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/PIC24H/gld \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/dsPIC30F/gld \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC33E \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/dsPIC33E/gld \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC33F \
+  -Lc:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../support/dsPIC33F/gld \
+  dma.o \
+  spi.o \
+  rtc.o \
+  lcd.o \
+  -Tp33EP512GP502.gld.00 \
+  --defsym=__MPLAB_BUILD=1 \
+  --defsym=__MPLAB_DEBUG=1 \
+  -Map=dspic_hal.map \
+  --report-mem \
+  -start-group \
+  --library=fx-coff \
+  --library=pic30-coff \
+  --library=m-coff \
+  --library=c-coff \
+  -end-group \
+
+Archive member included because of file (symbol)
+
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-coff.a(crt0_extendedep.o)
+                              (_resetPRI)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-coff.a(data_init_extendedep.o)
+                              c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-coff.a(crt0_extendedep.o) (_data_init_extended)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(udivsi3.epo)
+                              spi.o (__udivsi3)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libc-coff.a(ctime.epo)
+                              rtc.o (localtime)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libc-coff.a(mktime.epo)
+                              rtc.o (mktime)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(modsi3.epo)
+                              c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libc-coff.a(ctime.epo) (__modsi3)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(divsi3.epo)
+                              c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libc-coff.a(ctime.epo) (__divsi3)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(mulsi3.epo)
+                              c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libc-coff.a(mktime.epo) (__mulsi3)
+c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(umodsi3.epo)
+                              c:/program files (x86)/microchip/xc16/v1.21/bin/bin/../../lib\libm-coff.a(modsi3.epo) (__umodsi3)

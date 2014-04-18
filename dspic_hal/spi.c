@@ -104,7 +104,7 @@ uint32_t spi_set_clock(char module, uint32_t bps)
 	uint32_t fcy = rtc_get_fcy();
 	uint32_t bps_temp;
 	uint32_t bps_max = 0;
-	unsigned char pri, sec, pri_max, sec_max;
+	unsigned char pri, sec, pri_max=0, sec_max=0;
 	
 	#if defined(__dsPIC33E__)
 	#define SPI_PPRE_MAX	3
