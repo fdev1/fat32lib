@@ -21,3 +21,14 @@ It contains abstractions (mostly macro based) for the SPI and DMA modules
 as well as IO ports. As an added bonus it comes with an LCD driver for the
 LCD on the Explorer 16 development board.
  
+
+How to compile:
+===============
+
+The following command can be used to compile using GNU Make:
+
+Windows:
+make CC=<path to xc16-gcc.exe> AR=<path to xc16-ar.exe>
+
+Linux:
+make RM="rm -f" CC=<path to xc16-gcc> AR=<path to xc16-ar>

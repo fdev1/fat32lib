@@ -21,3 +21,14 @@ Please read sm.h for configuration details.
 
 You may also have to modify compiler.h in the compiler folder in
 order to compile this library.
+
+How to compile:
+===============
+
+The following command can be used to compile using GNU Make:
+
+Windows:
+make CC=<path to xc16-gcc.exe> AR=<path to xc16-ar.exe>
+
+Linux:
+make RM="rm -f" CC=<path to xc16-gcc> AR=<path to xc16-ar>

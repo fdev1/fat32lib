@@ -1,4 +1,4 @@
- #
+#
 # Makefile
 #
 # Copyright 2014 Fernando Rodriguez (support@fernansoft.com). 
@@ -16,6 +16,7 @@
 #
 # toolchain
 #
+HAL=../dspic_hal
 CC="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-gcc.exe" 
 AS="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-gcc.exe"
 AR="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-ar.exe"
@@ -25,9 +26,9 @@ OPT=-O3
 #
 # target flags
 #
-p33f: CFLAGS=-omf=coff $(OPT) -I"..\compiler" -I"..\dspic_hal" -x c -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn -mcpu=33FJ256GP710A
+p33f: CFLAGS=-omf=coff $(OPT) -I"../compiler" -I"../dspic_hal" -x c -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn -mcpu=33FJ256GP710A
 p33f: ASFLAGS=-omf=-coff -mcpu=33FJ256GP710A -c -Wa
-p33e: CFLAGS=-omf=coff $(OPT) -I"..\compiler" -I"..\dspic_hal" -x c -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn -mcpu=33EP512GP502
+p33e: CFLAGS=-omf=coff $(OPT) -I"../compiler" -I"../dspic_hal" -x c -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn -mcpu=33EP512GP502
 p33e: ASFLAGS=-omf=coff -mcpu=33EP512GP502 -c -Wa
 ARFLAGS=-omf=coff r
 #
@@ -57,8 +58,8 @@ $(LIBRARY_P33F): $(OBJECTS)
 	$(RM) $(LIBRARY_P33F)
 	$(AR) $(ARFLAGS) $@ $(OBJECTS)
 	
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+.c.o:
+	$(CC) $(CFLAGS) -I$(HAL) -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS)

@@ -40,3 +40,15 @@ ANSI mode is not as good but it's still OK.
 aligned or if it's size is not divisible by two it will throw an
 address error. That is actually a driver bug which I will get fixed
 in the next release.
+
+How to compile:
+===============
+
+The following command can be used to compile using GNU Make:
+
+Windows:
+make CC=<path to xc16-gcc.exe> AR=<path to xc16-ar.exe>
+
+Linux:
+make RM="rm -f" CC=<path to xc16-gcc> AR=<path to xc16-ar>
+

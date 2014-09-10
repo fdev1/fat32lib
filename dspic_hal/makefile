@@ -57,7 +57,7 @@ $(LIBRARY_P33F): $(OBJECTS)
 	$(RM) $(LIBRARY_P33F)
 	$(AR) $(ARFLAGS) $@ $(OBJECTS)
 	
-.cpp.o:
+.c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
