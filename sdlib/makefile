@@ -21,7 +21,7 @@ CC="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-gcc.exe"
 AS="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-gcc.exe"
 AR="C:\Program Files (x86)\Microchip\xc16\v1.21\bin\xc16-ar.exe"
 RM=del /Q
-OPT=-O3
+OPT=-O1
 
 #
 # target flags

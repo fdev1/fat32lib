@@ -29,7 +29,9 @@ p33f: CFLAGS=-omf=coff $(OPT) -x c -Wall -mlarge-code -mlarge-data -fno-schedule
 p33f: ASFLAGS=-omf=-coff -mcpu=33FJ256GP710A -c -Wa
 p33e: CFLAGS=-omf=coff $(OPT) -x c -Wall -mlarge-code -mlarge-data -fno-schedule-insns -fno-schedule-insns2 -mno-eds-warn -mcpu=33EP512GP502
 p33e: ASFLAGS=-omf=coff -mcpu=33EP512GP502 -c -Wa
-ARFLAGS=-omf=coff r
+p33f: ARFLAGS=-omf=coff r
+p33e: ARFLAGS=-omf=coff r
+
 #
 # target libraries
 #
