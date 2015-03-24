@@ -7,13 +7,13 @@ Fat32lib is a portable FAT12/16/32 file system stack for embedded devices. All c
 Features:
 ---------
 
-- Written in 100% portable C89 code (driver requires hardware abstraction library);
+- Written in portable C (C89) (SD driver requires hardware abstraction library);
 - Synchronous and asynchronous (non-blocking) IO;
 - Buffered and unbuffered IO;
 - Stream IO (for writting continuos streams of data);
 - Extensible drive manager (can be extended to interface with other file systems);
 - FAT12/16/32 drive formatting support (can optimize file system for flash);
-- SD cards (for Microchip's dsPIC but should be easy to port);
+- SD card driver (for Microchip's dsPIC but should be easy to port);
 - Driver supports any SD card size;
 - Multi-threading support;
 - Multiple volumes/partitions can be mounted at once;
@@ -21,7 +21,7 @@ Features:
 - Long filenames support (ASCII only/can be disabled at compile-time);
 - Several memory management options;
 - Easy to use API;
-- Released under GPL v3. Commercial licenses also available (contact <a href="mailto:frodriguez.developer@outlook.com">developer</a> for info).
+- Released under GPL v3.
 
 Feel free to browse the documentation <a href="http://fernando-rodriguez.github.io/fat32lib/doc/html/index.html" target="_blank">here</a>.
 
