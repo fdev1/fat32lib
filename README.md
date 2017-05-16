@@ -8,12 +8,12 @@ Features:
 ---------
 
 - Written in portable C (C89) (SD driver requires hardware abstraction library);
-- Synchronous and asynchronous (non-blocking) IO;
-- Buffered and unbuffered IO;
-- Stream IO (for writting continuos streams of data);
+- Synchronous and asynchronous (non-blocking) I/O;
+- Buffered and unbuffered I/O;
+- Stream I/O (for writting continuos streams of data);
 - Extensible drive manager (can be extended to interface with other file systems);
 - FAT12/16/32 drive formatting support (can optimize file system for flash);
-- SD card driver (for Microchip's dsPIC but should be easy to port);
+- SD card driver (for Microchip's dsPIC, but it should be easy to port);
 - Driver supports any SD card size;
 - Multi-threading support;
 - Multiple volumes/partitions can be mounted at once;
